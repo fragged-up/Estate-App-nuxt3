@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-border {
+  background-color:#1A1A1A;
+  border:1px solid #262626;
+}
+
+.inline-block-children > * {
+  @apply inline-block;
+}
+

@@ -19,9 +19,58 @@ const card_price = "1,250,000";
 const card_bedrooms = 7;
 const card_bathrooms = 6;
 
+const properties = ref([
+  {
+    cardImage: '/assets/Beckos.svg',
+    cardTitle: 'Property Title 1',
+    cardText: 'Property description 1',
+    bedRooms: 3,
+    bathRooms: 2,
+    cardPrice: '500,000'
+  },
+  {
+    cardImage: '/assets/Beckos.svg',
+    cardTitle: 'Property Title 2',
+    cardText: 'Property description 2',
+    bedRooms: 4,
+    bathRooms: 3,
+    cardPrice: '750,000'
+  },
+  {
+    cardImage: '/assets/Beckos.svg',
+    cardTitle: 'Property Title 2',
+    cardText: 'Property description 2',
+    bedRooms: 4,
+    bathRooms: 3,
+    cardPrice: '750,000'
+  },
+  {
+    cardImage: '/assets/Beckos.svg',
+    cardTitle: 'Property Title 1',
+    cardText: 'Property description 1',
+    bedRooms: 3,
+    bathRooms: 2,
+    cardPrice: '500,000'
+  },
+  {
+    cardImage: '/assets/Beckos.svg',
+    cardTitle: 'Property Title 2',
+    cardText: 'Property description 2',
+    bedRooms: 4,
+    bathRooms: 3,
+    cardPrice: '750,000'
+  },
+  {
+    cardImage: '/assets/Beckos.svg',
+    cardTitle: 'Property Title 2',
+    cardText: 'Property description 2',
+    bedRooms: 4,
+    bathRooms: 3,
+    cardPrice: '750,000'
+  },
+]);
 
-
-</script>     
+</script>
 
 <template>
   <header class="w-full py-12 px-6 fallback border-b border-[#262626]">
@@ -35,11 +84,21 @@ const card_bathrooms = 6;
           <BoxInput />
         </div>
 
-        <div class="property w-11/12 mx-auto">
+        <div class="property">
           <MainBlock :header-text="card_Head_1" :para-text="card_Para_1">
             <template #default>
-              <PropertyCard :card-image="'/assets/Beckos.svg'" :card-title="card_title" :card-text="card_text"
-                :bed-rooms="card_bedrooms" :bath-rooms="card_bathrooms" :card-price="card_price" />
+
+            <div class="min-w-[100%] overflow-x-scroll block whitespace-nowrap">
+                <div class="w-[80%] inline-block my-6 mx-4" v-for="(property, index) in properties" :key="index">
+                  <PropertyCard :card-image="property.cardImage" :card-title="property.cardTitle"
+                    :card-text="property.cardText" :bed-rooms="property.bedRooms" :bath-rooms="property.bathRooms"
+                    :card-price="property.cardPrice" />
+                </div>
+
+
+            </div>
+              <!-- <PropertyCard :card-image="'/assets/Beckos.svg'" :card-title="card_title" :card-text="card_text"
+                :bed-rooms="card_bedrooms" :bath-rooms="card_bathrooms" :card-price="card_price" /> -->
               <div class="flex justify-between items-center my-8">
                 <button class="arrows-bg text-[#808080]">
                   &leftarrow;
@@ -70,23 +129,23 @@ const card_bathrooms = 6;
               <Input :for="'phone'" :label="'Phone'" :input-type="'number'" :name="'phone'"
                 :placeholder="'Enter Phone'" />
 
-                <div class="">
-                  
-                   <SelectInput :select-head="'Preferred Location'"  :place-holder="'Select Location'" 
-                    :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
-                    <SelectInput :select-head="'Property Type'"  :place-holder="'Select Property Type'" 
-                    :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
-                    <SelectInput :select-head="'No. of Bathrooms'"  :place-holder="'Select no. of Bathrooms'" 
-                    :label="'No. of Bathrooms'" :options="['Option1', 'Option 2', 'Option 3']" />
-                    <SelectInput :select-head="'No. of Bedrooms'"  :place-holder="'Select no. of Bedrooms'" 
-                    :label="'No. of Bedrooms'" :options="['Option1', 'Option 2', 'Option 3']" />
-                    <SelectInput :select-head="'Budget'"  :place-holder="'Select Budget'" 
-                    :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
-                    <Preferred />
-                    
-                </div>
-                </template>
-              </MainBlock>
+              <div class="">
+
+                <SelectInput :select-head="'Preferred Location'" :place-holder="'Select Location'"
+                  :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+                <SelectInput :select-head="'Property Type'" :place-holder="'Select Property Type'"
+                  :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+                <SelectInput :select-head="'No. of Bathrooms'" :place-holder="'Select no. of Bathrooms'"
+                  :label="'No. of Bathrooms'" :options="['Option1', 'Option 2', 'Option 3']" />
+                <SelectInput :select-head="'No. of Bedrooms'" :place-holder="'Select no. of Bedrooms'"
+                  :label="'No. of Bedrooms'" :options="['Option1', 'Option 2', 'Option 3']" />
+                <SelectInput :select-head="'Budget'" :place-holder="'Select Budget'" :label="'Select Location'"
+                  :options="['Option1', 'Option 2', 'Option 3']" />
+                <Preferred />
+
+              </div>
+            </template>
+          </MainBlock>
         </div>
       </section>
 

@@ -1,13 +1,29 @@
+<script setup>
+const isVisible = ref(false);
+const toggleVisual = () => isVisible.value = !isVisible.value;
+
+const cardProperty = defineProps({
+    cardImage: String,
+    cardTitle: String,
+    cardText: String,
+    bedRooms: Number,
+    bathRooms: Number,
+    cardPrice: String
+});
+
+
+</script>
+
+
 <template>
-    <div class="p4 w-full">
-        <div class="card-box w-full rounded-xl grid row-auto gap-y-6 border-2 border-[#262626] p-4">
+    <div class="w-full p4">
+        <div class="card-box w-full rounded-xl grid gap-y-6 border-2 border-[#262626] max-w-[413px] max-h-[540px] p-4">
   <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
               width 155px and height 49px  -->
-
+                 <slot></slot>
             <div class="container middleBuilding-c">
                 <img :src="cardProperty.cardImage" alt="middleBuilding" class="w-full max-h-56" />
             </div>
-
             <div class="container">
                 <h3 class="text-white text-lg">{{ cardProperty.cardTitle }}</h3>
                 <p class="text-[#999999] py-2">
@@ -66,19 +82,3 @@
  <!-- from 1440px wrap it in container & to display additional 2 FeaturedProperties components with different props values -->
 </template>
 
-<script setup>
-import { useSlots } from 'vue';
-const isVisible = ref(false);
-const toggleVisual = () => isVisible.value = !isVisible.value;
-
-const cardProperty = defineProps({
-    cardImage: String,
-    cardTitle: String,
-    cardText: String,
-    bedRooms: Number,
-    bathRooms: Number,
-    cardPrice: String
-});
-
-
-</script>

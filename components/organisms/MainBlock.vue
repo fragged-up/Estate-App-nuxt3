@@ -14,7 +14,7 @@ const blockContent = defineProps({
     </div>
 
     <div class="container py-4 my-6 mx-auto">
-      <h1 class="text-white text-4xl">
+      <h1 class="font-sans font-semibold text-white text-3xl">
         {{ headerText }}
       </h1>
       <p class="leading-5 text-sm font-medium font-urbanist text-[#999999] py-4">

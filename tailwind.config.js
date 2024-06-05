@@ -30,7 +30,7 @@ export default {
      },
       colors: {
         pr:'#703BF7',
-        lg:'#999999',
+        gl:'#999999',
         mg:'#1A1A1A',
         hg:'#262626'
       },

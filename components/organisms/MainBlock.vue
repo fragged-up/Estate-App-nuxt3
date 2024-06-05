@@ -13,7 +13,7 @@ const blockContent = defineProps({
       <img src="/assets/icons/stars.svg" alt="stars" class="stars">
     </div>
 
-    <div class="container py-4 my-6">
+    <div class="container py-4 my-6 mx-auto">
       <h1 class="text-white text-4xl">
         {{ headerText }}
       </h1>

@@ -3,23 +3,25 @@ import BoxInput from '~/components/organisms/BoxInput.vue';
 import MainBlock from '~/components/organisms/MainBlock.vue';
 import PropertyCard from '~/components/molecules/PropertyCard.vue';
 import SelectInput from '~/components/atoms/SelectInput.vue';
+import Preferred from '~/components/atoms/Preferred.vue';
+import Input from '~/components/atoms/Input.vue';
 
 const hero_Head = "Find Your Dream Property";
 const hero_Para = "Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey";
 const card_Head_1 = "Discover a World of Possibilities";
+const card_Head_2 = "Let's Make it Happen";
 const card_Para_1 = "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home";
+const card_Para_2 = "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.";
 
 const card_title = "Seaside Serenity Villa";
 const card_text = "Wake up to the soothing melody of waves. This beachfront villa offers..";
 const card_price = "1,250,000";
 const card_bedrooms = 7;
 const card_bathrooms = 6;
-const Option1 = ['Select Your Title'];
-const additionalPlaceHolderStyle = ['placeholder:text-white','placeholder:text-lg'];
 
 
 
-</script>
+</script>     
 
 <template>
   <header class="w-full py-12 px-6 fallback border-b border-[#262626]">
@@ -53,18 +55,39 @@ const additionalPlaceHolderStyle = ['placeholder:text-white','placeholder:text-l
               </div>
             </template>
           </MainBlock>
-          <div class="div">
-            <SelectInput
-            :class="additionalPlaceHolderStyle"
-      :placeholder="'Select an option'"
-      :showDropDown="true"
-      :label="'helo you whatuups?'"
-      :options="['Option1', 'Option 2', 'Option 3']"
-    />
-          </div>
         </div>
 
+        <div class="last-div w-11/12 mx-auto">
+          <MainBlock :header-text="card_Head_2" :para-text="card_Para_2">
+            <template #default>
 
+              <Input :for="'firstName'" :label="'First Name'" :input-type="'text'" :name="'firstName'"
+                :placeholder="'Enter First Name'" />
+              <Input :for="'lastName'" :label="'Last Name'" :input-type="'text'" :name="'lastName'"
+                :placeholder="'Enter Last Name'" />
+              <Input :for="'Email'" :label="'Email'" :input-type="'email'" :name="'Email'"
+                :placeholder="'Enter Email'" />
+              <Input :for="'phone'" :label="'Phone'" :input-type="'number'" :name="'phone'"
+                :placeholder="'Enter Phone'" />
+
+                <div class="">
+                  
+                   <SelectInput :select-head="'Preferred Location'"  :place-holder="'Select Location'" 
+                    :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+                    <SelectInput :select-head="'Property Type'"  :place-holder="'Select Property Type'" 
+                    :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+                    <SelectInput :select-head="'No. of Bathrooms'"  :place-holder="'Select no. of Bathrooms'" 
+                    :label="'No. of Bathrooms'" :options="['Option1', 'Option 2', 'Option 3']" />
+                    <SelectInput :select-head="'No. of Bedrooms'"  :place-holder="'Select no. of Bedrooms'" 
+                    :label="'No. of Bedrooms'" :options="['Option1', 'Option 2', 'Option 3']" />
+                    <SelectInput :select-head="'Budget'"  :place-holder="'Select Budget'" 
+                    :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+                    <Preferred />
+                    
+                </div>
+                </template>
+              </MainBlock>
+        </div>
       </section>
 
     </main>
@@ -73,6 +96,8 @@ const additionalPlaceHolderStyle = ['placeholder:text-white','placeholder:text-l
 
 <style scoped>
 .fallback {
-  background: #262626, linear-gradient(to right, #262626 0%, #262626 100%), linear-gradient(to left, #262626 53%, rgba(38, 38, 38, 0) 0%);
+  background: rgb(38, 38, 38);
+  background: linear-gradient(90deg, rgba(38, 38, 38, 1) 0%, rgba(38, 38, 38, 1) 100%, (rgba(38, 38, 38) 53%, rgba(38, 38, 38, 0.5) 0%));
+  /* background: #262626, linear-gradient(to right, #262626 0%, #262626 100%), linear-gradient(to left, #262626 53%, rgba(38, 38, 38, 0) 0%); */
 }
 </style>

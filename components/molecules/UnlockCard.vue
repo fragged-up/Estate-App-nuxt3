@@ -37,27 +37,27 @@ const ppp4 = 'Diversify your real estate portfolio effectively. Our experts guid
 <template>
  <div v-if="$slots.unlock">
     <slot name="unlock">
-    <div class="grid grid-rows-5 gap-y-5 p-6 rounded-xl">
+    <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl">
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Valut.svg'" :head="h1" :para="p1" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Valut.svg'" :head="h1" :para="p1" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Strategic.svg'" :head="h2" :para="p2" />
+      <div class="border-2 border-[#262626] rounded-xl p-0">
+        <RepeatedBlock :class="'border-none p-0'" :image="'/assets/unlock/Strategic.svg'" :head="h2" :para="p2" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Negotiation.svg'" :head="h3" :para="p3" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Negotiation.svg'" :head="h3" :para="p3" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Clossing.svg'" :head="h4" :para="p4" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Clossing.svg'" :head="h4" :para="p4" />
       </div>
 
-      <div class="box unlock-image unlock-image">
+      <div class="box back bg-hero-about-abst bg-fixed text-center rounded-xl px-4">
         <h4 class="py-2 font-san text-white text-lg font-bold">Unlock the Value of Your Property Today </h4>
-        <Button :class="'py-2 bg-[#141414]'" :buttonTxt="'Learn More'" />
+        <Button :class="'w-full py-2 bg-[#141414] border-2 border-[#262626] text-white text-center px-10 my-4 rounded-xl'" :buttonTxt="'Learn More'"  />
         <p class="py-2 font-san text-gl text-sm font-medium">Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.</p>
       </div>
       
@@ -67,26 +67,26 @@ const ppp4 = 'Diversify your real estate portfolio effectively. Our experts guid
 
 <div v-if="$slots.effort">
   <slot name="effort">
-    <div class="grid grid-rows-5 gap-y-5 p-6 rounded-xl">
+    <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl">
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Tenant.svg'" :head="hh1" :para="pp1" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Tenant.svg'" :head="hh1" :para="pp1" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Maintain.svg'" :head="hh2" :para="pp2" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Maintain.svg'" :head="hh2" :para="pp2" />
       </div>
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Financial.svg'" :head="hh3" :para="pp3" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Financial.svg'" :head="hh3" :para="pp3" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Legal.svg'" :head="hh4" :para="pp4" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Legal.svg'" :head="hh4" :para="pp4" />
       </div>
         
-      <div class="box unlock-image">
+      <div class="box back bg-hero-about-abst bg-fixed text-center rounded-xl px-4">
         <h4 class="py-2 font-san text-white text-lg font-bold">Experience Effortless Property Management </h4>
-        <Button :class="'py-2 bg-[#141414]'" :buttonTxt="'Learn More'" />
+        <Button :class="'w-full py-2 bg-[#141414] border-2 border-[#262626] text-white text-center px-10 my-4 rounded-xl'" :buttonTxt="'Learn More'" />
         <p class="py-2 font-san text-gl text-sm font-medium">Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.</p>
       </div>
 
@@ -97,27 +97,27 @@ const ppp4 = 'Diversify your real estate portfolio effectively. Our experts guid
 
 <div v-if="$slots.smart">
   <slot name="smart">
-    <div class="grid grid-rows-5 gap-y-5 p-6 rounded-xl bg-color[#262626]">
+    <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl">
 
-      <div class="box unlock-image">
+      <div class="box back text-center px-4 bg-hero-about-abst bg-fixed rounded-xl">
         <h4 class="py-2 font-san text-white text-lg font-bold">Unlock Your Investment Potential </h4>
-        <Button :class="'py-2 bg-[#141414]'" :buttonTxt="'Learn More'" />
+        <Button :class="'w-full py-2 bg-[#141414] border-2 border-[#262626] text-white text-center rounded-xl px-10 my-4'" :buttonTxt="'Learn More'"  />
         <p class="py-2 font-san text-gl text-sm font-medium">Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.</p>
       </div>
 
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'flex flex-col border-none'" :image="'/assets/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
       </div>
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
       </div>
   
-      <div class="border-2 border-[#262626] rounded-xl my-2">
-        <RepeatedBlock :image="'/assets/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
+      <div class="border-2 border-[#262626] rounded-xl">
+        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
       </div>
         
      
@@ -133,5 +133,8 @@ const ppp4 = 'Diversify your real estate portfolio effectively. Our experts guid
 <style scoped>
 .shadow-frame {
  box-shadow: 1px -1px 18px 1px #262626;
+}
+.back{
+  background-color: #262626;
 }
 </style>

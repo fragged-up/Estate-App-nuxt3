@@ -14,16 +14,18 @@ export default {
         'foot-image': "url('/public/FooterImage.svg')",
         'hero-about-abst':"url('/public/AbstractDesign.svg')",
         'hero-about-image': "url('/public/HeroAbout.svg')",
-        'grey-hero': ' linear-gradient(90deg, rgba(38,38,38,1) 0%, rgba(38,38,38,0.5) 53%, rgba(0,0,0,1) 100%)',
-        'unlock-image':"url('/public/unlock/UnlockImage.svg), #333333",
+        'grey-hero': 'linear-gradient(90deg, rgba(38,38,38,1) 0%, rgba(38,38,38,0.5) 53%, rgba(0,0,0,1) 100%)',
+        'unlock-image':"url('/public/unlock/UnlockImage.svg'), #FFFFFF",
       },
       backgroundPosition: {
         'hero-about-abst': 'center center',
         'hero-about-image': 'right center',
+        'unlock-image': 'center',
       },
       backgroundSize: {
         'hero-about-abst': 'cover',
         'hero-about-image': 'contain',
+        'unlock-image': 'cover',
       },
       screens: {
          "pad-fix": { "max": "376px" },

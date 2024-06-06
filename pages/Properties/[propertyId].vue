@@ -8,7 +8,7 @@ const propertyId = route.params.propertyId
 
 
 <template>
-  <div>
+  <div class="main-propertyId-cont">
     <h1>Property ID: {{ propertyId }}</h1>
     <!-- Your component content here -->
   </div>

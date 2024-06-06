@@ -19,7 +19,7 @@ const thirdPara = "Building a real estate portfolio requires a strategic approac
 </script>
 
 <template>
-  <div>
+  <div class="services-page">
     <header class="w-full py-12 px-6 fallback border-b border-[#262626]">
       <h1 class="font-sans font-semibold text-3xl text-white">{{ heroService }}</h1>
       <p class="py-6 font-sans font-medium text-[#999999] text-sm">{{ paraService }}</p>
@@ -46,9 +46,6 @@ const thirdPara = "Building a real estate portfolio requires a strategic approac
             <UnlockCard><template #smart></template></UnlockCard>
          </MainBlock>
         </div>
-
-
-
 
 
       </section>

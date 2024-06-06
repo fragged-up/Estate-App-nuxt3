@@ -2,6 +2,17 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
+
+  vite: {
+    // Ensure Vite HMR is enabled
+    server: {
+      hmr: {
+        overlay:false,
+        host:'localhost',
+        port:3000,
+      }
+    }
+  },
   app: {
     head: {
       link: [

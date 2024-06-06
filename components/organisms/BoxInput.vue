@@ -5,7 +5,7 @@ import SortInput from '@/components/molecules/SortInput.vue';
 </script>
 
 <template>
-  <div>
+  <div class="box-input-main-container">
 
     <div class="p-4 text-center mt-8">
       <Search :placeholder="'Search For A Property'" :iconSrc="'/assets/icons/Find.svg'" />

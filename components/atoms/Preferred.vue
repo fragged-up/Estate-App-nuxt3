@@ -65,6 +65,7 @@ const setPreferredContactMethod = (method) => {
     </div>
     <button class="mt-6 w-full p-4 bg-[#703BF7] text-white rounded-2xl">Send Your Message</button>
   </div>
+  
 </template>
 
 <style scoped>

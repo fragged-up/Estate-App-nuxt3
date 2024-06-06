@@ -3,7 +3,7 @@
       <h2 class="text-white font-sans font-semibold">
         How do I search for properties on Estatein?
       </h2>
-      <p class="text-lg text-sm font-sans font-medium">Learn how to use our user-friendly search tools to find properties that match your criteria.</p>
+      <p class="text-gl text-sm font-sans font-medium">Learn how to use our user-friendly search tools to find properties that match your criteria.</p>
 
       <Button :class="'bg-[#1A1A1A] text-center text-white p-4'" :buttonTxt="'Read More'" />
         

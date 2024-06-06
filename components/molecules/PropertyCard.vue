@@ -16,15 +16,15 @@ const cardProperty = defineProps({
 
 
 <template>
-    <div class="w-full p4">
-        <div class="card-box w-full rounded-xl grid gap-y-6 border-2 border-[#262626] max-w-[413px] max-h-[540px] p-4">
+    <div class="property-card-main-container w-auto m-0">
+        <div class="card-box w-full max-w-[413px] rounded-xl grid gap-y-6 border-2 border-[#262626] p-4">
   <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
               width 155px and height 49px  -->
-                 <slot></slot>
+                
             <div class="container middleBuilding-c">
                 <img :src="cardProperty.cardImage" alt="middleBuilding" class="w-full max-h-56" />
             </div>
-            <div class="container">
+            <div class="container h-auto">
                 <h3 class="text-white text-lg">{{ cardProperty.cardTitle }}</h3>
                 <p class="text-[#999999] py-2">
                     {{ cardProperty.cardText }}
@@ -37,14 +37,12 @@ const cardProperty = defineProps({
             </div>
 
             <div class="grid grid-cols-2 gap-4">
-
                 <button class="bg-[#1A1A1A] border-2 border-[#262626] rounded-3xl">
                     <span class="inline-flex gap-2 py-2">
                         <img src="/assets/icons/bedRoom.svg" class="text-center mx-auto" alt="bedRoom">
                         <small class="text-white">{{ cardProperty.bedRooms }}-Bedroom</small>
                     </span>
                 </button>
-
                 <button class="bg-[#1A1A1A] border-2 border-[#262626] rounded-3xl">
                     <span class="inline-flex gap-2 py-2">
                         <img src="/assets/icons/bathRoom.svg" class="text-center mx-auto" alt="bathRoom">
@@ -58,7 +56,6 @@ const cardProperty = defineProps({
                         <small class="text-white">Villa</small>
                     </span>
                 </button>
-
             </div>
 
             <div class="grid grid-cols-[.4fr_1fr] gap-x-2 my-4">

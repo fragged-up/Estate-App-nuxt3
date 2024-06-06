@@ -45,7 +45,7 @@ const stepPara_3 = "OHave questions about a property or need more information? O
     <section class="w-11/12 mx-auto">
       <MainBlock :headerText="cardHead_1" :paraText="cardPara_1">
         <template #default>
-          <div>
+          <div class="cardThree-cont">
             <CardThree />
           </div>
         </template>
@@ -53,7 +53,7 @@ const stepPara_3 = "OHave questions about a property or need more information? O
 
       <MainBlock :headerText="cardHead_2" :paraText="cardPara_2">
         <template #default>
-          <div>
+          <div class="columnForth-cont">
             <ColumnFourthCard />
           </div>
         </template>
@@ -61,7 +61,7 @@ const stepPara_3 = "OHave questions about a property or need more information? O
 
       <MainBlock :headerText="cardHead_3" :paraText="cardPara_3">
         <template #default>
-          <div>
+          <div clas="cardTAbout-cont">
             <CardTAbout />
           </div>
         </template>

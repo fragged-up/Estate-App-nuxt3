@@ -4,7 +4,7 @@
 
 <template>
     <!-- Cont four cards  -->
-    <div class="second-template grid grid-cols-2 grid-rows-2 gap-y-2.5 gap-x-2.5 border-2 border-gray-800 p-4 rounded-md">
+    <div class="second-template grid grid-cols-2 grid-rows-2 gap-y-2.5 gap-x-2.5 border-2 border-[#262626] p-4 rounded-md">
         <div class="flex flex-col bg-[#141414] border-2 border-[#262626] text-center rounded-lg p-4">
             <div class="flex flex-col justify-center items-center">
                 <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">

@@ -6,7 +6,7 @@ import FooterInput from '@/components/atoms/FooterInput.vue';
 </script>
 
 <template>
-  <div class="bg-mg">
+  <div class="bg-[#1A1A1A]">
     
     <div class="before-footer bg-mg bg-foot-image bg-no-repeat bg-cover bg-center w-full p-4 border-b-2 border-hg laptop:flex justify-between items-center laptop:p-6">
   

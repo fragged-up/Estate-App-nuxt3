@@ -1,6 +1,6 @@
 <template>
 <div class="pt-4">
-    <div class="logo-container bg-mg p-4">
+    <div class="logo-container p-4">
       <img src="/assets/images/HeaderLogo.svg" class="logo" alt="HeaderLogo">
       <h1 class="header-text font-semibold">Estatein</h1>
     </div>

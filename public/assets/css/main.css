@@ -11,3 +11,6 @@
   @apply inline-block;
 }
 
+.main-b {
+  @apply border-2 border-[#262626] rounded-xl;
+}

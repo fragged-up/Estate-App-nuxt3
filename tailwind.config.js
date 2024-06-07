@@ -29,7 +29,9 @@ export default {
       },
       screens: {
          "pad-fix": { "max": "376px" },
+         "mobile":  { "max": "1440px" },
           "laptop":  { "min": "1440px" },
+          "desktop":  {"min": "1920px"},
      },
       colors: {
         pr:'#703BF7',

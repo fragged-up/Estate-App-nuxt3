@@ -36,7 +36,7 @@ const lastPara = "Estatein is here to serve you across multiple locations. Wheth
           </div>
           <div class="flex flex-col bg-[#1A1A1A] border-2 border-[#262626] text-center rounded-lg py-4 px-2 laptop:flex-grow-0">
             <div class="flex flex-col justify-center items-center">
-              <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">
+              <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">   
               <img src="public/assets/icons/cameraIcon.svg" class="self-center" alt="homeIcon">
             </div>
             <p class="font-sans font-semibold text-sm text-white laptop:my-4">+1 (123) 456-7890</p>
@@ -59,8 +59,8 @@ const lastPara = "Estatein is here to serve you across multiple locations. Wheth
       </div>
     </header>
     <main class="main-contact">
-      <section>
-        <MainBlock :header-text="mainHead" :para-text="mainPara">
+    
+        <!-- <MainBlock :header-text="mainHead" :para-text="mainPara">
           <template #default>
            <FormContact />
           </template>
@@ -74,9 +74,33 @@ const lastPara = "Estatein is here to serve you across multiple locations. Wheth
             <div class="w-11/12 my-6 mx-auto"><CardOffice><template #second></template></CardOffice></div>
             <div class="w-11/12 my-16 mx-auto"><ExploreCard /></div>
           </template>
-        </MainBlock>
+        </MainBlock> -->
+
+        <FormContact />
+        <section>
+      <MainBlock :header-text="lastHead" :para-text="lastPara">
+         <template #top>
+          <div class="my-6">  <Office /></div>
+         </template>
+         <template #default>
+
+            <div class="w-11/12 mx-auto">
+
+               <div
+                  class="w-11/12 flex flex-col justify-center items-center gap-y-8 mx-auto laptop:flex-row laptop:gap-10 laptop:justify-around">
+                  <CardOffice><template #first></template></CardOffice>
+                  <CardOffice><template #second></template></CardOffice>
+               </div>
+               <div class="w-11/12 my-16 mx-auto">
+                  <ExploreCard />
+               </div>
+            </div>
+         </template>
+      </MainBlock>
+
+   </section>
         
-      </section>
+    
     </main>
   </div>
 </template>

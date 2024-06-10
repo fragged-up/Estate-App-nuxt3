@@ -23,6 +23,7 @@ const blockContent = defineProps({
         <p class="leading-5 text-sm font-medium font-urbanist text-[#999999] py-4">
           {{ paraText }}
         </p>
+        <slot v-if="$slots.top" name="top"></slot>
       </div>
 
       </div>

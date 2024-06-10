@@ -15,7 +15,7 @@ const third_Para = "Estatein's presence extends to multiple regions, each with i
 
 <template>
 
-  <div class="card-office border-2 border-[#262626] p-4 rounded-xl">
+  <div class="card-office border-2 border-[#262626] p-4 rounded-xl max-w-[630px] h-[410px]">
 
    <slot v-if="$slots.first" name="first">
      <div class="my-6">

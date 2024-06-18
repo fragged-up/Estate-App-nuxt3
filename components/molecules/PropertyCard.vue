@@ -22,7 +22,7 @@ const cardProperty = defineProps({
               width 155px and height 49px  -->
                 
             <div class="container middleBuilding-c">
-                <img :src="cardProperty.cardImage" alt="middleBuilding" class="w-full max-h-56" />
+                <img :src="$loadImage(`${cardImage}`)" alt="middleBuilding" class="w-full max-h-56" />
             </div>
             <div class="container h-auto">
                 <h3 class="text-white text-lg">{{ cardProperty.cardTitle }}</h3>
@@ -39,20 +39,20 @@ const cardProperty = defineProps({
             <div class="grid grid-cols-2 gap-4">
                 <button class="bg-[#1A1A1A] border-2 border-[#262626] rounded-3xl">
                     <span class="inline-flex gap-2 py-2">
-                        <img src="/assets/icons/bedRoom.svg" class="text-center mx-auto" alt="bedRoom">
+                        <img :src="$loadImage('/icons/bedRoom.svg')" class="text-center mx-auto" alt="bedRoom">
                         <small class="text-white">{{ cardProperty.bedRooms }}-Bedroom</small>
                     </span>
                 </button>
                 <button class="bg-[#1A1A1A] border-2 border-[#262626] rounded-3xl">
                     <span class="inline-flex gap-2 py-2">
-                        <img src="/assets/icons/bathRoom.svg" class="text-center mx-auto" alt="bathRoom">
+                        <img :src="$loadImage('/icons/bathRoom.svg')" class="text-center mx-auto" alt="bathRoom">
                         <small class="text-white">{{ cardProperty.bathRooms }}-Bathroom</small>
                     </span>
                 </button>
 
                 <button class="col-span-auto bg-[#1A1A1A] border-2 border-[#262626] rounded-3xl">
                     <span class="inline-flex gap-2 py-2">
-                        <img src="/assets/icons/villaIcon.svg" class="text-center mx-auto" alt="villa" />
+                        <img :src="$loadImage('/icons/villaIcon.svg')" class="text-center mx-auto" alt="villa" />
                         <small class="text-white">Villa</small>
                     </span>
                 </button>

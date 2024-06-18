@@ -1,3 +1,10 @@
+<script setup>
+// import Button from '@/components/atoms/Button.vue';
+
+</script>
+
+
+
 <template>
    <div class="card-box w-full rounded-xl grid row-auto gap-y-6 border-2 border-[#262626] p-8">
       <h2 class="text-white font-sans font-semibold">
@@ -10,11 +17,6 @@
 
   </div>
 </template>
-
-<script setup>
-import Button from '@/components/atoms/Button.vue';
-
-</script>
 
 <style>
 

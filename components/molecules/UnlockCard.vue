@@ -1,6 +1,6 @@
 <script setup>
-import RepeatedBlock from '../molecules/RepeatedBlock.vue';
-import Button from '../atoms/Button.vue';
+// import RepeatedBlock from '../molecules/RepeatedBlock.vue';
+// import UnlockBox from './UnlockBox.vue';
 const h1 = 'Valuation Mastery';
 const h2 = 'Strategic Marketing';
 const h3 = 'Negotiation Wizardry';
@@ -31,110 +31,116 @@ const ppp2 = 'Make investment decisions with confidence. Our ROI Assessment serv
 const ppp3 = 'Every investor is unique, and so are their goals. We develop Customized Investment Strategies tailored to your specific needs';
 const ppp4 = 'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations';
 
+const unlockHeader_1 = 'Unlock the Value of Your Property Today';
+const unlockHeader_2 = 'Experience Effortless Property Management';
+const unlockHeader_3 = 'Unlock Your Investment Potential';
+
+const unlockPara_1 = "Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.";
+const unlockPara_2 = "Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.";
+const unlockPara_3 = "Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.";
+
+const unlockButText = "Learn More";
+
+
 
 </script>
-
+<!-- <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl laptop:grid-cols-2 laptop:gap-0 laptop:px-0"> -->
+<!-- <div class="border-2 border-[#262626] rounded-xl max-w-[413px]"></div>
+       </div> -->
 <template>
- <div v-if="$slots.unlock">
+  <ClientOnly >
+    
+ 
+  <div v-if="$slots.unlock" class="text-start">
     <slot name="unlock">
-    <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl">
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Valut.svg'" :head="h1" :para="p1" />
-      </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl p-0">
-        <RepeatedBlock :class="'border-none p-0'" :image="'/assets/unlock/Strategic.svg'" :head="h2" :para="p2" />
-      </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Negotiation.svg'" :head="h3" :para="p3" />
-      </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Clossing.svg'" :head="h4" :para="p4" />
-      </div>
+      <div class="grid grid-cols-1 gap-x-4 laptop: controller-box">
 
-      <div class="box back bg-hero-about-abst bg-fixed text-center rounded-xl px-4">
-        <h4 class="py-2 font-san text-white text-lg font-bold">Unlock the Value of Your Property Today </h4>
-        <Button :class="'w-full py-2 bg-[#141414] border-2 border-[#262626] text-white text-center px-10 my-4 rounded-xl'" :buttonTxt="'Learn More'"  />
-        <p class="py-2 font-san text-gl text-sm font-medium">Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.</p>
+        <div class="flex flex-col justify-center items-center laptop:flex-row gap-4">
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Valut.svg'" :head="h1" :para="p1" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Strategic.svg'" :head="h2" :para="p2" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Clossing.svg'" :head="h4" :para="p4" />
+        </div>
+        <div class="flex flex-col justify-center items-center laptop:flex-row gap-4">
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Negotiation.svg'" :head="h3" :para="p3" />
+          <UnlockBox :class="'laptop:max-w-full'" :HTxt="unlockHeader_1" :PTxt="unlockPara_1" :BTx="unlockButText" />
+        </div>
       </div>
-      
-    </div>
-  </slot>
- </div>
+    </slot>
+  </div>
 
-<div v-if="$slots.effort">
-  <slot name="effort">
-    <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl">
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Tenant.svg'" :head="hh1" :para="pp1" />
+  <div v-if="$slots.effort">
+    <slot name="effort">
+      <div class="grid grid-cols-1 gap-x-4 laptop: controller-box">
+        <div class="flex flex-col justify-center items-center laptop:flex-row gap-4">
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Tenant.svg'" :head="hh1" :para="pp1" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Maintain.svg'" :head="hh2" :para="pp2" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Financial.svg'" :head="hh3" :para="pp3" />
+        </div>
+        <div class="flex flex-col justify-center items-center laptop:flex-row gap-4">
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Legal.svg'" :head="hh4" :para="pp4" />
+          <UnlockBox :class="'laptop:max-w-full'" :HTxt="unlockHeader_2" :PTxt="unlockPara_2" :BTx="unlockButText" />
+        </div>
       </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Maintain.svg'" :head="hh2" :para="pp2" />
-      </div>
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Financial.svg'" :head="hh3" :para="pp3" />
-      </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Legal.svg'" :head="hh4" :para="pp4" />
-      </div>
-        
-      <div class="box back bg-hero-about-abst bg-fixed text-center rounded-xl px-4">
-        <h4 class="py-2 font-san text-white text-lg font-bold">Experience Effortless Property Management </h4>
-        <Button :class="'w-full py-2 bg-[#141414] border-2 border-[#262626] text-white text-center px-10 my-4 rounded-xl'" :buttonTxt="'Learn More'" />
-        <p class="py-2 font-san text-gl text-sm font-medium">Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.</p>
-      </div>
+    </slot>
 
-    </div>
-  </slot>
-  
-</div>
+  </div>
 
-<div v-if="$slots.smart">
-  <slot name="smart">
-    <div class="grid auto-rows-auto gap-y-6 px-4 rounded-xl">
+  <div v-if="$slots.smart">
+    <slot name="smart">
+      <div class="max-w-full grid grid-cols-1 gap-x-4 laptop:max-w-[1280px] laptop:grid-cols-2">
 
-      <div class="box back text-center px-4 bg-hero-about-abst bg-fixed rounded-xl">
-        <h4 class="py-2 font-san text-white text-lg font-bold">Unlock Your Investment Potential </h4>
-        <Button :class="'w-full py-2 bg-[#141414] border-2 border-[#262626] text-white text-center rounded-xl px-10 my-4'" :buttonTxt="'Learn More'"  />
-        <p class="py-2 font-san text-gl text-sm font-medium">Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.</p>
-      </div>
+        <UnlockBox :class="'laptop:text-center'" :HTxt="unlockHeader_3" :PTxt="unlockPara_3" :BTx="unlockButText" />
 
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'flex flex-col border-none'" :image="'/assets/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
-      </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
-      </div>
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
-      </div>
-  
-      <div class="border-2 border-[#262626] rounded-xl">
-        <RepeatedBlock :class="'border-none'" :image="'/assets/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
-      </div>
-        
-     
-
-    </div>
-  </slot>
-  
-</div>
+        <div class="max-w-auto laptop: smart-desktop">
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
+          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
+        </div>
 
 
+      </div>
+    </slot>
+  </div>
+
+</ClientOnly>
 </template>
 
 <style scoped>
 .shadow-frame {
- box-shadow: 1px -1px 18px 1px #262626;
+  box-shadow: 1px -1px 18px 1px #2f1313;
 }
-.back{
-  background-color: #262626;
+
+
+ 
+.b-frame {
+  margin: 0;
+  border: 2px solid #262626;
+  border-radius: .75rem;
+  padding: 2rem;
+  width:auto;
+  max-width: 413px;
 }
+
+.controller-box {
+  max-width: 1280px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  grid-template-rows: repeat(2, minmax(100px, auto));
+  row-gap: 20px;
+  column-gap: 15px;
+}
+
+
+/* laptop:grid laptop:auto-rows-auto laptop:auto-cols-auto gap-4 */
+.smart-desktop {
+  background-color:#1A1A1A;
+  display:grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);  
+  gap:20px;
+  padding:25px;
+}
+
 </style>

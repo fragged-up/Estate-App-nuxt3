@@ -1,7 +1,7 @@
 <script setup>
-import Button from '@/components/atoms/Button.vue';
-import Logo from '@/components/atoms/Logo.vue';
-import FooterInput from '@/components/atoms/FooterInput.vue';
+// import Button from '@/components/atoms/Button.vue';
+// import Logo from '@/components/atoms/Logo.vue';
+// import FooterInput from '@/components/atoms/FooterInput.vue';
 
 </script>
 
@@ -93,10 +93,10 @@ import FooterInput from '@/components/atoms/FooterInput.vue';
       <nav class="bg-[#1A1A1A] py-10">
         <div class="ic-c flex justify-center items-center gap-4">
           
-          <div class="bg-[#141414] p-6 rounded-full"><img src="/assets/socialMedia/facebook.svg" alt="facebook"></div>
-          <div class="bg-[#141414] p-6 rounded-full"><img src="/assets/socialMedia/in.svg" alt="instagram"></div>
-          <div class="bg-[#141414] p-6 rounded-full"><img src="/assets/socialMedia/twitter.svg" alt="twitter"></div>
-          <div class="bg-[#141414] p-6 rounded-full"><img src="/assets/socialMedia/youtube.svg" alt="youtube"></div>
+          <div class="bg-[#141414] p-6 rounded-full"><img :src="$loadImage('/socialMedia/facebook.svg')" alt="facebook"></div>
+          <div class="bg-[#141414] p-6 rounded-full"><img :src="$loadImage('/socialMedia/in.svg')" alt="instagram"></div>
+          <div class="bg-[#141414] p-6 rounded-full"><img :src="$loadImage('/socialMedia/twitter.svg')" alt="twitter"></div>
+          <div class="bg-[#141414] p-6 rounded-full"><img :src="$loadImage('/socialMedia/youtube.svg')" alt="youtube"></div>
   
         </div>
         <p class="font-sans font-medium text-sm text-white text-center my-4">@2023 Estatein. All Rights Reserved.</p>

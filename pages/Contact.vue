@@ -1,11 +1,11 @@
 <script setup>
 
-import MainBlock from '~/components/organisms/MainBlock.vue';
+// import MainBlock from '~/components/organisms/MainBlock.vue';
 
-import FormContact from '~/components/templates/FormContact.vue';
-import Office from '~/components/organisms/Office.vue';
-import CardOffice from '~/components/molecules/CardOffice.vue';
-import ExploreCard from '~/components/molecules/ExploreCard.vue';
+// import FormContact from '~/components/templates/FormContact.vue';
+// import Office from '~/components/organisms/Office.vue';
+// import CardOffice from '~/components/molecules/CardOffice.vue';
+// import ExploreCard from '~/components/molecules/ExploreCard.vue';
 
 const heroHeader = "Get in Touch with Estatein";
 const heroPara = "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have.";
@@ -29,29 +29,29 @@ const lastPara = "Estatein is here to serve you across multiple locations. Wheth
         <div class="grid grid-cols-2 grid-rows-2 gap-y-2.5 gap-x-2.5 border-2 border-[#262626] p-4 rounded-md laptop:grid-cols-none laptop:grid-rows-none laptop:grid-flow-col">
           <div class="flex flex-col bg-[#1A1A1A] border-2 border-[#262626] text-center rounded-lg py-4 px-2 laptop:flex-grow-0">
             <div class="flex flex-col justify-center items-center">
-              <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">
-              <img src="public/assets/icons/homeIcon.svg" class="self-center" alt="homeIcon">
+              <img :src="$loadImage('/icons/arrowRtop.svg')" class="self-end mr-4" alt="rtop">
+              <img :src="$loadImage('/icons/homeIcon.svg')" class="self-center" alt="homeIcon">
             </div>
             <p class="font-sans font-semibold text-sm text-white laptop:my-4">info@estatein.com</p>
           </div>
           <div class="flex flex-col bg-[#1A1A1A] border-2 border-[#262626] text-center rounded-lg py-4 px-2 laptop:flex-grow-0">
             <div class="flex flex-col justify-center items-center">
-              <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">   
-              <img src="public/assets/icons/cameraIcon.svg" class="self-center" alt="homeIcon">
+              <img :src="$loadImage('/icons/arrowRtop.svg')" class="self-end mr-4" alt="rtop">   
+              <img :src="$loadImage('/icons/cameraIcon.svg')" class="self-center" alt="homeIcon">
             </div>
             <p class="font-sans font-semibold text-sm text-white laptop:my-4">+1 (123) 456-7890</p>
           </div>
           <div class="flex flex-col bg-[#1A1A1A] border-2 border-[#262626] text-center rounded-lg py-4 px-2 flaptop:lex-grow-0">
             <div class="flex flex-col justify-center items-center">
-              <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">
-              <img src="public/assets/icons/buildingIcon.svg" class="self-center" alt="homeIcon">
+              <img :src="$loadImage('/icons/arrowRtop.svg')" class="self-end mr-4" alt="rtop">
+              <img :src="$loadImage('/icons/buildingIcon.svg')" class="self-center" alt="homeIcon">
             </div>
             <p class="font-sans font-semibold text-sm text-white laptop:my-4">Instagram / Linkedin / Facebook</p>
           </div>
           <div class="flex flex-col bg-[#1A1A1A] border-2 border-[#262626] text-center rounded-lg py-4 px-2 laptop:flex-grow-0">
             <div class="flex flex-col justify-center items-center">
-              <img src="public/assets/icons/arrowRtop.svg" class="self-end mr-4" alt="rtop">
-              <img src="public/assets/icons/sunIcon.svg" class="self-center" alt="homeIcon">
+              <img :src="$loadImage('/icons/arrowRtop.svg')" class="self-end mr-4" alt="rtop">
+              <img :src="$loadImage('/icons/sunIcon.svg')" class="self-center" alt="homeIcon">
             </div>
             <p class="font-sans font-semibold text-sm text-white laptop:my-4">Main Headquarters</p>
           </div>

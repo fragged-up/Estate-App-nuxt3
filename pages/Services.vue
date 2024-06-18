@@ -1,7 +1,7 @@
 <script setup>
-import CardFour from '~/components/molecules/CardFour.vue';
-import MainBlock from '~/components/organisms/MainBlock.vue';
-import UnlockCard from '~/components/molecules/UnlockCard.vue';
+// import CardFour from '~/components/molecules/CardFour.vue';
+// import MainBlock from '~/components/organisms/MainBlock.vue';
+// import UnlockCard from '~/components/molecules/UnlockCard.vue';
 
 const heroService = "Elevate Your Real Estate Experience";
 const paraService = "Welcome to Estatein, where your real estate aspirations meet expert guidance. Explore our comprehensive range of services, each designed to cater to your unique needs and dreams.";
@@ -25,26 +25,39 @@ const thirdPara = "Building a real estate portfolio requires a strategic approac
       <p class="py-6 font-sans font-medium text-[#999999] text-sm">{{ paraService }}</p>
       <CardFour />
     </header>
-
     <main>
       <section>
 
         <div class="section-1">
           <MainBlock :header-text="firstHeader" :para-text="firstPara">
-         <UnlockCard><template #unlock></template></UnlockCard>
-         </MainBlock>
+            <UnlockCard><template #unlock></template></UnlockCard>
+          </MainBlock>
         </div>
 
         <div class="section-2">
           <MainBlock :header-text="secondHeader" :para-text="secondPara">
-         <UnlockCard><template #effort></template></UnlockCard>
-         </MainBlock>
+            <UnlockCard><template #effort></template></UnlockCard>
+          </MainBlock>
         </div>
 
         <div class="section-3">
-          <MainBlock :header-text="thirdHeader" :para-text="thirdPara">
-            <UnlockCard><template #smart></template></UnlockCard>
-         </MainBlock>
+          <MainBlock>
+            <template #top>
+              <div class="w-11/12 py-4 my-4 mx-auto">
+                <h1 class="font-sans font-semibold text-white text-3xl">
+                  {{ thirdHeader }}
+                </h1>
+                <p class="leading-5 text-sm font-medium font-urbanist text-[#999999] py-4">
+                  {{ thirdPara }}
+                </p>
+              </div>
+            </template>
+            <UnlockCard>
+              <template #smart>
+
+              </template>
+            </UnlockCard>
+          </MainBlock>
         </div>
 
 
@@ -52,7 +65,6 @@ const thirdPara = "Building a real estate portfolio requires a strategic approac
     </main>
 
   </div>
-
 </template>
 
 <style scoped></style>

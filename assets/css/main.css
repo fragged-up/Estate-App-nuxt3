@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-border {
+  background-color: #1a1a1a;
+  border: 1px solid #262626;
+}
+
+/* .controller-box{
+  display: grid;
+  grid-template-columns:repeat(1,minmax(100px,1fr));
+  justify-content: center;
+  align-items: center;
+  row-gap:2rem;
+} */
+
+
+
+
+.main-b {
+  @apply border-2 border-[#262626] rounded-xl;
+}
+
+/* Define the custom styles for the laptop breakpoint */
+/* @screen laptop {
+  .controller-box {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(1, minmax(100px, 1fr));
+  }
+} */
+
+/* @screen laptop {
+  .controller-box {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, minmax(100px, 1fr));
+    max-width:1280px;
+    margin-inline:auto;
+  }
+} */

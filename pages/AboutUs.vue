@@ -1,11 +1,11 @@
 <script setup>
-import MainBlock from '@/components/organisms/MainBlock.vue';
-import CardThree from '@/components/molecules/CardThree.vue';
-import ColumnFourthCard from '@/components/organisms/ColumnFourthCard.vue';
-import CardTAbout from '@/components/organisms/CardTAbout.vue';
-import Steps from '@/components/organisms/Steps.vue';
-import ProfileCard from '@/components/molecules/ProfileCard.vue';
-import OurValuedClients from '@/components/molecules/OurValuedClients.vue';
+// import MainBlock from '@/components/organisms/MainBlock.vue';
+// import CardThree from '@/components/molecules/CardThree.vue';
+// import ColumnFourthCard from '@/components/organisms/ColumnFourthCard.vue';
+// import CardTAbout from '@/components/organisms/CardTAbout.vue';
+// import Steps from '@/components/organisms/Steps.vue';
+// import ProfileCard from '@/components/molecules/ProfileCard.vue';
+// import OurValuedClients from '@/components/molecules/OurValuedClients.vue';
 
 
 
@@ -80,16 +80,16 @@ const stepPara_3 = "OHave questions about a property or need more information? O
       <MainBlock :headerText="cardHead_5" :paraText="cardPara_5">
         <template #default>
           <div class="flex flex-col gap-y-12 my-12">
-            <ProfileCard :imageUrl="'/assets/icons/ProfileMax.svg'" :name="'Max Mitchell'" :title="'Founder'"
+            <ProfileCard :imageUrl="'/icons/ProfileMax.svg'" :name="'Max Mitchell'" :title="'Founder'"
               :twitterUrl="'https://twitter.com/username'"
               :sayHelloText="'Say Hello 👋'" />
-              <ProfileCard :imageUrl="'/assets/icons/ProfileSara.svg'" :name="'Sara Johnson'" :title="'Chief Real Estate Officer'"
+              <ProfileCard :imageUrl="'/icons/ProfileSara.svg'" :name="'Sara Johnson'" :title="'Chief Real Estate Officer'"
               :twitterUrl="'https://twitter.com/username'"
               :sayHelloText="'Say Hello 👋'" />
-              <ProfileCard :imageUrl="'/assets/icons/ProfileDavid.svg'" :name="'David Brown'" :title="'Head of Property Management'"
+              <ProfileCard :imageUrl="'/icons/ProfileDavid.svg'" :name="'David Brown'" :title="'Head of Property Management'"
               :twitterUrl="'https://twitter.com/username'"
               :sayHelloText="'Say Hello 👋'" />
-              <ProfileCard :imageUrl="'/assets/icons/ProfileMichael.svg'" :name="'Michael Turner'" :title="'Legal Counsel'"
+              <ProfileCard :imageUrl="'/icons/ProfileMichael.svg'" :name="'Michael Turner'" :title="'Legal Counsel'"
               :twitterUrl="'https://twitter.com/username'"
               :sayHelloText="'Say Hello 👋'" />
           </div>

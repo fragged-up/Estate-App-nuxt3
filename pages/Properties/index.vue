@@ -1,10 +1,10 @@
 <script setup>
-import BoxInput from '~/components/organisms/BoxInput.vue';
-import MainBlock from '~/components/organisms/MainBlock.vue';
-import PropertyCard from '~/components/molecules/PropertyCard.vue';
-import SelectInput from '~/components/atoms/SelectInput.vue';
-import Preferred from '~/components/atoms/Preferred.vue';
-import Input from '~/components/atoms/Input.vue';
+// import BoxInput from '~/components/organisms/BoxInput.vue';
+// import MainBlock from '~/components/organisms/MainBlock.vue';
+// import PropertyCard from '~/components/molecules/PropertyCard.vue';
+// import SelectInput from '~/components/atoms/SelectInput.vue';
+// import Preferred from '~/components/atoms/Preferred.vue';
+// import Input from '~/components/atoms/Input.vue';
 
 const hero_Head = "Find Your Dream Property";
 const hero_Para = "Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey";
@@ -21,7 +21,7 @@ const card_bathrooms = 6;
 
 const properties = ref([
   {
-    cardImage: '/assets/Beckos.svg',
+    cardImage: '/Beckos.svg',
     cardTitle: 'Property Title 1',
     cardText: 'Property description 1',
     bedRooms: 3,
@@ -29,7 +29,7 @@ const properties = ref([
     cardPrice: '500,000'
   },
   {
-    cardImage: '/assets/Beckos.svg',
+    cardImage: '/Beckos.svg',
     cardTitle: 'Property Title 2',
     cardText: 'Property description 2',
     bedRooms: 4,
@@ -37,7 +37,7 @@ const properties = ref([
     cardPrice: '750,000'
   },
   {
-    cardImage: '/assets/Beckos.svg',
+    cardImage: '/Beckos.svg',
     cardTitle: 'Property Title 2',
     cardText: 'Property description 2',
     bedRooms: 4,
@@ -45,7 +45,7 @@ const properties = ref([
     cardPrice: '750,000'
   },
   {
-    cardImage: '/assets/Beckos.svg',
+    cardImage: '/Beckos.svg',
     cardTitle: 'Property Title 1',
     cardText: 'Property description 1',
     bedRooms: 3,
@@ -53,7 +53,7 @@ const properties = ref([
     cardPrice: '500,000'
   },
   {
-    cardImage: '/assets/Beckos.svg',
+    cardImage: '/Beckos.svg',
     cardTitle: 'Property Title 2',
     cardText: 'Property description 2',
     bedRooms: 4,
@@ -61,7 +61,7 @@ const properties = ref([
     cardPrice: '750,000'
   },
   {
-    cardImage: '/assets/Beckos.svg',
+    cardImage: '/Beckos.svg',
     cardTitle: 'Property Title 2',
     cardText: 'Property description 2',
     bedRooms: 4,
@@ -97,7 +97,7 @@ const properties = ref([
 
 
             </div>
-              <!-- <PropertyCard :card-image="'/assets/Beckos.svg'" :card-title="card_title" :card-text="card_text"
+              <!-- <PropertyCard :card-image="'/Beckos.svg'" :card-title="card_title" :card-text="card_text"
                 :bed-rooms="card_bedrooms" :bath-rooms="card_bathrooms" :card-price="card_price" /> -->
               <div class="flex justify-between items-center my-8">
                 <button class="arrows-bg text-[#808080]">

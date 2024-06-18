@@ -1,11 +1,24 @@
+<script setup>
+
+const review = defineProps({
+  faceImage:String,
+  faceName:String,
+  faceText:String
+}) 
+
+</script>
+
+
+
+
 <template>
  <div class="card-box w-full rounded-xl grid row-auto gap-y-6 border-2 border-[#262626] p-4">
   <div class="stars-shape-box flex gap-8">
-    <img src="/assets/icons/starShape.svg" alt="starShape" />
-    <img src="/assets/icons/starShape.svg" alt="starShape" />
-    <img src="/assets/icons/starShape.svg" alt="starShape" />
-    <img src="/assets/icons/starShape.svg" alt="starShape" />
-    <img src="/assets/icons/starShape.svg" alt="starShape" />
+    <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
+    <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
+    <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
+    <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
+    <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
   </div>
 
  <div class="text-box">
@@ -20,7 +33,7 @@
     <div class="face-box flex gap-x-4 p-4">
 
       <div class="face-img-cont">
-        <img :src="review.faceImage" alt="face">
+        <img :src="$loadImage(review.faceImage)" alt="face">
       </div>
 
       <div class="face-text">
@@ -38,16 +51,3 @@
 
 </template>
 
-<script setup>
-
-const review = defineProps({
-  faceImage:String,
-  faceName:String,
-  faceText:String
-}) 
-
-</script>
-
-<style>
-
-</style>

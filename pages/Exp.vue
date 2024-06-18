@@ -1,9 +1,9 @@
 <script setup>
-import FormContact from '~/components/templates/FormContact.vue';
-import Office from '~/components/organisms/Office.vue';
-import MainBlock from '~/components/organisms/MainBlock.vue';
-import CardOffice from '~/components/molecules/CardOffice.vue';
-import ExploreCard from '~/components/molecules/ExploreCard.vue';
+// import FormContact from '~/components/templates/FormContact.vue';
+// import Office from '~/components/organisms/Office.vue';
+// import MainBlock from '~/components/organisms/MainBlock.vue';
+// import CardOffice from '~/components/molecules/CardOffice.vue';
+// import ExploreCard from '~/components/molecules/ExploreCard.vue';
 
 const lastHead = "Discover Our Office Locations";
 const lastPara = "Estatein is here to serve you across multiple locations. Whether you're looking to meet our team.";
@@ -33,5 +33,5 @@ const lastPara = "Estatein is here to serve you across multiple locations. Wheth
 
    </section>
 </template>
-s
+
 <style scoped></style>

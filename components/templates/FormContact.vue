@@ -1,6 +1,6 @@
 <script setup>
-import Input from '~/components/atoms/Input.vue';
-import SelectInput from '~/components/atoms/SelectInput.vue';
+// import Input from '~/components/atoms/Input.vue';
+// import SelectInput from '~/components/atoms/SelectInput.vue';
 
 </script>
 

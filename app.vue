@@ -1,12 +1,17 @@
 <script setup>
+useSeoMeta({
+  title: 'Real-Estate Nuxt App',
+  description: 'Oded Real Estate Company'
+})
+
 </script>
 
-  <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
-</template>
 
+<template>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+</template>
 
 
 
@@ -27,18 +32,19 @@
   --wght-heavy: 900;
   --main-clr: #FFFFFF;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
 
 
 html,
-body{
+body {
   min-height: 100vh;
 }
 
-#__nuxt{
+#__nuxt {
   min-height: 100vh;
-  background-color:#141414;
+  background-color: #141414;
 }
 </style>

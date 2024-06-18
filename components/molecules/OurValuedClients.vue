@@ -1,5 +1,5 @@
 <script setup>
-import Button from '@/components/atoms/Button.vue';
+// import Button from '@/components/atoms/Button.vue';
 
 </script>
 
@@ -14,17 +14,18 @@ import Button from '@/components/atoms/Button.vue';
       </div>
     </div>
 
+
     <div class="grid grid-cols-2">
       <div class="cols-span-1 px-3">
-        <div class="inline-block-children">
-          <img src="/assets/icons/DomainVec.svg" alt="DomainVec">
+        <div class="row-inside">
+          <img :src="$loadImage('/icons/DomainVec.svg')" alt="DomainVec">
           <p class="font-sans font-medium text-xs text-[#999999] ml-4">Domain</p>
         </div>
         <h3 class="font-sans font-medium text-sm text-white">Commercial Real Estate</h3>
       </div>
       <div class="cols-span-2 border-l-2 border-[#999999] px-3">
-        <div class="inline-block-children">
-          <img src="/assets/icons/BlitzVec.svg" alt="BlitzVec">
+        <div class="row-inside">
+          <img :src="$loadImage('/icons/BlitzVec.svg')" alt="BlitzVec">
           <p class="font-sans font-medium text-xs text-[#999999] ml-4">Category</p>
         </div>
         <h3 class="font-sans font-medium text-sm text-white">Luxury Home Development</h3>
@@ -47,6 +48,7 @@ import Button from '@/components/atoms/Button.vue';
     <button class="arrows-bg text-[#808080]">
       &leftarrow;
     </button>
+    <!-- pad-fix screen max-width 376px  deleted -->
     <p class="pad-fix:whitespace-nowrap p-2">
       <span class="text-white">{{ pagesNumber="01" }}</span>
       <span class="text-[#808080]"> of </span>
@@ -72,4 +74,5 @@ import Button from '@/components/atoms/Button.vue';
   height: 44px;
   text-align: center;
 }
+
 </style>

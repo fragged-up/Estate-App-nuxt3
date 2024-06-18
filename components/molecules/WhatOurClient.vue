@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="what-our-clients-say">
-      <img src="/assets/icons/stars.svg" alt="stars" class="stars">
+      <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars">
     </div>
 
     <div class="container py-4">

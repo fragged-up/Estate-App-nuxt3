@@ -1,6 +1,6 @@
 <script setup>
-import Button from '../atoms/Button.vue';
-import Pod from '../atoms/Pod.vue';
+// import Button from '../atoms/Button.vue';
+// import Pod from '../atoms/Pod.vue';
 
 
 const firstPara = "Main Headquarters";
@@ -26,12 +26,12 @@ const third_Para = "Estatein's presence extends to multiple regions, each with i
        
       <div class="grid auto-rows-auto my-4 gap-y-4">
         <div class="">
-          <Pod :podTxt="'info@estatein.com'" :pod-img="'/assets/icons/Mail.svg'" />
+          <Pod :podTxt="'info@estatein.com'" :pod-img="'/icons/Mail.svg'" />
   
         </div>
         <div class="">
-            <Pod :podTxt="'+1 (123) 456-7890'" :pod-img="'/assets/icons/metroPhone.svg'" />
-            <Pod :podTxt="'Metropolis'" :pod-img="'/assets/icons/Metro.svg'" />
+            <Pod :podTxt="'+1 (123) 456-7890'" :pod-img="'/icons/metroPhone.svg'" />
+            <Pod :podTxt="'Metropolis'" :pod-img="'/icons/Metro.svg'" />
          
         </div>
       </div>
@@ -48,12 +48,12 @@ const third_Para = "Estatein's presence extends to multiple regions, each with i
        
       <div class="grid auto-rows-auto my-4 gap-y-4">
         <div class="">
-          <Pod :podTxt="'info@estatein.com'" :pod-img="'/assets/icons/Mail.svg'" />
+          <Pod :podTxt="'info@estatein.com'" :pod-img="'/icons/Mail.svg'" />
   
         </div>
         <div class="">
-            <Pod :podTxt="'+1 (123) 456-7890'" :pod-img="'/assets/icons/metroPhone.svg'" />
-            <Pod :podTxt="'Metropolis'" :pod-img="'/assets/icons/Metro.svg'" />
+            <Pod :podTxt="'+1 (123) 456-7890'" :pod-img="'/icons/metroPhone.svg'" />
+            <Pod :podTxt="'Metropolis'" :pod-img="'/icons/Metro.svg'" />
          
         </div>
       </div>

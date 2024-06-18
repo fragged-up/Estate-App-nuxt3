@@ -1,11 +1,11 @@
 <script setup>
-import MainBlock from '@/components/organisms/MainBlock.vue';
-import CardThree from '../components/molecules/CardThree.vue';
-import CardFour from '../components/molecules/CardFour.vue';
-import ViewButton from '../components/molecules/ViewButton.vue';
-import PropertyCard from '../components/molecules/PropertyCard.vue';
-import ClientCard from '../components/molecules/ClientCard.vue';
-import FaqCard from '../components/molecules/FaqCard.vue';
+// import MainBlock from '@/components/organisms/MainBlock.vue';
+// import CardThree from '../components/molecules/CardThree.vue';
+// import CardFour from '../components/molecules/CardFour.vue';
+// import ViewButton from '../components/molecules/ViewButton.vue';
+// import PropertyCard from '../components/molecules/PropertyCard.vue';
+// import ClientCard from '../components/molecules/ClientCard.vue';
+// import FaqCard from '../components/molecules/FaqCard.vue';
 const { viewButtonText } = whichButton();
 const viewAP = viewButtonText.value;
 
@@ -85,7 +85,7 @@ const cardThirdParagraph = "Find answers to common questions about Estatein's se
                     <div class="p4 w-full">
                         <MainBlock :headerText="cardOneHead" :paraText="cardOneParagraph">
                             <template #default>
-                                <PropertyCard :cardImage="'/building.svg'" :cardTitle="'Rustic Retreat Cottage'"
+                                <PropertyCard :cardImage="'/home/building.svg'" :cardTitle="'Rustic Retreat Cottage'"
                                     :cardText="'Rustic Retreat Cottage'" :bedRooms="4" :bathRooms="3"
                                     :cardPrice="'500,000'" />
                                 <ViewButton :buttonText="viewAP" :totalPagesNumber="'10'" />
@@ -93,7 +93,7 @@ const cardThirdParagraph = "Find answers to common questions about Estatein's se
                         </MainBlock>
                         <MainBlock :headerText="cardTwoHead" :paraText="cardTwoParagraph">
                             <template #default>
-                                <ClientCard :faceImage="'/wadeFace.svg'" :faceName="'Wade Warren'"
+                                <ClientCard :faceImage="'/home/wadeFace.svg'" :faceName="'Wade Warren'"
                                     :faceText="'USA, California'" />
                                 <ViewButton :buttonText="viewAP" :totalPagesNumber="'10'" />
                             </template>
@@ -107,7 +107,7 @@ const cardThirdParagraph = "Find answers to common questions about Estatein's se
                     </div>
                 </div>
             </div>
-        </div>
+        </div>x
     </main>
 </template>
 
@@ -116,7 +116,7 @@ const cardThirdParagraph = "Find answers to common questions about Estatein's se
 .bg-image {
     height: 300px;
     width: 90%;
-    background-image: url('/assets/images/backMobile.svg');
+    background-image: url('~/assets/images/backMobile.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

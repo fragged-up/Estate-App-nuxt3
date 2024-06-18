@@ -9,13 +9,13 @@ const paraText = "Step inside the world of Estatein, where professionalism meets
       <div class="grid grid-cols-2 gap-x-4 justify-center my-4">
 
            <div class="w-auto flex flex-col gap-y-4">
-                <img src="/assets/Explore/topLeft.svg"  alt="topLeft">  
-                <img src="/assets/Explore/bottomLeft.svg" alt="bottomLeft">
+                <img :src="$loadImage('/Explore/topLeft.svg')"  alt="topLeft">  
+                <img :src="$loadImage('/Explore/bottomLeft.svg')" alt="bottomLeft">
               </div>
 
            <div class="w-auto flex flex-col gap-y-4">
-              <img src="/assets/Explore/topRight.svg" alt="topRight">
-               <div class="sre"><img src="/assets/Explore/halfLeft.svg" alt="halfLeft"><img src="/assets/Explore/halfRight.svg" alt="halfRight"></div>
+              <img :src="$loadImage('/Explore/topRight.svg')" alt="topRight">
+               <div class="sre"><img :src="$loadImage('/Explore/halfLeft.svg')" alt="halfLeft"><img :src="$loadImage('/Explore/halfRight.svg')" alt="halfRight"></div>
               </div>
         </div>
 
@@ -24,7 +24,7 @@ const paraText = "Step inside the world of Estatein, where professionalism meets
 
      <div class="top-cont w-11/12 mx-auto">
       <div class="stars-cont">
-        <img src="/assets/icons/stars.svg" alt="stars" class="stars">
+        <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars">
       </div>
       <div class="w-11/12 py-4 my-4 mx-auto">
         <h1 class="font-sans font-semibold text-white text-3xl">
@@ -37,7 +37,7 @@ const paraText = "Step inside the world of Estatein, where professionalism meets
       </div>
 
         <div class="sre">
-          <img src="/assets/Explore/Main.svg" alt="">
+          <img :src="$loadImage('/Explore/Main.svg')" alt="main">
         </div>
     
   </div>

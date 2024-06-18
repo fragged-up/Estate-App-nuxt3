@@ -1,5 +1,5 @@
 <script setup>
-import RepeatedBlock from '../molecules/RepeatedBlock.vue';
+// import RepeatedBlock from '../molecules/RepeatedBlock.vue';
 const h1 = 'Trust';
 const h2 = 'Excellence';
 const h3 = 'Client-Centric';
@@ -15,19 +15,19 @@ const p4 = 'We are dedicated to providing you with the highest level of service,
   <div class="grid grid-rows-4 gap-y-4 shadow-frame p-6 rounded-xl">
 
     <div class="">
-      <RepeatedBlock :image="'/assets/icons/TrustIcon.svg'" :head="h1" :para="p1" />
+      <RepeatedBlock :image="'/icons/TrustIcon.svg'" :head="h1" :para="p1" />
     </div>
 
     <div class="]">
-      <RepeatedBlock :image="'/assets/icons/ExcellenceIcon.svg'" :head="h2" :para="p2" />
+      <RepeatedBlock :image="'/icons/ExcellenceIcon.svg'" :head="h2" :para="p2" />
     </div>
 
     <div class="">
-      <RepeatedBlock :image="'/assets/icons/CentricIcon.svg'" :head="h3" :para="p3" />
+      <RepeatedBlock :image="'/icons/CentricIcon.svg'" :head="h3" :para="p3" />
     </div>
 
     <div class="">
-      <RepeatedBlock :image="'/assets/icons/CommitIcon.svg'" :head="h4" :para="p4" />
+      <RepeatedBlock :image="'/icons/CommitIcon.svg'" :head="h4" :para="p4" />
     </div>
 
   </div>

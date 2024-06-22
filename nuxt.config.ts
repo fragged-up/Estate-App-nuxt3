@@ -5,8 +5,12 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   devtools: {
     enabled: true,
+    vscode: {
+      enabled: false, // Disable VS Code server integration
+    },
   },
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
+  modules: ['@nuxt/devtools',"@pinia/nuxt", "@nuxtjs/tailwindcss"],
+  
   runtimeConfig:{
   public: {
     baseURL: process.env.BASE_URL

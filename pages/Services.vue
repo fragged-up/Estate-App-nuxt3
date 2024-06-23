@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 // import CardFour from '~/components/molecules/CardFour.vue';
 // import MainBlock from '~/components/organisms/MainBlock.vue';
 // import UnlockCard from '~/components/molecules/UnlockCard.vue';
+
 
 const heroService = "Elevate Your Real Estate Experience";
 const paraService = "Welcome to Estatein, where your real estate aspirations meet expert guidance. Explore our comprehensive range of services, each designed to cater to your unique needs and dreams.";
@@ -16,7 +17,14 @@ const secondPara = "Owning a property should be a pleasure, not a hassle. Estate
 const thirdHeader = "Smart Investments, Informed Decisions";
 const thirdPara = "Building a real estate portfolio requires a strategic approach.";
 
-</script>
+const { width, isDesk } = useWindowSize();
+
+console.log(isDesk.value ===true );
+
+
+
+
+</script> 
 
 <template>
   <div class="services-page">
@@ -43,14 +51,16 @@ const thirdPara = "Building a real estate portfolio requires a strategic approac
         <div class="section-3">
           <MainBlock>
             <template #top>
-              <div class="w-11/12 py-4 my-4 mx-auto">
-                <h1 class="font-sans font-semibold text-white text-3xl">
-                  {{ thirdHeader }}
-                </h1>
-                <p class="leading-5 text-sm font-medium font-urbanist text-[#999999] py-4">
-                  {{ thirdPara }}
-                </p>
-              </div>
+            <div v-if="!isDesk">
+                <div class="w-11/12 py-4 my-4 mx-auto laptop:max-w-auto laptop:w-auto laptop:ml-auto">
+                  <h1 class="font-sans font-semibold text-white text-3xl">
+                    {{ thirdHeader }}
+                  </h1>
+                  <p class="leading-5 text-sm font-medium font-urbanist text-[#999999] py-4">
+                    {{ thirdPara }}
+                  </p>
+                </div>
+            </div>
             </template>
             <UnlockCard>
               <template #smart>

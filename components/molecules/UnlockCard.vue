@@ -87,11 +87,16 @@ const unlockButText = "Learn More";
   <div v-if="$slots.smart">
     <slot name="smart">
       <div class="max-w-full grid grid-cols-1 gap-x-4 laptop:max-w-[1280px] laptop:grid-cols-2">
+<!-- add this line when you wake up, because we need to change the specific structure of this slots in mobile and desktop ... 
+ we need to get this inside, the h1 and the p so it will able to collapse together on desktop
+        <div>
+  <h1>Smart Invesements, informed Decisions</h1>
+  <p>Building a real estate portofolio requires a starategic approach</p> -->
 
-        <UnlockBox :class="'laptop:text-center'" :HTxt="unlockHeader_3" :PTxt="unlockPara_3" :BTx="unlockButText" />
-
-        <div class="laptop: smart-desktop">
-          <RepeatedBlock :class="'b-frame bg-[#141414] text-white'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
+        <UnlockBox :class="'mx-auto laptop:text-center laptop:max-h-[300px]'" :HTxt="unlockHeader_3" :PTxt="unlockPara_3" :BTx="unlockButText" />
+      <!-- </div> -->
+        <div class="grid grid-cols-1 laptop:bg-[#1A1A1A] laptop:grid-cols-[repeat(2,auto)] laptop:grid-rows-[repeat(2,auto)] mx-auto gap-2.5 p-4">
+          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
           <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
           <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
           <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
@@ -132,13 +137,16 @@ const unlockButText = "Learn More";
 
 
 /* laptop:grid laptop:auto-rows-auto laptop:auto-cols-auto gap-4 */
-.smart-desktop {
+/* .smart-desktop {
   background-color:#1A1A1A;
   display:grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);  
+  margin:auto;
   gap:10px;
-  padding:25px;
-}
+  padding:1rem;
+  
+} */
+
 
 </style>

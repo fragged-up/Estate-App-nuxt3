@@ -48,7 +48,6 @@ const unlockButText = "Learn More";
 <!-- <div class="border-2 border-[#262626] rounded-xl max-w-[413px]"></div>
        </div> -->
 <template>
-  <ClientOnly >
     
  
   <div v-if="$slots.unlock" class="text-start">
@@ -91,11 +90,11 @@ const unlockButText = "Learn More";
 
         <UnlockBox :class="'laptop:text-center'" :HTxt="unlockHeader_3" :PTxt="unlockPara_3" :BTx="unlockButText" />
 
-        <div class="max-w-auto laptop: smart-desktop">
-          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
-          <RepeatedBlock :class="'b-frame'" :image="'/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
-          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
-          <RepeatedBlock :class="'b-frame'" :image="'/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
+        <div class="laptop: smart-desktop">
+          <RepeatedBlock :class="'b-frame bg-[#141414] text-white'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
+          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
+          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
+          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
         </div>
 
 
@@ -103,7 +102,6 @@ const unlockButText = "Learn More";
     </slot>
   </div>
 
-</ClientOnly>
 </template>
 
 <style scoped>
@@ -139,7 +137,7 @@ const unlockButText = "Learn More";
   display:grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);  
-  gap:20px;
+  gap:10px;
   padding:25px;
 }
 

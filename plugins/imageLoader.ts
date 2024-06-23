@@ -1,23 +1,14 @@
-// import { defineNuxtPlugin } from '#app'
-// import { loadImage } from '~/utils/imageLoader'
 
-// export default defineNuxtPlugin((nuxtApp) => {
-//   nuxtApp.vueApp.mixin({
-//     beforeCreate() {
-//       this.$loadImage = loadImage
-//     }
-//   })
-// })
+export default defineNuxtPlugin((nuxtApp:any) => {
+  const baseURL = process.env.BASE_URL || '';
 
+  const loadImage = (path: string) => {
+    const assetUrl = `${baseURL}/_nuxt/assets/${path}`;
+    if (!assetUrl) console.log('Failed to load Asset URL:', assetUrl);
 
-// import { defineNuxtPlugin } from '#app'
-
-export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig().public;
-  nuxtApp.provide('loadImage', (path:string) =>{
-    const assetUrl = `${config.baseURL}/_nuxt/assets/${path}`;
-    console.log('Asset URL:',assetUrl);
     return assetUrl;
-  });
-});
+  };
 
+  nuxtApp.vueApp.config.globalProperties.$loadImage = loadImage;
+  nuxtApp.provide('loadImage', loadImage);
+});

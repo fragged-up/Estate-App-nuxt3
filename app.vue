@@ -1,4 +1,5 @@
 <script setup>
+import './assets/css/tailwind.css'
 useSeoMeta({
   title: 'Real-Estate Nuxt App',
   description: 'Oded Real Estate Company'

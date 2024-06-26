@@ -23,6 +23,9 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
   plugins: ["~/plugins/imageLoader.ts"],
+  imports: {
+    dirs: ['~/composables']
+  },
   components: {
     dirs: [
       { path: '~/components', pathPrefix: false,  },

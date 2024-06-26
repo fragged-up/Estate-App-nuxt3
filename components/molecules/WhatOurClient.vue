@@ -1,3 +1,9 @@
+<script setup>
+const { viewAllTestimonials } = whichButton();
+const viewAllTest = viewAllTestimonials.value;
+
+</script>
+
 <template>
   <div>
     <div class="what-our-clients-say">
@@ -16,12 +22,6 @@
 
 </template>
 
-<script setup>
-const { viewAllTestimonials } = whichButton();
-const viewAllTest = viewAllTestimonials.value;
 
-
-
-</script>
 
 <style></style>

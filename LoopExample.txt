@@ -1,0 +1,40 @@
+
+const faces = [
+    {
+        faceImage: '/home/wadeFace.svg',
+        faceName: 'Wade Warren',
+        faceLocation: 'USA, California',
+        faceHead: 'Exceptional Service!',
+        facePara: "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+   
+   
+    },
+    
+    {
+        faceImage: '/home/wadeFace.svg',
+        faceName: 'Wade Warren',
+        faceLocation: 'USA, California',
+        faceHead: 'Exceptional Service!',
+        facePara: "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    },
+
+    {
+        faceImage: '/home/wadeFace.svg',
+        faceName: 'Wade Warren',
+        faceLocation: 'USA, California',
+        faceHead: 'Exceptional Service!',
+        facePara: "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    
+    
+    },
+]
+
+             <ClientCard 
+             v-for="(faces,index) in faces" 
+             :key="index" 
+             :faceImage="faces.faceImage"
+             :faceName="faces.faceName"
+             :faceLocation="faces.faceLocation"
+             :faceHead="faces.faceHead"
+             :facePara="faces.facePara"
+              />

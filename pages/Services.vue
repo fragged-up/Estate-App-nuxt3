@@ -17,14 +17,11 @@ const secondPara = "Owning a property should be a pleasure, not a hassle. Estate
 const thirdHeader = "Smart Investments, Informed Decisions";
 const thirdPara = "Building a real estate portfolio requires a strategic approach.";
 
-const { width, isDesk } = useWindowSize();
-
-console.log(isDesk.value ===true );
 
 
 
 
-</script> 
+</script>
 
 <template>
   <div class="services-page">
@@ -36,18 +33,23 @@ console.log(isDesk.value ===true );
     <main>
       <section>
 
-        <div class="section-1">
-          <MainBlock :header-text="firstHeader" :para-text="firstPara">
+        <div class="section-1 max-w-[1280px] mx-auto">
+          <MainBlock :header-text="firstHeader" :contStyle="'laptop:mx-0'" :subContStyle="'laptop:mx-0'"
+            :para-text="firstPara">
             <UnlockCard><template #unlock></template></UnlockCard>
           </MainBlock>
         </div>
 
-        <div class="section-2">
-          <MainBlock :header-text="secondHeader" :para-text="secondPara">
+        <div class="section-2 max-w-[1280px] mx-auto">
+          <MainBlock :header-text="secondHeader" :contStyle="'laptop:mx-0'" :subContStyle="'laptop:mx-0'"
+            :para-text="secondPara">
             <UnlockCard><template #effort></template></UnlockCard>
           </MainBlock>
         </div>
-
+        <div class="section-3">
+          <UnlockCard><template #smart></template></UnlockCard>
+        </div>
+        <!-- 
         <div class="section-3">
           <MainBlock>
             <template #top>
@@ -68,7 +70,7 @@ console.log(isDesk.value ===true );
               </template>
             </UnlockCard>
           </MainBlock>
-        </div>
+        </div> -->
 
 
       </section>

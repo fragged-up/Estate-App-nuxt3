@@ -4,14 +4,13 @@ useSeoMeta({
   title: 'Real-Estate Nuxt App',
   description: 'Oded Real Estate Company'
 })
-
 </script>
 
 
 <template>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 
@@ -48,4 +47,10 @@ body {
   min-height: 100vh;
   background-color: #141414;
 }
-</style>
+
+/*
+crazy overflow detecter  
+* {
+  outline: 1px solid red; /* Highlight all elements with a red outline 
+} */
+</style>  

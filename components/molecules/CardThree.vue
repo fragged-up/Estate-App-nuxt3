@@ -4,7 +4,7 @@
 
 <template>
    <!-- Cont three cards 200k, 10k+ ,16+ -->
-   <div class="w-full grid grid-cols-2 grid-rows-2 gap-3 mx-auto">
+   <div class="w-full grid grid-cols-2 grid-rows-2 gap-3 justify-center">
 
 <div class="py-4 flex flex-col justify-center items-center text-center rounded-2xl gap-[10px] text-mg border-2 border-[#262626]">
     <h2 class="p-2 font-sans font-bold text-2xl text-white">200+</h2>

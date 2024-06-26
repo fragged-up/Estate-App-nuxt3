@@ -1,9 +1,10 @@
 <script setup>
-
-const review = defineProps({
+const props = defineProps({
   faceImage:String,
   faceName:String,
-  faceText:String
+  faceLocation:String,
+  faceHead:String,
+  facePara:String,
 }) 
 
 </script>
@@ -13,7 +14,7 @@ const review = defineProps({
 
 <template>
  <div class="card-box w-full rounded-xl grid row-auto gap-y-6 border-2 border-[#262626] p-4">
-  <div class="stars-shape-box flex gap-8">
+  <div class="stars-shape-box flex gap-4 my-2 ml-3">
     <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
     <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
     <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" />
@@ -23,22 +24,23 @@ const review = defineProps({
 
  <div class="text-box">
     <h2 class="text-white font-semibold">
-      Exceptional Service!
+      {{ props.faceHead }}
+       <br/><br/>
     </h2>
        <p class="text-white text-sm">
-        Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!
+        {{ props.facePara }}
        </p>
  </div>
 
     <div class="face-box flex gap-x-4 p-4">
 
       <div class="face-img-cont">
-        <img :src="$loadImage(review.faceImage)" alt="face">
+        <img :src="$loadImage(props.faceImage)" alt="face">
       </div>
 
       <div class="face-text">
-        <p class="face-name text-white">{{ review.faceName }}</p>
-        <p class="face-review text-[#999999]">{{ review.faceText }}</p>
+        <p class="face-name text-white">{{ props.faceName }}</p>
+        <p class="face-review text-[#999999]">{{ props.faceLocation }}</p>
         <p></p>
       </div>
 
@@ -50,4 +52,9 @@ const review = defineProps({
 
 
 </template>
-
+<!-- 
+{{face.faceHead}}
+{{face.facePara}}
+{{face.faceImage}}
+{{face.faceName}}
+{{face.faceText}} -->

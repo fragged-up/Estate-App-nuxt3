@@ -39,8 +39,15 @@ const unlockPara_1 = "Ready to unlock the true value of your property? Explore o
 const unlockPara_2 = "Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.";
 const unlockPara_3 = "Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.";
 
+
 const unlockButText = "Learn More";
 
+const { width, isDesk } = useWindowSize();
+const smartLaptop = ref(`Building a real estate portfolio requires a strategic approach.\nEstatein's Investment Advisory Service empowers you to make smart investments and informed decisions.`);
+const smartMobile = ref("Building a real estate portofolio requires a starategic approach");
+const whichHead = computed(()=>{
+  return isDesk.value ? smartLaptop.value : smartMobile.value
+})
 
 
 </script>
@@ -48,8 +55,8 @@ const unlockButText = "Learn More";
 <!-- <div class="border-2 border-[#262626] rounded-xl max-w-[413px]"></div>
        </div> -->
 <template>
-    
- 
+
+
   <div v-if="$slots.unlock" class="text-start">
     <slot name="unlock">
       <div class="grid grid-cols-1 gap-x-4 laptop: controller-box">
@@ -61,7 +68,7 @@ const unlockButText = "Learn More";
         </div>
         <div class="flex flex-col justify-center items-center laptop:flex-row gap-4">
           <RepeatedBlock :class="'b-frame'" :image="'/unlock/Negotiation.svg'" :head="h3" :para="p3" />
-          <UnlockBox :class="'laptop:max-w-full'" :HTxt="unlockHeader_1" :PTxt="unlockPara_1" :BTx="unlockButText" />
+          <UnlockBox :class="'laptop:max-w-full'" :learnMoreButt="`laptop:max-w-[110px] self-end mt-auto`" :HTxt="unlockHeader_1" :PTxt="unlockPara_1" :BTx="unlockButText" />
         </div>
       </div>
     </slot>
@@ -77,7 +84,7 @@ const unlockButText = "Learn More";
         </div>
         <div class="flex flex-col justify-center items-center laptop:flex-row gap-4">
           <RepeatedBlock :class="'b-frame'" :image="'/unlock/Legal.svg'" :head="hh4" :para="pp4" />
-          <UnlockBox :class="'laptop:max-w-full'" :HTxt="unlockHeader_2" :PTxt="unlockPara_2" :BTx="unlockButText" />
+          <UnlockBox :class="'laptop:max-w-full'" :learnMoreButt="`laptop:max-w-[110px] self-end mt-auto`" :HTxt="unlockHeader_2" :PTxt="unlockPara_2" :BTx="unlockButText" />
         </div>
       </div>
     </slot>
@@ -86,20 +93,27 @@ const unlockButText = "Learn More";
 
   <div v-if="$slots.smart">
     <slot name="smart">
-      <div class="max-w-full grid grid-cols-1 gap-x-4 laptop:max-w-[1280px] laptop:grid-cols-2">
-<!-- add this line when you wake up, because we need to change the specific structure of this slots in mobile and desktop ... 
- we need to get this inside, the h1 and the p so it will able to collapse together on desktop
-        <div>
-  <h1>Smart Invesements, informed Decisions</h1>
-  <p>Building a real estate portofolio requires a starategic approach</p> -->
-
-        <UnlockBox :class="'mx-auto laptop:text-center laptop:max-h-[300px]'" :HTxt="unlockHeader_3" :PTxt="unlockPara_3" :BTx="unlockButText" />
-      <!-- </div> -->
-        <div class="grid grid-cols-1 laptop:bg-[#1A1A1A] laptop:grid-cols-[repeat(2,auto)] laptop:grid-rows-[repeat(2,auto)] mx-auto gap-2.5 p-4">
-          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
-          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
-          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
-          <RepeatedBlock :class="'b-frame bg-[#141414]'" :image="'/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
+     
+      <div class="max-w-full grid grid-cols-1 gap-x-4 laptop:max-w-[1280px] laptop:grid-cols-2 laptop:auto-cols-auto laptop:mx-auto laptop:my-20">
+        <div class="p4 w-full my-6 laptop:p-0 laptop:!w-auto laptop:max-w-[560px]">
+      <div class="top-cont w-11/12 mx-auto laptop:mx-0 laptop:inline-flex laptop:flex-col laptop:m-0">
+        <div class="stars-cont laptop:m-0">
+          <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars">
+        </div>
+        <div class="smart-top w-11/12 py-4 my-4 mx-auto laptop:mx-0 laptop:max-w-[412px]">
+          <h1 class="font-sans font-semibold text-white text-3xl laptop:text-wrap">Smart Invesements,<br class="break"/> informed Decisions</h1>
+          <p class="leading-5 text-sm font-medium font-urbanist text-[#999999] py-4 laptop:break-words">{{ whichHead }}</p>
+        </div>
+        <UnlockBox :class="'mx-auto laptop:text-center laptop:max-h-[300px] laptop:m-0'" :HTxt="unlockHeader_3"
+        :PTxt="unlockPara_3" :BTx="unlockButText" />
+      </div>
+    </div>
+        <div
+          class="grid grid-cols-1 laptop:bg-[#1A1A1A] laptop:grid-cols-[repeat(2,auto)] laptop:grid-rows-[repeat(2,auto)] mx-auto gap-2.5 p-4 self-stretch">
+          <RepeatedBlock :class="'b-frame bg-[#141414] laptop:max-w-[395px] laptop:max-h-[260px]'" :image="'/unlock/Market.svg'" :head="hhh1" :para="ppp1" />
+          <RepeatedBlock :class="'b-frame bg-[#141414] laptop:max-w-[395px] laptop:max-h-[260px]'" :image="'/unlock/ROI.svg'" :head="hhh2" :para="ppp2" />
+          <RepeatedBlock :class="'b-frame bg-[#141414] laptop:max-w-[395px] laptop:max-h-[260px]'" :image="'/unlock/Customized.svg'" :head="hhh3" :para="ppp3" />
+          <RepeatedBlock :class="'b-frame bg-[#141414] laptop:max-w-[395px] laptop:max-h-[260px]'" :image="'/unlock/Diver.svg'" :head="hhh4" :para="ppp4" />
         </div>
 
 
@@ -115,13 +129,13 @@ const unlockButText = "Learn More";
 }
 
 
- 
+
 .b-frame {
   margin: 0;
   border: 2px solid #262626;
   border-radius: .75rem;
   padding: 2rem;
-  width:auto;
+  width: auto;
   max-width: 413px;
 }
 
@@ -135,6 +149,14 @@ const unlockButText = "Learn More";
   column-gap: 15px;
 }
 
+.break{
+  display:none;
+}
+@media (min-width:1440px){
+  .break{
+    display:block;
+  }
+}
 
 /* laptop:grid laptop:auto-rows-auto laptop:auto-cols-auto gap-4 */
 /* .smart-desktop {
@@ -147,6 +169,4 @@ const unlockButText = "Learn More";
   padding:1rem;
   
 } */
-
-
 </style>

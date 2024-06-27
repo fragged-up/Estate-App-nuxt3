@@ -7,6 +7,13 @@
   border: 1px solid #262626;
 }
 
+/* .desk-hero-image {
+  background-image: url('/assets/home/DeskRight.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+} */
 /* .controller-box{
   display: grid;
   grid-template-columns:repeat(1,minmax(100px,1fr));
@@ -14,9 +21,6 @@
   align-items: center;
   row-gap:2rem;
 } */
-
-
-
 
 .main-b {
   @apply border-2 border-[#262626] rounded-xl;

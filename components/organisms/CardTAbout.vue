@@ -3,7 +3,7 @@
 </script>
 
 <template>
-   <div class="w-11/12 grid grid-rows-3 gap-6 my-10 mx-auto laptop:grid-rows-1 laptop:grid-cols-3 laptop:justify-between">
+   <div class="w-11/12 grid grid-rows-3 gap-6 my-10 mx-auto laptop:grid-rows-1 laptop:grid-cols-3 laptop:w-full laptop:justify-between ">
 
 <div class="shadow-frame p-6 flex flex-col rounded-2xl gap-[8px] text-mg border-2 border-[#262626] laptop:h-56 laptop:max-h-56">
     <h2 class="p-2 font-sans font-semibold text-xl text-white">3+ Years of Excellence</h2>
@@ -24,5 +24,6 @@
 <style scoped>
 .shadow-frame {
   box-shadow: 1px -1px 18px 1px #262626;
+  width:100%;
 }
 </style>

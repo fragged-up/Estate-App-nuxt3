@@ -14,6 +14,7 @@
     headerStyle: {
       type: String,
       required: false,
+      default:'',
     },
     paraStyle: {
       type: String,
@@ -37,7 +38,7 @@
     <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
                                     width 155px and height 49px  -->
 
-    <div :class="`${contStyle} top-cont w-11/12 mx-auto`">
+    <div :class="`${blockContent.contStyle} top-cont w-11/12 mx-auto`">
       <div class="stars-cont">
         <img
           :src="$loadImage('/icons/stars.svg')"
@@ -54,7 +55,7 @@
         </h1>
 
         <div
-          v-if="blockContent.deskHeader"
+          v-if="!blockContent.deskHeader"
           class="deskBlockCnt grid-auto-cols justify-between"
         >
           <p
@@ -62,10 +63,10 @@
           >
             {{ paraText }}
           </p>
-          <Button
+          <!-- <Button
             :class="`pad-fix:text-sm bg-[#1A1A1A] border-1 border-[#262626] text-center col-span-1 py-4 px-8 text-white rounded-lg self-end`"
             :buttonTxt="'View All Properties'"
-          />
+          /> -->
         </div>
 
         <p

@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="bg-[#141414] border-2 border-[#262626] rounded-2xl p-6 shadow-lg text-center flex flex-col items-center">
+  <div class="bg-[#141414] border-2 border-[#262626] rounded-2xl p-6 shadow-lg text-center flex flex-col items-center max-w-[20rem]">
 
       <img :src="$loadImage(props.imageUrl)" alt="Profile Picture" class="w-[318px] h-[268px]">
   

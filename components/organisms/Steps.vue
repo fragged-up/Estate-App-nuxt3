@@ -12,7 +12,7 @@ const props = defineProps({
       <h4 class="font-sans font-semibold text-xl text-white">{{ props.stepsNo }}</h4>
     </div>
 
-    <div class="step-box p-6 flex flex-col rounded-2xl gap-[8px] text-mg border-2 border-[#262626] no-left-radius">
+    <div class="step-box p-6 flex flex-col rounded-2xl gap-[8px] text-mg border-2 border-[#262626] no-left-radius laptop:h-56 laptop:items-strech laptop:p-12">
       <h5 class="p-2 font-sans font-semibold text-lg text-white">{{ props.stepHead }}</h5>
       <p class="font-sans font-medium text-sm text-[#999999]">{{ props.stepPara }}</p>
     </div>

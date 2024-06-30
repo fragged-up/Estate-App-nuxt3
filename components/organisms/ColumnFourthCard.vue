@@ -1,5 +1,12 @@
 <script setup>
 // import RepeatedBlock from '../molecules/RepeatedBlock.vue';
+const props = defineProps({
+  cWrapStyle: {
+    type: String,
+    required: false,
+    default: ''
+  }
+})
 const h1 = 'Trust';
 const h2 = 'Excellence';
 const h3 = 'Client-Centric';
@@ -12,13 +19,12 @@ const p4 = 'We are dedicated to providing you with the highest level of service,
 </script>
 
 <template>
-  <div class="grid grid-rows-4 gap-y-4 shadow-frame p-6 rounded-xl">
-
+  <div class="grid grid-rows-4 gap-y-4 shadow-frame p-6 rounded-xl" :class="props.cWrapStyle">
     <div class="">
       <RepeatedBlock :image="'/icons/TrustIcon.svg'" :head="h1" :para="p1" />
     </div>
 
-    <div class="]">
+    <div class="">
       <RepeatedBlock :image="'/icons/ExcellenceIcon.svg'" :head="h2" :para="p2" />
     </div>
 
@@ -29,7 +35,6 @@ const p4 = 'We are dedicated to providing you with the highest level of service,
     <div class="">
       <RepeatedBlock :image="'/icons/CommitIcon.svg'" :head="h4" :para="p4" />
     </div>
-
   </div>
 </template>
 

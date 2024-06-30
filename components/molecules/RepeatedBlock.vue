@@ -2,7 +2,12 @@
 const props = defineProps({
   image: String,
   head: String,
-  para: String
+  para: String,
+  dadContainer: {
+    type: String,
+    required: false,
+    default: ''
+  }
 });
 
 </script>
@@ -11,7 +16,7 @@ const props = defineProps({
 
 
 <template>
-  <div :class="'repeated-cont'">
+  <div :class="props.dadContainer">
 
     <div class="repeated-father">
       <img :src="$loadImage(image)" class="w-[52px] h-[52px] inline-block" alt="image">
@@ -25,6 +30,4 @@ const props = defineProps({
 </template>
 
 
-<style>
-
-</style>
+<style scoped></style>

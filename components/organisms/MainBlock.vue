@@ -1,11 +1,11 @@
 <script setup>
-  import { onMounted, onBeforeUnmount } from 'vue';
   const blockContent = defineProps({
     headerText: String,
     paraText: String,
     contStyle: {
       type: String,
       required: false,
+      default: '',
     },
     subContStyle: {
       type: String,
@@ -37,7 +37,7 @@
     <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
                                     width 155px and height 49px  -->
 
-    <div :class="`${blockContent.contStyle} top-cont w-11/12 mx-auto`">
+    <div :class="`${contStyle} top-cont w-11/12 mx-auto`">
       <div class="stars-cont">
         <img
           :src="$loadImage('/icons/stars.svg')"

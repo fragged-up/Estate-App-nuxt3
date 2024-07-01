@@ -33,8 +33,6 @@
 <style scoped></style>
  Until Here AboutUs Hero Desktop-->
 
-
-
 <!--
  Hero Home Desktop Fully Ready 
   <template>
@@ -42,7 +40,6 @@
     <HeroDesktop />
   </div>
 </template> -->
-
 
 <!-- 
 
@@ -79,13 +76,6 @@ the none edited one :
                 </p>
               </div>
 </div> -->
-
-
-
-
-
-
-
 
 <!-- Saftey AboutUsPage
 <script setup>

@@ -1,490 +1,107 @@
 <script setup>
+  const hero_Head = 'Find Your Dream Property'
+  const hero_Para =
+    'Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey'
+  const card_Head_1 = 'Discover a World of Possibilities'
+  const card_Head_2 = "Let's Make it Happen"
+  const card_Para_1 = 'Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home'
+  const card_Para_2 =
+    "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together."
 
-const cardHead_1 = 'Our Journey';
-const cardHead_2 = 'Our Values';
-const cardHead_3 = 'Our Achievements';
-const cardHead_4 = 'Navigating the Estatein Experience';
-const cardHead_5 = 'Meet the Estatein Team';
-const cardHead_6 = 'Our Valued Clients';
+  const card_title = 'Seaside Serenity Villa'
+  const card_text = 'Wake up to the soothing melody of waves. This beachfront villa offers..'
+  const card_price = '1,250,000'
+  const card_bedrooms = 7
+  const card_bathrooms = 6
 
-
-const cardPara_1 = "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients.";
-const cardPara_2 = "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients."
-const cardPara_3 = 'Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.';
-const cardPara_4 = "At Estatein, we've designed a straightforward process to help you find and purchase your dream property with ease. Here's a step-by-step guide to how it all works.";
-const cardPara_5 = 'At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality.';
-const cardPara_6 = "At Estatein, we have had the privilege of working with a diverse range of clients across various industries. Here are some of the clients we've had the pleasure of serving";
-
-const h1 = 'Trust';
-const h2 = 'Excellence';
-const h3 = 'Client-Centric';
-const h4 = 'Our Commitment';
-
-const p1 = 'Trust is the cornerstone of every successful real estate transaction.';
-const p2 = 'We set the bar high for ourselves. From the properties we list to the services we provide.';
-const p3 = 'Your dreams and needs are at the center of our universe. We listen, understand.';
-const p4 = 'We are dedicated to providing you with the highest level of service, professionalism';
-
-const stepHead_1 = 'Discover a World of Possibilities';
-const stepHead_2 = 'Narrowing Down Your Choices';
-const stepHead_3 = 'Personalized Guidance';
-const stepHead_4 = "See It for Yourself";
-const stepHead_5 = "Making Informed Decisions";
-const stepHead_6 = "Getting the Best Deal";
-
-const stepPara_1 = 'Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location,';
-const stepPara_2 = "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision.";
-const stepPara_3 = 'OHave questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.';
-const stepPara_4 = "Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.";
-const stepPara_5 = "Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed.";
-const stepPara_6 = "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms.";
-
-
-const profiles = [
-  {
-    profileName: 'Max Mitchell',
-    profileImageUrl: '/icons/ProfileMax.svg',
-    profileTitle: 'Founder',
-    profileTwitterUrl: 'https://twitter.com/username',
-    profileHelloText: 'Say Hello 👋',
-  },
-  {
-    profileName: 'Sara Johnson',
-    profileImageUrl: '/icons/ProfileSara.svg',
-    profileTitle: 'Chief Real Estate Officer',
-    profileTwitterUrl: 'https://twitter.com/username',
-    profileHelloText: 'Say Hello 👋',
-  }
-  ,
-  {
-    profileName: 'David Brown',
-    profileImageUrl: '/icons/ProfileDavid.svg',
-    profileTitle: 'Head of Property Management',
-    profileTwitterUrl: 'https://twitter.com/username',
-    profileHelloText: 'Say Hello 👋',
-  }
-  ,
-  {
-    profileName: 'Michael Turner',
-    profileImageUrl: '/icons/ProfileMichael.svg',
-    profileTitle: 'Legal Counsel',
-    profileTwitterUrl: 'https://twitter.com/username',
-    profileHelloText: 'Say Hello 👋',
-  }
-
-];
-
-
-
+  const properties = ref([
+    {
+      cardImage: '/Beckos.svg',
+      cardTitle: 'Property Title 1',
+      cardText: 'Property description 1',
+      bedRooms: 3,
+      bathRooms: 2,
+      cardPrice: '500,000',
+    },
+    {
+      cardImage: '/Beckos.svg',
+      cardTitle: 'Property Title 2',
+      cardText: 'Property description 2',
+      bedRooms: 4,
+      bathRooms: 3,
+      cardPrice: '750,000',
+    },
+    {
+      cardImage: '/Beckos.svg',
+      cardTitle: 'Property Title 2',
+      cardText: 'Property description 2',
+      bedRooms: 4,
+      bathRooms: 3,
+      cardPrice: '750,000',
+    },
+    {
+      cardImage: '/Beckos.svg',
+      cardTitle: 'Property Title 1',
+      cardText: 'Property description 1',
+      bedRooms: 3,
+      bathRooms: 2,
+      cardPrice: '500,000',
+    },
+    {
+      cardImage: '/Beckos.svg',
+      cardTitle: 'Property Title 2',
+      cardText: 'Property description 2',
+      bedRooms: 4,
+      bathRooms: 3,
+      cardPrice: '750,000',
+    },
+    {
+      cardImage: '/Beckos.svg',
+      cardTitle: 'Property Title 2',
+      cardText: 'Property description 2',
+      bedRooms: 4,
+      bathRooms: 3,
+      cardPrice: '750,000',
+    },
+  ])
 </script>
 
 <template>
-
-  <header class="laptop:hidden">
-    <nav>
-      <header
-        class="w-11/12 mx-auto my-10 bg-hero-about-abst bg-position-hero-about-abst bg-size-hero-about-abst bg-no-repeat h-70 border border-[#262626] rounded-3xl">
-        <div class="w-full bg-hero-about-image bg-position-hero-about-image bg-size-hero-about-image bg-no-repeat h-80">
-        </div>
-      </header>
-      <!-- :class="`m-0 w-11/12 mx-auto`" -->
-      <div :subContStyle="`w-11/12`">
-        <MainBlock :headerText="cardHead_1" :paraText="cardPara_1">
-          <template #default>
-            <div class="w-11/12 mx-auto">
-              <CardThree />
-            </div>
-          </template>
-        </MainBlock>
-      </div>
-    </nav>
-  </header>
-
-  <header>
-    <div class="desk-about-page hidden laptop:grid grid-cols-2 justify-center items-stretch p-8 mx-auto">
-      <div class="left-side-about m-auto px-8">
-        <div class="flex flex-col gap-y-6">
-          <div class="stars-cont">
-            <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars" />
-          </div>
-          <h1 class="font-sans font-semibold text-5xl text-white">Our Journey</h1>
-          <p class="font-sans font-medium text-gl text-base">
-            Our story is one of continuous growth and evolution. We started as a
-            small team with big dreams, determined to create a real estate
-            platform that transcended the ordinary. Over the years, we've expanded
-            our reach, forged valuable partnerships, and gained the trust of
-            countless clients.
-          </p>
-        </div>
-        <CardThreeDesk />
-      </div>
-      <div class="right-side-about h-[29.75rem] bg-about-us bg-no-repeat"></div>
-    </div>
-  </header>
-  <div class="cont">
-
-    <main
-      class="bg-fgl my-8 flex flex-col justify-center items-center laptop:grid grid-cols-[30%_1fr] laptop:justify-between laptop:items-center w-11/12 gap-x-20 mx-auto">
-      <div class="first-frame laptop:place-self-start">
-        <MainBox :headline="cardHead_2" :paraline="cardPara_2" />
-      </div>
-      <div class="block-cr p-5">
-        <div class="row-one">
-          <LineImg :image="'/icons/TrustIcon.svg'" :head="h1" :para="p1" :containerWraper="'box-one'" />
-          <LineImg :image="'/icons/ExcellenceIcon.svg'" :head="h2" :para="p2" :containerWraper="'box-two'" />
-        </div>
-        <div class="row-two">
-          <LineImg :image="'/icons/CentricIcon.svg'" :head="h3" :para="p3" :containerWraper="'box-three'" />
-          <LineImg :image="'/icons/CommitIcon.svg'" :head="h4" :para="p4" :containerWraper="'box-fourth'" />
-        </div>
-      </div>
-    </main>
-
-
-    <div class="w-11/12 mx-auto">
-      <MainBox :headline="cardHead_3" :paraline="cardPara_3" />
-      <CardTAbout />
-    </div>
-
-    <div class="w-11/12 mx-auto">
-      <MainBox :headline="cardHead_4" :paraline="cardPara_4" />
-      <div class="steps-cont flex flex-col gap-y-12 my-12 laptop:grid grid-cols-3 laptop:gap-x-10">
-        <Steps :stepsNo="'Step 01'" :stepHead="stepHead_1" :stepPara="stepPara_1" />
-
-        <Steps :stepsNo="'Step 02'" :stepHead="stepHead_2" :stepPara="stepPara_2" />
-
-        <Steps :stepsNo="'Step 03'" :stepHead="stepHead_3" :stepPara="stepPara_3" />
-
-        <Steps :stepsNo="'Step 04'" :stepHead="stepHead_4" :stepPara="stepPara_4" />
-
-        <Steps :stepsNo="'Step 05'" :stepHead="stepHead_5" :stepPara="stepPara_5" />
-
-        <Steps :stepsNo="'Step 06'" :stepHead="stepHead_6" :stepPara="stepPara_6" />
-      </div>
-    </div>
-
-    <div class="w-11/12 mx-auto">
-      <MainBox :headline="cardHead_6" :paraline="cardPara_6" />
-      <div class="flex flex-col gap-y-12 my-12 laptop:flex-row laptop:justify-between items-center laptop:gap-0">
-        <ProfileCard v-for="(profile, index) in profiles" :key="index" :name="profile.profileName"
-          :imageUrl="profile.profileImageUrl" :title="profile.profileTitle" :twitterUrl="profile.profileTwitterUrl"
-          :sayHelloText="profile.profileHelloText" />
-      </div>
-    </div>
-
-    <div class="w-11/12 mx-auto">
-      <MainBox :headline="cardHead_6" :paraline="cardPara_6" />
-      <div class="flex flex-col gap-y-12 my-12">
-
-        <div class="laptop:hidden">
-          <OurValuedClients />
-        </div>
-        <!-- box One  -->
-        <div class="hidden laptop:flex justify-between items-center gap-x-6">
-
-          <div class="p-6 border-2 border-[#262626] rounded-xl shadow-frame grid gap-y-6">
-            <div class="py-5">
-              <p class="font-sans font-medium text-sm text-[#999999]"> Since 2019 </p>
-              <h2 class="laptop:hidden py-5 font-sans font-semibold text-xl text-white"> ABC Corporation </h2>
-              <div class="hidden laptop:flex justify-between items-center">
-                <h2 class="py-5 font-sans font-semibold text-xl text-white"> ABC Corporation </h2>
-                <Button
-                  :class="'bg-mg py-4 px-8 rounded-xl border-2 border-hg text-white font-sans font-medium text-sm'"
-                  :buttonTxt="'View Website'" />
-              </div>
-              <div class="laptop:hidden p-4 bg-mg text-center border border-[#262626] rounded-xl">
-                <Button :class="'text-white font-sans font-medium text-sm'" :buttonTxt="'View Website'" />
-              </div>
-            </div>
-
-
-            <div class="grid grid-cols-2">
-              <div class="cols-span-1 px-3">
-                <div class="row-inside flex gap-x-4">
-                  <img :src="$loadImage('/icons/DomainVec.svg')" alt="DomainVec">
-                  <p class="font-sans font-medium text-xs text-[#999999]">Domain</p>
-                </div>
-                <h3 class="font-sans font-medium text-sm text-white">Commercial Real Estate</h3>
-              </div>
-              <div class="cols-span-2 border-l-2 border-[#999999] px-3">
-                <div class="row-inside">
-                  <img :src="$loadImage('/icons/BlitzVec.svg')" alt="BlitzVec">
-                  <p class="font-sans font-medium text-xs text-[#999999]">Category</p>
-                </div>
-                <h3 class="font-sans font-medium text-sm text-white">Luxury Home Development</h3>
-              </div>
-            </div>
-
-            <div class="what-they-said p-6 border-2 border-[#262626] rounded-xl">
-              <h3 class="font-sans font-medium text-sm text-[#999999]">
-                What They Said 🤗
-              </h3>
-              <p class="py-5 font-sans font-medium text-sm text-white">
-                Estatein's expertise in finding the perfect office space for our expanding operations was invaluable.
-                They
-                truly
-                understand our business needs.
-              </p>
-            </div>
-          </div>
-          <!-- end Box One  -->
-
-          <!-- box two  -->
-          <div class="p-6 border-2 border-[#262626] rounded-xl shadow-frame grid gap-y-6">
-            <div class="py-5">
-              <p class="font-sans font-medium text-sm text-[#999999]"> Since 2018 </p>
-              <h2 class="laptop:hidden py-5 font-sans font-semibold text-xl text-white"> GreenTech Enterprises </h2>
-              <div class="hidden laptop:flex justify-between items-center">
-                <h2 class="py-5 font-sans font-semibold text-xl text-white"> ABC Corporation </h2>
-                <Button
-                  :class="'bg-mg py-4 px-8 rounded-xl border-2 border-hg text-white font-sans font-medium text-sm'"
-                  :buttonTxt="'View Website'" />
-              </div>
-              <div class="laptop:hidden p-4 bg-mg text-center border border-[#262626] rounded-xl">
-                <Button :class="'text-white font-sans font-medium text-sm'" :buttonTxt="'View Website'" />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2">
-              <div class="cols-span-1 px-3">
-                <div class="row-inside flex gap-x-4">
-                  <img :src="$loadImage('/icons/DomainVec.svg')" alt="DomainVec">
-                  <p class="font-sans font-medium text-xs text-[#999999]">Domain</p>
-                </div>
-                <h3 class="font-sans font-medium text-sm text-white">Commercial Real Estate</h3>
-              </div>
-              <div class="cols-span-2 border-l-2 border-[#999999] px-3">
-                <div class="row-inside">
-                  <img :src="$loadImage('/icons/BlitzVec.svg')" alt="BlitzVec">
-                  <p class="font-sans font-medium text-xs text-[#999999]">Category</p>
-                </div>
-                <h3 class="font-sans font-medium text-sm text-white">Retail Space</h3>
-              </div>
-            </div>
-
-            <div class="what-they-said p-6 border-2 border-[#262626] rounded-xl">
-              <h3 class="font-sans font-medium text-sm text-[#999999]">
-                What They Said 🤗
-              </h3>
-              <p class="py-5 font-sans font-medium text-sm text-white">
-                Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a
-                trusted partner in our growth.
-              </p>
-            </div>
-
-          </div>
-        </div>
-        <!-- end Box Two -->
-      </div>
-    </div>
-
+  <div class="div">
+    <BoxInput />
   </div>
 
-
-</template>
-
-<style scoped>
-.first-frame {
-  margin-block: 5rem;
-}
-
-.block-cr {
-  box-shadow: 1px -1px 18px 1px #262626;
-  /* display: subgrid; */
-}
-
-.row-one,
-.row-two {
-  display: block;
-}
-
-.box-one,
-.box-two,
-.box-three,
-.box-fourth {
-  max-width: 23rem;
-  padding: 1rem;
-  margin-block: 1rem;
-  /* aspect-ratio: 1/1; */
-
-}
-
-.box-one {
-  border-bottom: 1px solid #262626;
-}
-
-.box-two {
-  border-bottom: 1px solid #262626;
-}
-
-.box-three {
-  border-bottom: 1px solid #262626;
-}
-
-.box-three {
-  border-top: none;
-  border-left: none;
-  border-bottom: 1px solid #262626;
-}
-
-.box-fourth {
-  border: none;
-
-}
-
-@media (min-width:1440px) {
-  .first-frame {
-    margin-block: 2rem;
-  }
-
-  .row-one,
-  .row-two {
-    display: flex;
-    gap: 0;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .block-cr {
-    width: 60rem;
-    max-width: 60rem;
-  }
-
-  .row-two {
-    border-top: 1px solid #262626;
-  }
-
-  .box-one {
-    border: none;
-  }
-
-  .box-two {
-    border: none;
-    border-left: 1px solid #262626;
-  }
-
-  .box-three {
-    border: none;
-  }
-
-  .box-fourth {
-    border-left: 1px solid #262626;
-  }
-}
-</style>
-
-
-<!-- 
-Final Result 
-<section>
-      <main class="w-full bg-[#141414] p-14">
-  
-  
-        <div class="wrap-one laptop:grid laptop:grid-cols-2">
-          <div class="wrapper laptop:w-[38%]">
-            <MainBox :headline="cardHead_2" :paraline="cardPara_2" />
-          </div>
-          <div class="laptop: w-[62%]">
-            <ColumnFourthCard />
-          </div>
-        </div>
-      </main>
-    </section> -->
-
-
-
-<!-- RepeatedBlock FullComponent  
-<script setup>
-const props = defineProps({
-  image: String,
-  head: String,
-  para: String
-});</script>
-
-<template>
-  <div :class="'repeated-cont'">
-
-    <div class="repeated-father">
-      <img :src="$loadImage(image)" class="w-[52px] h-[52px] inline-block" alt="image">
-      <h3 class="font-sans font-semibold text-white text-hg ml-4 inline-block">{{ props.head }}</h3>
-    </div>
-    <div class="py-6">
-      <p class="font-sans font-medium text-[#999999] text-sm">{{ props.para }}</p>
+  <div class="property mx-auto w-11/12">
+    <MainBox :headline="card_Head_1" :paraline="card_Para_1" :wrapStyle="'mx-auto'" />
+    <!-- For Visualling Better the Container border-4 border-red-600 -->
+    <div class="laptop:max-w-11/12 mx-auto grid w-full auto-cols-max grid-flow-col gap-x-12 overflow-x-scroll border-4 border-red-600">
+      <div class="my-6" v-for="(property, index) in properties" :key="index">
+        <PropertyCard
+          :card-image="property.cardImage"
+          :card-title="property.cardTitle"
+          :card-text="property.cardText"
+          :bed-rooms="property.bedRooms"
+          :bath-rooms="property.bathRooms"
+          :card-price="property.cardPrice"
+        />
+      </div>
+      <ViewButton :buttonText="'View All Properites'" :totalPagesNumber="'10'" />
     </div>
 
-  </div>
-</template>
-<style></style> -->
-
-
-
-
-<!-- ColumnForthCard FullComponent     
-<script setup>
-// import RepeatedBlock from '../molecules/RepeatedBlock.vue';
-const h1 = 'Trust';
-const h2 = 'Excellence';
-const h3 = 'Client-Centric';
-const h4 = 'Our Commitment';
-
-const p1 = 'Trust is the cornerstone of every successful real estate transaction.';
-const p2 = 'We set the bar high for ourselves. From the properties we list to the services we provide.';
-const p3 = 'Your dreams and needs are at the center of our universe. We listen, understand.';
-const p4 = 'We are dedicated to providing you with the highest level of service, professionalism';
-</script>
-
-<template>
-  <div class="grid grid-rows-4 gap-y-4 shadow-frame p-6 rounded-xl laptop:grid-rows-2">
-    <div class="border-b-[.5px] border-hg">
-      <RepeatedBlock :image="'/icons/TrustIcon.svg'" :head="h1" :para="p1" />
-    </div>
-
-    <div class="border-b-[.5px] border-hg">
-      <RepeatedBlock :image="'/icons/ExcellenceIcon.svg'" :head="h2" :para="p2" />
-    </div>
-
-    <div class="border-b-[.5px] border-hg">
-      <RepeatedBlock :image="'/icons/CentricIcon.svg'" :head="h3" :para="p3" />
-    </div>
-
-    <div class="">
-      <RepeatedBlock :image="'/icons/CommitIcon.svg'" :head="h4" :para="p4" />
+    <div class="my-8 flex items-center justify-between">
+      <button class="arrows-bg text-[#808080]">&leftarrow;</button>
+      <p class="pad-fix:whitespace-nowrap p-2">
+        <span class="text-white">{{ (pagesNumber = '01') }}</span>
+        <span class="text-[#808080]">of</span>
+        <span class="text-[#808080]">{{ (totalPagesNumber = '10') }}</span>
+      </p>
+      <button class="arrows-bg text-white">&rightarrow;</button>
     </div>
   </div>
+
+  <div class="form-section">
+    <PropertyForm />
+  </div>
 </template>
-<style scoped>
-.shadow-frame {
-  box-shadow: 1px -1px 18px 1px #262626;
-}
-</style> -->
 
-
-
-
-
-<!-- My Last Try 
-
-  <main class="bg-[#141414] p-8 flex max-w-[1280px]">
-  
-      <div class="div">
-        <MainBox :headline="cardHead_2" :paraline="cardPara_2" />
-      </div>
-  
-  
-      <div class="max-w-[810px] shadow-frame">
-        <div class="grid grid-cols-2 border-b border-hg">
-          <RepeatedBlock :image="'/icons/TrustIcon.svg'" :head="h1" :para="p1" :dadContainer="'p-6 my-4'" />
-          <RepeatedBlock :image="'/icons/ExcellenceIcon.svg'" :head="h2" :para="p2"
-            :dadContainer="'border-l border-hg p-6 my-4'" />
-        </div>
-        <div class="nka grid grid-cols-2">
-          <RepeatedBlock :image="'/icons/CentricIcon.svg'" :head="h3" :para="p3" :dadContainer="'p-6 my-4'" />
-          <RepeatedBlock :image="'/icons/CommitIcon.svg'" :head="h4" :para="p4"
-            :dadContainer="'border-l border-hg p-6 my-4'" />
-        </div>
-      </div>
-  
-  
-  
-  
-    </main> -->
+<style scoped></style>

@@ -1,11 +1,9 @@
-
 <script setup>
-import { useRoute } from 'vue-router'
+  import { useRoute } from 'vue-router'
 
-const route = useRoute()
-const propertyId = route.params.propertyId
+  const route = useRoute()
+  const propertyId = route.params.propertyId
 </script>
-
 
 <template>
   <div class="main-propertyId-cont">

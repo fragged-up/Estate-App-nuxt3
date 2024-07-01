@@ -43,9 +43,9 @@
   </main>
 </template> -->
 <template>
-  <main class="bg-[#141414] w-full">
-    <div class="container bg-[#141414] grid justify-center mx-auto">
-      <div class="bg-image rounded-3xl mx-auto my-4">
+  <main class="w-full bg-[#141414]">
+    <div class="container mx-auto grid justify-center bg-[#141414]">
+      <div class="bg-image mx-auto my-4 rounded-3xl">
         <div class="circle-box leading-7">
           <div id="outer-circle">
             <div class="circle-text">D</div>

@@ -1,13 +1,13 @@
 <script setup>
-const props = defineProps({
-  headline: String,
-  paraline: String,
-  wrapStyle: {
-    type: String,
-    required: false,
-    default: ''
-  }
-})
+  const props = defineProps({
+    headline: String,
+    paraline: String,
+    wrapStyle: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  })
 </script>
 
 <template>
@@ -17,11 +17,11 @@ const props = defineProps({
         <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars" />
       </div>
       <div class="flex flex-col">
-        <h1 class="font-sans text-3xl font-semibold text-white text-wrap">
+        <h1 class="text-wrap font-sans text-3xl font-semibold text-white">
           {{ props.headline }}
         </h1>
 
-        <p class="font-urbanist py-4 text-sm font-medium leading-5 text-[#999999] text-wrap">
+        <p class="font-urbanist text-wrap py-4 text-sm font-medium leading-5 text-[#999999]">
           {{ props.paraline }}
         </p>
       </div>

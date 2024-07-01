@@ -1,6 +1,13 @@
 <script setup>
   // import Input from '~/components/atoms/Input.vue';
   // import SelectInput from '~/components/atoms/SelectInput.vue';
+  const props = defineProps({
+    property: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  })
 </script>
 
 <template>
@@ -10,12 +17,25 @@
         <Input :label="'First Name'" :input-type="'text'" :name="'firstName'" :placeholder="'Enter First Name'" />
         <Input :label="'Last Name'" :input-type="'text'" :name="'lastName'" :placeholder="'Enter Last Name'" />
         <Input :label="'Email'" :input-type="'email'" :name="'Email'" :placeholder="'Enter your Email'" />
+        <Input :label="'Phone'" :input-type="'number'" :name="'phone'" :placeholder="'Enter Phone Number'" />
       </div>
 
       <div class="second-row laptop:flex laptop:gap-6">
-        <Input :label="'Phone'" :input-type="'number'" :name="'phone'" :placeholder="'Enter Phone Number'" />
-        <SelectInput :select-head="'Inquiry Type'" :place-holder="'Inquiry Type'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
-        <SelectInput :select-head="'How Did You Hear About Us'" :place-holder="'Select'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+        <SelectInput :select-head="'Prefferred Location'" :place-holder="'Select Location'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+        <SelectInput :select-head="'Property Type'" :place-holder="'Select Property Type'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+        <SelectInput :select-head="'No. of Bathrooms'" :place-holder="'Select no. of Bathrooms'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+        <SelectInput :select-head="'No. of Bedrooms'" :place-holder="'Select no. of Bedrooms'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+      </div>
+
+      <div class="budget-row w-full laptop:flex laptop:gap-6">
+        <div class="sliced w-2/4">
+          <SelectInput :extra-style="'w-auto m-auto'" :select-head="'Budget'" :place-holder="'Select Budget'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />
+        </div>
+        <div class="sliced">
+          <!-- <SelectInput :select-head="'Property Type'" :place-holder="'Select Property Type'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />  
+          <SelectInput :select-head="'No. of Bathrooms'" :place-holder="'Select no. of Bathrooms'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" /> -->
+          <PrefferedInputs />
+        </div>
       </div>
 
       <div class="message-cont mx-auto w-11/12 laptop:w-full">

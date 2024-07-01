@@ -3,87 +3,47 @@
 <template>
   <!-- Cont four cards  -->
   <div
-    class="second-template grid grid-cols-2 grid-rows-2 gap-y-2.5 gap-x-2.5 border-2 border-[#262626] p-4 rounded-md laptop:grid-cols-none laptop:grid-rows-none laptop:grid-flow-col max-w-[100%] laptop:border-[7px]"
+    class="second-template grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px]"
   >
-    <div
-      class="flex flex-col bg-[#141414] border-2 border-[#262626] text-center rounded-lg p-4 laptop:flex-grow-0 laptop:bg-mg"
-    >
-      <div class="flex flex-col justify-center items-center">
-        <img
-          :src="$loadImage('/icons/arrowRtop.svg')"
-          class="self-end mr-4"
-          alt="rtop"
-        />
-        <img
-          :src="$loadImage('/icons/homeIcon.svg')"
-          class="self-center"
-          alt="homeIcon"
-        />
+    <div class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
+      <div class="flex flex-col items-center justify-center">
+        <img :src="$loadImage('/icons/arrowRtop.svg')" class="mr-4 self-end" alt="rtop" />
+        <img :src="$loadImage('/icons/homeIcon.svg')" class="self-center" alt="homeIcon" />
       </div>
-      <p class="font-sans font-semibold text-base text-white">
+      <p class="font-sans text-base font-semibold text-white">
         Find Your Dream
         <br />
         Home
       </p>
     </div>
-    <div
-      class="flex flex-col bg-[#141414] border-2 border-[#262626] text-center rounded-lg p-4 laptop:flex-grow-0 laptop:bg-mg"
-    >
-      <div class="flex flex-col justify-center items-center">
-        <img
-          :src="$loadImage('/icons/arrowRtop.svg')"
-          class="self-end mr-4"
-          alt="rtop"
-        />
-        <img
-          :src="$loadImage('/icons/cameraIcon.svg')"
-          class="self-center"
-          alt="homeIcon"
-        />
+    <div class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
+      <div class="flex flex-col items-center justify-center">
+        <img :src="$loadImage('/icons/arrowRtop.svg')" class="mr-4 self-end" alt="rtop" />
+        <img :src="$loadImage('/icons/cameraIcon.svg')" class="self-center" alt="homeIcon" />
       </div>
-      <p class="font-sans font-semibold text-base text-white">
+      <p class="font-sans text-base font-semibold text-white">
         Unlock Property
         <br />
         Value
       </p>
     </div>
-    <div
-      class="flex flex-col bg-[#141414] border-2 border-[#262626] text-center rounded-lg p-4 laptop:flex-grow-0 laptop:bg-mg"
-    >
-      <div class="flex flex-col justify-center items-center">
-        <img
-          :src="$loadImage('/icons/arrowRtop.svg')"
-          class="self-end mr-4"
-          alt="rtop"
-        />
-        <img
-          :src="$loadImage('/icons/buildingIcon.svg')"
-          class="self-center"
-          alt="homeIcon"
-        />
+    <div class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
+      <div class="flex flex-col items-center justify-center">
+        <img :src="$loadImage('/icons/arrowRtop.svg')" class="mr-4 self-end" alt="rtop" />
+        <img :src="$loadImage('/icons/buildingIcon.svg')" class="self-center" alt="homeIcon" />
       </div>
-      <p class="font-sans font-semibold text-base text-white">
+      <p class="font-sans text-base font-semibold text-white">
         Effortless Property
         <br />
         Management
       </p>
     </div>
-    <div
-      class="flex flex-col bg-[#141414] border-2 border-[#262626] text-center rounded-lg p-4 laptop:flex-grow-0 laptop:bg-mg"
-    >
-      <div class="flex flex-col justify-center items-center">
-        <img
-          :src="$loadImage('/icons/arrowRtop.svg')"
-          class="self-end mr-4"
-          alt="rtop"
-        />
-        <img
-          :src="$loadImage('/icons/sunIcon.svg')"
-          class="self-center"
-          alt="homeIcon"
-        />
+    <div class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
+      <div class="flex flex-col items-center justify-center">
+        <img :src="$loadImage('/icons/arrowRtop.svg')" class="mr-4 self-end" alt="rtop" />
+        <img :src="$loadImage('/icons/sunIcon.svg')" class="self-center" alt="homeIcon" />
       </div>
-      <p class="font-sans font-semibold text-base text-white">
+      <p class="font-sans text-base font-semibold text-white">
         Smart Investments,
         <br />
         Informed Decisions

@@ -1,33 +1,26 @@
 <script setup>
-const props = defineProps({
-  image: String,
-  head: String,
-  para: String,
-  dadContainer: {
-    type: String,
-    required: false,
-    default: ''
-  }
-});
-
+  const props = defineProps({
+    image: String,
+    head: String,
+    para: String,
+    dadContainer: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  })
 </script>
-
-
-
 
 <template>
   <div :class="props.dadContainer">
-
     <div class="repeated-father">
-      <img :src="$loadImage(image)" class="w-[52px] h-[52px] inline-block" alt="image">
-      <h3 class="font-sans font-semibold text-white text-lg ml-4 inline-block">{{ props.head }}</h3>
+      <img :src="$loadImage(image)" class="inline-block h-[52px] w-[52px]" alt="image" />
+      <h3 class="ml-4 inline-block font-sans text-lg font-semibold text-white">{{ props.head }}</h3>
     </div>
     <div class="py-6">
-      <p class="font-sans font-medium text-[#999999] text-sm">{{ props.para }}</p>
+      <p class="font-sans text-sm font-medium text-[#999999]">{{ props.para }}</p>
     </div>
-
   </div>
 </template>
-
 
 <style scoped></style>

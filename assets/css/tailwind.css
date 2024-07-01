@@ -23,7 +23,7 @@
 } */
 
 .main-b {
-  @apply border-2 border-[#262626] rounded-xl;
+  @apply rounded-xl border-2 border-[#262626];
 }
 
 /* Define the custom styles for the laptop breakpoint */

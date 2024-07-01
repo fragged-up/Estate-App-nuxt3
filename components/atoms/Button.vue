@@ -1,33 +1,32 @@
 <template>
   <button :class="but.buttonStyling">
-   {{ but.buttonTxt }}
+    {{ but.buttonTxt }}
   </button>
 </template>
 
 <script setup>
-const but = defineProps({
-  buttonTxt:String,
-  buttonStyling:String
-}
-)
+  const but = defineProps({
+    buttonTxt: String,
+    buttonStyling: String,
+  })
 </script>
 
 <style scoped>
-.btn {
-  padding: 0.5em 1em;
-  border: none;
-  cursor: pointer;
-}
+  .btn {
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+  }
 
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-}
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
 
-.btn-secondary {
-  background-color: #6c757d;
-  color: white;
-}
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
 
-/* Add more variants as needed */
+  /* Add more variants as needed */
 </style>

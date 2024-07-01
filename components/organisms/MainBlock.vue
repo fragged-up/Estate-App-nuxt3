@@ -14,7 +14,7 @@
     headerStyle: {
       type: String,
       required: false,
-      default:'',
+      default: '',
     },
     paraStyle: {
       type: String,
@@ -30,37 +30,26 @@
       requried: false,
       default: null,
     },
-  });
+  })
 </script>
 
 <template>
-  <div class="p4 w-full my-6">
+  <div class="p4 my-6 w-full">
     <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
                                     width 155px and height 49px  -->
 
-    <div :class="`${blockContent.contStyle} top-cont w-11/12 mx-auto`">
+    <div :class="`${blockContent.contStyle} top-cont mx-auto w-11/12`">
       <div class="stars-cont">
-        <img
-          :src="$loadImage('/icons/stars.svg')"
-          alt="stars"
-          class="stars"
-        />
+        <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars" />
       </div>
 
-      <div :class="`${blockContent.subContStyle} w-11/12 py-4 my-4 mx-auto`">
-        <h1
-          :class="`${blockContent.headerStyle} font-sans font-semibold text-white text-3xl`"
-        >
+      <div :class="`${blockContent.subContStyle} mx-auto my-4 w-11/12 py-4`">
+        <h1 :class="`${blockContent.headerStyle} font-sans text-3xl font-semibold text-white`">
           {{ headerText }}
         </h1>
 
-        <div
-          v-if="!blockContent.deskHeader"
-          class="deskBlockCnt grid-auto-cols justify-between"
-        >
-          <p
-            :class="`${blockContent.paraStyle} leading-5 text-sm font-medium font-urbanist text-[#999999] py-4`"
-          >
+        <div v-if="!blockContent.deskHeader" class="deskBlockCnt grid-auto-cols justify-between">
+          <p :class="`${blockContent.paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`">
             {{ paraText }}
           </p>
           <!-- <Button
@@ -69,17 +58,11 @@
           /> -->
         </div>
 
-        <p
-          v-if="blockContent.deskHeader && blockContent.override"
-          :class="`${blockContent.paraStyle} leading-5 text-sm font-medium font-urbanist text-[#999999] py-4`"
-        >
+        <p v-if="blockContent.deskHeader && blockContent.override" :class="`${blockContent.paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`">
           {{ paraText }}
         </p>
 
-        <slot
-          v-if="$slots.top"
-          name="top"
-        ></slot>
+        <slot v-if="$slots.top" name="top"></slot>
       </div>
     </div>
 

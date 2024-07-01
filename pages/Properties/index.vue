@@ -15,62 +15,44 @@
   const card_Para_2 =
     "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together."
 
-  const card_title = 'Seaside Serenity Villa'
-  const card_text = 'Wake up to the soothing melody of waves. This beachfront villa offers..'
-  const card_price = '1,250,000'
-  const card_bedrooms = 7
-  const card_bathrooms = 6
+  // const card_title = 'Seaside Serenity Villa'
+  // const card_text = 'Wake up to the soothing melody of waves. This beachfront villa offers..'
+  // const card_price = '1,250,000'
+  // const card_bedrooms = 7
+  // const card_bathrooms = 6
 
-  const properties = ref([
+  const properties = [
+    { propertyName: 'Beckos', cardImage: '/images/Beckos.svg', cardTitle: 'Property Title 1', cardText: 'Property description 1', bedRooms: 3, bathRooms: 2, cardPrice: '500,000' },
+    { propertyName: 'Metro', cardImage: '/images/MetroCard.svg', cardTitle: 'Property Title 2', cardText: 'Property description 2', bedRooms: 4, bathRooms: 3, cardPrice: '750,000' },
     {
-      cardImage: '/Beckos.svg',
-      cardTitle: 'Property Title 1',
-      cardText: 'Property description 1',
-      bedRooms: 3,
-      bathRooms: 2,
-      cardPrice: '500,000',
+      propertyName: 'SeaSide',
+      cardImage: '/images/SeasideCard.svg',
+      cardTitle: 'Property Title 3',
+      cardText: 'Property description 3',
+      bedRooms: 4,
+      bathRooms: 3,
+      cardPrice: '750,000',
     },
+    { propertyName: 'Benarks', cardImage: '/images/Beckos.svg', cardTitle: 'Property Title 4', cardText: 'Property description 4', bedRooms: 3, bathRooms: 2, cardPrice: '500,000' },
     {
-      cardImage: '/Beckos.svg',
-      cardTitle: 'Property Title 2',
-      cardText: 'Property description 2',
+      propertyName: 'MetroLine',
+      cardImage: '/images/Beckos.svg',
+      cardTitle: 'Property Title 5',
+      cardText: 'Property description 5',
       bedRooms: 4,
       bathRooms: 3,
       cardPrice: '750,000',
     },
     {
-      cardImage: '/Beckos.svg',
-      cardTitle: 'Property Title 2',
-      cardText: 'Property description 2',
+      propertyName: 'Seamore',
+      cardImage: '/images/SeasideCard.svg',
+      cardTitle: 'Property Title 6',
+      cardText: 'Property description 6',
       bedRooms: 4,
       bathRooms: 3,
       cardPrice: '750,000',
     },
-    {
-      cardImage: '/Beckos.svg',
-      cardTitle: 'Property Title 1',
-      cardText: 'Property description 1',
-      bedRooms: 3,
-      bathRooms: 2,
-      cardPrice: '500,000',
-    },
-    {
-      cardImage: '/Beckos.svg',
-      cardTitle: 'Property Title 2',
-      cardText: 'Property description 2',
-      bedRooms: 4,
-      bathRooms: 3,
-      cardPrice: '750,000',
-    },
-    {
-      cardImage: '/Beckos.svg',
-      cardTitle: 'Property Title 2',
-      cardText: 'Property description 2',
-      bedRooms: 4,
-      bathRooms: 3,
-      cardPrice: '750,000',
-    },
-  ])
+  ]
 </script>
 
 <template>
@@ -91,6 +73,7 @@
               <div class="block min-w-[100%] overflow-x-scroll whitespace-nowrap">
                 <div class="mx-4 my-6 inline-block w-[80%]" v-for="(property, index) in properties" :key="index">
                   <PropertyCard
+                    :property-name="property.propertyName"
                     :card-image="property.cardImage"
                     :card-title="property.cardTitle"
                     :card-text="property.cardText"

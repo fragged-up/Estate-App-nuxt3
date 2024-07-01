@@ -13,7 +13,9 @@
   const card_price = '1,250,000'
   const card_bedrooms = 7
   const card_bathrooms = 6
-
+  const handleNavigation = () => {
+    router.push(`/Properties/${cardProperty.propertyName}`)
+  }
   const properties = ref([
     {
       cardImage: '/Beckos.svg',
@@ -74,7 +76,7 @@
   <div class="property mx-auto w-11/12">
     <MainBox :headline="card_Head_1" :paraline="card_Para_1" :wrapStyle="'mx-auto'" />
     <!-- For Visualling Better the Container border-4 border-red-600 -->
-    <div class="laptop:max-w-11/12 mx-auto grid w-full auto-cols-max grid-flow-col gap-x-12 overflow-x-scroll border-4 border-red-600">
+    <div @click="handleNavigation" class="laptop:max-w-11/12 mx-auto grid w-full auto-cols-max grid-flow-col gap-x-12 overflow-x-scroll border-4 border-red-600">
       <div class="my-6" v-for="(property, index) in properties" :key="index">
         <PropertyCard
           :card-image="property.cardImage"

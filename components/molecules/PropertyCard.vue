@@ -3,6 +3,7 @@
   const toggleVisual = () => (isVisible.value = !isVisible.value)
 
   const cardProperty = defineProps({
+    propertyName: [String, Number],
     cardImage: String,
     cardTitle: String,
     cardText: String,
@@ -10,16 +11,21 @@
     bathRooms: Number,
     cardPrice: String,
   })
+  const router = useRouter()
+
+  const handleNavigation = () => {
+    router.push(`/Properties/${cardProperty.propertyName}`)
+  }
 </script>
 
 <template>
-  <div class="property-card-main-container mx-auto w-auto">
+  <div @click="handleNavigation" class="property-card-main-container mx-auto w-auto">
     <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-8">
       <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
               width 155px and height 49px  -->
 
       <div class="middleBuilding-c container">
-        <img :src="$loadImage(`${cardImage}`)" alt="middleBuilding" class="max-h-64 w-full" />
+        <img :src="$loadImage(`${cardProperty.cardImage}`)" alt="middleBuilding" class="max-h-64 w-full" />
       </div>
       <div class="container h-auto">
         <h3 class="text-lg text-white">{{ cardProperty.cardTitle }}</h3>

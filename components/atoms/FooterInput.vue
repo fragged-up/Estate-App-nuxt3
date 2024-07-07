@@ -21,6 +21,7 @@
     <input
       type="email"
       placeholder="Enter Your Email"
+      id="etmail"
       class="footer-input w-full rounded-lg border-2 border-[#262626] bg-[#141414] py-4 pl-10 pr-10 text-white placeholder:text-lg placeholder:text-gl focus:outline-none focus:ring-2 focus:ring-pr"
     />
     <img :src="$loadImage('/icons/InputRightImage.svg')" class="absolute right-8 top-1/2 h-6 w-6 -translate-y-1/2 transform" alt="Icon 2" />

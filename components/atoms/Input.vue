@@ -16,6 +16,10 @@
       type: String,
       required: true,
     },
+    htmlAtt: {
+      type: String,
+      required: false,
+    },
   })
 </script>
 
@@ -23,6 +27,7 @@
   <div class="mx-auto my-6 flex w-11/12 flex-col gap-y-4">
     <label :for="props.id" class="font-sans text-base font-medium text-white">{{ props.label }}</label>
     <input
+      :v-html="props.htmlAtt"
       :type="props.inputType"
       :name="props.name"
       :id="props.name"

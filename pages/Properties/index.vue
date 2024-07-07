@@ -1,64 +1,36 @@
 <script setup>
-  // import BoxInput from '~/components/organisms/BoxInput.vue';
-  // import MainBlock from '~/components/organisms/MainBlock.vue';
-  // import PropertyCard from '~/components/molecules/PropertyCard.vue';
-  // import SelectInput from '~/components/atoms/SelectInput.vue';
-  // import Preferred from '~/components/atoms/Preferred.vue';
-  // import Input from '~/components/atoms/Input.vue';
+  const router = useRouter()
+  const { data: properties } = useFetch('/api/properties')
 
-  const hero_Head = 'Find Your Dream Property'
-  const hero_Para =
-    'Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey'
-  const card_Head_1 = 'Discover a World of Possibilities'
-  const card_Head_2 = "Let's Make it Happen"
-  const card_Para_1 = 'Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home'
-  const card_Para_2 =
-    "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together."
+  // Function to set the property data in a state
+  const usePropertyState = () => useState('propertyState', () => ({}))
 
-  // const card_title = 'Seaside Serenity Villa'
-  // const card_text = 'Wake up to the soothing melody of waves. This beachfront villa offers..'
-  // const card_price = '1,250,000'
-  // const card_bedrooms = 7
-  // const card_bathrooms = 6
+  const sendTheData = property => {
+    const propertyState = usePropertyState()
+    propertyState.value = property // Set the property data in the state
 
-  const properties = [
-    { propertyName: 'Beckos', cardImage: '/images/Beckos.svg', cardTitle: 'Property Title 1', cardText: 'Property description 1', bedRooms: 3, bathRooms: 2, cardPrice: '500,000' },
-    { propertyName: 'Metro', cardImage: '/images/MetroCard.svg', cardTitle: 'Property Title 2', cardText: 'Property description 2', bedRooms: 4, bathRooms: 3, cardPrice: '750,000' },
-    {
-      propertyName: 'SeaSide',
-      cardImage: '/images/SeasideCard.svg',
-      cardTitle: 'Property Title 3',
-      cardText: 'Property description 3',
-      bedRooms: 4,
-      bathRooms: 3,
-      cardPrice: '750,000',
-    },
-    { propertyName: 'Benarks', cardImage: '/images/Beckos.svg', cardTitle: 'Property Title 4', cardText: 'Property description 4', bedRooms: 3, bathRooms: 2, cardPrice: '500,000' },
-    {
-      propertyName: 'MetroLine',
-      cardImage: '/images/Beckos.svg',
-      cardTitle: 'Property Title 5',
-      cardText: 'Property description 5',
-      bedRooms: 4,
-      bathRooms: 3,
-      cardPrice: '750,000',
-    },
-    {
-      propertyName: 'Seamore',
-      cardImage: '/images/SeasideCard.svg',
-      cardTitle: 'Property Title 6',
-      cardText: 'Property description 6',
-      bedRooms: 4,
-      bathRooms: 3,
-      cardPrice: '750,000',
-    },
-  ]
+    router.push({
+      path: `/Properties/${property.propertyName}`,
+    })
+  }
+  const hero = {
+    head: 'Find Your Dream Property',
+    para: 'Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey',
+  }
+  const card_1 = {
+    head: 'Discover a World of Possibilities',
+    para: 'Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home',
+  }
+  const card_2 = {
+    head: "Let's Make it Happen",
+    para: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
+  }
 </script>
 
 <template>
   <header class="fallback w-full border-b border-[#262626] px-6 py-12">
-    <h1 class="font-sans text-3xl font-semibold text-white">{{ hero_Head }}</h1>
-    <p class="py-6 font-sans text-sm font-medium text-[#999999]">{{ hero_Para }}</p>
+    <h1 class="font-sans text-3xl font-semibold text-white">{{ hero.head }}</h1>
+    <p class="py-6 font-sans text-sm font-medium text-[#999999]">{{ hero.para }}</p>
   </header>
   <div>
     <main>
@@ -68,18 +40,23 @@
         </div>
 
         <div class="property">
-          <MainBlock :header-text="card_Head_1" :para-text="card_Para_1">
+          <MainBlock :header-text="card_1.head" :para-text="card_1.para">
             <template #default>
               <div class="block min-w-[100%] overflow-x-scroll whitespace-nowrap">
                 <div class="mx-4 my-6 inline-block w-[80%]" v-for="(property, index) in properties" :key="index">
                   <PropertyCard
-                    :property-name="property.propertyName"
-                    :card-image="property.cardImage"
-                    :card-title="property.cardTitle"
-                    :card-text="property.cardText"
-                    :bed-rooms="property.bedRooms"
-                    :bath-rooms="property.bathRooms"
-                    :card-price="property.cardPrice"
+                    :propertyName="property.propertyName"
+                    :cardImage="property.cardImage"
+                    :cardTitle="property.cardTitle"
+                    :cardText="property.cardText"
+                    :bedRooms="property.bedRooms"
+                    :bathRooms="property.bathRooms"
+                    :cardPrice="property.cardPrice"
+                    :description="property.description"
+                    :squareFeet="property.squareFeet"
+                    :propertyLocation="property.propertyLocation"
+                    :propertyImages="property.propertyImages"
+                    @click="sendTheData(property)"
                   />
                 </div>
               </div>
@@ -99,7 +76,7 @@
         </div>
 
         <div class="last-div mx-auto w-11/12">
-          <MainBlock :header-text="card_Head_2" :para-text="card_Para_2">
+          <MainBlock :header-text="card_2.head" :para-text="card_2.para">
             <template #default>
               <Input :for="'firstName'" :label="'First Name'" :input-type="'text'" :name="'firstName'" :placeholder="'Enter First Name'" />
               <Input :for="'lastName'" :label="'Last Name'" :input-type="'text'" :name="'lastName'" :placeholder="'Enter Last Name'" />

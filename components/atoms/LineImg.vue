@@ -1,23 +1,43 @@
 <script setup>
   const props = defineProps({
-    image: String,
+    image: {
+      type: String,
+      requried: false,
+    },
+    svgIcon: {
+      type: String,
+      required: false,
+    },
     head: String,
-    para: String,
     containerWraper: {
       type: String,
       required: false,
       default: '',
+    },
+    gappedValue: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    para: {
+      type: String,
+      required: false,
     },
   })
 </script>
 
 <template>
   <div class="flex flex-col gap-4" :class="props.containerWraper">
-    <div class="flex items-center gap-4">
-      <img :src="$loadImage(image)" class="h-[52px] w-[52px]" alt="image" />
+    <div class="flex items-center gap-4" :class="props.gappedValue">
+      <div v-if="image">
+        <img :src="$loadImage(image)" class="h-[52px] w-[52px]" alt="image" />
+      </div>
+      <div v-if="props.svgIcon">
+        <div v-html="props.svgIcon"></div>
+      </div>
       <h3 class="font-sans text-lg font-semibold text-white">{{ props.head }}</h3>
     </div>
-    <div class="my-3">
+    <div v-if="props.para" class="my-3">
       <p class="font-sans text-sm font-medium text-[#999999]">{{ props.para }}</p>
     </div>
   </div>

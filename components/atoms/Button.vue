@@ -1,15 +1,15 @@
-<template>
-  <button :class="but.buttonStyling">
-    {{ but.buttonTxt }}
-  </button>
-</template>
-
 <script setup>
   const but = defineProps({
     buttonTxt: String,
     buttonStyling: String,
   })
 </script>
+
+<template>
+  <button :class="but.buttonStyling">
+    {{ but.buttonTxt }}
+  </button>
+</template>
 
 <style scoped>
   .btn {

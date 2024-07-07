@@ -13,6 +13,8 @@ module.exports = {
         'desk-hero': "url('~/assets/home/DeskRight.svg')",
         'about-us': "url('~/assets/images/ImageHeroAbout.png')",
         tsr: "url('~/assets/icons/threeStars.svg')",
+        'sea-left': "url('~/assets/images/leftSeaSide.svg')",
+        'sea-right': "url('~/assets/images/rightSeaSide.svg')",
       },
       backgroundPosition: {
         'hero-about-abst': 'center center',

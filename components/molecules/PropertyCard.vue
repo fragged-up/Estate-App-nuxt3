@@ -2,35 +2,32 @@
   const isVisible = ref(false)
   const toggleVisual = () => (isVisible.value = !isVisible.value)
 
-  const cardProperty = defineProps({
+  const props = defineProps({
     propertyName: [String, Number],
+    propertyLocation: String,
     cardImage: String,
     cardTitle: String,
     cardText: String,
     bedRooms: Number,
     bathRooms: Number,
     cardPrice: String,
+    propertyLocation: String,
+    propertyImages: Array,
+    description: { type: String, required: false },
+    squareFeet: { type: String, required: false },
   })
-  const router = useRouter()
-
-  const handleNavigation = () => {
-    router.push(`/Properties/${cardProperty.propertyName}`)
-  }
 </script>
 
 <template>
-  <div @click="handleNavigation" class="property-card-main-container mx-auto w-auto">
+  <div class="property-card-main-container mx-auto w-auto">
     <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-8">
-      <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
-              width 155px and height 49px  -->
-
       <div class="middleBuilding-c container">
-        <img :src="$loadImage(`${cardProperty.cardImage}`)" alt="middleBuilding" class="max-h-64 w-full" />
+        <img :src="$loadImage(`${props.cardImage}`)" alt="middleBuilding" class="max-h-64 w-full" />
       </div>
       <div class="container h-auto">
-        <h3 class="text-lg text-white">{{ cardProperty.cardTitle }}</h3>
+        <h3 class="text-lg text-white">{{ props.cardTitle }}</h3>
         <p class="py-2 text-[#999999]">
-          {{ cardProperty.cardText }}
+          {{ props.cardText }}
           <strong @click="toggleVisual" class="text-sm text-white underline">Read More</strong>
         </p>
         <p v-show="isVisible" class="pt-1 text-white">
@@ -43,13 +40,13 @@
         <button class="rounded-3xl border-2 border-[#262626] bg-[#1A1A1A]">
           <span class="inline-flex gap-2 py-2">
             <img :src="$loadImage('/icons/bedRoom.svg')" class="mx-auto text-center" alt="bedRoom" />
-            <small class="text-white">{{ cardProperty.bedRooms }}-Bedroom</small>
+            <small class="text-white">{{ props.bedRooms }}-Bedroom</small>
           </span>
         </button>
         <button class="rounded-3xl border-2 border-[#262626] bg-[#1A1A1A]">
           <span class="inline-flex gap-2 py-2">
             <img :src="$loadImage('/icons/bathRoom.svg')" class="mx-auto text-center" alt="bathRoom" />
-            <small class="text-white">{{ cardProperty.bathRooms }}-Bathroom</small>
+            <small class="text-white">{{ props.bathRooms }}-Bathroom</small>
           </span>
         </button>
 
@@ -64,7 +61,7 @@
       <div class="my-4 grid grid-cols-[.4fr_1fr] gap-x-2">
         <div class="text-center">
           <p class="text-start text-[#999999]">Price</p>
-          <p class="text-start text-white">${{ cardProperty.cardPrice }}</p>
+          <p class="text-start text-white">${{ props.cardPrice }}</p>
         </div>
 
         <button class="rounded-xl bg-[#703BF7]">
@@ -76,3 +73,20 @@
   <!-- inner Card need in the styling overflow-x auto for mobile  -->
   <!-- from 1440px wrap it in container & to display additional 2 FeaturedProperties components with different props values -->
 </template>
+<!-- const handleNavigation = () => {
+  router.push({
+    path: `/Properties/${props.propertyName}`,
+    query: {
+      propertyId: props.propertyId,
+      cardImage: props.cardImage,
+      cardTitle: props.cardTitle,
+      cardText: props.cardText,
+      bedRooms: props.bedRooms,
+      bathRooms: props.bathRooms,
+      cardPrice: props.cardPrice,
+      description: props.description,
+      squareFeet: props.squareFeet,
+      propertyLocation: props.propertyLocation,
+      propertyImages: JSON.stringify(props.propertyImages),
+    },
+  }) -->

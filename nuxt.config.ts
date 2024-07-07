@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
-  plugins: ['~/plugins/imageLoader.ts'],
+  plugins: ['~/plugins/imageLoader.ts', '~/plugins/mediaQueries.client.ts'],
   imports: {
     dirs: ['~/composables'],
   },

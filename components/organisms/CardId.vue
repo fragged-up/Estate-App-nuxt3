@@ -1,77 +1,102 @@
 <script setup>
   const props = defineProps({
-    image: String,
-    miniOne: String,
-    miniTwo: String,
-    miniThree: String,
-    miniFourth: String,
+    propertyNameId: {
+      type: String,
+      required: true,
+    },
+    cardImageId: {
+      type: String,
+      required: true,
+    },
+    propertyLocationId: {
+      type: String,
+      required: true,
+    },
+    cardPriceId: {
+      type: String,
+      required: true,
+    },
+    propertyImagesId: {
+      type: Array,
+      required: true,
+    },
+    activeIndex: {
+      type: Number,
+      required: true,
+    },
   })
+
+  const emit = defineEmits(['updateIndex'])
+
+  const currentIndex = ref(props.activeIndex)
+
+  const updateActiveIndex = index => {
+    currentIndex.value = index
+    emit('updateIndex', index)
+  }
+
+  const changeIndex = delta => {
+    const newIndex = currentIndex.value + delta
+    currentIndex.value = newIndex
+    emit('updateIndex', newIndex)
+  }
+
+  const whiteLocationSvg = `<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.61646 19.1259C9.64163 19.1405 9.66141 19.1517 9.67542 19.1596L9.69869 19.1726C9.88441 19.2745 10.1148 19.2738 10.3007 19.1729L10.3246 19.1596C10.3386 19.1517 10.3584 19.1405 10.3835 19.1259C10.4339 19.0967 10.5058 19.0542 10.5963 18.9985C10.7771 18.8872 11.0323 18.723 11.3372 18.5076C11.9459 18.0776 12.7581 17.4395 13.5721 16.6061C15.1922 14.9474 16.875 12.4551 16.875 9.25C16.875 5.45304 13.797 2.375 10 2.375C6.20304 2.375 3.125 5.45304 3.125 9.25C3.125 12.4551 4.80777 14.9474 6.42788 16.6061C7.24188 17.4395 8.05409 18.0776 8.66282 18.5076C8.96771 18.723 9.22295 18.8872 9.40375 18.9985C9.49419 19.0542 9.56612 19.0967 9.61646 19.1259ZM10 11.75C11.3807 11.75 12.5 10.6307 12.5 9.25C12.5 7.86929 11.3807 6.75 10 6.75C8.61929 6.75 7.5 7.86929 7.5 9.25C7.5 10.6307 8.61929 11.75 10 11.75Z" fill="white"/>
+</svg>`
 </script>
 
 <template>
-  <div class="card-id-cont grid-flow-rows mx-auto my-12 grid max-w-[414px] auto-rows-max items-center justify-center rounded-xl bg-mg px-12 py-6">
-    <!-- Tommorow insert here The Header Price , and The Header Name of The Property Card
-     <div class="flex items-center justify-center">
-          <h1 class="font-sans text-lg font-bold text-white">{{ prName }}</h1>
-          <p class="font sans text-lg font-medium text-white">Price: {{ price }}</p>
-     </div> 
-    
-    .  . . -->
-    <div class="img-cont mx-auto w-full rounded-xl">
-      <img :src="$loadImage(image)" alt="" class="card-img h-full w-full" />
-    </div>
-
-    <div class="img-mini-cont mx-auto my-8 grid auto-cols-max grid-flow-col items-center justify-center gap-x-6 rounded-xl border-hg bg-fgl p-4">
-      <img :src="$loadImage(props.miniOne)" alt="mini-image" />
-      <img :src="$loadImage(props.miniTwo)" alt="mini-image" class="bg-filter" />
-      <img :src="$loadImage(props.miniThree)" alt="mini-image" class="bg-filter" />
-      <img :src="$loadImage(props.miniFourth)" alt="mini-image" class="bg-filter" />
-    </div>
-
-    <div class="heavy-arrows-cont flex items-center justify-between rounded-full border-gl bg-fgl p-2">
-      <div class="left-arr">
-        <div class="arr-l rounded-full border-2 border-hg bg-fgl p-3 text-gl">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M20.3984 12C20.3984 12.497 19.9955 12.9 19.4984 12.9L6.73287 12.9L11.7222 17.6512C12.0805 17.9957 12.0917 18.5655 11.7472 18.9238C11.4027 19.2821 10.8329 19.2932 10.4746 18.9487L3.87464 12.6487C3.69816 12.4791 3.5984 12.2448 3.5984 12C3.5984 11.7552 3.69816 11.5209 3.87464 11.3512L10.4746 5.05119C10.8329 4.70668 11.4027 4.71784 11.7472 5.07613C12.0917 5.43442 12.0805 6.00416 11.7222 6.34867L6.73287 11.1L19.4984 11.1C19.9955 11.1 20.3984 11.5029 20.3984 12Z"
-              fill="white"
-            />
-          </svg>
-        </div>
+  <div class="content-title mx-auto my-4 w-[90%]">
+    <h1 class="font-sans text-xl font-semibold text-white">{{ props.propertyNameId }}</h1>
+    <div class="mx-auto mb-2 mt-4 grid grid-flow-col">
+      <div class="flex">
+        <LineImg :svgIcon="whiteLocationSvg" :containerWraper="'border border-hg bg-fgl rounded-xl p-2'" :gappedValue="'gap-1'" :head="props.propertyLocationId" />
       </div>
-
-      <div class="middle-lines flex items-center justify-center gap-2 rounded-3xl">
-        <p class="line text-[2rem] font-semibold text-pr">-</p>
-        <p class="line text-[2rem] text-gl">-</p>
-        <p class="line text-[2rem] text-gl">-</p>
-        <p class="line text-[2rem] text-gl">-</p>
-        <p class="line text-[2rem] text-gl">-</p>
-        <p class="line text-[2rem] text-gl">-</p>
-        <p class="line text-[2rem] text-gl">-</p>
-      </div>
-
-      <div class="right-arr">
-        <div class="arr-r rounded-full border-2 border-hg bg-mg p-3 text-white">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M3.60156 12C3.60156 11.503 4.00451 11.1 4.50156 11.1L17.2671 11.1L12.2778 6.34876C11.9195 6.00425 11.9083 5.43451 12.2528 5.07621C12.5973 4.71792 13.1671 4.70675 13.5254 5.05126L20.1254 11.3513C20.3018 11.5209 20.4016 11.7552 20.4016 12C20.4016 12.2448 20.3018 12.4791 20.1254 12.6488L13.5254 18.9488C13.1671 19.2933 12.5973 19.2821 12.2528 18.9238C11.9083 18.5655 11.9195 17.9958 12.2778 17.6513L17.2671 12.9L4.50156 12.9C4.00451 12.9 3.60156 12.4971 3.60156 12Z"
-              fill="white"
-            />
-          </svg>
-        </div>
+      <div class="flex items-center justify-center gap-2">
+        <p class="font-sans text-sm font-medium text-gl">Price</p>
+        <p class="font-sans text-lg font-semibold text-white">${{ props.cardPriceId }}</p>
       </div>
     </div>
+  </div>
+
+  <!-- max-w-[414px] deleted for now  -->
+  <div class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">
+    <!-- mobile BOX  -->
+    <div class="mobile-box laptop:hidden">
+      <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
+        <img :src="$loadImage(props.cardImageId)" alt="miniMainImage" class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]" />
+      </div>
+      <div class="gallery-cont min-w-full">
+        <imageGallery :images="props.propertyImagesId" @updateActiveIndex="currentIndex" :activeIndex="currentIndex" />
+      </div>
+      <div class="navigator-cont"><imageNavigator @updateIndex="changeIndex" /></div>
+    </div>
+    <!-- END MOBILEBOX  -->
+
+    <!-- laptop BOX  -->
+    <div class="laptop-box mx-auto hidden bg-hg laptop:block">
+      <div class="mx-auto">
+        <imageGallery :images="props.propertyImagesId" @updateActiveIndex="updateActiveIndex" :activeIndex="currentIndex" />
+      </div>
+      <div class="images-cnt mx-auto flex h-auto w-full items-center gap-4 p-4">
+        <img :src="$loadImage('images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" />
+        <img :src="$loadImage('images/rightSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" />
+      </div>
+      <div class="navigator-cont py-8"><imageNavigator @updateIndex="changeIndex" /></div>
+    </div>
+    <!-- END LAPTOPBOX  -->
   </div>
 </template>
 
 <style scoped>
   .bg-filter {
-    background-color: rgba(10, 10, 10, 0.5);
-    backdrop-filter: blur(55px);
+    background-color: black;
+    background-blend-mode: color;
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+    /* backdrop-filter: blur(55px); */
     /* Adjust the alpha value for opacity */
   }
 </style>

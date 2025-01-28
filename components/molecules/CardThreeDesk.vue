@@ -3,8 +3,14 @@
 <template>
   <div class="main-wrapper">
     <div class="my-12 flex items-start justify-start gap-6">
-      <Button :buttonTxt="'Learn More'" :buttonStyling="'py-4 px-6 bg-transparent rounded-2xl text-center text-white font-medium text-sm border-2 border-hg'" />
-      <Button :buttonTxt="'Browse Properties'" :buttonStyling="'py-4 px-6 bg-pr rounded-2xl text-center text-white font-sans font-medium text-sm'" />
+      <Button
+        :btn-text="'Learn More'"
+        :btn-style="'py-4 px-6 bg-transparent rounded-2xl text-center text-white font-medium text-sm border-2 border-hg'"
+      />
+      <Button
+        :btn-text="'Browse Properties'"
+        :btn-style="'py-4 px-6 bg-pr rounded-2xl text-center text-white font-sans font-medium text-sm'"
+      />
     </div>
 
     <div class="card-hero-cont items-strech flex justify-start gap-6">
@@ -14,11 +20,15 @@
       </div>
       <div class="rounded-xl border-2 border-hg bg-mg px-6 py-3">
         <h2 class="font-sans text-[2.5rem] font-bold text-white">10K+</h2>
-        <p class="font-sans text-base font-medium text-gl">Properties For Clients</p>
+        <p class="font-sans text-base font-medium text-gl">
+          Properties For Clients
+        </p>
       </div>
       <div class="rounded-xl border-2 border-hg bg-mg px-6 py-3">
         <h2 class="font-sans text-[2.5rem] font-bold text-white">16+</h2>
-        <p class="font-sans text-base font-medium text-gl">Years of Experience</p>
+        <p class="font-sans text-base font-medium text-gl">
+          Years of Experience
+        </p>
       </div>
     </div>
   </div>

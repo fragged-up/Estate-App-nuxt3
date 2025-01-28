@@ -1,13 +1,13 @@
-<script setup>
-  const but = defineProps({
-    buttonTxt: String,
-    buttonStyling: String,
-  })
+<script setup lang="ts">
+  defineProps<{
+    btnText: string
+    btnStyle?: string
+  }>()
 </script>
 
 <template>
-  <button :class="but.buttonStyling">
-    {{ but.buttonTxt }}
+  <button :class="btnStyle">
+    {{ btnText }}
   </button>
 </template>
 

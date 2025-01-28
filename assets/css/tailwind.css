@@ -26,6 +26,34 @@
   @apply rounded-xl border-2 border-[#262626];
 }
 
+.arrows-background {
+  background-color: black;
+  border: 2px solid #262626;
+  border-radius: 50%;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 50px;
+  max-height: 50px;
+}
+.arrows-background:hover {
+  background-color: rgba(163, 161, 161, 0.2);
+}
+.activebg {
+  background-color: #1a1a1a;
+}
+.fill-gray-400 {
+  fill: gray;
+}
+.default-background-color {
+  background-color: #262626;
+}
+
+.fill-white {
+  fill: white;
+}
 /* Define the custom styles for the laptop breakpoint */
 /* @screen laptop {
   .controller-box {

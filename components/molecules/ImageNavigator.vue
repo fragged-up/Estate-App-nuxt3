@@ -1,5 +1,8 @@
-<script setup>
-  const emit = defineEmits(['updateIndex'])
+<script setup lang="ts">
+  // const emit = defineEmits(['updateIndex'])
+  const emit = defineEmits<{
+    updateIndex: (index: number) => void
+  }>()
 
   const prev = () => {
     emit('updateIndex', -1)
@@ -11,10 +14,18 @@
 
 <template>
   <div class="mx-auto max-w-[19rem]">
-    <div class="heavy-arrows-cont flex items-center justify-between rounded-full border-gl bg-fgl p-2">
-      <div @click="prev" class="left-box">
+    <div
+      class="heavy-arrows-cont flex items-center justify-between rounded-full border-gl bg-fgl p-2"
+    >
+      <div class="left-box" @click="prev">
         <div class="arr-l rounded-full border-2 border-hg bg-fgl p-3 text-gl">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -25,7 +36,9 @@
         </div>
       </div>
 
-      <div class="middle-lines flex items-center justify-center gap-2 rounded-3xl">
+      <div
+        class="middle-lines flex items-center justify-center gap-2 rounded-3xl"
+      >
         <p class="line text-[2rem] font-semibold text-pr">-</p>
         <p class="line text-[2rem] text-gl">-</p>
         <p class="line text-[2rem] text-gl">-</p>
@@ -35,9 +48,15 @@
         <p class="line text-[2rem] text-gl">-</p>
       </div>
 
-      <div @click="next" class="right-box">
+      <div class="right-box" @click="next">
         <div class="arr-r rounded-full border-2 border-hg bg-mg p-3 text-white">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"

@@ -1,5 +1,5 @@
 <script setup>
-  import './assets/css/tailwind.css'
+  import '~/assets/css/tailwind.css'
   useSeoMeta({
     title: 'Real-Estate Nuxt App',
     description: 'Oded Real Estate Company',
@@ -13,8 +13,6 @@
 </template>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-
   :root {
     --main-fs: 'Urbanist', sans-serif;
     --wght-thin: 100;
@@ -35,7 +33,7 @@
 
   html,
   body {
-    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   #__nuxt {
@@ -44,9 +42,9 @@
   }
 
   /*
-crazy overflow detecter  
-* {
-  outline: 1px solid red; /* Highlight all elements with a red outline 
-} */
+  crazy overflow detector
+  * {
+    outline: 1px solid red; /* Highlight all elements with a red outline 
+  } 
+  */
 </style>
-  

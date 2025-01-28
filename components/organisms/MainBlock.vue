@@ -1,36 +1,8 @@
-<script setup>
-  const blockContent = defineProps({
-    headerText: String,
-    paraText: String,
-    contStyle: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    subContStyle: {
-      type: String,
-      required: false,
-    },
-    headerStyle: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    paraStyle: {
-      type: String,
-      required: false,
-    },
-    deskHeader: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    override: {
-      type: Boolean,
-      requried: false,
-      default: null,
-    },
-  })
+<script setup lang="ts">
+import type { MainBlockProps } from '~/constants/types';
+
+ const {deskHeader=false,override=false,}=defineProps<MainBlockProps>()
+ 
 </script>
 
 <template>
@@ -38,18 +10,25 @@
     <!-- from 1440px make hook to display viewButton wrap it in container of inline-flex width 
                                     width 155px and height 49px  -->
 
-    <div :class="`${blockContent.contStyle} top-cont mx-auto w-11/12`">
+    <div :class="`${contStyle} top-cont mx-auto w-11/12`">
       <div class="stars-cont">
-        <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars" />
+        <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars" >
       </div>
 
-      <div :class="`${blockContent.subContStyle} mx-auto my-4 w-11/12 py-4`">
-        <h1 :class="`${blockContent.headerStyle} font-sans text-3xl font-semibold text-white`">
+      <div :class="`${subContStyle} mx-auto my-4 w-11/12 py-4`">
+        <h1
+          :class="`${headerStyle} font-sans text-3xl font-semibold text-white`"
+        >
           {{ headerText }}
         </h1>
 
-        <div v-if="!blockContent.deskHeader" class="deskBlockCnt grid-auto-cols justify-between">
-          <p :class="`${blockContent.paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`">
+        <div
+          v-if="!deskHeader"
+          class="deskBlockCnt grid-auto-cols justify-between"
+        >
+          <p
+            :class="`${paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`"
+          >
             {{ paraText }}
           </p>
           <!-- <Button
@@ -58,16 +37,19 @@
           /> -->
         </div>
 
-        <p v-if="blockContent.deskHeader && blockContent.override" :class="`${blockContent.paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`">
+        <p
+          v-if="deskHeader && override"
+          :class="`${paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`"
+        >
           {{ paraText }}
         </p>
 
-        <slot v-if="$slots.top" name="top"></slot>
+        <slot v-if="$slots.top" name="top" />
       </div>
     </div>
 
     <div class="p4 w-full">
-      <slot></slot>
+      <slot />
     </div>
 
     <!-- inner Card need in the styling overflow-x auto for mobile  -->

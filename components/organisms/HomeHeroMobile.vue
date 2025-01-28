@@ -1,47 +1,24 @@
-<script setup></script>
+<script setup lang="ts">
+  const heroSquaresHome = [
+    {
+      centerIcon: '/icons/homeIcon.svg',
+      title: 'Find Your Dream\n Home',
+    },
+    {
+      centerIcon: '/icons/cameraIcon.svg',
+      title: 'Unlock Property\n Value',
+    },
+    {
+      centerIcon: '/icons/buildingIcon.svg',
+      title: 'Effortless Property\n Management',
+    },
+    {
+      centerIcon: '/icons/sunIcon.svg',
+      title: 'Smart Investments,\n Informed Decisions',
+    },
+  ]
+</script>
 
-<!-- <template>
-  <main class="bg-[#141414] w-full">
-    <div class="container bg-[#141414] grid justify-center mx-auto">
-      <div class="bg-image rounded-3xl my-4">
-        <div class="w-full circle-box leading-7">
-          <div id="outer-circle">
-            <div class="circle-text">D</div>
-            <div class="circle-text">i</div>
-            <div class="circle-text">s</div>
-            <div class="circle-text">c</div>
-            <div class="circle-text">o</div>
-            <div class="circle-text">v</div>
-            <div class="circle-text">e</div>
-            <div class="circle-text">r</div>
-            <div class="circle-text"></div>
-            <div class="circle-text">Y</div>
-            <div class="circle-text">o</div>
-            <div class="circle-text">u</div>
-            <div class="circle-text">r</div>
-            <div class="circle-text"></div>
-            <div class="circle-text">D</div>
-            <div class="circle-text">r</div>
-            <div class="circle-text">e</div>
-            <div class="circle-text">a</div>
-            <div class="circle-text">m</div>
-            <div class="circle-text"></div>
-            <div class="circle-text">P</div>
-            <div class="circle-text">r</div>
-            <div class="circle-text">o</div>
-            <div class="circle-text">p</div>
-            <div class="circle-text">e</div>
-            <div class="circle-text">r</div>
-            <div class="circle-text">t</div>
-            <div class="circle-text">y</div>
-            <div class="circle-text">✨</div>
-            <div id="inner-circle"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</template> -->
 <template>
   <main class="w-full bg-[#141414]">
     <div class="container mx-auto grid justify-center bg-[#141414]">
@@ -56,18 +33,18 @@
             <div class="circle-text">v</div>
             <div class="circle-text">e</div>
             <div class="circle-text">r</div>
-            <div class="circle-text"></div>
+            <div class="circle-text" />
             <div class="circle-text">Y</div>
             <div class="circle-text">o</div>
             <div class="circle-text">u</div>
             <div class="circle-text">r</div>
-            <div class="circle-text"></div>
+            <div class="circle-text" />
             <div class="circle-text">D</div>
             <div class="circle-text">r</div>
             <div class="circle-text">e</div>
             <div class="circle-text">a</div>
             <div class="circle-text">m</div>
-            <div class="circle-text"></div>
+            <div class="circle-text" />
             <div class="circle-text">P</div>
             <div class="circle-text">r</div>
             <div class="circle-text">o</div>
@@ -77,12 +54,47 @@
             <div class="circle-text">t</div>
             <div class="circle-text">y</div>
             <div class="circle-text">✨</div>
-            <div id="inner-circle"></div>
+            <div id="inner-circle" />
           </div>
         </div>
       </div>
     </div>
   </main>
+
+  <div class="mx-auto mt-12 w-11/12 space-y-8">
+    <div class="first-template my-18 mx-auto">
+      <h1 class="mb-[20px] font-sans text-3xl font-semibold text-white">
+        Discover Your Dream
+        <br >
+        Property with Estatein
+      </h1>
+      <p class="mb-[20px] pt-4 text-base font-medium text-[#999999]">
+        Your journey to finding the perfect property begins here. Explore our
+        listings to find the home that matches your dreams.
+      </p>
+      <button
+        class="mx-auto my-2 w-full rounded-2xl border-2 border-[#262626] p-5 text-center font-sans text-base font-medium text-white"
+      >
+        Learn More
+      </button>
+      <button
+        class="mx-auto my-2 w-full rounded-2xl bg-[#703BF7] p-5 text-center font-sans text-base font-medium text-white"
+      >
+        Browse Properties
+      </button>
+    </div>
+    <CardThree />
+    <div
+      class="second-template grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px]"
+    >
+      <BoxAtom
+        v-for="(square, index) in heroSquaresHome"
+        :key="index"
+        :center-icon="square.centerIcon"
+        :title="square.title"
+      />
+    </div>
+  </div>
 </template>
 
 <style scoped>

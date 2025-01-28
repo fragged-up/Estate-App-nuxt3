@@ -1,0 +1,27 @@
+
+the new defineEmits vue 3.3 and above 
+const emit = defineEmits<{
+  updateIndex: (index: number) => void;
+}>();
+
+# THATS THE NEW WAY 
+
+const emit = defineEmits<{ 
+ change:[id:number]
+ update:[id:number,index:number]
+}>
+
+
+
+
+default value for props but only one or two from the props 
+
+const {activeIndex = 0} = defineProps<{
+      images: string[]
+      activeIndex: number
+    }>()
+
+
+    disable es-lint for next line 
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars

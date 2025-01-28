@@ -1,41 +1,46 @@
-<script setup>
-  const props = defineProps({
-    propertyNameId: {
-      type: String,
-      required: true,
-    },
-    cardImageId: {
-      type: String,
-      required: true,
-    },
-    propertyLocationId: {
-      type: String,
-      required: true,
-    },
-    cardPriceId: {
-      type: String,
-      required: true,
-    },
-    propertyImagesId: {
-      type: Array,
-      required: true,
-    },
-    activeIndex: {
-      type: Number,
-      required: true,
-    },
-  })
+<script setup lang="ts">
+  const props = defineProps<{
+    propertyNameId: string
+    cardImageId: string
+    propertyLocationId: string
+    cardPriceId: string | number
+    propertyImagesId: string[]
+    activeIndex: number
+  }>()
+  // const props = defineProps({
+  //   propertyNameId: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   cardImageId: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   propertyLocationId: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   cardPriceId: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   propertyImagesId: {
+  //     type: Array,
+  //     required: true,
+  //   },
+  //   activeIndex: {
+  //     type: Number,
+  //     required: true,
+  //   },
+  // })
 
-  const emit = defineEmits(['updateIndex'])
+  // const emit = defineEmits(['updateIndex'])
+  const emit = defineEmits<{
+    updateIndex: (index: number) => void
+  }>()
+  const currentIndex = ref<number | null>(props.activeIndex)
 
-  const currentIndex = ref(props.activeIndex)
-
-  const updateActiveIndex = index => {
-    currentIndex.value = index
-    emit('updateIndex', index)
-  }
-
-  const changeIndex = delta => {
+  const changeIndex = (delta: number | string | null) => {
     const newIndex = currentIndex.value + delta
     currentIndex.value = newIndex
     emit('updateIndex', newIndex)
@@ -48,42 +53,79 @@
 
 <template>
   <div class="content-title mx-auto my-4 w-[90%]">
-    <h1 class="font-sans text-xl font-semibold text-white">{{ props.propertyNameId }}</h1>
+    <h1 class="font-sans text-xl font-semibold text-white">
+      {{ propertyNameId }}
+    </h1>
     <div class="mx-auto mb-2 mt-4 grid grid-flow-col">
       <div class="flex">
-        <LineImg :svgIcon="whiteLocationSvg" :containerWraper="'border border-hg bg-fgl rounded-xl p-2'" :gappedValue="'gap-1'" :head="props.propertyLocationId" />
+        <LineImg
+          :svg-icon="whiteLocationSvg"
+          :container-wrapper="'border border-hg bg-fgl rounded-xl p-2'"
+          :gapped-value="'gap-1'"
+          :head="propertyLocationId"
+        />
       </div>
       <div class="flex items-center justify-center gap-2">
         <p class="font-sans text-sm font-medium text-gl">Price</p>
-        <p class="font-sans text-lg font-semibold text-white">${{ props.cardPriceId }}</p>
+        <p class="font-sans text-lg font-semibold text-white">
+          ${{ cardPriceId }}
+        </p>
       </div>
     </div>
   </div>
 
   <!-- max-w-[414px] deleted for now  -->
-  <div class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">
+  <div
+    class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]"
+  >
     <!-- mobile BOX  -->
     <div class="mobile-box laptop:hidden">
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
-        <img :src="$loadImage(props.cardImageId)" alt="miniMainImage" class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]" />
+        <img
+          :src="$loadImage(cardImageId)"
+          alt="miniMainImage"
+          class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]"
+        >
       </div>
       <div class="gallery-cont min-w-full">
-        <imageGallery :images="props.propertyImagesId" @updateActiveIndex="currentIndex" :activeIndex="currentIndex" />
+        <imageGallery
+          :images="propertyImagesId"
+          :active-index="currentIndex"
+          @update-active-index="currentIndex"
+        />
       </div>
-      <div class="navigator-cont"><imageNavigator @updateIndex="changeIndex" /></div>
+      <div class="navigator-cont">
+        <imageNavigator @update-index="changeIndex" />
+      </div>
     </div>
     <!-- END MOBILEBOX  -->
 
     <!-- laptop BOX  -->
     <div class="laptop-box mx-auto hidden bg-hg laptop:block">
       <div class="mx-auto">
-        <imageGallery :images="props.propertyImagesId" @updateActiveIndex="updateActiveIndex" :activeIndex="currentIndex" />
+        <imageGallery
+          :images="propertyImagesId"
+          :active-index="current - index"
+          @update-active-index="update - active - index"
+        />
       </div>
       <div class="images-cnt mx-auto flex h-auto w-full items-center gap-4 p-4">
-        <img :src="$loadImage('images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" />
-        <img :src="$loadImage('images/rightSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" />
+        <img
+          :src="$loadImage('images/leftSeaSide.svg')"
+          style="width: 50%"
+          class="responsive-img"
+          alt="mini-image"
+        >
+        <img
+          :src="$loadImage('images/rightSeaSide.svg')"
+          style="width: 50%"
+          class="responsive-img"
+          alt="mini-image"
+        >
       </div>
-      <div class="navigator-cont py-8"><imageNavigator @updateIndex="changeIndex" /></div>
+      <div class="navigator-cont py-8">
+        <imageNavigator @update-index="changeIndex" />
+      </div>
     </div>
     <!-- END LAPTOPBOX  -->
   </div>

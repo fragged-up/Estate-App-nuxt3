@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./components/**/*.{js,vue,ts}', './layouts/**/*.vue', './pages/**/*.vue', './plugins/**/*.{js,ts}', './nuxt.config.{js,ts}', './app.vue', './error.vue'],
+export default {
+  content: [
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+    './app.vue',
+    './error.vue',
+  ],
 
   theme: {
     extend: {
@@ -8,7 +16,8 @@ module.exports = {
         'foot-image': "url('/public/FooterImage.svg')",
         'hero-about-abst': "url('/public/AbstractDesign.svg')",
         'hero-about-image': "url('/public/HeroAbout.svg')",
-        'grey-hero': 'linear-gradient(90deg, rgba(38,38,38,1) 0%, rgba(38,38,38,0.5) 53%, rgba(0,0,0,1) 100%)',
+        'grey-hero':
+          'linear-gradient(90deg, rgba(38,38,38,1) 0%, rgba(38,38,38,0.5) 53%, rgba(0,0,0,1) 100%)',
         'unlock-image': "url('/public/unlock/UnlockImage.svg')",
         'desk-hero': "url('~/assets/home/DeskRight.svg')",
         'about-us': "url('~/assets/images/ImageHeroAbout.png')",

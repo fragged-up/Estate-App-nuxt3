@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@vueuse/core'
-
-export default defineNuxtPlugin((nuxtApp: any) => {
+import type { NuxtApp } from 'nuxt/app';
+export default defineNuxtPlugin((nuxtApp:NuxtApp) => {
   const isMobile = useMediaQuery('(max-width: 1440px)')
   const isLaptop = useMediaQuery('(min-width: 1440px)')
 

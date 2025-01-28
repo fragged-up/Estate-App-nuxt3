@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   // import Button from '../atoms/Button.vue';
   // import Pod from '../atoms/Pod.vue';
 
@@ -14,45 +14,63 @@
 </script>
 
 <template>
-  <div class="card-office h-[410px] max-w-[630px] rounded-xl border-2 border-[#262626] p-4">
+  <div
+    class="card-office h-[410px] max-w-[630px] rounded-xl border-2 border-[#262626] p-4"
+  >
     <slot v-if="$slots.first" name="first">
       <div class="my-6">
         <p class="font sans text-sm font-medium text-white">{{ firstPara }}</p>
-        <p class="font sans my-4 text-xl font-semibold text-white">{{ secondPara }}</p>
+        <p class="font sans my-4 text-xl font-semibold text-white">
+          {{ secondPara }}
+        </p>
         <p class="font sans text-sm font-medium text-gl">{{ thirdPara }}</p>
       </div>
 
       <div class="my-4 grid auto-rows-auto gap-y-4">
         <div class="">
-          <Pod :podTxt="'info@estatein.com'" :pod-img="'/icons/Mail.svg'" />
+          <Pod :pod-txt="'info@estatein.com'" :pod-img="'/icons/Mail.svg'" />
         </div>
         <div class="">
-          <Pod :podTxt="'+1 (123) 456-7890'" :pod-img="'/icons/metroPhone.svg'" />
-          <Pod :podTxt="'Metropolis'" :pod-img="'/icons/Metro.svg'" />
+          <Pod
+            :pod-txt="'+1 (123) 456-7890'"
+            :pod-img="'/icons/metroPhone.svg'"
+          />
+          <Pod :pod-txt="'Metropolis'" :pod-img="'/icons/Metro.svg'" />
         </div>
       </div>
 
-      <Button :button-styling="'bg-pr w-full mx-auto py-4 rounded-xl text-white'" :button-txt="'Get Direction'" />
+      <Button
+        :button-styling="'bg-pr w-full mx-auto py-4 rounded-xl text-white'"
+        :button-txt="'Get Direction'"
+      />
     </slot>
 
     <slot v-if="$slots.second" name="second">
       <div class="my-6">
         <p class="font sans text-sm font-medium text-white">{{ first_Para }}</p>
-        <p class="font sans my-4 text-xl font-semibold text-white">{{ second_Para }}</p>
+        <p class="font sans my-4 text-xl font-semibold text-white">
+          {{ second_Para }}
+        </p>
         <p class="font sans text-sm font-medium text-gl">{{ third_Para }}</p>
       </div>
 
       <div class="my-4 grid auto-rows-auto gap-y-4">
         <div class="">
-          <Pod :podTxt="'info@estatein.com'" :pod-img="'/icons/Mail.svg'" />
+          <Pod :pod-txt="'info@estatein.com'" :pod-img="'/icons/Mail.svg'" />
         </div>
         <div class="">
-          <Pod :podTxt="'+1 (123) 456-7890'" :pod-img="'/icons/metroPhone.svg'" />
-          <Pod :podTxt="'Metropolis'" :pod-img="'/icons/Metro.svg'" />
+          <Pod
+            :pod-txt="'+1 (123) 456-7890'"
+            :pod-img="'/icons/metroPhone.svg'"
+          />
+          <Pod :pod-txt="'Metropolis'" :pod-img="'/icons/Metro.svg'" />
         </div>
       </div>
 
-      <Button :button-styling="'bg-pr w-full mx-auto py-4 rounded-xl text-white'" :button-txt="'Get Direction'" />
+      <Button
+        :button-styling="'bg-pr w-full mx-auto py-4 rounded-xl text-white'"
+        :button-txt="'Get Direction'"
+      />
     </slot>
   </div>
 </template>

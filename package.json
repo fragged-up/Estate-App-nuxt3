@@ -8,26 +8,38 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write",
+    "lint": "eslint --fix",
+    "clean:all": "rimraf node_modules .nuxt .output .pnpm-lock.yaml",
+    "clean:build": "rimraf .nuxt .output"
   },
   "dependencies": {
-    "@vueuse/core": "^10.11.0",
-    "nuxt": "^3.12.2",
-    "pinia": "^2.1.7",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "@nuxt/eslint": "0.7.5",
+    "@vueuse/core": "^12.5.0",
+    "dompurify": "^3.2.3",
+    "glob": "^11.0.1",
+    "nuxt": "^3.15.3",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "@pinia/nuxt": "^0.5.1",
-    "@types/node": "^20.14.5",
-    "postcss": "^8.4.21",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "@nuxt/eslint-config": "^0.7.5",
+    "@nuxtjs/tailwindcss": "^6.13.1",
+    "@pinia/nuxt": "^0.9.0",
+    "@types/node": "^22.10.10",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "postcss": "^8.5.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "prettier-plugin-vue": "^1.1.6",
-    "typescript": "^5.4.5"
-  },
-  "resolutions": {
-    "glob": "^9.0.0"
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
   }
 }

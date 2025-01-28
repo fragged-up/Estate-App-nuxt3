@@ -1,0 +1,248 @@
+
+
+
+//PropertyForm.vue
+
+
+  <div
+      class="cont main-b mx-auto my-10 w-[90%] laptop:grid laptop:w-4/5 laptop:grid-cols-1 laptop:p-8"
+    >
+      <div class="first-row laptop:flex laptop:gap-6">
+        <Input
+          :label="'First Name'"
+          :input-type="'text'"
+          :name="'firstName'"
+          :placeholder="'Enter First Name'"
+        />
+        <Input
+          :label="'Last Name'"
+          :input-type="'text'"
+          :name="'lastName'"
+          :placeholder="'Enter Last Name'"
+        />
+        <Input
+          :label="'Email'"
+          :input-type="'email'"
+          :name="'Email'"
+          :placeholder="'Enter your Email'"
+        />
+        <Input
+          :label="'Phone'"
+          :input-type="'number'"
+          :name="'phone'"
+          :placeholder="'Enter Phone Number'"
+        />
+      </div>
+
+
+
+
+
+
+
+
+
+
+      //PropertyForm.vue 
+
+
+      <script setup lang="ts">
+  // import { ref } from 'vue'
+  // import Input from '~/components/atoms/Input.vue';
+  // import SelectInput from '~/components/atoms/SelectInput.vue';
+  // const { property } = defineProps<{
+  //   property: boolean
+  // }>()
+type FirstRow = {
+    label: string
+    type: string
+    name: string
+    placeholder: string
+  }[]
+  const firstRow: FirstRow = [
+    {
+      label: 'First Name',
+      type: 'text',
+      name: 'firstName',
+      placeholder: 'Enter First Name',
+    },
+    {
+      label: 'First Name',
+      type: 'text',
+      name: 'lastName',
+      placeholder: 'Enter Last Name',
+    },
+    {
+      label: 'Email',
+      type: 'email',
+      name: 'Email',
+      placeholder: 'Enter your Email',
+    },
+    {
+      label: 'Phone',
+      type: 'number',
+      name: 'phone',
+      placeholder: 'Enter Phone Number',
+    },
+  ]
+</script>
+
+<template>
+  <div class="contact-section">
+    <div
+      class="cont main-b mx-auto my-10 w-[90%] laptop:grid laptop:w-4/5 laptop:grid-cols-1 laptop:p-8"
+    >
+      <div class="first-row laptop:flex laptop:gap-6">
+        <!-- <Input
+          :label="'First Name'"
+          :input-type="'text'"
+          :name="'firstName'"
+          :placeholder="'Enter First Name'"
+        />
+        <Input
+          :label="'Last Name'"
+          :input-type="'text'"
+          :name="'lastName'"
+          :placeholder="'Enter Last Name'"
+        />
+        <Input
+          :label="'Email'"
+          :input-type="'email'"
+          :name="'Email'"
+          :placeholder="'Enter your Email'"
+        />
+        <Input
+          :label="'Phone'"
+          :input-type="'number'"
+          :name="'phone'"
+          :placeholder="'Enter Phone Number'"
+        /> -->
+        <Input
+          v-for="(row, index) in firstRow"
+          :key="index"
+          :label="row.label"
+          :input-type="row.type"
+          :name="row.name"
+          :placeholder="row.placeholder"
+        />
+      </div>
+
+      <div class="second-row laptop:flex laptop:gap-6">
+        <SelectInput
+          :select-head="'Prefferred Location'"
+          :place-holder="'Select Location'"
+          :label="'Select Location'"
+          :options="['Option1', 'Option 2', 'Option 3']"
+        />
+        <SelectInput
+          :select-head="'Property Type'"
+          :place-holder="'Select Property Type'"
+          :label="'Select Location'"
+          :options="['Option1', 'Option 2', 'Option 3']"
+        />
+        <SelectInput
+          :select-head="'No. of Bathrooms'"
+          :place-holder="'Select no. of Bathrooms'"
+          :label="'Select Location'"
+          :options="['Option1', 'Option 2', 'Option 3']"
+        />
+        <SelectInput
+          :select-head="'No. of Bedrooms'"
+          :place-holder="'Select no. of Bedrooms'"
+          :label="'Select Location'"
+          :options="['Option1', 'Option 2', 'Option 3']"
+        />
+      </div>
+
+      <div class="budget-row w-full laptop:flex laptop:gap-6">
+        <div class="mx-auto w-11/12 laptop:flex laptop:w-full">
+          <div class="sliced">
+            <SelectInput
+              :extra-style="'w-auto m-auto'"
+              :select-head="'Budget'"
+              :place-holder="'Select Budget'"
+              :label="'Select Location'"
+              :options="['Option1', 'Option 2', 'Option 3']"
+            />
+          </div>
+          <div class="sliced">
+            <!-- <PrefferedInputs /> -->
+            <!-- <h3 class="mb-4 text-lg font-semibold text-white">Preferred Contact Method</h3>
+            <InputCheckbox :leftIcon="'/icons/PhoneIcon.svg'" label="Enter Your Number" />
+            <InputCheckbox :leftIcon="'/icons/contactEmailIcon.svg'" label="Enter Your Email" /> -->
+            <PrefInputs />
+          </div>
+        </div>
+      </div>
+
+      <div class="message-cont mx-auto w-11/12 laptop:w-full">
+        <div class="third-row message-section mt-6">
+          <h3 class="mb-4 text-lg font-semibold text-white">Message</h3>
+          <textarea
+            class="w-full rounded-2xl border border-[#262626] bg-[#141414] p-4 text-white"
+            placeholder="Enter your Message here.."
+          />
+        </div>
+
+        <div
+          class="fourth-row agree-section mt-6 laptop:my-6 laptop:flex laptop:justify-between"
+        >
+          <label class="flex items-center text-white">
+            <input
+              type="checkbox"
+              class="form-checkbox h-4 w-4 text-[#703BF7] accent-[#703BF7]"
+            >
+            <span class="ml-2">
+              I agree with
+              <a href="#" class="text-[#703BF7] underline">Terms of Use</a>
+              and
+              <a href="#" class="text-[#703BF7] underline">Privacy Policy</a>
+            </span>
+          </label>
+          <button
+            class="my-6 w-full rounded-2xl bg-[#703BF7] p-4 text-white laptop:m-0 laptop:max-w-[195px]"
+          >
+            Send Your Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped></style>
+
+<!-- the 2nd sliced div container
+<div class="sliced">
+ <SelectInput :select-head="'Property Type'" :place-holder="'Select Property Type'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" />  
+  <SelectInput :select-head="'No. of Bathrooms'" :place-holder="'Select no. of Bathrooms'" :label="'Select Location'" :options="['Option1', 'Option 2', 'Option 3']" /> -->
+<!-- <PrefferedInputs /> 
+   </div> -->
+
+
+
+
+//BoxAtom.vue
+
+<!-- <script lang="ts" setup>
+defineProps<{}>()
+</script>
+
+<template>
+     <div class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
+      <div class="flex flex-col items-center justify-center">
+        <img :src="$loadImage('/icons/arrowRtop.svg')" class="mr-4 self-end" alt="rtop" />
+        <img :src="$loadImage('/icons/homeIcon.svg')" class="self-center" alt="homeIcon" />
+      </div>
+      <p class="font-sans text-base font-semibold text-white">
+        Find Your Dream
+        <br />
+        Home
+      </p>
+    </div>
+</template>
+
+<style lang="css" scoped>
+  
+</style>
+  -->

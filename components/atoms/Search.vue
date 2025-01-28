@@ -1,18 +1,30 @@
-<script setup>
-  const props = defineProps({
-    iconSrc: String,
-    placeholder: String,
-  })
+<script setup lang="ts">
+  defineProps<{
+    iconSrc: string
+    placeholder: string
+  }>()
+  // const props = defineProps({
+  //   iconSrc: String,
+  //   placeholder: String,
+  // })
 </script>
 
 <template>
   <div class="shadow-frame relative w-full rounded-3xl">
-    <input type="search" :placeholder="placeholder" class="w-full rounded-2xl border border-[#262626] bg-[#141414] p-6 text-white focus:outline-none" />
-    <div class="search-box pointer-events-none absolute right-3 top-1/2 mb-4 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-3xl bg-pr shadow-md">
-      <img :src="$loadImage(iconSrc)" alt="Icon" class="text-center" />
+    <input
+      type="search"
+      :placeholder="placeholder"
+      class="w-full rounded-2xl border border-[#262626] bg-[#141414] p-6 text-white focus:outline-none"
+    >
+    <div
+      class="search-box pointer-events-none absolute right-3 top-1/2 mb-4 flex h-12 w-12 -translate-y-1/2 transform items-center justify-center rounded-3xl bg-pr shadow-md"
+    >
+      <img :src="$loadImage(iconSrc)" alt="Icon" class="text-center" >
     </div>
-    <div class="search-box pointer-events-none absolute right-3 top-1/2 mb-4 hidden h-14 w-44 -translate-y-1/2 transform items-center justify-center gap-4 rounded-md bg-pr shadow-md laptop:flex">
-      <img :src="$loadImage(iconSrc)" alt="Icon" class="text-center" />
+    <div
+      class="search-box pointer-events-none absolute right-3 top-1/2 mb-4 hidden h-14 w-44 -translate-y-1/2 transform items-center justify-center gap-4 rounded-md bg-pr shadow-md laptop:flex"
+    >
+      <img :src="$loadImage(iconSrc)" alt="Icon" class="text-center" >
       <p class="font-sans text-sm font-medium text-white">Find Property</p>
     </div>
   </div>

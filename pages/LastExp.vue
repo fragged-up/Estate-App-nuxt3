@@ -3,10 +3,16 @@
   // const { $isMobile, $isLaptop } = useNuxtApp()
   // console.log($isMobile)
 
-  const prName = 'Seaside Serenity Villa'
-  const location = 'Malibu,California'
-  const price = '$1,250,000'
-  const idProper = [
+  import { useSeoMeta } from '#imports'
+
+  useSeoMeta({
+    title: 'Last Exp',
+  })
+
+  const _prName = 'Seaside Serenity Villa'
+  const _location = 'Malibu,California'
+  const _price = '$1,250,000'
+  const _idProper = [
     {
       image: '/Mini/BoldImage.svg',
       miniOne: '/Mini/propImageMini.svg',
@@ -15,6 +21,7 @@
       miniFourth: '/Mini/MiniFourth.svg',
     },
   ]
+
   // console.log(performance.now())
   //for expand althought the card id is unique ... -_-
   //const idProper = [
@@ -78,8 +85,18 @@
       <imageGallery />
     </div>
     <div class="images-cnt mx-auto flex h-auto w-full items-center gap-4 p-4">
-      <img :src="$loadImage('images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" />
-      <img :src="$loadImage('images/rightSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" />
+      <img
+        :src="$loadImage('images/leftSeaSide.svg')"
+        style="width: 50%"
+        class="responsive-img"
+        alt="mini-image"
+      >
+      <img
+        :src="$loadImage('images/rightSeaSide.svg')"
+        style="width: 50%"
+        class="responsive-img"
+        alt="mini-image"
+      >
     </div>
     <ImageNavigator />
   </div>

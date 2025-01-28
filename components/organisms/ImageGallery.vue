@@ -1,32 +1,31 @@
-<script setup>
-  const props = defineProps({
-    images: {
-      type: Array,
-      required: true,
-    },
-    activeIndex: {
-      type: Number,
-      default: 0,
-    },
-  })
+<script setup lang="ts">
+  const {activeIndex = 0} = defineProps<{
+      images: string[]
+      activeIndex: number
+    }>()
+    
 
-  const emit = defineEmits(['updateActiveIndex'])
+  const emit = defineEmits<{
+    updateActiveIndex: (index: number) => void
+  }>()
 
-  const setActive = index => {
+  const setActive = (index: number) => {
     emit('updateActiveIndex', index)
   }
 </script>
 
 <template>
-  <div class="my-6 flex max-w-[22rem] space-x-4 overflow-x-auto border border-hg bg-fgl laptop:w-full laptop:max-w-full laptop:justify-evenly">
+  <div
+    class="my-6 flex max-w-[22rem] space-x-4 overflow-x-auto border border-hg bg-fgl laptop:w-full laptop:max-w-full laptop:justify-evenly"
+  >
     <img
-      v-for="(images, index) in props.images"
+      v-for="(image, index) in props.images"
       :key="index"
-      :src="$loadImage(images.path)"
+      :src="$loadImage(image.path)"
+      class="h-24 w-24 cursor-pointer"
       :class="['thumbnail', index === activeIndex ? 'active' : 'inactive']"
       @click="setActive(index)"
-      class="h-24 w-24 cursor-pointer"
-    />
+    >
   </div>
 </template>
 <style scoped>

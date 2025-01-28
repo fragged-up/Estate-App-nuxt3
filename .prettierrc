@@ -3,20 +3,23 @@
   "semi": false,
   "trailingComma": "all",
   "arrowParens": "avoid",
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-vue"],
   "vueIndentScriptAndStyle": true,
-  "printWidth": 200,
+  "printWidth": 80,
   "proseWrap": "never",
   "tabWidth": 2,
   "useTabs": false,
   "htmlWhitespaceSensitivity": "ignore",
-  "overrides": [
+  "vue/html-self-closing": [
+    "error",
     {
-      "files": "*.vue",
-      "options": {
-        "parser": "vue",
-        "printWidth": 200
-      }
+      "html": {
+        "void": "never",
+        "normal": "always",
+        "component": "always"
+      },
+      "svg": "always",
+      "math": "always"
     }
   ]
 }

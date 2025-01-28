@@ -1,6 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  css: ['~/assets/css/tailwind.css'],
+
   app: {
     head: {
       link: [
@@ -9,9 +11,14 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap',
         },
       ],
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
     },
   },
+
   ssr: false,
+
   devtools: {
     enabled: true,
     vscode: {
@@ -21,11 +28,19 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
-  plugins: ['~/plugins/imageLoader.ts', '~/plugins/mediaQueries.client.ts'],
+
+  modules: [
+    '@nuxt/devtools',
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/eslint',
+  ],
+  plugins: ['~/plugins/imageLoader.ts', '~/plugins/sanitize.ts','~/plugins/mediaQueries.client.ts'],
+
   imports: {
     dirs: ['~/composables'],
   },
+
   components: {
     dirs: [
       { path: '~/components', pathPrefix: false },
@@ -35,11 +50,13 @@ export default defineNuxtConfig({
       { path: '~/components/templates', pathPrefix: false },
     ],
   },
-  css: ['~/assets/css/tailwind.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
+  compatibilityDate: '2025-01-20',
 })

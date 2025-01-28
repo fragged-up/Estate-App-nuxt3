@@ -1,20 +1,24 @@
-<script setup>
-  const props = defineProps({
-    stepsNo: String,
-    stepHead: String,
-    stepPara: String,
-  })
+<script setup lang="ts">
+  defineProps<{
+    stepsNo: string
+    stepHead: string
+    stepPara: string
+  }>()
 </script>
 
 <template>
   <div class="neon-border-left step">
     <div class="neon-border-bottom p-3">
-      <h4 class="font-sans text-xl font-semibold text-white">{{ props.stepsNo }}</h4>
+      <h4 class="font-sans text-xl font-semibold text-white">{{ stepsNo }}</h4>
     </div>
 
-    <div class="step-box no-left-radius laptop:items-strech flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:p-12">
-      <h5 class="p-2 font-sans text-lg font-semibold text-white">{{ props.stepHead }}</h5>
-      <p class="font-sans text-sm font-medium text-[#999999]">{{ props.stepPara }}</p>
+    <div
+      class="step-box no-left-radius laptop:items-strech flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:p-12"
+    >
+      <h5 class="p-2 font-sans text-lg font-semibold text-white">
+        {{ stepHead }}
+      </h5>
+      <p class="font-sans text-sm font-medium text-[#999999]">{{ stepPara }}</p>
     </div>
   </div>
 </template>

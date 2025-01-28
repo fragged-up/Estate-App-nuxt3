@@ -1,4 +1,4 @@
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="grid grid-cols-2">
@@ -6,12 +6,13 @@
       <div class="discover mx-auto space-y-10">
         <h1 class="font-sans text-5xl font-semibold text-white">
           Discover Your Dream
-          <br />
+          <br >
           Property With Estatein
         </h1>
         <p class="font-sans text-base font-medium text-gl">
-          Your journey to finding the perfect property begins here. Explore our listings to find the
-          <br />
+          Your journey to finding the perfect property begins here. Explore our
+          listings to find the
+          <br >
           home that matches your dreams.
         </p>
       </div>
@@ -19,7 +20,7 @@
       <CardThreeDesk />
     </div>
 
-    <div class="right h-[51rem] bg-desk-hero"></div>
+    <div class="right h-[51rem] bg-desk-hero" />
   </div>
   <CardFour />
 </template>

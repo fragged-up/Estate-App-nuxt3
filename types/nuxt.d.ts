@@ -10,3 +10,5 @@ declare module '@vue/runtime-core' {
     $loadImage(path: string): string
   }
 }
+
+declare module 'circletype'

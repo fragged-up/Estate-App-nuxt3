@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<!-- <script setup lang="ts"></script>
 
 <template>
   <div class="grid grid-cols-2">
@@ -25,4 +25,23 @@
   <CardFour />
 </template>
 
-<style scoped></style>
+<style scoped></style> -->
+
+<script lang="ts" setup>
+
+</script>
+<template>
+  <div class="relative max-w-[22.375rem] w-full aspect-[4/3] bg-mobile-hero bg-cover bg-center rounded-xl ">
+    <!-- מיקום הכפתור יחסית לרקע -->
+    <div class="absolute -bottom-8 -left-8 laptop:-bottom-12 laptop:-left-12">
+      <CircleCTA />
+    </div>
+  </div>
+</template>
+
+
+<style lang="css" scoped>
+</style>
+<!-- <div class="relativemax-w-[22.375rem] max-h-[18.875rem] bg-mobile-hero bg-cover bg-center w-full aspect-[4/3] rounded-xl">
+  <CircleCTA class="absolute bottom-[-2rem] left-[-2rem] laptop:bottom-[-3rem] laptop:left-[-3rem]" />
+</div> -->

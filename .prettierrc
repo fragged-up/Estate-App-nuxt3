@@ -1,14 +1,11 @@
 {
-  "singleQuote": true,
-  "semi": false,
-  "trailingComma": "all",
-  "arrowParens": "avoid",
-  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-vue"],
-  "vueIndentScriptAndStyle": true,
-  "bracketSameLine": true,
-  "printWidth": 80,
-  "proseWrap": "never",
+  "printWidth":120,
   "tabWidth": 2,
   "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "html.autoClosingTags": false,
   "htmlWhitespaceSensitivity": "ignore"
+   
 }

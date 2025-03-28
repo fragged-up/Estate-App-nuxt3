@@ -13,6 +13,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        'mobile-hero':"url(~/assets/home/mobile-hero.png)",
+        'desktop-hero':"url(~/assets/home/mobile-hero.png)",
         'foot-image': "url('/public/FooterImage.svg')",
         'hero-about-abst': "url('/public/AbstractDesign.svg')",
         'hero-about-image': "url('/public/HeroAbout.svg')",

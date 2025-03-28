@@ -454,3 +454,23 @@ export const BOX_GROUPS: BoxGroups = {
     },
   ],
 }
+
+
+export const heroSquaresHome = [
+  {
+    centerIcon: '/icons/homeIcon.svg',
+    title: 'Find Your Dream\n Home',
+  },
+  {
+    centerIcon: '/icons/cameraIcon.svg',
+    title: 'Unlock Property\n Value',
+  },
+  {
+    centerIcon: '/icons/buildingIcon.svg',
+    title: 'Effortless Property\n Management',
+  },
+  {
+    centerIcon: '/icons/sunIcon.svg',
+    title: 'Smart Investments,\n Informed Decisions',
+  },
+]

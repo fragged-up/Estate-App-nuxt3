@@ -1,6 +1,5 @@
 <script setup>
   import { faces, cards, faqs } from '~/constants/index'
-  import CircleCTA from '~/components/molecules/CircleCTA.vue'
   import {
     cardOneHead,
     cardOneParagraph,
@@ -19,9 +18,7 @@
 <template>
   <main class="w-full bg-[#141414]">
     <div class="w-full">
-      <HomeHeroMobile />
- <HeroDesktop />
-      <CircleCTA />
+      <HomeHero />
     </div>
 
     <div class="container mx-auto grid justify-center bg-fgl">

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { heroSquaresHome } from '~/constants'
+import CircleCTA from '../molecules/CircleCTA.vue';
 </script>
 
 <template>
-  <div class="relative bg-mobile-hero bg-cover bg-center rounded-xl overflow-hidden w-full aspect-[4/3] max-w-[22.375rem] mx-auto">
-    <div class="absolute laptop:top-[-3rem] laptop:left-[-3rem] bottom-[-3rem] left-1/2 translate-x-[-50%]">
-      <CircleCTA />
-    </div>
-  </div>
+ <div class="pt-12">
+      <div class="relative h-[18.875rem] bg-mobile-hero bg-cover bg-center rounded-xl z-10 w-full aspect-[4/3] max-w-[22.375rem] mx-auto">
+          <CircleCTA  />
+      </div>
+ </div>
 
   <div class="mx-auto mt-12 w-11/12 space-y-8">
     <div class="first-template my-18 mx-auto">
@@ -45,5 +46,4 @@ import { heroSquaresHome } from '~/constants'
     </div>
   </div>
 </template>
-
 

@@ -14,7 +14,7 @@ export default {
     extend: {
       backgroundImage: {
         'mobile-hero':"url(~/assets/home/mobile-hero.png)",
-        'desktop-hero':"url(~/assets/home/mobile-hero.png)",
+        'desktop-hero':"url(~/assets/home/desktop-hero.png)",
         'foot-image': "url('/public/FooterImage.svg')",
         'hero-about-abst': "url('/public/AbstractDesign.svg')",
         'hero-about-image': "url('/public/HeroAbout.svg')",
@@ -31,7 +31,7 @@ export default {
         'hero-about-abst': 'center center',
         'hero-about-image': 'right center',
         'unlock-image': 'center',
-        'desk-hero': 'center',
+        'desktop-hero': 'center center',
         'about-us': 'center',
         tsr: 'left',
       },
@@ -39,7 +39,7 @@ export default {
         'hero-about-abst': 'cover',
         'hero-about-image': 'contain',
         'unlock-image': 'cover',
-        'desk-hero': 'cover',
+        'desktop-hero': 'cover',
         'about-us': 'contain',
         tsr: 'cover',
       },

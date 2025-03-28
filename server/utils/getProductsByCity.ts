@@ -1,6 +1,6 @@
 import { collection, query, where, getDocs } from 'firebase/firestore'
 
-export const getPropertiesByCity = async (city) => {
+export const getPropertiesByCity = async (city:any) => {
   const q = query(
     collection(db, 'properties'),
     where('location.city', '==', city),

@@ -1,12 +1,12 @@
 <script setup>
-  import Header from '~/components/Header.vue'
-  import Footer from '~/components/Footer.vue'
+  import SiteHeader from '~/components/SiteHeader.vue'
+  import SiteFooter from '~/components/SiteFooter.vue'
 </script>
 
 <template>
   <div class="main-default-layout-cont">
-    <Header />
+    <SiteHeader />
     <NuxtPage />
-    <Footer />
+    <SiteFooter />
   </div>
 </template>

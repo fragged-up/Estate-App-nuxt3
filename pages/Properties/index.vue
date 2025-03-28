@@ -1,18 +1,17 @@
 <script setup>
-// inputsFields
-  import {hero, card_1, card_2,} from "~/constants/propertiesPageConstants"
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  import {inputsFields,selectFields} from "~/constants"
+  // inputsFields
+  import { hero, card_1, card_2 } from '~/constants/propertiesPageConstants'
+  import { inputsFields, selectFields } from '~/constants'
 
   useSeoMeta({
     title: 'Properties',
   })
   const router = useRouter()
-  const { data: properties } = useFetch('/api/properties')
-
-  // Function to set the property data in a state
+  const { data: collageProperties } = useFetch('/api/properties')
   const usePropertyState = () => useState('propertyState', () => ({}))
+  console.log('COLLAGE PROERTIES : ', collageProperties)
 
+  console.log('USEPROPERTYSTATE FROM INDEX.VUE :', usePropertyState)
   const sendTheData = property => {
     const propertyState = usePropertyState()
     propertyState.value = property // Set the property data in the state
@@ -21,13 +20,14 @@
       path: `/Properties/${property.propertyName}`,
     })
   }
- 
 </script>
 
 <template>
- <div>
+  <div>
     <header class="fallback w-full border-b border-[#262626] px-6 py-12">
-      <h1 class="font-sans text-3xl font-semibold text-white">{{ hero.head }}</h1>
+      <h1 class="font-sans text-3xl font-semibold text-white">
+        {{ hero.head }}
+      </h1>
       <p class="py-6 font-sans text-sm font-medium text-[#999999]">
         {{ hero.para }}
       </p>
@@ -38,34 +38,34 @@
           <div class="box-c">
             <BoxInput />
           </div>
-  
+
           <div class="property">
             <MainBlock :header-text="card_1.head" :para-text="card_1.para">
               <template #default>
-                <div class="min-w-[100%] overflow-x-scroll whitespace-nowrap">
-                  <div
-                    v-for="(property, index) in properties"
-                    :key="index"
-                    class="mx-4 my-6 inline-block w-[80%]"
-                  >
-                    <PropertyCard
-                      :property-name="property.propertyName"
-                      :card-image="property.cardImage"
-                      :card-title="property.cardTitle"
-                      :card-text="property.cardText"
-                      :bed-rooms="property.bedRooms"
-                      :bath-rooms="property.bathRooms"
-                      :card-price="property.cardPrice"
-                      :description="property.description"
-                      :square-feet="property.squareFeet"
-                      :property-location="property.propertyLocation"
-                      :property-images="property.propertyImages"
-                      @click="sendTheData(property)"
-                    />
+               <div class="min-w-[100%] overflow-x-scroll whitespace-nowrap border border-blue-800">
+                  <div class="min-w-[100%] overflow-x-hidden grid grid-cols-1">
+                    <div
+                       v-for="(property, index) in collageProperties"
+                      :key="index"
+                      class="mx-auto my-6 w-full ">
+                      <PropertyCard
+                        :property-name="property.propertyName"
+                        :card-image="property.cardImage"
+                        :card-title="property.cardTitle"
+                        :card-text="property.cardText"
+                        :bed-rooms="property.bedRooms"
+                        :bath-rooms="property.bathRooms"
+                        :card-price="property.cardPrice"
+                        :description="property.description"
+                        :square-feet="property.squareFeet"
+                        :property-location="property.propertyLocation"
+                        :property-images="property.propertyImages"
+                        @click="sendTheData(property)" />
+                    </div>
                   </div>
-                </div>
-                <!-- <PropertyCard :card-image="'/Beckos.svg'" :card-title="card_title" :card-text="card_text"
-                  :bed-rooms="card_bedrooms" :bath-rooms="card_bathrooms" :card-price="card_price" /> -->
+               </div>
+                
+
                 <div class="my-8 flex items-center justify-between">
                   <button class="arrows-bg text-[#808080]">&leftarrow;</button>
                   <p class="pad-fix:whitespace-nowrap p-2">
@@ -80,70 +80,28 @@
               </template>
             </MainBlock>
           </div>
-  
+
           <div class="last-div mx-auto w-11/12">
             <MainBlock :header-text="card_2.head" :para-text="card_2.para">
               <template #default>
                 <Input
-                  :for="'firstName'"
-                  :label="'First Name'"
-                  :input-type="'text'"
-                  :name="'firstName'"
-                  :placeholder="'Enter First Name'"
-                />
-                <Input
-                  :for="'lastName'"
-                  :label="'Last Name'"
-                  :input-type="'text'"
-                  :name="'lastName'"
-                  :placeholder="'Enter Last Name'"
-                />
-                <Input
-                  :for="'Email'"
-                  :label="'Email'"
-                  :input-type="'email'"
-                  :name="'Email'"
-                  :placeholder="'Enter Email'"
-                />
-                <Input
-                  :for="'phone'"
-                  :label="'Phone'"
-                  :input-type="'number'"
-                  :name="'phone'"
-                  :placeholder="'Enter Phone'"
-                />
-  
-                <div class="">
+                  v-for="(inp, index) in inputsFields"
+                  :key="index"
+                  :for="inp.for"
+                  :label="inp.label"
+                  :input-type="inp.inputType"
+                  :name="inp.name"
+                  :placeholder="inp.placeHolder" />
+
+                <div class="select-input-group">
                   <SelectInput
-                    :select-head="'Preferred Location'"
-                    :place-holder="'Select Location'"
-                    :label="'Select Location'"
-                    :options="['Option1', 'Option 2', 'Option 3']"
-                  />
-                  <SelectInput
-                    :select-head="'Property Type'"
-                    :place-holder="'Select Property Type'"
-                    :label="'Select Location'"
-                    :options="['Option1', 'Option 2', 'Option 3']"
-                  />
-                  <SelectInput
-                    :select-head="'No. of Bathrooms'"
-                    :place-holder="'Select no. of Bathrooms'"
-                    :label="'No. of Bathrooms'"
-                    :options="['Option1', 'Option 2', 'Option 3']"
-                  />
-                  <SelectInput
-                    :select-head="'No. of Bedrooms'"
-                    :place-holder="'Select no. of Bedrooms'"
-                    :label="'No. of Bedrooms'"
-                    :options="['Option1', 'Option 2', 'Option 3']"
-                  />
-                  <SelectInput
-                    :select-head="'Budget'"
-                    :place-holder="'Select Budget'"
-                    :label="'Select Location'"
-                    :options="['Option1', 'Option 2', 'Option 3']"
-                  />
+                    v-for="(selInp, index) in selectFields"
+                    :key="index"
+                    :select-head="selInp.selectHead"
+                    :place-holder="selInp.placeHolder"
+                    :label="selInp.label"
+                    :options="selInp.options" />
+
                   <Preferred />
                 </div>
               </template>
@@ -152,7 +110,7 @@
         </section>
       </main>
     </div>
- </div>
+  </div>
 </template>
 
 <style scoped>

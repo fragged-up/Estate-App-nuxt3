@@ -2,16 +2,14 @@
 
 <template>
   <div
-    class="desk-about-page mx-auto grid grid-cols-2 items-stretch justify-center p-8"
-  >
+    class="desk-about-page mx-auto grid grid-cols-2 items-stretch justify-center p-8">
     <div class="left-side-about m-auto px-8">
       <div class="flex flex-col gap-y-6">
         <div class="stars-cont">
           <img
             :src="$loadImage('/icons/stars.svg')"
             alt="stars"
-            class="stars"
-          >
+            class="stars" >
         </div>
         <h1 class="font-sans text-5xl font-semibold text-white">Our Journey</h1>
         <p class="font-sans text-base font-medium text-gl">

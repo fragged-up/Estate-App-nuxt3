@@ -73,26 +73,22 @@
         listings to find the home that matches your dreams.
       </p>
       <button
-        class="mx-auto my-2 w-full rounded-2xl border-2 border-[#262626] p-5 text-center font-sans text-base font-medium text-white"
-      >
+        class="mx-auto my-2 w-full rounded-2xl border-2 border-[#262626] p-5 text-center font-sans text-base font-medium text-white">
         Learn More
       </button>
       <button
-        class="mx-auto my-2 w-full rounded-2xl bg-[#703BF7] p-5 text-center font-sans text-base font-medium text-white"
-      >
+        class="mx-auto my-2 w-full rounded-2xl bg-[#703BF7] p-5 text-center font-sans text-base font-medium text-white">
         Browse Properties
       </button>
     </div>
     <CardThree />
     <div
-      class="second-template grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px]"
-    >
+      class="second-template grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px]">
       <BoxAtom
         v-for="(square, index) in heroSquaresHome"
         :key="index"
         :center-icon="square.centerIcon"
-        :title="square.title"
-      />
+        :title="square.title" />
     </div>
   </div>
 </template>

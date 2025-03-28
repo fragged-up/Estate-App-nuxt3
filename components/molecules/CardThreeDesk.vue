@@ -5,12 +5,10 @@
     <div class="my-12 flex items-start justify-start gap-6">
       <Button
         :btn-text="'Learn More'"
-        :btn-style="'py-4 px-6 bg-transparent rounded-2xl text-center text-white font-medium text-sm border-2 border-hg'"
-      />
+        :btn-style="'py-4 px-6 bg-transparent rounded-2xl text-center text-white font-medium text-sm border-2 border-hg'" />
       <Button
         :btn-text="'Browse Properties'"
-        :btn-style="'py-4 px-6 bg-pr rounded-2xl text-center text-white font-sans font-medium text-sm'"
-      />
+        :btn-style="'py-4 px-6 bg-pr rounded-2xl text-center text-white font-sans font-medium text-sm'" />
     </div>
 
     <div class="card-hero-cont items-strech flex justify-start gap-6">

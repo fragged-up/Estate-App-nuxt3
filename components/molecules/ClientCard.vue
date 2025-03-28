@@ -17,8 +17,7 @@
 
 <template>
   <div
-    class="card-box row-auto grid w-full gap-y-6 rounded-xl border-2 border-[#262626] p-4"
-  >
+    class="card-box row-auto grid w-full gap-y-6 rounded-xl border-2 border-[#262626] p-4">
     <div class="stars-shape-box my-2 ml-3 flex gap-4">
       <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" >
       <img :src="$loadImage('/icons/starShape.svg')" alt="starShape" >

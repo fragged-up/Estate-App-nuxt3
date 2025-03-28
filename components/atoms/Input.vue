@@ -32,7 +32,7 @@
 
 <template>
   <div class="mx-auto my-6 flex w-11/12 flex-col gap-y-4">
-    <label :for="id" class="font-sans text-base font-medium text-white">
+    <label :for="name" class="font-sans text-base font-medium text-white">
       {{ label }}
     </label>
     <input
@@ -41,8 +41,7 @@
       :type="inputType"
       :name="name"
       :placeholder="placeholder"
-      class="w-full cursor-pointer rounded-2xl border border-[#262626] bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none"
-    >
+      class="w-full cursor-pointer rounded-2xl border border-[#262626] bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none" >
   </div>
 </template>
 

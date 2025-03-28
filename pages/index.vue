@@ -8,10 +8,21 @@
     cardThirdHead,
     cardThirdParagraph,
   } from '~/constants/homePage'
-  
+
   useSeoMeta({
     title: 'Home',
   })
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <template>
@@ -27,31 +38,35 @@
           :cont-style="'laptop:mx-0'"
           :sub-cont-style="'laptop:mx-0'"
           :para-text="cardOneParagraph"
-          :desk-header="true"
-        >
+          :desk-header="true">
           <template #default>
             <div class="min-w-[100%] overflow-x-scroll">
               <div
                 v-for="(card, index) in cards"
                 :key="index"
-                class="mx-4 my-6 inline-block w-[80%]"
-              >
+                class="mx-4 my-6 inline-block w-[80%]">
                 <PropertyCard
-                  :key="index"
                   :card-image="card.cardImage"
                   :card-title="card.cardTitle"
                   :card-text="card.cardText"
                   :bed-rooms="card.bedRooms"
                   :bath-rooms="card.bathRooms"
-                  :card-price="card.cardPrice"
-                />
+                  :card-price="card.cardPrice" />
+
+                  <!-- <PropertyCard
+                  :key="index" 
+                  :card-image="card.cardImage"
+                  :card-title="card.cardTitle"
+                  :card-text="card.cardText"
+                  :bed-rooms="card.bedRooms"
+                  :bath-rooms="card.bathRooms"
+                  :card-price="card.cardPrice" /> -->
               </div>
             </div>
 
             <ViewButton
-              :button-text="'View All Properites'"
-              :total-pages-number="'10'"
-            />
+              :btn-text="'View All Properites'"
+              :total-pages-number="'10'" />
           </template>
         </MainBlock>
 
@@ -59,8 +74,7 @@
           :header-text="cardTwoHead"
           :cont-style="'laptop:mx-0'"
           :sub-cont-style="'laptop:mx-0'"
-          :para-text="cardTwoParagraph"
-        >
+          :para-text="cardTwoParagraph">
           <template #default>
             <div class="cw flex flex-col gap-4 laptop:flex-row">
               <ClientCard
@@ -70,13 +84,11 @@
                 :face-name="face.faceName"
                 :face-location="face.faceLocation"
                 :face-head="face.faceHead"
-                :face-para="face.facePara"
-              />
+                :face-para="face.facePara" />
             </div>
             <ViewButton
-              :button-text="'View All Properites'"
-              :total-pages-number="'10'"
-            />
+              :btn-text="'View All Properites'"
+              :total-pages-number="'10'" />
           </template>
         </MainBlock>
 
@@ -84,24 +96,22 @@
           :header-text="cardThirdHead"
           :cont-style="'laptop:mx-0'"
           :sub-cont-style="'laptop:mx-0'"
-          :para-text="cardThirdParagraph"
-        >
+          :para-text="cardThirdParagraph">
           <template #default>
             <div
-              class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6"
-            >
+              class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
               <FaqCard
                 v-for="(faq, index) in faqs"
                 :key="index"
                 :faq-title="faq.faqTitle"
-                :faq-text="faq.faqText"
-              />
+                :faq-text="faq.faqText" />
             </div>
 
+
+            <Arrows />
             <ViewButton
-              :button-text="'View All Properites'"
-              :total-pages-number="'10'"
-            />
+              :btn-text="'View All Properites'"
+              :total-pages-number="'10'" />
           </template>
         </MainBlock>
       </div>

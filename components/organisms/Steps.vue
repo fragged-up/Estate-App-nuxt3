@@ -13,8 +13,7 @@
     </div>
 
     <div
-      class="step-box no-left-radius laptop:items-strech flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:p-12"
-    >
+      class="step-box no-left-radius laptop:items-strech flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:p-12">
       <h5 class="p-2 font-sans text-lg font-semibold text-white">
         {{ stepHead }}
       </h5>

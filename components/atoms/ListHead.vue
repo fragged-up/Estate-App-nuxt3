@@ -11,8 +11,7 @@
     </p>
     <Button
       :btn-style="'border border-hg p-4 bg-mg text-white rounded-xl'"
-      :btn-txt="'Learn More'"
-    />
+      :btn-text="'Learn More'" />
   </div>
 </template>
 

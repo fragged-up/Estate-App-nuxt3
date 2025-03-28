@@ -89,14 +89,12 @@
         :src="$loadImage('images/leftSeaSide.svg')"
         style="width: 50%"
         class="responsive-img"
-        alt="mini-image"
-      >
+        alt="mini-image" >
       <img
         :src="$loadImage('images/rightSeaSide.svg')"
         style="width: 50%"
         class="responsive-img"
-        alt="mini-image"
-      >
+        alt="mini-image" >
     </div>
     <ImageNavigator />
   </div>

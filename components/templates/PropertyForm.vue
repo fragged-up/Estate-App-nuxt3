@@ -78,8 +78,7 @@
 <template>
   <div class="contact-section">
     <div
-      class="cont main-b mx-auto my-10 w-[90%] laptop:grid laptop:w-4/5 laptop:grid-cols-1 laptop:p-8"
-    >
+      class="cont main-b mx-auto my-10 w-[90%] laptop:grid laptop:w-4/5 laptop:grid-cols-1 laptop:p-8">
       <div class="first-row laptop:flex laptop:gap-6">
         <Input
           v-for="(column, index) in firstInputsColumn"
@@ -87,8 +86,7 @@
           :label="column.label"
           :input-type="column.type"
           :name="column.name"
-          :placeholder="column.placeholder"
-        />
+          :placeholder="column.placeholder" />
       </div>
 
       <div class="second-row laptop:flex laptop:gap-6">
@@ -97,8 +95,7 @@
           :key="index"
           :select-head="column.selectHead"
           :place-holder="column.placeHolder"
-          :options="column.options"
-        />
+          :options="column.options" />
       </div>
 
       <div class="budget-row laptop:flex laptop:gap-6">
@@ -108,8 +105,7 @@
               :extra-style="'w-auto m-auto'"
               :select-head="'Budget'"
               :place-holder="'Select Budget'"
-              :options="['Option1', 'Option 2', 'Option 3']"
-            />
+              :options="['Option1', 'Option 2', 'Option 3']" />
           </div>
           <div class="laptop:w-[50%]">
             <div class="">
@@ -117,13 +113,11 @@
                 Preferred Contact Method
               </h3>
               <div
-                class="flex flex-col laptop:flex-row justify-between items-center gap-0 laptop:gap-4"
-              >
+                class="flex flex-col laptop:flex-row justify-between items-center gap-0 laptop:gap-4">
                 <div
                   v-for="option in contactOptions"
                   :key="option.value"
-                  class="w-[95%]"
-                >
+                  class="w-[95%]">
                   <InputCheckbox
                     :left-icon="option.leftIcon"
                     :label="option.label"
@@ -131,8 +125,7 @@
                     @update:contact-value="
                       (value: boolean) =>
                         handleContactOp(value ? option.value : null)
-                    "
-                  />
+                    " />
                 </div>
               </div>
             </div>
@@ -145,18 +138,15 @@
           <h3 class="mb-4 text-lg font-semibold text-white">Message</h3>
           <textarea
             class="w-full rounded-2xl border border-[#262626] bg-[#141414] p-4 text-white"
-            placeholder="Enter your Message here.."
-          />
+            placeholder="Enter your Message here.." />
         </div>
 
         <div
-          class="fourth-row agree-section mt-6 laptop:my-6 laptop:flex laptop:justify-between"
-        >
+          class="fourth-row agree-section mt-6 laptop:my-6 laptop:flex laptop:justify-between">
           <label class="flex items-center text-white">
             <input
               type="checkbox"
-              class="form-checkbox h-4 w-4 text-[#703BF7] accent-[#703BF7]"
-            >
+              class="form-checkbox h-4 w-4 text-[#703BF7] accent-[#703BF7]" >
             <span class="ml-2">
               I agree with
               <a href="#" class="text-[#703BF7] underline">Terms of Use</a>
@@ -165,8 +155,7 @@
             </span>
           </label>
           <button
-            class="my-6 w-full rounded-2xl bg-[#703BF7] p-4 text-white laptop:m-0 laptop:max-w-[195px]"
-          >
+            class="my-6 w-full rounded-2xl bg-[#703BF7] p-4 text-white laptop:m-0 laptop:max-w-[195px]">
             Send Your Message
           </button>
         </div>

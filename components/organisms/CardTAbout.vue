@@ -2,11 +2,9 @@
 
 <template>
   <div
-    class="mx-auto my-10 grid w-11/12 grid-rows-3 gap-6 laptop:w-full laptop:grid-cols-3 laptop:grid-rows-1 laptop:justify-between"
-  >
+    class="mx-auto my-10 grid w-11/12 grid-rows-3 gap-6 laptop:w-full laptop:grid-cols-3 laptop:grid-rows-1 laptop:justify-between">
     <div
-      class="shadow-frame flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:max-h-56"
-    >
+      class="shadow-frame flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:max-h-56">
       <h2 class="p-2 font-sans text-xl font-semibold text-white">
         3+ Years of Excellence
       </h2>
@@ -16,8 +14,7 @@
       </p>
     </div>
     <div
-      class="shadow-frame laptop:-56 flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:max-h-56"
-    >
+      class="shadow-frame laptop:-56 flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:max-h-56">
       <h2 class="p-2 font-sans text-xl font-semibold text-white">
         Happy Clients
       </h2>
@@ -27,8 +24,7 @@
       </p>
     </div>
     <div
-      class="shadow-frame flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:max-h-56"
-    >
+      class="shadow-frame flex flex-col gap-[8px] rounded-2xl border-2 border-[#262626] p-6 text-mg laptop:h-56 laptop:max-h-56">
       <h2 class="p-2 font-sans text-xl font-semibold text-white">
         Industry Recognition+
       </h2>

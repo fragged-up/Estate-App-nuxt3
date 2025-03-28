@@ -11,8 +11,7 @@
 <template>
   <div
     v-show="isShown.value"
-    class="flex items-center justify-around bg-hero-about-abst py-6"
-  >
+    class="flex items-center justify-around bg-hero-about-abst py-6">
     <p class="font-sans text-sm font-medium text-white">
       ✨Discover Your Dream Property with Estatein
     </p>
@@ -23,15 +22,13 @@
         height="14"
         viewBox="0 0 14 14"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+        xmlns="http://www.w3.org/2000/svg">
         <path
           d="M1 13L13 1M1 1L13 13"
           stroke="white"
           stroke-width="1.5"
           stroke-linecap="round"
-          stroke-linejoin="round"
-        />
+          stroke-linejoin="round" />
       </svg>
     </small>
   </div>
@@ -42,8 +39,7 @@
         <img
           :src="$loadImage('/images/HeaderLogo.svg')"
           class="logo"
-          alt="HeaderLogo"
-        >
+          alt="HeaderLogo" >
         <h1 class="ml-4 text-white">Estatein</h1>
       </div>
 
@@ -53,14 +49,12 @@
     </div>
   </div>
   <div
-    class="laptop-box hidden items-center justify-evenly bg-hg py-6 laptop:flex"
-  >
+    class="laptop-box hidden items-center justify-evenly bg-hg py-6 laptop:flex">
     <div class="logo-container">
       <img
         :src="$loadImage('/images/HeaderLogo.svg')"
         class="logo"
-        alt="HeaderLogo"
-      >
+        alt="HeaderLogo" >
       <h1 class="ml-4 font-sans text-2xl font-bold text-white">Estatein</h1>
     </div>
 
@@ -68,35 +62,30 @@
       <NuxtLink
         to="/"
         class="font-sans text-lg font-medium text-white"
-        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4"
-      >
+        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Home
       </NuxtLink>
       <NuxtLink
         to="/AboutUs"
         class="font-sans text-lg font-medium text-white"
-        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4"
-      >
+        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Abouts Us
       </NuxtLink>
       <NuxtLink
         to="/Properties"
         class="font-sans text-lg font-medium text-white"
-        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4"
-      >
+        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Properties
       </NuxtLink>
       <NuxtLink
         to="/Services"
         class="font-sans text-lg font-medium text-white"
-        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4"
-      >
+        exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Services
       </NuxtLink>
     </div>
     <div
-      class="rounded-xl border-2 border-gl bg-fgl px-8 py-4 text-center font-sans text-base font-medium text-white"
-    >
+      class="rounded-xl border-2 border-gl bg-fgl px-8 py-4 text-center font-sans text-base font-medium text-white">
       <NuxtLink to="/Contact">Contact Us</NuxtLink>
     </div>
   </div>

@@ -1,5 +1,0 @@
-how to give border top and bottom in tailwind css : 
-top and bottom : 
-border-y border-hg 
-left and right : 
-border-t border-h

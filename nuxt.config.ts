@@ -3,6 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
 
+  ssr: false,
   app: {
     head: {
       link: [
@@ -16,16 +17,19 @@ export default defineNuxtConfig({
       ],
     },
   },
+  typescript: {
+    typeCheck: true,
+  },
 
-  ssr: false,
+  sourcemap: {
+    server: true,
+    client: true,
+  },
 
   devtools: {
     enabled: true,
     vscode: {
       enabled: false,
-    },
-    timeline: {
-      enabled: true,
     },
   },
 
@@ -35,7 +39,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
   ],
-  plugins: ['~/plugins/imageLoader.ts', '~/plugins/sanitize.ts','~/plugins/mediaQueries.client.ts'],
+  plugins: ['~/plugins/imageLoader.ts', '~/plugins/mediaQueries.client.ts'],
 
   imports: {
     dirs: ['~/composables'],

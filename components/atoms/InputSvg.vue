@@ -1,17 +1,12 @@
-
 <script setup lang="ts">
-
-const { $sanitize:_sanitize }= useNuxtApp();
- const props = defineProps<{
+defineProps<{
     label?: string
     inTxt: string
     svgImage: string
   }>()
 
-  // @ts-expect-error nevermind-er
-const sanitizedSvg = _sanitize(props.svgImage);
 
-// ...
+
 </script>
 
 <template>
@@ -20,11 +15,9 @@ const sanitizedSvg = _sanitize(props.svgImage);
       {{ label }}
     </p>
     <div
-      class="flex w-full cursor-pointer gap-4 rounded-2xl border border-hg bg-fgl p-4 focus:outline-none"
-    >
+      class="flex w-full cursor-pointer gap-4 rounded-2xl border border-hg bg-fgl p-4 focus:outline-none">
       <p class="font-sans text-sm font-medium text-white">{{ inTxt }}</p>
-      <div v-html="sanitizedSvg" />
+      <div v-html="svgImage" />
     </div>
   </div>
 </template>
-

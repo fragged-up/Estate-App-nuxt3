@@ -30,8 +30,7 @@
           {{ headerText }}
         </h1>
         <p
-          class="font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]"
-        >
+          class="font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]">
           {{ paraText }}
         </p>
       </div>

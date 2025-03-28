@@ -17,19 +17,16 @@
 
 <template>
   <div
-    class="flex max-w-[20rem] flex-col items-center rounded-2xl border-2 border-[#262626] bg-[#141414] p-6 text-center shadow-lg"
-  >
+    class="flex max-w-[20rem] flex-col items-center rounded-2xl border-2 border-[#262626] bg-[#141414] p-6 text-center shadow-lg">
     <img
       :src="$loadImage(imageUrl)"
       alt="Profile Picture"
-      class="h-[268px] w-[318px]"
-    >
+      class="h-[268px] w-[318px]" >
 
     <a
       :href="twitterUrl"
       target="_blank"
-      class="mt-[-25px] h-[40px] w-[60px] text-center"
-    >
+      class="mt-[-25px] h-[40px] w-[60px] text-center">
       <img :src="$loadImage('/icons/ProfileTwitter.svg')" alt="Twitter Icon" >
     </a>
     <!-- class="mt-[-25px]" -->
@@ -37,12 +34,10 @@
     <p class="text-sm text-gray-400">{{ title }}</p>
 
     <div
-      class="mt-4 flex w-full max-w-md items-center justify-between rounded-full bg-[#262626] px-6 py-2"
-    >
+      class="mt-4 flex w-full max-w-md items-center justify-between rounded-full bg-[#262626] px-6 py-2">
       <span class="text-sm text-white">{{ sayHelloText }}</span>
       <button
-        class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 shadow-md"
-      >
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 shadow-md">
         <img :src="$loadImage('/icons/ProfileSend.svg')" alt="Say Hello Icon" >
       </button>
     </div>

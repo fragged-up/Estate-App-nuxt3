@@ -4,8 +4,7 @@
 
 <template>
   <div
-    class="shadow-frame grid gap-y-6 rounded-xl border-2 border-[#262626] p-6"
-  >
+    class="shadow-frame grid gap-y-6 rounded-xl border-2 border-[#262626] p-6">
     <div class="py-5">
       <p class="font-sans text-sm font-medium text-[#999999]">Since 2019</p>
       <h2 class="py-5 font-sans text-xl font-semibold text-white laptop:hidden">
@@ -17,16 +16,13 @@
         </h2>
         <Button
           :class="'rounded-xl border-2 border-hg bg-mg px-8 py-4 font-sans text-sm font-medium text-white'"
-          :btn-text="'View Website'"
-        />
+          :btn-text="'View Website'" />
       </div>
       <div
-        class="rounded-xl border border-[#262626] bg-mg p-4 text-center laptop:hidden"
-      >
+        class="rounded-xl border border-[#262626] bg-mg p-4 text-center laptop:hidden">
         <Button
           :class="'font-sans text-sm font-medium text-white'"
-          :btn-text="'View Website'"
-        />
+          :btn-text="'View Website'" />
       </div>
     </div>
 

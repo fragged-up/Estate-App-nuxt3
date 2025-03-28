@@ -1,19 +1,14 @@
 <script setup>
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { heroHeader,heroPara,mainHead,mainPara,lastHead,lastPara } from '~/constants/contactPage';
+  import {
+    heroHeader,
+    heroPara,
+    lastHead,
+    lastPara,
+  } from '~/constants/contactPage'
   useSeoMeta({
     title: 'Contact Us',
   })
 
-
-  // import MainBlock from '~/components/organisms/MainBlock.vue';
-
-  // import FormContact from '~/components/templates/FormContact.vue';
-  // import Office from '~/components/organisms/Office.vue';
-  // import CardOffice from '~/components/molecules/CardOffice.vue';
-  // import ExploreCard from '~/components/molecules/ExploreCard.vue';
-
-  
 </script>
 
 <template>
@@ -29,79 +24,66 @@ import { heroHeader,heroPara,mainHead,mainPara,lastHead,lastPara } from '~/const
       </div>
       <div class="hero-contact">
         <div
-          class="grid grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none"
-        >
+          class="grid grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none">
           <div
-            class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0"
-          >
+            class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0">
             <div class="flex flex-col items-center justify-center">
               <img
                 :src="$loadImage('/icons/arrowRtop.svg')"
                 class="mr-4 self-end"
-                alt="rtop"
-              >
+                alt="rtop" >
               <img
                 :src="$loadImage('/icons/homeIcon.svg')"
                 class="self-center"
-                alt="homeIcon"
-              >
+                alt="homeIcon" >
             </div>
             <p class="font-sans text-sm font-semibold text-white laptop:my-4">
               info@estatein.com
             </p>
           </div>
           <div
-            class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0"
-          >
+            class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0">
             <div class="flex flex-col items-center justify-center">
               <img
                 :src="$loadImage('/icons/arrowRtop.svg')"
                 class="mr-4 self-end"
-                alt="rtop"
-              >
+                alt="rtop" >
               <img
                 :src="$loadImage('/icons/cameraIcon.svg')"
                 class="self-center"
-                alt="homeIcon"
-              >
+                alt="homeIcon" >
             </div>
             <p class="font-sans text-sm font-semibold text-white laptop:my-4">
               +1 (123) 456-7890
             </p>
           </div>
           <div
-            class="flaptop:lex-grow-0 flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center"
-          >
+            class="flaptop:lex-grow-0 flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center">
             <div class="flex flex-col items-center justify-center">
               <img
                 :src="$loadImage('/icons/arrowRtop.svg')"
                 class="mr-4 self-end"
-                alt="rtop"
-              >
+                alt="rtop" >
               <img
                 :src="$loadImage('/icons/buildingIcon.svg')"
                 class="self-center"
-                alt="homeIcon"
-              >
+                alt="homeIcon" >
             </div>
             <p class="font-sans text-sm font-semibold text-white laptop:my-4">
               Instagram / Linkedin / Facebook
             </p>
           </div>
           <div
-            class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0"
-          >
+            class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0">
             <div class="flex flex-col items-center justify-center">
               <img
                 :src="$loadImage('/icons/arrowRtop.svg')"
                 class="mr-4 self-end"
-                alt="rtop"
-              >
+                alt="rtop" >
               <img
                 :src="$loadImage('/icons/sunIcon.svg')"
                 class="self-center"
-                alt="homeIcon"
-              >
+                alt="homeIcon" >
             </div>
             <p class="font-sans text-sm font-semibold text-white laptop:my-4">
               Main Headquarters
@@ -136,10 +118,9 @@ import { heroHeader,heroPara,mainHead,mainPara,lastHead,lastPara } from '~/const
           <template #default>
             <div class="mx-auto w-11/12">
               <div
-                class="mx-auto flex w-11/12 flex-col items-center justify-center gap-y-8 laptop:flex-row laptop:justify-around laptop:gap-10"
-              >
-                <CardOffice><template #first/></CardOffice>
-                <CardOffice><template #second/></CardOffice>
+                class="mx-auto flex w-11/12 flex-col items-center justify-center gap-y-8 laptop:flex-row laptop:justify-around laptop:gap-10">
+                <CardOffice><template #first /></CardOffice>
+                <CardOffice><template #second /></CardOffice>
               </div>
               <div class="mx-auto my-16 w-11/12">
                 <ExploreCard />

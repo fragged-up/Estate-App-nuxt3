@@ -5,22 +5,18 @@
 <template>
   <!-- Cont four cards  -->
   <div
-    class="second-template grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px]"
-  >
+    class="second-template grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px]">
     <div
-      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg"
-    >
+      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
       <div class="flex flex-col items-center justify-center">
         <img
           :src="$loadImage('/icons/arrowRtop.svg')"
           class="mr-4 self-end"
-          alt="rtop"
-        >
+          alt="rtop" >
         <img
           :src="$loadImage('/icons/homeIcon.svg')"
           class="self-center"
-          alt="homeIcon"
-        >
+          alt="homeIcon" >
       </div>
       <p class="font-sans text-base font-semibold text-white">
         Find Your Dream
@@ -29,19 +25,16 @@
       </p>
     </div>
     <div
-      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg"
-    >
+      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
       <div class="flex flex-col items-center justify-center">
         <img
           :src="$loadImage('/icons/arrowRtop.svg')"
           class="mr-4 self-end"
-          alt="rtop"
-        >
+          alt="rtop" >
         <img
           :src="$loadImage('/icons/cameraIcon.svg')"
           class="self-center"
-          alt="homeIcon"
-        >
+          alt="homeIcon" >
       </div>
       <p class="font-sans text-base font-semibold text-white">
         Unlock Property
@@ -50,19 +43,16 @@
       </p>
     </div>
     <div
-      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg"
-    >
+      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
       <div class="flex flex-col items-center justify-center">
         <img
           :src="$loadImage('/icons/arrowRtop.svg')"
           class="mr-4 self-end"
-          alt="rtop"
-        >
+          alt="rtop" >
         <img
           :src="$loadImage('/icons/buildingIcon.svg')"
           class="self-center"
-          alt="homeIcon"
-        >
+          alt="homeIcon" >
       </div>
       <p class="font-sans text-base font-semibold text-white">
         Effortless Property
@@ -71,19 +61,16 @@
       </p>
     </div>
     <div
-      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg"
-    >
+      class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#141414] p-4 text-center laptop:flex-grow-0 laptop:bg-mg">
       <div class="flex flex-col items-center justify-center">
         <img
           :src="$loadImage('/icons/arrowRtop.svg')"
           class="mr-4 self-end"
-          alt="rtop"
-        >
+          alt="rtop" >
         <img
           :src="$loadImage('/icons/sunIcon.svg')"
           class="self-center"
-          alt="homeIcon"
-        >
+          alt="homeIcon" >
       </div>
       <p class="font-sans text-base font-semibold text-white">
         Smart Investments,

@@ -33,8 +33,7 @@
           :contact-value="selectedOption === option.value"
           @update:contact-value="
             (value: boolean) => handleSelection(value ? option.value : null)
-          "
-        />
+          " />
       </div>
     </div>
   </div>

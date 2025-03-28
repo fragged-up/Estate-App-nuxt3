@@ -27,8 +27,7 @@
 <template>
   <div
     class="shadow-frame grid grid-rows-4 gap-y-4 rounded-xl p-6"
-    :class="props.cWrapStyle"
-  >
+    :class="props.cWrapStyle">
     <div class="">
       <RepeatedBlock :image="'/icons/TrustIcon.svg'" :head="h1" :para="p1" />
     </div>
@@ -37,8 +36,7 @@
       <RepeatedBlock
         :image="'/icons/ExcellenceIcon.svg'"
         :head="h2"
-        :para="p2"
-      />
+        :para="p2" />
     </div>
 
     <div class="">

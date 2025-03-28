@@ -1,11 +1,6 @@
 <script setup lang="ts">
-  defineProps<{
-    title: string
-    price?: string
-    boxText?: string
-    addBorder?: string
-    singleText?: string
-  }>()
+  import type { ListingBox } from '~/constants/types'
+  defineProps<ListingBox>()
 </script>
 
 <template>
@@ -19,8 +14,7 @@
       </p>
       <div
         v-if="boxText"
-        class="box-text inline-flex rounded-xl border border-hg bg-mg p-4"
-      >
+        class="box-text inline-flex rounded-xl border border-hg bg-mg p-4">
         <p class="text font-sans text-sm font-medium text-gl">{{ boxText }}</p>
       </div>
       <div v-if="singleText" class="box-text col-span-2">

@@ -5,21 +5,10 @@
   "arrowParens": "avoid",
   "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-vue"],
   "vueIndentScriptAndStyle": true,
+  "bracketSameLine": true,
   "printWidth": 80,
   "proseWrap": "never",
   "tabWidth": 2,
   "useTabs": false,
-  "htmlWhitespaceSensitivity": "ignore",
-  "vue/html-self-closing": [
-    "error",
-    {
-      "html": {
-        "void": "never",
-        "normal": "always",
-        "component": "always"
-      },
-      "svg": "always",
-      "math": "always"
-    }
-  ]
+  "htmlWhitespaceSensitivity": "ignore"
 }

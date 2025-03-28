@@ -11,8 +11,7 @@
 <template>
   <div class="bg-fgl">
     <div
-      class="before-footer w-full items-center justify-between border-b-2 border-hg bg-mg bg-foot-image bg-cover bg-center bg-no-repeat p-4 laptop:flex laptop:p-6"
-    >
+      class="before-footer w-full items-center justify-between border-b-2 border-hg bg-mg bg-foot-image bg-cover bg-center bg-no-repeat p-4 laptop:flex laptop:p-6">
       <div class="before-footer-text">
         <h1 class="pt-4 font-sans text-3xl font-semibold text-white">
           Start Your Real Estate
@@ -32,8 +31,7 @@
       <div class="mx-auto w-11/12 py-8 text-center">
         <Button
           :class="'w-full rounded-lg bg-pr py-4 font-sans text-sm font-medium text-white laptop:max-w-[153px]'"
-          btn-text="Explore Properties"
-        />
+          btn-text="Explore Properties" />
       </div>
     </div>
 
@@ -126,8 +124,7 @@
           <div class="rounded-full bg-[#141414] p-6">
             <img
               :src="$loadImage('/socialMedia/facebook.svg')"
-              alt="facebook"
-            >
+              alt="facebook" >
           </div>
           <div class="rounded-full bg-[#141414] p-6">
             <img :src="$loadImage('/socialMedia/in.svg')" alt="instagram" >

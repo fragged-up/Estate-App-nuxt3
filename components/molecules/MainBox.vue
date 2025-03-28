@@ -27,8 +27,7 @@
         </h1>
 
         <p
-          class="font-urbanist text-wrap py-4 text-sm font-medium leading-5 text-[#999999]"
-        >
+          class="font-urbanist text-wrap py-4 text-sm font-medium leading-5 text-[#999999]">
           {{ paraline }}
         </p>
       </div>

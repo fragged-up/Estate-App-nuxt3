@@ -1,23 +1,40 @@
 <script setup lang="ts">
-  import type {PropertyCard} from '~/constants/types'
+  defineProps<{
+    propertyName?: string | number
+    propertyLocation?: string
+    cardImage: string
+    cardTitle: string
+    cardText: string
+    bedRooms: number
+    bathRooms: number
+    cardPrice?: string | number
+    propertyImages?: string[]
+    description?: string
+    squareFeet?: string
+  }>()
+
   const isVisible = ref(false)
   const toggleVisual = () => (isVisible.value = !isVisible.value)
 
- 
-  defineProps<PropertyCard>()
+  //ref-toggleVisual
+
+  // props in active use here :
+  //cardImage
+  //cardTitle
+  //cardText
+  //bedRooms
+  //bathRooms
+  //cardPrice
 </script>
 
 <template>
-  <div class="property-card-main-container mx-auto w-auto">
     <div
-      class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6"
-    >
+      class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
       <div class="middleBuilding-c container">
         <img
           :src="$loadImage(cardImage)"
           alt="middleBuilding"
-          class="w-[19.375rem]"
-        >
+          class="w-[19.375rem]" >
       </div>
       <div class="w-auto">
         <h3 class="text-lg text-white">{{ cardTitle }}</h3>
@@ -43,8 +60,7 @@
             <img
               :src="$loadImage('/icons/bedRoom.svg')"
               class="mx-auto text-center"
-              alt="bedRoom"
-            >
+              alt="bedRoom" >
             <small class="text-white">{{ bedRooms }}-Bedroom</small>
           </span>
         </button>
@@ -53,21 +69,18 @@
             <img
               :src="$loadImage('/icons/bathRoom.svg')"
               class="mx-auto text-center"
-              alt="bathRoom"
-            >
+              alt="bathRoom" >
             <small class="text-white">{{ bathRooms }}-Bathroom</small>
           </span>
         </button>
 
         <button
-          class="col-span-auto rounded-3xl border-2 border-[#262626] bg-[#1A1A1A]"
-        >
+          class="col-span-auto rounded-3xl border-2 border-[#262626] bg-[#1A1A1A]">
           <span class="inline-flex gap-2 py-2">
             <img
               :src="$loadImage('/icons/villaIcon.svg')"
               class="mx-auto text-center"
-              alt="villa"
-            >
+              alt="villa" >
             <small class="text-white">Villa</small>
           </span>
         </button>
@@ -79,10 +92,14 @@
           <p class="text-start text-white">${{ cardPrice }}</p>
         </div>
 
-        <button class="rounded-xl bg-[#703BF7]">
+        <!-- <button class="rounded-xl bg-[#703BF7]">
           <p class="text-sm text-white">View Property Details</p>
-        </button>
+        </button> -->
+        <Button 
+        :btn-text="'View Property Details'"
+        :btn-style="'rounded-xl bg-[#703BF7] text-white'"
+        
+        />
       </div>
     </div>
-  </div>
 </template>

@@ -6,8 +6,7 @@
       <img
         :src="$loadImage('/images/HeaderLogo.svg')"
         class="logo"
-        alt="HeaderLogo"
-      >
+        alt="HeaderLogo" >
       <h1 class="header-text font-semibold">Estatein</h1>
     </div>
   </div>

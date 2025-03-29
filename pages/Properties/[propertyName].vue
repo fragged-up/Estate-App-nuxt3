@@ -1,8 +1,7 @@
 <script setup lang="ts">
   import { bedSVG, bathSVG, areaSVG } from '~/constants/svgIcons';
   import { scard_1, scard_2, faqCard, keyFeatures } from '~/constants';
-  import { useRoute } from '#imports'
-
+  import { useRoute } from '#imports';
 
   const route = useRoute();
   const propertyId = route.params.propertyName;
@@ -16,10 +15,6 @@
   const { data: property, error } = await useAsyncData(`property-${route.params.propertyName}`, () =>
     $fetch(`/api/properties/${route.params.propertyName}`),
   );
-
-  // const usePropertyState = () => useState('propertyState', () => ({}))
-  // const propertyState = usePropertyState()
-  // const property = propertyState
 
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {

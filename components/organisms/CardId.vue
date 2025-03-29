@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import { whiteLocationSvg } from '~/constants/svgIcons';
-  import NavigatorDots from './NavigatorDots.vue';
   defineProps<{
     propertyNameId: string | number;
     cardImageId: string | number;
@@ -21,6 +20,22 @@
   };
   const current = ref(0);
   const total = 5;
+
+  // const currentIndex = ref(0) //בלי .value
+
+// const changeIndex = (delta: number | string) => {
+//   const newIndex = currentIndex.value + Number(delta)
+//   currentIndex.value = newIndex
+//   emit('updateIndex', newIndex)
+// }
+
+// const total = computed(() => propertyImagesId.length)
+
+
+
+
+
+
 </script>
 
 <template>

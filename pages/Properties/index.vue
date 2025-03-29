@@ -6,18 +6,14 @@
  
   const router = useRouter()
   const { data: collageProperties } = useFetch('/api/properties')
-  const usePropertyState = () => useState('propertyState', () => ({}))
-  console.log('COLLAGE PROERTIES : ', collageProperties)
 
-  console.log('USEPROPERTYSTATE FROM INDEX.VUE :', usePropertyState)
-  const sendTheData = property => {
-    const propertyState = usePropertyState()
-    propertyState.value = property // Set the property data in the state
-
+  const sendTheData = (property) => {
     router.push({
       path: `/Properties/${property.propertyName}`,
     })
   }
+
+  
 </script>
 
 <template>

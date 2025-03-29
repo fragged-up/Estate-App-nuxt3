@@ -76,7 +76,7 @@ const prev = () => {
       class="w-12 h-12 rounded-full border border-[#333] flex items-center justify-center hover:bg-[#1a1a1a] transition"
       @click="prev"
     >
-      <NuxtIcon name="tabler:chevron-left" class="text-white w-5 h-5" />
+      <Icon name="tabler:chevron-left" class="text-white w-5 h-5" />
     </button>
 
     <!-- Dots -->
@@ -94,7 +94,7 @@ const prev = () => {
       class="w-12 h-12 rounded-full border border-[#333] flex items-center justify-center hover:bg-[#1a1a1a] transition"
       @click="next"
     >
-      <NuxtIcon name="tabler:chevron-right" class="text-white w-5 h-5" />
+      <Icon name="tabler:chevron-right" class="text-white w-5 h-5" />
     </button>
   </div>
 </template>

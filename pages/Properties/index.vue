@@ -18,8 +18,7 @@
 
 <template>
   <div>
-
-    <header class="fallback w-full border-b border-[#262626] px-6 py-12">
+    <header class="bg-[linear-gradient(135deg,_#262626_0%,_#0D0D0D_53%)] px-10 py-32">
       <h1 class="font-sans text-3xl font-semibold text-white">
         {{ hero.head }}
       </h1>
@@ -32,6 +31,7 @@
         <section>
           <div class="box-c">
             <BoxInput />
+            <NewMarkup />
           </div>
 
           <div class="property">

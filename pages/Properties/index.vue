@@ -31,7 +31,7 @@
         <section>
           <div class="box-c">
             <BoxInput />
-            <NewMarkup />
+          
           </div>
 
           <div class="property">

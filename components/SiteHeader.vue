@@ -1,11 +1,5 @@
-<script>
-  export default {
-    name: 'AppHeader',
-    setup() {
-      const isShown = ref(true)
-      return { isShown }
-    },
-  }
+<script setup lang="ts">
+const isShown = ref(true)
 </script>
 
 <template>
@@ -48,8 +42,7 @@
       </div>
     </div>
   </div>
-  <div
-    class="laptop-box hidden items-center justify-evenly bg-hg py-6 laptop:flex">
+  <div class="laptop-box hidden items-center justify-evenly bg-hg py-6 laptop:flex">
     <div class="logo-container">
       <img
         :src="$loadImage('/images/HeaderLogo.svg')"

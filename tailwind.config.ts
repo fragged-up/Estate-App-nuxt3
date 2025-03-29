@@ -12,6 +12,9 @@ export default {
 
   theme: {
     extend: {
+      letterSpacing:{
+        custom:'0.07em'
+      },
       backgroundImage: {
         'mobile-hero':"url(~/assets/home/mobile-hero.png)",
         'desktop-hero':"url(~/assets/home/desktop-hero.png)",

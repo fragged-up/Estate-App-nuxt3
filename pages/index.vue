@@ -1,17 +1,7 @@
 <script setup>
   import { faces, cards, faqs } from '~/constants/index'
-  import {
-    cardOneHead,
-    cardOneParagraph,
-    cardTwoHead,
-    cardTwoParagraph,
-    cardThirdHead,
-    cardThirdParagraph,
-  } from '~/constants/homePage'
-  useSeoMeta({
-    title: 'Home',
-  })
-
+  import {cardOneHead, cardOneParagraph, cardTwoHead, cardTwoParagraph, cardThirdHead, cardThirdParagraph} from '~/constants/homePage'
+  useSeoMeta({title: 'Home'})
 
 </script>
 
@@ -42,18 +32,8 @@
                   :bed-rooms="card.bedRooms"
                   :bath-rooms="card.bathRooms"
                   :card-price="card.cardPrice" />
-
-                  <!-- <PropertyCard
-                  :key="index" 
-                  :card-image="card.cardImage"
-                  :card-title="card.cardTitle"
-                  :card-text="card.cardText"
-                  :bed-rooms="card.bedRooms"
-                  :bath-rooms="card.bathRooms"
-                  :card-price="card.cardPrice" /> -->
               </div>
             </div>
-
             <ViewButton
               :btn-text="'View All Properites'"
               :total-pages-number="'10'" />
@@ -67,7 +47,7 @@
           :para-text="cardTwoParagraph">
           <template #default>
             <div class="cw flex flex-col gap-4 laptop:flex-row">
-              <ClientCard
+              <ClientCard  
                 v-for="(face, index) in faces"
                 :key="index"
                 :face-image="face.faceImage"
@@ -88,16 +68,13 @@
           :sub-cont-style="'laptop:mx-0'"
           :para-text="cardThirdParagraph">
           <template #default>
-            <div
-              class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
+            <div class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
               <FaqCard
                 v-for="(faq, index) in faqs"
                 :key="index"
                 :faq-title="faq.faqTitle"
                 :faq-text="faq.faqText" />
             </div>
-
-
             <Arrows />
             <ViewButton
               :btn-text="'View All Properites'"

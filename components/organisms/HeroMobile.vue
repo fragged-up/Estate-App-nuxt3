@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { heroSquaresHome } from '~/constants'
 import CircleCTA from '../molecules/CircleCTA.vue';
+
+
+
 </script>
 
 <template>

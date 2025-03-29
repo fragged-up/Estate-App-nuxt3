@@ -1,11 +1,15 @@
+
 {
-  "printWidth":120,
-  "tabWidth": 2,
-  "useTabs": false,
   "semi": false,
   "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
   "bracketSpacing": true,
-  "html.autoClosingTags": false,
-  "htmlWhitespaceSensitivity": "ignore"
-   
+  "arrowParens": "always",
+  "htmlWhitespaceSensitivity": "ignore",
+  "vueIndentScriptAndStyle": true,
+  "embeddedLanguageFormatting": "auto",
+  "endOfLine": "lf"
 }

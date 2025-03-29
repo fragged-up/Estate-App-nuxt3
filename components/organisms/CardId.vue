@@ -1,29 +1,32 @@
 <script setup lang="ts">
-  import { whiteLocationSvg } from '~/constants/svgIcons'
-   defineProps<{
-    propertyNameId: string | number
-    cardImageId: string | number
-    propertyLocationId: string
-    cardPriceId: string | number
-    propertyImagesId: string[]
-  }>()
+  import { whiteLocationSvg } from '~/constants/svgIcons';
+  import NavigatorDots from './NavigatorDots.vue';
+  defineProps<{
+    propertyNameId: string | number;
+    cardImageId: string | number;
+    propertyLocationId: string;
+    cardPriceId: string | number;
+    propertyImagesId: string[];
+  }>();
 
   const emit = defineEmits<{
-    updateIndex: [index: number]
-  }>()
+    updateIndex: [index: number];
+  }>();
 
-  const currentIndex = ref<number>(0).value
+  const currentIndex = ref<number>(0).value;
 
-  const changeIndex = (delta: number | string ) => {
-    const newIndex = currentIndex + delta
-    emit('updateIndex', newIndex)
-  }
+  const changeIndex = (delta: number | string) => {
+    const newIndex = currentIndex + delta;
+    emit('updateIndex', newIndex);
+  };
+  const current = ref(0);
+  const total = 5;
 </script>
 
 <template>
   <div class="content-title mx-auto my-4 w-[90%]">
     <h1 class="font-sans text-xl font-semibold text-white">
-    {{ propertyNameId }}
+      {{ propertyNameId }}
     </h1>
     <div class="mx-auto mb-2 mt-4 grid grid-flow-col">
       <div class="flex">
@@ -31,66 +34,52 @@
           :svg-icon="whiteLocationSvg"
           :container-wrapper="'border border-hg bg-fgl rounded-xl p-2'"
           :gapped-value="'gap-1'"
-          :head="propertyLocationId" />
+          :head="propertyLocationId"
+        />
       </div>
       <div class="flex items-center justify-center gap-2">
         <p class="font-sans text-sm font-medium text-gl">Price</p>
-        <p class="font-sans text-lg font-semibold text-white">
-          ${{ cardPriceId }}
-        </p>
+        <p class="font-sans text-lg font-semibold text-white"> ${{ cardPriceId }} </p>
       </div>
     </div>
   </div>
 
   <!-- max-w-[414px] deleted for now  -->
   <div
-    class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">
+    class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]"
+  >
     <!-- mobile BOX  -->
     <div class="mobile-box laptop:hidden">
-
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
         <img
           :src="$loadImage(cardImageId)"
           alt="miniMainImage"
-          class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]" >
+          class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]"
+        >
       </div>
       <div class="gallery-cont min-w-full">
-        <imageGallery
-          :images="propertyImagesId"
-          :active-index="currentIndex"
-          @update-active-index="currentIndex " />
+        <imageGallery :images="propertyImagesId" :active-index="currentIndex" @update-active-index="currentIndex" />
       </div>
 
       <div class="navigator-cont">
         <imageNavigator @update-index="changeIndex" />
       </div>
-
     </div>
-
 
     <!-- END MOBILEBOX  -->
 
     <!-- laptop BOX  -->
     <div class="laptop-box mx-auto hidden bg-hg laptop:block">
       <div class="mx-auto">
-        <imageGallery
-          :images="propertyImagesId"
-          :active-index="currentIndex"
-          @update-active-index="changeIndex" />
+        <imageGallery :images="propertyImagesId" :active-index="currentIndex" @update-active-index="changeIndex" />
       </div>
       <div class="images-cnt mx-auto flex h-auto w-full items-center gap-4 p-4">
-        <img
-          :src="$loadImage('images/leftSeaSide.svg')"
-          style="width: 50%"
-          class="responsive-img"
-          alt="mini-image" >
-        <img
-          :src="$loadImage('images/rightSeaSide.svg')"
-          style="width: 50%"
-          class="responsive-img"
-          alt="mini-image" >
+        <img :src="$loadImage('images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >
+        <img :src="$loadImage('images/rightSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >
       </div>
       <div class="navigator-cont py-8">
+        <NavigatorDots :total="total" :current="current" @update:current="(val: any) => (current = val)" />
+
         <!-- <imageNavigator @update-index="changeIndex" /> -->
       </div>
     </div>
@@ -104,10 +93,6 @@
     background-blend-mode: color;
   }
 </style>
-
-
-
-
 
 <!-- 
 <style scoped>

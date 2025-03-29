@@ -2,7 +2,7 @@
   import '~/assets/css/tailwind.css'
   useSeoMeta({
     title: 'Real-Estate Nuxt App',
-    description: 'Oded Real Estate Company',
+    description: 'Real Estate Company',
   })
 </script>
 
@@ -41,10 +41,5 @@
     background-color: #141414;
   }
 
-  /*
-  crazy overflow detector
-  * {
-    outline: 1px solid red; /* Highlight all elements with a red outline 
-  } 
-  */
+ 
 </style>

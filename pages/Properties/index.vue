@@ -1,11 +1,9 @@
 <script setup>
-  // inputsFields
   import { hero, card_1, card_2 } from '~/constants/propertiesPageConstants'
   import { inputsFields, selectFields } from '~/constants'
 
-  useSeoMeta({
-    title: 'Properties',
-  })
+  useSeoMeta({ title: 'Properties' })
+ 
   const router = useRouter()
   const { data: collageProperties } = useFetch('/api/properties')
   const usePropertyState = () => useState('propertyState', () => ({}))

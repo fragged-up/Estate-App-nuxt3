@@ -18,6 +18,7 @@
 
 <template>
   <div>
+
     <header class="fallback w-full border-b border-[#262626] px-6 py-12">
       <h1 class="font-sans text-3xl font-semibold text-white">
         {{ hero.head }}

@@ -33,12 +33,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxt/devtools',
-    '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/eslint',
-  ],
+  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/icon'],
+  icon: {
+    serverBundle: {
+      collections: ['tabler', 'mdi'],
+    },
+  },
   plugins: ['~/plugins/imageLoader.ts', '~/plugins/mediaQueries.client.ts'],
 
   imports: {

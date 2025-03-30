@@ -22,35 +22,25 @@
   // end can delete list of headings
 
   // all can delete list of paragraphs
-  const p1 =
-    'Discover the true worth of your property with our expert valuation services.'
-  const p2 =
-    'Selling a property requires more than just a listing; it demands a strategic marketing.'
+  const p1 =  'Discover the true worth of your property with our expert valuation services.'
+  const p2 = 'Selling a property requires more than just a listing; it demands a strategic marketing.'
+  const p4 = 'A successful sale is not complete until the closing. We guide you through the intricate closing process.'
 
-  const p4 =
-    'A successful sale is not complete until the closing. We guide you through the intricate closing process.'
-  const pp1 =
-    'Our Tenant Management services ensure that your tenants have a smooth and reducing vacancies.'
-  const pp2 =
-    'Say goodbye to property maintenance headaches. We handle all aspects of property upkeep.'
-  const pp3 =
-    'Managing property finances can be complex. Our financial experts take care of rent collection'
+  const pp1 =  'Our Tenant Management services ensure that your tenants have a smooth and reducing vacancies.'
+  const pp2 = 'Say goodbye to property maintenance headaches. We handle all aspects of property upkeep.'
+  const pp3 = 'Managing property finances can be complex. Our financial experts take care of rent collection'
 
-  const ppp1 =
-    'Stay ahead of market trends with our expert Market Analysis. We provide in-depth insights into real estate market conditions'
-  const ppp2 =
-    'Make investment decisions with confidence. Our ROI Assessment services evaluate the potential returns on your investments'
-  const ppp3 =
-    'Every investor is unique, and so are their goals. We develop Customized Investment Strategies tailored to your specific needs'
-  const ppp4 =
-    'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations'
+  const ppp1 = 'Stay ahead of market trends with our expert Market Analysis. We provide in-depth insights into real estate market conditions'
+  const ppp2 = 'Make investment decisions with confidence. Our ROI Assessment services evaluate the potential returns on your investments'
+  const ppp3 = 'Every investor is unique, and so are their goals. We develop Customized Investment Strategies tailored to your specific needs'
+  const ppp4 = 'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations'
 
   // end can delete list of paragraphs
 
   const { isDesk } = useWindowSize()
   const laptopHeader: string = `Building a real estate portfolio requires a strategic approach.\nEstatein's Investment Advisory Service empowers you to make smart investments and informed decisions.`
-  const mobileHeader: string =
-    'Building a real estate portofolio requires a starategic approach'
+  const mobileHeader: string =  'Building a real estate portofolio requires a starategic approach'
+   
   const smartLaptop = ref<string>(laptopHeader)
   const smartMobile = ref<string>(mobileHeader)
   const whichHead = computed(() => {
@@ -64,8 +54,8 @@
   <div v-if="$slots.unlock" class="text-start">
     <slot name="unlock">
       <div class="laptop: controller-box grid grid-cols-1 gap-x-4">
-        <div
-          class="flex flex-col items-center justify-center gap-4 laptop:flex-row">
+        <div class="flex flex-col items-center justify-center gap-4 laptop:flex-row">
+          
           <!-- start : loop repeatedBlockConfig.unlockSec -->
           <!-- <RepeatedBlock 
              v-for="(block,index) in unlockSec"
@@ -93,8 +83,7 @@
             :head="h4"
             :para="p4" />
         </div>
-        <div
-          class="flex flex-col items-center justify-center gap-4 laptop:flex-row">
+        <div class="flex flex-col items-center justify-center gap-4 laptop:flex-row">
           <RepeatedBlock
             :class="'b-frame'"
             :image="'/unlock/Negotiation.svg'"

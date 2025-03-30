@@ -1,7 +1,5 @@
-<script setup>
+<script setup></script>
  
-</script>
-
 <template>
  <div>
     <SiteHeader />

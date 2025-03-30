@@ -29,7 +29,7 @@
   >
     <div
       ref="textRef"
-      class="absolute z-50 text-white text-xs laptop:text-base fill-zinc-500 tracking-custom font-medium text-center"
+      class="absolute z-50 text-white text-xs laptop:text-base fill-zinc-500 tracking-custom font-sans font-medium text-center"
     >
       Discover Your Dream Property ✨
     </div>

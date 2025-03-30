@@ -14,9 +14,8 @@
   }>()
 
   const isVisible = ref(false)
-  const toggleVisual = () => (isVisible.value = !isVisible.value)
+  const toggleReadMe = () => (isVisible.value = !isVisible.value)
 
-  //ref-toggleVisual
 
   // props in active use here :
   //cardImage
@@ -28,19 +27,19 @@
 </script>
 
 <template>
-    <div
-      class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
+    <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
       <div class="middleBuilding-c container">
         <img
           :src="$loadImage(cardImage)"
           alt="middleBuilding"
           class="w-[19.375rem]" >
       </div>
+
       <div class="w-auto">
         <h3 class="text-lg text-white">{{ cardTitle }}</h3>
         <p class="py-2 text-[#999999]">
           {{ cardText }}
-          <strong class="text-sm text-white underline" @click="toggleVisual">
+          <strong class="text-sm text-white underline" @click="toggleReadMe">
             Read More
           </strong>
         </p>
@@ -97,9 +96,9 @@
         </button> -->
         <Button 
         :btn-text="'View Property Details'"
-        :btn-style="'rounded-xl bg-[#703BF7] text-white'"
+        :btn-style="'rounded-xl bg-[#703BF7] text-white'"  />
         
-        />
+       
       </div>
     </div>
 </template>

@@ -10,7 +10,7 @@ const isShown = ref(true)
       ✨Discover Your Dream Property with Estatein
     </p>
     <small class="text-white underline">Learn More</small>
-    <small class="ss" @click="() => (isShown.value = !isShown.value)">
+    <small class="bg-[rgba(102,102,102,0.6)] rounded-full p-[10px] text-white" @click="() => (isShown.value = !isShown.value)">
       <svg
         width="14"
         height="14"
@@ -29,13 +29,13 @@ const isShown = ref(true)
 
   <div class="mobile-box bg-mg laptop:hidden">
     <div class="flex items-center justify-between bg-[#1A1A1A] p-8">
-      <div class="logo-container">
+      <NuxtLink to="/" class="cursor-pointer logo-container">
         <img
           :src="$loadImage('/images/HeaderLogo.svg')"
           class="logo"
           alt="HeaderLogo" >
-        <h1 class="ml-4 text-white">Estatein</h1>
-      </div>
+        <h1 class="ml-4 text-white font-sans">Estatein</h1>
+      </NuxtLink>
 
       <div class="hambu-container">
         <img :src="$loadImage('/icons/Hamburger.svg')" alt="Hamburger" >
@@ -43,36 +43,36 @@ const isShown = ref(true)
     </div>
   </div>
   <div class="laptop-box hidden items-center justify-evenly bg-hg py-6 laptop:flex">
-    <div class="logo-container">
+    <NuxtLink to="/" class="logo-container">
       <img
         :src="$loadImage('/images/HeaderLogo.svg')"
         class="logo"
         alt="HeaderLogo" >
       <h1 class="ml-4 font-sans text-2xl font-bold text-white">Estatein</h1>
-    </div>
+    </NuxtLink>
 
     <div class="center space-x-4">
       <NuxtLink
         to="/"
-        class="font-sans text-lg font-medium text-white"
+        class="font-sans text-lg font-medium text-white cursor-pointer "
         exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Home
       </NuxtLink>
       <NuxtLink
         to="/AboutUs"
-        class="font-sans text-lg font-medium text-white"
+        class="font-sans text-lg font-medium text-white cursor-pointer "
         exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Abouts Us
       </NuxtLink>
       <NuxtLink
         to="/Properties"
-        class="font-sans text-lg font-medium text-white"
+        class="font-sans text-lg font-medium text-white cursor-pointer"
         exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Properties
       </NuxtLink>
       <NuxtLink
         to="/Services"
-        class="font-sans text-lg font-medium text-white"
+        class="font-sans text-lg font-medium text-white cursor-pointer"
         exact-active-class="rounded-xl border-2 border-gl bg-fgl px-8 py-4">
         Services
       </NuxtLink>
@@ -90,10 +90,5 @@ const isShown = ref(true)
   .logo-container > * {
     display: inline-block;
   }
-  .ss {
-    background-color: rgba(102, 102, 102, 0.6);
-    border-radius: 50%;
-    padding: 10px;
-    color: white;
-  }
+  
 </style>

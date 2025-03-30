@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { z } from 'zod'
 
-// Zod schema
 const contactFormSchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
   lastName: z.string().min(2, 'Last name is required'),
@@ -15,7 +14,6 @@ const contactFormSchema = z.object({
   }),
 })
 
-//  Reactive form
 const form = reactive({
   firstName: '',
   lastName: '',
@@ -30,7 +28,7 @@ const form = reactive({
 // Error map
 const errors = ref<Record<string, string>>({})
 
-// 🚀 Handle submit
+
 const handleSubmit = () => {
   const result = contactFormSchema.safeParse(form)
 

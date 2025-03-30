@@ -5,17 +5,13 @@
 </script>
 <template>
   <div class="services-page"> 
-    <header  class="fallback w-full bg-[linear-gradient(135deg,_#262626_0%,_#0D0D0D_53%)] py-[3.125rem] px-4 lapotop:px-10 laptop:py-32 border-b border-[#262626]"  >
-      <h1 class="font-sans text-3xl font-semibold text-white">Elevate Your Real Estate Experience</h1>
-      <p class="py-6 font-sans text-sm font-medium text-[#999999]">
-        Welcome to Estatein, where your real estate aspirations meet expert guidance. Explore our comprehensive range of
-        services, each designed to cater to your unique needs and dreams.
-      </p>
-    </header>
+   <DynamicHero variant="services"/>
     <nav>
       <CardFour />
     </nav>
     
+
+
     <main class="w-full">
 
       <section>

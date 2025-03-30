@@ -4,7 +4,7 @@
   const pagination = usePaginationStore();
   const itemsPerPage = 1;
 
-  const { data: properties } = await useFetch('/api/test'); // הנח שזה API שלך
+  const { data: properties } = await useFetch('/api/test'); 
 
   const paginatedProperties = computed(() => {
     if (!properties.value) return [];

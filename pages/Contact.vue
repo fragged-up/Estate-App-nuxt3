@@ -6,15 +6,7 @@
 
 <template>
   <div class="contact-page">
-    <header class="fallback w-full border-b border-[#262626] bg-[linear-gradient(135deg,_#262626_0%,_#0D0D0D_53%)] px-10 py-25">
-      <div class="py-16">
-        <h1 class="font-sans text-3xl laptop:text-4xl font-semibold text-white"> Get in Touch with Estatein </h1>
-        <p class="py-6 font-sans text-sm laptop:text-base font-medium text-[#999999]">
-          Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.
-        </p>
-      </div>
-    </header>
-
+    <DynamicHero variant="contact"/>
     <div class="hero-contact w-full">
         <div class="grid grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none">
           <div class="flex flex-col rounded-lg border-2 border-[#262626] bg-[#1A1A1A] px-2 py-4 text-center laptop:flex-grow-0">
@@ -97,7 +89,6 @@
           </template>
         </MainBlock>
       </section>
-
     </main>
   </div>
 </template>

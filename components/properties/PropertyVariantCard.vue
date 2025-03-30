@@ -5,9 +5,9 @@
     propertyLocation?: string;
     cardImage: string;
     cardTitle: string;
-    cardText: string;
-    bedRooms: number;
-    bathRooms: number;
+    cardText?: string;
+    bedRooms?: number;
+    bathRooms?: number;
     cardPrice?: string | number;
     propertyImages?: string[];
     description?: string;
@@ -23,7 +23,7 @@
     <PropetyImage :card-image="$loadImage(cardImage)" />
     <!-- Properties Version -->
     <template v-if="variant === 'properties'">
-      <PropertyTagLine :tag-line="tagline" />
+      <PropertyTagLine :tag="tagline" />
       <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
     </template>
     <!-- HomePage Version -->

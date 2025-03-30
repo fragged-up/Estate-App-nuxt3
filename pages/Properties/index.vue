@@ -41,19 +41,20 @@ const sendTheData = (property: any) => {
          <PropertyVariantCard 
          v-for="(item,index) in items"
          :key="index"
-         :variant="properties"
-         :card-image="property.image"
-         :card-title="proprety.title"
-         :card-price="proprety.price"
-         :tag-line="property.locationText"
-         :description="property.description"
+         :variant="`properties`"
+         :card-image="item.image"
+         :card-title="item.title"
+         :card-price="item.price"
+         :tag-line="item.locationText"
+         :card-text="item.text"
+         :description="item.description"
          /> 
          
         </template>
         </PaginationWrapper>
-    
-      
-      />
+
+
+
       <section>
         <div class="box-c">
           <BoxInput />

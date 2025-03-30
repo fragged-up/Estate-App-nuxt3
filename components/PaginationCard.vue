@@ -5,25 +5,16 @@ const pagination = usePaginationStore()
 </script>
 
 <template>
-  <div class="mt-10 flex justify-center items-center gap-6 text-white">
-    <button
-      :disabled="pagination.currentPage === 1"
-      class="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center hover:bg-[#1a1a1a] transition disabled:opacity-30"
-      @click="pagination.prev"
-    >
-      <Icon name="tabler:chevron-left" class="w-5 h-5" />
-    </button>
-
-    <span class="text-sm font-medium text-[#999]">
-      {{ pagination.currentPage.toString().padStart(2, '0') }} of {{ pagination.totalPages }}
+  <div class="mt-12 flex justify-between items-center border-t border-[#2A2A2A] pt-6">
+    <span class="text-sm font-medium text-white/80">
+      {{ pagination.currentPage.toString().padStart(2, '0') }}
+      <span class="text-white/40">of</span>
+      {{ pagination.totalPages }}
     </span>
 
-    <button
-      :disabled="pagination.currentPage === pagination.totalPages"
-      class="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center hover:bg-[#1a1a1a] transition disabled:opacity-30"
-      @click="pagination.next"
-    >
-      <Icon name="tabler:chevron-right" class="w-5 h-5" />
-    </button>
+    <div class="flex items-center gap-3">
+      <PaginationButton direction="left" />
+      <PaginationButton direction="right" />
+    </div>
   </div>
 </template>

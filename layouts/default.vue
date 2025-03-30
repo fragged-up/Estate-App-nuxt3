@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <div class="main-default-layout-cont">
+ <div>
     <SiteHeader />
-    <NuxtPage />
+    <main class="laptop:mx-[5.0625rem]">
+      <NuxtPage />
+    </main>
     <SiteFooter />
-  </div>
+ </div>
 </template>

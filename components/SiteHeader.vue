@@ -77,8 +77,12 @@ const isShown = ref(true)
         Services
       </NuxtLink>
     </div>
-    <div
-      class="rounded-xl border-2 border-gl bg-fgl px-8 py-4 text-center font-sans text-base font-medium text-white">
+
+
+
+
+    
+    <div class="rounded-xl  bg-[#703BF7] px-8 py-4 text-center font-sans text-base font-medium text-white">
       <NuxtLink to="/Contact">Contact Us</NuxtLink>
     </div>
   </div>

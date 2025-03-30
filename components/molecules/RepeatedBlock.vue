@@ -10,7 +10,7 @@
   <div>
     <div class="repeated-father">
       <img
-        :src="$loadImage(image)"
+       :src="$loadImage(image)"
         class="inline-block h-[52px] w-[52px]"
         alt="image" >
       <h3 class="ml-4 inline-block font-sans text-lg font-semibold text-white">

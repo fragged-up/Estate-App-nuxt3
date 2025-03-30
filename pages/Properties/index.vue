@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { inputsFields, selectFields } from '~/constants'
-import { usePaginationStore } from '~/stores/pagination'
 import { useSeoMeta } from '#imports'
 
 useSeoMeta({ title: 'Properties' })
@@ -37,6 +36,24 @@ const sendTheData = (property: any) => {
     <DynamicHero variant="properties" />
 
     <main>
+     <PaginationWrapper :items="properties">
+       <template #default="{ items }">
+         <PropertyVariantCard 
+         v-for="(item,index) in items"
+         :key="index"
+         :variant="properties"
+         :card-image="property.image"
+         :card-title="proprety.title"
+         :card-price="proprety.price"
+         :tag-line="property.locationText"
+         :description="property.description"
+         /> 
+         
+        </template>
+        </PaginationWrapper>
+    
+      
+      />
       <section>
         <div class="box-c">
           <BoxInput />
@@ -53,6 +70,7 @@ const sendTheData = (property: any) => {
                 :description="property.description"
                 :price="property.price"
                 :location-text="property.locationText"
+                @click="sendTheData"
               />
             </template>
           </PaginationWrapper>

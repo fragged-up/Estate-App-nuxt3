@@ -1,4 +1,6 @@
+
 <script setup lang="ts">
+import ReadMore from "~/components/properties/ReadMore.vue"
   defineProps<{
     imageKey: string;
     locationText: string;

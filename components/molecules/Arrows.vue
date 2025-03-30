@@ -8,7 +8,6 @@
 
 <template>
   <div class="flex items-center space-x-4">
-    <!-- Pass active state to arrows -->
     <LeftArrow @paginate-back="pageStore.updatePage('left')" />
     <span :totalPages="pageStore.totalPages" class="text-gray-500">
       Page: {{ pageStore.currentPage }} of {{ pageStore.totalPages }}

@@ -7,12 +7,11 @@
 
 <template>
   <main class="w-full bg-[#141414]">
-    <div class="w-full">
-      <HomeHero />
-    </div>
-
+    <div class="w-full"><HomeHero /></div>
+     
     <div class="container mx-auto grid justify-center bg-fgl">
       <div class="mx-auto mt-32 grid w-11/12">
+        
         <MainBlock
           :header-text="cardOneHead"
           :cont-style="'laptop:mx-0'"

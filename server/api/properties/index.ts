@@ -1,6 +1,6 @@
-import { getPropertyList } from '~/server/utils/getPropertyList'
-import { propertyList } from '~/server/data/propertyList'
+import { getProperties } from '~/server/utils/getProperties'
+import { PROPERTIES_API } from '~/server/data'
 
 export default defineEventHandler(() => {
-  return getPropertyList(propertyList)
+  return getProperties(PROPERTIES_API)
 })

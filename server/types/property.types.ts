@@ -1,8 +1,7 @@
 export type Nullable<T> = T | null
 export type Optional<T> = T | undefined
-
 export type Id = string | number
-export type PropertyItem = {
+export type PropertyListItem = {
     id: Id
     slug: string
     title: string
@@ -11,15 +10,23 @@ export type PropertyItem = {
     location: string
     bedrooms: number
     bathrooms: number
-  }
+}
 export type PropertyImage = {
-    id: number
+    id?: number
     path: string
 }
-export type PropertyId = PropertyItem & {
+export type PropertyId = PropertyListItem & {
     description: string
     areaSqFt: number
-    images: PropertyImage[]
+    imageGallery: PropertyImage[]
 }
+
+
+
 export type MaybePropertyId = PropertyId | undefined
 export type GetPropertyById = (data: PropertyId[], id: Id) => MaybePropertyId
+export type GetProperties = (properties: PropertyId[]) => PropertyListItem[]
+
+
+
+

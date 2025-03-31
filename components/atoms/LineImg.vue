@@ -17,7 +17,7 @@
         <img :src="$loadImage(image)" class="h-[52px] w-[52px]" alt="image" >
       </div>
       <div v-if="svgIcon">
-        <div v-html="svgIcon" />
+        <Icon :name="svgIcon" />
       </div>
       <h3 class="font-sans text-lg font-semibold text-white">{{ head }}</h3>
     </div>

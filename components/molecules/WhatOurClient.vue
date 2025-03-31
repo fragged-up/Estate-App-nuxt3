@@ -17,7 +17,7 @@
       </p>
     </div>
 
-    <ViewButton :btn-text="viewAllTest" :total-pages-number="'10'" />
+    <ViewButton :button-text="viewAllTest" :total-pages-number="'10'" />
   </div>
 </template>
 

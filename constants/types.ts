@@ -1,15 +1,16 @@
 export type PropertyCard = {
-  propertyName?: string | number
-  propertyLocation?: string
-  cardImage: string
-  cardTitle: string
-  cardText: string
-  bedRooms: number
-  bathRooms: number
-  cardPrice?: string | number
-  propertyImages?: string[]
+  id:string | number
+  slug?: string 
+  location?: string
+  image: string
+  title: string
+  summary: string
+  bedrooms: number
+  bathrooms: number
+  price: string | number
+  imageGallery?: string[]
   description?: string
-  squareFeet?: string
+  areaSqFt?:number
 }
 export type Faces = {
   faceImage: string

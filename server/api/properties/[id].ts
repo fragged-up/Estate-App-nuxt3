@@ -1,20 +1,14 @@
-// server/api/properties/[id].ts
-import { getPropertyById } from '~/server/utils/getPropertyById'
-import { getPropertyDetails } from ~/
+import { getPropertyById } from "~/server/data/apiUtils"
+export default defineEventHandler(async(event:any) => {
 
-export default defineEventHandler((event) => {
-  const raw = event.context.params?.id || ''
-  const id = raw.split('-').pop()
+  const { id } = event.context?.params
+  const result = getPropertyById(id)
 
-  if (!id) {
-    throw createError({ statusCode: 400, message: 'Missing property ID' })
-  }
+  if(result){
+    return result 
+  } 
+  throw createError({ statusCode: 404, statusMessage: 'Property Not Found' })
 
-  const property = getPropertyById(id)
-
-  if (!property) {
-    throw createError({ statusCode: 404, message: 'Property not found' })
-  }
-
-  return property
 })
+
+

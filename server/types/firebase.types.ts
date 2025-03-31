@@ -1,7 +1,7 @@
-import type { PropertyId, Id } from './index'
+import type { PropertyId } from './index'
 import type { DocumentData, DocumentReference } from 'firebase/firestore'
 
-export type FirestoreDoc<T> = T & { id: Id }
+export type FirestoreDoc<T> = T & { id: string | number }
 
 export type GetPropertiesByCity = (city: string) => Promise<FirestoreDoc<PropertyId>[]>
 

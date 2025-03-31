@@ -1,2 +1,2 @@
-export * from "./getProperties"
+export * from "../data/apiUtils"
 export * from "./formatters"

@@ -1,6 +1,6 @@
-import { getProperties } from '~/server/utils/getProperties'
+import { getProperties } from '~/server/data/apiUtils'
 import { PROPERTIES_API } from '~/server/data'
 
 export default defineEventHandler(() => {
-  return getProperties(PROPERTIES_API)
+  return PROPERTIES_API
 })

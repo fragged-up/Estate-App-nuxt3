@@ -11,7 +11,10 @@ import type {
   FaqCardType,
   BoxGroups,
 } from './types'
-import { lightningSVG } from './svgIcons'
+import areaSVG from '~/assets/svgs/areaSVG.svg';
+import bedSVG from '~/assets/svgs/bedSvg.svg';
+import bathSVG from '~/assets/svgs/bathSVG.svg';
+import lightningSvg from '~/assets/svgs/lightningSVG.svg';
 
 export const faces: Faces[] = [
   {
@@ -43,8 +46,7 @@ export const cards: Cards[] = [
   {
     cardImage: '/home/building.svg',
     cardTitle: 'Rustic Retreat Cottage',
-    cardText:
-      'An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community...',
+    cardText:  'An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community...',
     bedRooms: 4,
     bathRooms: 3,
     cardPrice: '500,000',
@@ -52,8 +54,7 @@ export const cards: Cards[] = [
   {
     cardImage: '/images/MetroCard.svg',
     cardTitle: 'Metropolitan Haven',
-    cardText:
-      'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
+    cardText:  'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
     bedRooms: 2,
     bathRooms: 2,
     cardPrice: '500,000',
@@ -61,8 +62,7 @@ export const cards: Cards[] = [
   {
     cardImage: '/images/SeasideCard.svg',
     cardTitle: 'Rustic Retreat Cottage',
-    cardText:
-      'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
+    cardText:   'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
     bedRooms: 4,
     bathRooms: 3,
     cardPrice: '500,000',
@@ -71,18 +71,17 @@ export const cards: Cards[] = [
 export const faqs: Faqs[] = [
   {
     faqTitle: 'How do I search for properties on Estatein?',
-    faqText:
-      'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+    faqText: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
   },
   {
     faqTitle: 'What documents do I need to sell my property through Estatein?',
-    faqText:
-      'Find out about the necessary documentation for listing your property with us.',
+    faqText:   'Find out about the necessary documentation for listing your property with us.',
+   
   },
   {
     faqTitle: 'How can I contact an Estatein agent?',
-    faqText:
-      'Discover the different ways you can get in touch with our experienced agents',
+    faqText:'Discover the different ways you can get in touch with our experienced agents',
+      
   },
 ]
 export const inputsFields: InputFields[] = [
@@ -182,38 +181,38 @@ export const StepsField: StepsType[] = [
   {
     stepNo: 'Step 01',
     stepHead: 'Discover a World of Possibilities',
-    stepPara:
-      'Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location,',
+    stepPara: 'Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location,',
+     
   },
   {
     stepNo: 'Step 02',
     stepHead: 'Narrowing Down Your Choices',
-    stepPara:
-      "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision.",
+    stepPara:  "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision.",
+    
   },
   {
     stepNo: 'Step 03',
     stepHead: 'Personalized Guidance',
-    stepPara:
-      'OHave questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.',
+    stepPara:  'OHave questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.',
+    
   },
   {
     stepNo: 'Step 04',
     stepHead: 'See It for Yourself',
-    stepPara:
-      "Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.",
+    stepPara:"Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.",
+      
   },
   {
     stepNo: 'Step 05',
     stepHead: 'Making Informed Decisions',
-    stepPara:
-      'Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed.',
+    stepPara:  'Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed.',
+    
   },
   {
     stepNo: 'Step 06',
     stepHead: 'Getting the Best Deal',
-    stepPara:
-      "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms.",
+    stepPara:  "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms.",
+    
   },
 ]
 
@@ -290,31 +289,31 @@ export const repeatedBlockConfig: RepeatedBlockConfig = {
 
 export const keyFeatures: LineImages[] = [
   {
-    svgImage: lightningSVG,
+    svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
-    svgImage: lightningSVG,
+    svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
-    svgImage: lightningSVG,
+    svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
-    svgImage: lightningSVG,
+    svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
-    svgImage: lightningSVG,
+    svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
@@ -336,19 +335,18 @@ export const faqCard: FaqCardType = {
   faqs: [
     {
       faqTitle: 'How do I search for properties on Estatein?',
-      faqText:
-        'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+      faqText: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+       
     },
     {
-      faqTitle:
-        'What documents do I need to sell my property through Estatein?',
-      faqText:
-        'Find out about the necessary documentation for listing your property with us.',
+      faqTitle:'What documents do I need to sell my property through Estatein?',
+      faqText:'Find out about the necessary documentation for listing your property with us.',
+        
     },
     {
       faqTitle: 'How can I contact an Estatein agent?',
-      faqText:
-        'Discover the different ways you can get in touch with our experienced agents',
+      faqText:  'Discover the different ways you can get in touch with our experienced agents',
+      
     },
   ],
 }

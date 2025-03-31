@@ -1,123 +1,53 @@
 <script setup lang="ts">
-import { inputsFields, selectFields } from '~/constants'
-import { useSeoMeta } from '#imports'
+  import { inputsFields, selectFields } from '~/constants';
+  import { useRouter, useSeoMeta } from '#imports';
 
-useSeoMeta({ title: 'Properties' })
+  useSeoMeta({ title: 'Properties' });
 
-const pagination = usePaginationStore()
-const router = useRouter()
-const itemsPerPage = 3
+  const router = useRouter();
+  const itemsPerPage = 3;
 
-const { data: collageProperties } = await useFetch('/api/properties')
-const { data: properties } = await useFetch('/api/test')
+  const { data: propertyList } = await useFetch('/api/properties');
 
-const paginatedProperties = computed(() => {
-  if (!properties.value) return []
-  const start = (pagination.currentPage - 1) * itemsPerPage
-  return properties.value.slice(start, start + itemsPerPage)
-})
-watch(
-  properties,
-  (val: Array<any> | null | undefined) => {
-    if (val) {
-      pagination.setTotal(Math.ceil(val.length / itemsPerPage))
-    }
-  },
-  { immediate: true }
-)
+  onMounted(() => {
+    console.log('propertyList', propertyList);
+  });
 
-const sendTheData = (property: any) => {
-  router.push(`/Properties/${property.propertyName}`)
-}
+
 </script>
 
 <template>
   <div>
     <DynamicHero variant="properties" />
-
     <main>
-     <PaginationWrapper :items="properties">
-       <template #default="{ items }">
-         <PropertyVariantCard 
-         v-for="(item,index) in items"
-         :key="index"
-         :variant="`properties`"
-         :card-image="item.image"
-         :card-title="item.title"
-         :card-price="item.price"
-         :tag-line="item.locationText"
-         :card-text="item.text"
-         :description="item.description"
-         /> 
-         
-        </template>
-        </PaginationWrapper>
-
-
-
       <section>
         <div class="box-c">
           <BoxInput />
         </div>
 
-        <div class="mt-10 space-y-8">
-          <PaginationWrapper :items="properties">
-            <template #default="{ items }">
-              <FeaturedPropertyCard
-                v-for="property in items"
-                :key="property.id"
-                :image-key="property.image"
-                :title="property.title"
-                :description="property.description"
-                :price="property.price"
-                :location-text="property.locationText"
-                @click="sendTheData"
-              />
-            </template>
-          </PaginationWrapper>
-        </div>
-
         <div class="property">
           <MainBlock
-            header-text="Discover a World of Possibilities"
-            para-text="Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home."
+            :header-text="'Discover a World of Possibilities'"
+            :para-text="`Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home.`"
           >
             <template #default>
-              <div class="min-w-[100%] overflow-x-scroll whitespace-nowrap border border-blue-800">
-                <div class="min-w-[100%] overflow-x-hidden grid grid-cols-1">
-                  <div
-                    v-for="(property, index) in collageProperties"
-                    :key="index"
-                    class="mx-auto my-6 w-full"
-                  >
-                    <PropertyCard
-                      :property-name="property.propertyName"
-                      :card-image="property.cardImage"
-                      :card-title="property.cardTitle"
-                      :card-text="property.cardText"
-                      :bed-rooms="property.bedRooms"
-                      :bath-rooms="property.bathRooms"
-                      :card-price="property.cardPrice"
-                      :description="property.description"
-                      :square-feet="property.squareFeet"
-                      :property-location="property.propertyLocation"
-                      :property-images="property.propertyImages"
-                      @click="sendTheData(property)"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <!-- אם הפגינציה הזו מיותרת אפשר למחוק -->
-              <div class="my-8 flex items-center justify-between">
-                <button class="arrows-bg text-[#808080]">&leftarrow;</button>
-                <p class="pad-fix:whitespace-nowrap p-2">
-                  <span class="text-white">01</span>
-                  <span class="text-[#808080]">of</span>
-                  <span class="text-[#808080]">10</span>
-                </p>
-                <button class="arrows-bg text-white">&rightarrow;</button>
-              </div>
+              <PaginationWrapper :items="propertyList">
+                <template #default="{ items }">
+                  <PropertyCard
+                    v-for="item in items"
+                    :id="item.id"
+                    :key="item.id"
+                    :slug="item.slug"
+                    :image="item.image"
+                    :title="item.title"
+                    :price="item.price"
+                    :tagline="item.tagline"
+                    :location="item.location"
+                    :summary="item.summary"
+                    :description="item.description"
+                  />
+                </template>
+              </PaginationWrapper>
             </template>
           </MainBlock>
         </div>
@@ -137,6 +67,7 @@ const sendTheData = (property: any) => {
                 :name="inp.name"
                 :placeholder="inp.placeHolder"
               />
+
               <div class="select-input-group">
                 <SelectInput
                   v-for="(selInp, index) in selectFields"
@@ -157,12 +88,7 @@ const sendTheData = (property: any) => {
 </template>
 
 <style scoped>
-.fallback {
-  background: linear-gradient(
-    90deg,
-    rgba(38, 38, 38, 1) 0%,
-    rgba(38, 38, 38, 1) 100%,
-    rgba(38, 38, 38, 0.5) 53%
-  );
-}
+  .fallback {
+    background: linear-gradient(90deg, rgba(38, 38, 38, 1) 0%, rgba(38, 38, 38, 1) 100%, rgba(38, 38, 38, 0.5) 53%);
+  }
 </style>

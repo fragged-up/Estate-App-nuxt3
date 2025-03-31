@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  defineProps<{
-    bedRooms: any;
-    bathRooms: any;
+  const props =defineProps<{
+    bedRooms: string;
+    bathRooms: string;
   }>();
 </script>
 
@@ -10,13 +10,13 @@
     <button class="rounded-3xl border-2 border-[#262626] bg-[#1A1A1A]">
       <span class="inline-flex gap-2 py-2">
         <img :src="$loadImage('/icons/bedRoom.svg')" class="mx-auto text-center" alt="bedRoom" >
-        <small class="text-white font-sans font-medium text-sm">{{ bedRooms }}-Bedroom</small>
+        <small class="text-white font-sans font-medium text-sm">{{ props.bedRooms.toString() }}-Bedroom</small>
       </span>
     </button>
     <button class="rounded-3xl border-2 border-[#262626] bg-[#1A1A1A]">
       <span class="inline-flex gap-2 py-2">
         <img :src="$loadImage('/icons/bathRoom.svg')" class="mx-auto text-center" alt="bathRoom" >
-        <small class="text-white font-sans font-medium text-sm">{{ bathRooms }}-Bathroom</small>
+        <small class="text-white font-sans font-medium text-sm">{{ props.bathRooms.toString() }}-Bathroom</small>
       </span>
     </button>
 

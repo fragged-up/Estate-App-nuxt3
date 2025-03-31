@@ -1,39 +1,45 @@
 <script setup lang="ts">
-  import { bedSVG, bathSVG, areaSVG } from '~/constants/svgIcons';
-  import { scard_1, scard_2, faqCard, keyFeatures } from '~/constants';
-  import { useRoute } from '#imports';
+  import areaSVG from '~/assets/svgs/areaSVG.svg';
+  import bedSVG from '~/assets/svgs/bedSvg.svg';
+  import bathSVG from '~/assets/svgs/bathSVG.svg';
+  import { scard_1,scard_2,keyFeatures,faqCard } from '~/constants';
+  import { useRoute, useSeoMeta } from '#imports'
 
-  const route = useRoute();
-  const propertyId = route.params.propertyName;
+const {id} = useRoute().params
+const { data: property } = await useAsyncData(`property-${id}`, () => {
+  return $fetch(`/api/properties/${id}`)
+}, {
+  server: true, 
+  lazy: false, 
+})
 
-  useSeoMeta({
-    title: `${propertyId} | Estatein`,
-    ogTitle: `${propertyId} | Estatein`,
-    description: `Details about property: ${propertyId}`,
-  });
+useSeoMeta({
+  title: `${id} | Property #${id}`,
+  description: `Explore ${id}, property #${id}.`,
 
-  const { data: property, error } = await useAsyncData(`property-${route.params.propertyName}`, () =>
-    $fetch(`/api/properties/${route.params.propertyName}`),
-  );
+})
 
+  
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {
     activeNumber.value = newIndex;
   };
 
-  const selectedProperty = `${property.propertyName} Villa, ${property.propertyLocation}`;
+console.log("property",property);
+
+
 </script>
 
 <template>
-  <div class="main">
+  <div v-if="property" class="main">
     <header>
       <div class="p-4">
         <CardId
-          :property-name-id="property.propertyName"
-          :card-image-id="property.cardImage"
-          :card-price-id="property.cardPrice"
-          :property-location-id="property.propertyLocation"
-          :property-images-id="property.propertyImages"
+          :slug-id="property.slug"
+          :image-id="property.image"
+          :price-id="property.price"
+          :location-id="property.location"
+          :image-gallery-id="property.imageGallery"
           :active-index="activeNumber"
           @update-index="updateIndex"
         />
@@ -54,20 +60,20 @@
           <div class="left-s border-r border-hg">
             <LineImg :svg-icon="bedSVG" :gapped-value="'gap-1'" :head="'Bedrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ property.bedRooms ? property.bedRooms.toString() : 'N/A' }}
+              0{{ property.bedrooms ? property.bedRooms.toString() : 'N/A' }}
             </p>
           </div>
           <div class="right-s pl-4">
             <LineImg :svg-icon="bathSVG" :gapped-value="'gap-1'" :head="'Bathrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ property.bathRooms ? property.bathRooms.toString() : 'N/A' }}
+              0{{ property.bathrooms ? property.bathrooms.toString() : 'N/A' }}
             </p>
           </div>
         </div>
         <div class="area">
           <LineImg :svg-icon="areaSVG" :gapped-value="'gap-1'" :head="'Area'" />
           <p class="font-sans text-lg font-semibold text-white">
-            {{ property.squareFeet ? property.squareFeet : 'N/A' }} Square Feet
+            {{ property.areaSqFt ? property.areaSqFt : 'N/A' }} Square Feet
           </p>
         </div>
       </div>
@@ -90,7 +96,7 @@
       <div class="box-rows">
         <div class="box-row-one laptop:my-12 laptop:grid laptop:grid-cols-[25%_70%] laptop:justify-between">
           <MainBox :headline="scard_1.head" :paraline="scard_1.para" />
-          <FormId :location-text="selectedProperty" />
+          <FormId :location-text="property.location" />
         </div>
 
         <div class="box-row-two">
@@ -105,7 +111,7 @@
             </div>
           </div>
           <div class="my-6">
-            <ListingData :listing-price="property.cardPrice" />
+            <ListingData :listing-price="property.price" />
           </div>
         </div>
 
@@ -131,6 +137,11 @@
         </div>
       </div>
     </section>
+  </div>
+  <div v-else>
+
+    <h1 class="text-red-500">NO Property ID! </h1>
+
   </div>
 </template>
 

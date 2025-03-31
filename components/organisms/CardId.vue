@@ -1,18 +1,18 @@
 <script setup lang="ts">
-  import { whiteLocationSvg } from '~/constants/svgIcons';
+  import  whiteLocationSvg  from '~/assets/svgs/whiteLocationSVG.svg';
   defineProps<{
-    propertyNameId: string | number;
-    cardImageId: string | number;
-    propertyLocationId: string;
-    cardPriceId: string | number;
-    propertyImagesId: string[];
+    slugId: string;
+    imageId: string ;
+    locationId: string;
+    priceId: string | number;
+    imageGalleryId: string[];
   }>();
 
   const emit = defineEmits<{
     updateIndex: [index: number];
   }>();
 
-  const currentIndex = ref<number>(0).value;
+  const currentIndex = ref<number>(0)
 
   const changeIndex = (delta: number | string) => {
     const newIndex = currentIndex + delta;
@@ -21,27 +21,12 @@
   const current = ref(0);
   const total = 5;
 
-  // const currentIndex = ref(0) //בלי .value
-
-// const changeIndex = (delta: number | string) => {
-//   const newIndex = currentIndex.value + Number(delta)
-//   currentIndex.value = newIndex
-//   emit('updateIndex', newIndex)
-// }
-
-// const total = computed(() => propertyImagesId.length)
-
-
-
-
-
-
 </script>
 
 <template>
   <div class="content-title mx-auto my-4 w-[90%]">
     <h1 class="font-sans text-xl font-semibold text-white">
-      {{ propertyNameId }}
+      {{ slugId }}
     </h1>
     <div class="mx-auto mb-2 mt-4 grid grid-flow-col">
       <div class="flex">
@@ -49,12 +34,12 @@
           :svg-icon="whiteLocationSvg"
           :container-wrapper="'border border-hg bg-fgl rounded-xl p-2'"
           :gapped-value="'gap-1'"
-          :head="propertyLocationId"
+          :head="locationId"
         />
       </div>
       <div class="flex items-center justify-center gap-2">
         <p class="font-sans text-sm font-medium text-gl">Price</p>
-        <p class="font-sans text-lg font-semibold text-white"> ${{ cardPriceId }} </p>
+        <p class="font-sans text-lg font-semibold text-white"> ${{ priceId }} </p>
       </div>
     </div>
   </div>
@@ -67,13 +52,13 @@
     <div class="mobile-box laptop:hidden">
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
         <img
-          :src="$loadImage(cardImageId)"
+          :src="$loadImage(imageId)"
           alt="miniMainImage"
           class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]"
         >
       </div>
       <div class="gallery-cont min-w-full">
-        <imageGallery :images="propertyImagesId" :active-index="currentIndex" @update-active-index="currentIndex" />
+        <imageGallery :images="imageGalleryId" :active-index="currentIndex" @update-active-index="currentIndex" />
       </div>
 
       <div class="navigator-cont">
@@ -86,7 +71,7 @@
     <!-- laptop BOX  -->
     <div class="laptop-box mx-auto hidden bg-hg laptop:block">
       <div class="mx-auto">
-        <imageGallery :images="propertyImagesId" :active-index="currentIndex" @update-active-index="changeIndex" />
+        <imageGallery :images="imageGalleryId" :active-index="currentIndex" @update-active-index="changeIndex" />
       </div>
       <div class="images-cnt mx-auto flex h-auto w-full items-center gap-4 p-4">
         <img :src="$loadImage('images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >

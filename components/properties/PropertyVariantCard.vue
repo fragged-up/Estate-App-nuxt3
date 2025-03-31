@@ -19,19 +19,21 @@
 </script>
 
 <template>
-  <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
-    <PropetyImage :card-image="$loadImage(cardImage)" />
-    <!-- Properties Version -->
-    <template v-if="variant === 'properties'">
-      <PropertyTagLine :tag="tagline" />
-      <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
-    </template>
-    <!-- HomePage Version -->
-    <template v-else>
-      <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
-      <PropertyBadges :bed-rooms="bedRooms" :bath-rooms="bathRooms" />
-    </template>
-    <!-- Footer Constitancy -->
-    <PropertyCardFooter :card-price="cardPrice" />
-  </div>
+  <NuxtLink :to="`/properties/${slug}-${id}`">
+    <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
+      <PropetyImage :card-image="$loadImage(cardImage)" />
+      <!-- Properties Version -->
+      <template v-if="variant === 'properties'">
+        <PropertyTagLine :tag="tagline" />
+        <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
+      </template>
+      <!-- HomePage Version -->
+      <template v-else>
+        <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
+        <PropertyBadges :bed-rooms="bedRooms" :bath-rooms="bathRooms" />
+      </template>
+      <!-- Footer Constitancy -->
+      <PropertyCardFooter :card-price="cardPrice" />
+    </div>
+  </NuxtLink>
 </template>

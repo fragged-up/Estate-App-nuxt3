@@ -1,5 +1,6 @@
-import { collageProperties } from './data'
+import { getPropertyList } from '~/server/utils/getPropertyList'
+import { propertyList } from '~/server/data/propertyList'
 
-export default defineEventHandler(async () => {
-  return collageProperties
+export default defineEventHandler(() => {
+  return getPropertyList(propertyList)
 })

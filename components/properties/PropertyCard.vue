@@ -26,7 +26,7 @@
 </script>
 
 <template>
-
+// proeprty card for properties page
     <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
       <PropetyImage :card-image="$loadImage(cardImage)"/>
       <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
@@ -35,21 +35,13 @@
     </div>
 
 
-
+ // proeprty card for home page
     <div class="card-box grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6">
       <PropetyImage :card-image="$loadImage(cardImage)"/>
       <PropretyTagLine :tag-line="pTagLine"/>
       <PropertyTextBlock :card-title="cardTitle" :card-text="cardText" :lorem-ipsum="loremIpsum" />
       <PropertyCardFooter :card-price="cardPrice" />
     </div>
-
-
-
-
-
-
-
-
 
 
 

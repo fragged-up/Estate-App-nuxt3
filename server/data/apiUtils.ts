@@ -4,10 +4,9 @@ import { PROPERTIES_API } from ".";
 export const getProperties = (properties:any) => {
   const extractedProperties = properties.map((property: any) => {
     const { id, slug, image, title, summary, bedrooms, bathrooms, price, location } = property;
-     const santizedId = id.toString();
  
     return {
-      santizedId,
+      id,
       slug,
       image,
       title,
@@ -26,8 +25,8 @@ export const getProperties = (properties:any) => {
 
 
 
-export const getPropertyById = (id:string) =>{
+export const getPropertyById = (id:string | number) =>{
   const allProps = PROPERTIES_API.map((property)=>property)
-  return allProps.filter((prop)=>prop.id.toString() ===id  ) 
+  return allProps.find((prop)=>prop.id === Number(id)  ) 
   
 }

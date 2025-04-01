@@ -11,10 +11,6 @@ import type {
   FaqCardType,
   BoxGroups,
 } from './types'
-import areaSVG from '~/assets/svgs/areaSVG.svg';
-import bedSVG from '~/assets/svgs/bedSvg.svg';
-import bathSVG from '~/assets/svgs/bathSVG.svg';
-import lightningSvg from '~/assets/svgs/lightningSVG.svg';
 
 export const faces: Faces[] = [
   {

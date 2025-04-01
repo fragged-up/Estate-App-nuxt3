@@ -53,12 +53,13 @@
     "vue-tsc": "^2.2.0"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
+    "overrides": {
+      "glob": "11.0.1"
+    },
+    "ignoredBuiltDependencies": [
       "@firebase/util",
       "@parcel/watcher",
-      "core-js",
-      "esbuild",
-      "protobufjs"
+      "esbuild"
     ]
   }
 }

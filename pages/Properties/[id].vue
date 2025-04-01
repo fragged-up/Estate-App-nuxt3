@@ -1,40 +1,39 @@
 <script setup lang="ts">
-  import areaSVG from '~/assets/svgs/areaSVG.svg';
-  import bedSVG from '~/assets/svgs/bedSvg.svg';
-  import bathSVG from '~/assets/svgs/bathSVG.svg';
   import { scard_1,scard_2,keyFeatures,faqCard } from '~/constants';
   import { useRoute, useSeoMeta } from '#imports'
 
-const {id} = useRoute().params
-const { data: property } = await useAsyncData(`property-${id}`, () => {
-  return $fetch(`/api/properties/${id}`)
-}, {
-  server: true, 
-  lazy: false, 
-})
-
+  const route = useRoute()
+  const id = ref(route.params.id)
+const result = await $fetch(`/api/properties/${id}`)
+const me = JSON.stringify(result)
+console.log(me);
 useSeoMeta({
   title: `${id} | Property #${id}`,
   description: `Explore ${id}, property #${id}.`,
 
 })
-
-  
+watch(() => route.params.id, (newId:any) => {
+  id.value = newId
+  refresh()
+})
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {
     activeNumber.value = newIndex;
   };
 
-console.log("property",property);
 
 
+function refresh() {
+  throw new Error('Function not implemented.');
+}
 </script>
 
-<template>
-  <div v-if="property" class="main">
+<template v-if="property" >
+  <div class="main">
     <header>
       <div class="p-4">
         <CardId
+        v-if="property"
           :slug-id="property.slug"
           :image-id="property.image"
           :price-id="property.price"
@@ -58,22 +57,22 @@ console.log("property",property);
         </div>
         <div class="grid grid-flow-col border-y border-hg py-12">
           <div class="left-s border-r border-hg">
-            <LineImg :svg-icon="bedSVG" :gapped-value="'gap-1'" :head="'Bedrooms'" />
+            <LineImg :svg-icon="'tabler:bed'" :gapped-value="'gap-1'" :head="'Bedrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ property.bedrooms ? property.bedRooms.toString() : 'N/A' }}
+              0{{ property?.bedrooms ? property.bedRooms.toString() : 'N/A' }}
             </p>
           </div>
           <div class="right-s pl-4">
-            <LineImg :svg-icon="bathSVG" :gapped-value="'gap-1'" :head="'Bathrooms'" />
+            <LineImg :svg-icon="'tabler:bath'" :gapped-value="'gap-1'" :head="'Bathrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ property.bathrooms ? property.bathrooms.toString() : 'N/A' }}
+              0{{ property?.bathrooms ? property.bathrooms.toString() : 'N/A' }}
             </p>
           </div>
         </div>
         <div class="area">
-          <LineImg :svg-icon="areaSVG" :gapped-value="'gap-1'" :head="'Area'" />
+          <LineImg :svg-icon="'mdi:ruler-square'" :gapped-value="'gap-1'" :head="'Area'" />
           <p class="font-sans text-lg font-semibold text-white">
-            {{ property.areaSqFt ? property.areaSqFt : 'N/A' }} Square Feet
+            {{ property?.areaSqFt ? property.areaSqFt : 'N/A' }} Square Feet
           </p>
         </div>
       </div>
@@ -138,11 +137,7 @@ console.log("property",property);
       </div>
     </section>
   </div>
-  <div v-else>
-
-    <h1 class="text-red-500">NO Property ID! </h1>
-
-  </div>
+  
 </template>
 
 <style scoped>

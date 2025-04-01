@@ -22,7 +22,7 @@ const loremIpsum =`Lorem ipsum dolor sit, amet consectetur adipisicing elit. Por
       .replace(/^-|-$/g, '')               // Trim dashes from start and end
   }
   
-
+  const { id } = props;
 const styleNav = 'bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white text-sm font-medium px-2 py-3 lg:px-6 rounded-xl'
 
 </script>
@@ -39,9 +39,12 @@ const styleNav = 'bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text
         {{ props.price ? formatPrice(props.price) : 'There is Error With Price' }}
       </p>
     </div>
-   <NuxtLink
-   class="bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white text-sm font-medium px-2 py-3 lg:px-6 rounded-xl text-center" 
-   :to="`/properties/${slugify(props.slug)}-${props.id.toString()}`">View Properties</NuxtLink>
+    <NuxtLink
+        class="bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white text-sm font-medium px-2 py-3 lg:px-6 rounded-xl text-center"
+        :to="`/properties/${id}`"
+      >
+        View Properties
+      </NuxtLink>
   </div>
   </div>
 </template>

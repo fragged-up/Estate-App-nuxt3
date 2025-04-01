@@ -1,18 +1,15 @@
 <script setup lang="ts">
-  import  whiteLocationSvg  from '~/assets/svgs/whiteLocationSVG.svg';
+type ImageGallery = { path:string}[]
   defineProps<{
-    slugId: string;
-    imageId: string ;
-    locationId: string;
-    priceId: string | number;
-    imageGalleryId: string[];
+    slugId: string
+    imageId: string
+    locationId: string
+    priceId: string | number
+    imageGalleryId: ImageGallery
   }>();
 
-  const emit = defineEmits<{
-    updateIndex: [index: number];
-  }>();
-
-  const currentIndex = ref<number>(0)
+const emit = defineEmits<{  updateIndex: [index: number];}>();
+const currentIndex = ref<number>(0)
 
   const changeIndex = (delta: number | string) => {
     const newIndex = currentIndex + delta;
@@ -26,12 +23,12 @@
 <template>
   <div class="content-title mx-auto my-4 w-[90%]">
     <h1 class="font-sans text-xl font-semibold text-white">
-      {{ slugId }}
+      {{ slugId || 'what' }}
     </h1>
     <div class="mx-auto mb-2 mt-4 grid grid-flow-col">
       <div class="flex">
         <LineImg
-          :svg-icon="whiteLocationSvg"
+          :svg-icon="'tabler:map-pin-filled'"
           :container-wrapper="'border border-hg bg-fgl rounded-xl p-2'"
           :gapped-value="'gap-1'"
           :head="locationId"
@@ -45,9 +42,8 @@
   </div>
 
   <!-- max-w-[414px] deleted for now  -->
-  <div
-    class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]"
-  >
+  <div class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">
+  
     <!-- mobile BOX  -->
     <div class="mobile-box laptop:hidden">
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">

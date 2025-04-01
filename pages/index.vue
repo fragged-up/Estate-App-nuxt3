@@ -6,13 +6,15 @@
     cardThirdHead,
     cardThirdParagraph,
   } from '~/constants/homePage';
+  import { useRouter } from '#imports'; 
 
   useSeoMeta({ title: 'Home' });
 
 const headerTxt ="Featured Properties"
 const paraTxt="Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein."
+const router = useRouter()
 
-
+const goToIdProperty = (property:any) => router.push({path:`/properties/${property.id}`})
 
   const API = [
     {
@@ -122,6 +124,7 @@ const paraTxt="Explore our handpicked selection of featured properties. Each lis
                  :bathrooms="item.bathrooms.toString()"
                  :bedrooms="item.bedrooms.toString()"
                  :price="item.price.toString()"
+                 @click="goToIdProperty(item)"
                   />
                 </template>
             </PaginationWrapper>

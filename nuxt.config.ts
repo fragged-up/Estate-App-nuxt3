@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
@@ -12,9 +12,7 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap',
         },
       ],
-      meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ],
+      meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     },
   },
   typescript: {
@@ -65,4 +63,4 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-03-29',
-})
+});

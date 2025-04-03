@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { NuxtLink } from '#components';
   type ImageGallery = { path: string }[];
   const props = defineProps<{
     id: number | string;
@@ -12,8 +11,13 @@
     location: string;
     tagline: string;
   }>();
-  const { id } = props;
   const loremIpsum = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porronecessitatibus...`;
+
+  const emit = defineEmits('click');
+
+  const handleClick = (id: any) => {
+    emit('click', id);
+  };
 </script>
 
 <template>
@@ -28,12 +32,12 @@
           {{ props.price ? formatPrice(props.price) : 'There is Error With Price' }}
         </p>
       </div>
-      <NuxtLink
+      <button
         class="bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white text-sm font-medium px-2 py-3 lg:px-6 rounded-xl text-center"
-        :to="`/properties/${id}`"
+        @click="handleClick"
       >
         View Properties
-      </NuxtLink>
+      </button>
     </div>
   </div>
 </template>

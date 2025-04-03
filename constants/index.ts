@@ -10,10 +10,11 @@ import type {
   MiniCard,
   FaqCardType,
   BoxGroups,
-} from './types'
+} from './types';
 
 export const faces: Faces[] = [
   {
+    id: 1,
     faceImage: '/home/wadeFace.svg',
     faceName: 'Wade Warren',
     faceLocation: 'USA, California',
@@ -22,6 +23,7 @@ export const faces: Faces[] = [
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
   },
   {
+    id: 2,
     faceImage: '/home/wadeFace.svg',
     faceName: 'Wade Warren',
     faceLocation: 'USA, California',
@@ -30,6 +32,7 @@ export const faces: Faces[] = [
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
   },
   {
+    id: 3,
     faceImage: '/home/wadeFace.svg',
     faceName: 'Wade Warren',
     faceLocation: 'USA, California',
@@ -37,33 +40,36 @@ export const faces: Faces[] = [
     facePara:
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
   },
-]
+];
 export const cards: Cards[] = [
   {
+    id: 1,
     cardImage: '/home/building.svg',
     cardTitle: 'Rustic Retreat Cottage',
-    cardText:  'An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community...',
+    cardText: 'An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community...',
     bedRooms: 4,
     bathRooms: 3,
     cardPrice: '500,000',
   },
   {
+    id: 2,
     cardImage: '/images/MetroCard.svg',
     cardTitle: 'Metropolitan Haven',
-    cardText:  'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
+    cardText: 'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
     bedRooms: 2,
     bathRooms: 2,
     cardPrice: '500,000',
   },
   {
+    id: 3,
     cardImage: '/images/SeasideCard.svg',
     cardTitle: 'Rustic Retreat Cottage',
-    cardText:   'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
+    cardText: 'A chic and fully-furnished 2-bedroom apartment with panoramic city views...',
     bedRooms: 4,
     bathRooms: 3,
     cardPrice: '500,000',
   },
-]
+];
 export const faqs: Faqs[] = [
   {
     faqTitle: 'How do I search for properties on Estatein?',
@@ -71,15 +77,13 @@ export const faqs: Faqs[] = [
   },
   {
     faqTitle: 'What documents do I need to sell my property through Estatein?',
-    faqText:   'Find out about the necessary documentation for listing your property with us.',
-   
+    faqText: 'Find out about the necessary documentation for listing your property with us.',
   },
   {
     faqTitle: 'How can I contact an Estatein agent?',
-    faqText:'Discover the different ways you can get in touch with our experienced agents',
-      
+    faqText: 'Discover the different ways you can get in touch with our experienced agents',
   },
-]
+];
 export const inputsFields: InputFields[] = [
   {
     for: 'firstName',
@@ -109,7 +113,7 @@ export const inputsFields: InputFields[] = [
     name: 'phone',
     placeHolder: 'Enter Phone',
   },
-]
+];
 export const selectFields: SelectFields[] = [
   {
     selectHead: 'Preferred Location',
@@ -141,9 +145,10 @@ export const selectFields: SelectFields[] = [
     label: 'Select Location',
     options: ['Option1', 'Option 2', 'Option 3'],
   },
-]
+];
 export const lineFieldOne: LineImages[] = [
   {
+    id: 1,
     image: '/icons/TrustIcon.svg',
     head: 'Trust',
     para: 'Trust is the cornerstone of every successful real estate transaction.',
@@ -151,66 +156,69 @@ export const lineFieldOne: LineImages[] = [
   },
 
   {
+    id: 2,
     image: '/icons/ExcellenceIcon.svg',
     head: 'Excellence',
     para: 'We set the bar high for ourselves. From the properties we list to the services we provide.',
     cWrapper: 'box-two',
   },
-]
+];
 
 export const lineFieldTwo: LineImages[] = [
   {
+    id: 1,
     image: '/icons/CentricIcon.svg',
     head: 'Client-Centric',
     para: 'Your dreams and needs are at the center of our universe. We listen, understand.',
     cWrapper: 'box-three',
   },
   {
+    id: 2,
     image: '/icons/TrustIcon.svg',
     head: 'Our Commitment',
     para: 'We are dedicated to providing you with the highest level of service, professionalism',
     cWrapper: 'box-fourth',
   },
-]
+];
 
 export const StepsField: StepsType[] = [
   {
     stepNo: 'Step 01',
     stepHead: 'Discover a World of Possibilities',
-    stepPara: 'Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location,',
-     
+    stepPara:
+      'Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location,',
   },
   {
     stepNo: 'Step 02',
     stepHead: 'Narrowing Down Your Choices',
-    stepPara:  "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision.",
-    
+    stepPara:
+      "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision.",
   },
   {
     stepNo: 'Step 03',
     stepHead: 'Personalized Guidance',
-    stepPara:  'OHave questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.',
-    
+    stepPara:
+      'OHave questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.',
   },
   {
     stepNo: 'Step 04',
     stepHead: 'See It for Yourself',
-    stepPara:"Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.",
-      
+    stepPara:
+      "Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.",
   },
   {
     stepNo: 'Step 05',
     stepHead: 'Making Informed Decisions',
-    stepPara:  'Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed.',
-    
+    stepPara:
+      'Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed.',
   },
   {
     stepNo: 'Step 06',
     stepHead: 'Getting the Best Deal',
-    stepPara:  "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms.",
-    
+    stepPara:
+      "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms.",
   },
-]
+];
 
 export const repeatedBlockConfig: RepeatedBlockConfig = {
   unlockSec: [
@@ -281,50 +289,55 @@ export const repeatedBlockConfig: RepeatedBlockConfig = {
       para: 'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations',
     },
   ],
-}
+};
 
 export const keyFeatures: LineImages[] = [
   {
+    id: 1,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
+    id: 2,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
+    id: 3,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
+    id: 4,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
   {
+    id: 5,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
     head: 'Expansive oceanfront terrace for outdoor entertaining',
   },
-]
+];
 
 export const scard_1: MiniCard = {
   head: 'Inquire About Seaside Serenity Villa',
   para: 'Interested in this property? Fill out the form below, and our real estate experts will get back to you with more details, including scheduling a viewing and answering any questions you may have.',
-}
+};
 
 export const scard_2: MiniCard = {
   head: 'Comprehensive Pricing Details',
   para: 'At Estatein, transparency is key. We want you to have a clear understanding of all costs associated with your property investment. Below, we break down the pricing for Seaside Serenity Villa to help you make an informed decision',
-}
+};
 export const faqCard: FaqCardType = {
   head: 'Frequently Asked Questions',
   para: "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
@@ -332,20 +345,17 @@ export const faqCard: FaqCardType = {
     {
       faqTitle: 'How do I search for properties on Estatein?',
       faqText: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
-       
     },
     {
-      faqTitle:'What documents do I need to sell my property through Estatein?',
-      faqText:'Find out about the necessary documentation for listing your property with us.',
-        
+      faqTitle: 'What documents do I need to sell my property through Estatein?',
+      faqText: 'Find out about the necessary documentation for listing your property with us.',
     },
     {
       faqTitle: 'How can I contact an Estatein agent?',
-      faqText:  'Discover the different ways you can get in touch with our experienced agents',
-      
+      faqText: 'Discover the different ways you can get in touch with our experienced agents',
     },
   ],
-}
+};
 
 export const BOX_GROUPS: BoxGroups = {
   firstBoxGroup: [
@@ -447,8 +457,7 @@ export const BOX_GROUPS: BoxGroups = {
       boxText: 'Approximate monthly cost',
     },
   ],
-}
-
+};
 
 export const heroSquaresHome = [
   {
@@ -467,4 +476,4 @@ export const heroSquaresHome = [
     centerIcon: '/icons/sunIcon.svg',
     title: 'Smart Investments,\n Informed Decisions',
   },
-]
+];

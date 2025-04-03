@@ -12,7 +12,7 @@ const emit = defineEmits<{  updateIndex: [index: number];}>();
 const currentIndex = ref<number>(0)
 
   const changeIndex = (delta: number | string) => {
-    const newIndex = currentIndex + delta;
+    const newIndex = currentIndex.value + delta;
     emit('updateIndex', newIndex);
   };
   const current = ref(0);
@@ -43,7 +43,7 @@ const currentIndex = ref<number>(0)
 
   <!-- max-w-[414px] deleted for now  -->
   <div class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">
-  
+
     <!-- mobile BOX  -->
     <div class="mobile-box laptop:hidden">
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
@@ -90,7 +90,7 @@ const currentIndex = ref<number>(0)
   }
 </style>
 
-<!-- 
+<!--
 <style scoped>
   .bg-filter {
     background-color: black;

@@ -1,6 +1,6 @@
 export type PropertyCard = {
   id:string | number
-  slug?: string 
+  slug?: string
   location?: string
   image: string
   title: string
@@ -13,6 +13,7 @@ export type PropertyCard = {
   areaSqFt?:number
 }
 export type Faces = {
+  id:number
   faceImage: string
   faceName: string
   faceLocation: string
@@ -20,6 +21,7 @@ export type Faces = {
   facePara: string
 }
 export type Cards = {
+  id:number
   cardImage: string
   cardTitle: string
   cardText: string
@@ -56,6 +58,7 @@ export type InputFields = {
   placeHolder?: string
 }
 export type SelectFields = {
+  id?:string;
   selectHead: string
   placeHolder: string
   label: string
@@ -74,6 +77,7 @@ export type StepsType = {
 }
 
 export type LineImages = {
+  id:number;
   image?: null | string
   head: string
   para?: null | string

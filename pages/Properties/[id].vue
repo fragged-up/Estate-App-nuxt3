@@ -1,44 +1,32 @@
 <script setup lang="ts">
-  import { scard_1,scard_2,keyFeatures,faqCard } from '~/constants';
-  import { useRoute, useSeoMeta } from '#imports'
+  import { scard_1, scard_2, keyFeatures, faqCard } from '~/constants';
+  import { getPropertyById } from '~/server/utils/';
+  import { useRoute } from '#imports';
+  const route = useRoute();
 
-  const route = useRoute()
-  const id = ref(route.params.id)
-const result = await $fetch(`/api/properties/${id}`)
-const me = JSON.stringify(result)
-console.log(me);
-useSeoMeta({
-  title: `${id} | Property #${id}`,
-  description: `Explore ${id}, property #${id}.`,
+  const { id } = route.params;
+  console.log('id', id);
+  const result = getPropertyById(id as string);
 
-})
-watch(() => route.params.id, (newId:any) => {
-  id.value = newId
-  refresh()
-})
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {
     activeNumber.value = newIndex;
   };
 
-
-
-function refresh() {
-  throw new Error('Function not implemented.');
-}
+  console.log(result);
 </script>
 
-<template v-if="property" >
+<template>
   <div class="main">
     <header>
       <div class="p-4">
         <CardId
-        v-if="property"
-          :slug-id="property.slug"
-          :image-id="property.image"
-          :price-id="property.price"
-          :location-id="property.location"
-          :image-gallery-id="property.imageGallery"
+          v-if="result"
+          :slug-id="result.slug"
+          :image-id="result.image"
+          :price-id="result.price"
+          :location-id="result.location"
+          :image-gallery-id="result.imageGallery"
           :active-index="activeNumber"
           @update-index="updateIndex"
         />
@@ -52,27 +40,27 @@ function refresh() {
         <div class="head-cnt space-y-4">
           <h2 class="font-sans font-semibold text-white">Description</h2>
           <p class="font-sans text-sm font-medium text-gl">
-            {{ property.description }}
+            {{ result.description }}
           </p>
         </div>
         <div class="grid grid-flow-col border-y border-hg py-12">
           <div class="left-s border-r border-hg">
             <LineImg :svg-icon="'tabler:bed'" :gapped-value="'gap-1'" :head="'Bedrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ property?.bedrooms ? property.bedRooms.toString() : 'N/A' }}
+              0{{ result?.bedrooms ? result.bedrooms.toString() : 'N/A' }}
             </p>
           </div>
           <div class="right-s pl-4">
             <LineImg :svg-icon="'tabler:bath'" :gapped-value="'gap-1'" :head="'Bathrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ property?.bathrooms ? property.bathrooms.toString() : 'N/A' }}
+              0{{ result?.bathrooms ? result.bathrooms.toString() : 'N/A' }}
             </p>
           </div>
         </div>
         <div class="area">
           <LineImg :svg-icon="'mdi:ruler-square'" :gapped-value="'gap-1'" :head="'Area'" />
           <p class="font-sans text-lg font-semibold text-white">
-            {{ property?.areaSqFt ? property.areaSqFt : 'N/A' }} Square Feet
+            {{ result?.areaSqFt ? result.areaSqFt : 'N/A' }} Square Feet
           </p>
         </div>
       </div>
@@ -81,8 +69,8 @@ function refresh() {
         <h3 class="font-sans text-lg font-semibold text-white">Key Features and Amenities</h3>
 
         <LineImg
-          v-for="(box, index) in keyFeatures"
-          :key="index"
+          v-for="box in keyFeatures"
+          :key="box.id"
           :svg-icon="box.svgImage"
           :container-wrapper="box.cWrapper"
           :gapped-value="box.gapVal"
@@ -95,7 +83,7 @@ function refresh() {
       <div class="box-rows">
         <div class="box-row-one laptop:my-12 laptop:grid laptop:grid-cols-[25%_70%] laptop:justify-between">
           <MainBox :headline="scard_1.head" :paraline="scard_1.para" />
-          <FormId :location-text="property.location" />
+          <FormId :location-text="result.location" />
         </div>
 
         <div class="box-row-two">
@@ -104,13 +92,13 @@ function refresh() {
             <h4 class="border-b border-hg pb-4 font-sans text-lg font-semibold text-white">Note</h4>
             <div class="laptop:border-l laptop:border-hg laptop:pl-4 laptop:text-center">
               <p class="py-4 font-sans text-sm font-medium text-gl laptop:text-center">
-                The figures provided above are estimates and may vary depending on the property, location, and
-                individual circumstances.
+                The figures provided above are estimates and may vary depending on the result, location, and individual
+                circumstances.
               </p>
             </div>
           </div>
           <div class="my-6">
-            <ListingData :listing-price="property.price" />
+            <ListingData :listing-price="result.price" />
           </div>
         </div>
 
@@ -137,7 +125,6 @@ function refresh() {
       </div>
     </section>
   </div>
-  
 </template>
 
 <style scoped>

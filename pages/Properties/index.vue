@@ -13,6 +13,10 @@
     console.log('propertyList', propertyList);
   });
 
+  const pushRoute = (id:number | string) => {
+    if(!id) console.log("no id ")
+    router.push(`/properties/${id}`);
+  };
 
 </script>
 
@@ -45,6 +49,7 @@
                     :location="item.location"
                     :summary="item.summary"
                     :description="item.description"
+                    @click=pushRoute(item.id)
                   />
                 </template>
               </PaginationWrapper>

@@ -8,4 +8,4 @@ export const slugify = (text: string): string => {
       .replace(/-+/g, '-')                 // Replace multiple dashes with one
       .replace(/^-|-$/g, '')               // Trim dashes from start and end
   }
-  
+

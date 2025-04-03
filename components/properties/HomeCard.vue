@@ -1,26 +1,18 @@
 <script lang="ts" setup>
   const props = defineProps<{
-    id: number;
-    slug: string;
-    title: string;
-    image: string;
-    summary: string;
-    bedrooms: string;
-    bathrooms: string;
-    location?: string;
-    price: number | string;
+    item: {
+      id: number;
+      slug: string;
+      title: string;
+      image: string;
+      summary: string;
+      bedrooms: string;
+      bathrooms: string;
+      location?: string;
+      price: number | string;
+    };
   }>();
   const loremIpsum = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porronecessitatibus...`;
-  const slugify = (text: string): string => {
-    return text
-      .toLowerCase() // Convert to lowercase
-      .normalize('NFD') // Normalize accented characters
-      .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks
-      .replace(/[^a-z0-9 ]/g, '') // Remove invalid characters
-      .replace(/\s+/g, '-') // Replace spaces with dashes
-      .replace(/-+/g, '-') // Replace multiple dashes with one
-      .replace(/^-|-$/g, ''); // Trim dashes from start and end
-  };
 
   const styleNav =
     'bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white text-sm font-medium px-2 py-3 lg:px-6 rounded-xl';
@@ -45,5 +37,4 @@
       </button>
     </div>
   </div>
-  ƒ
 </template>

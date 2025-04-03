@@ -70,3 +70,30 @@
     margin-inline:auto;
   }
 } */
+
+  .prp-cta {
+    @apply bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white font-medium text-center rounded-xl;
+  }
+
+  .card-box {
+    @apply grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6;
+  }
+
+  .shdw-template {
+    box-shadow: 1px -1px 18px 1px #262626;
+  }
+
+/*
+  // is migrated to navigation-btn
+  .arrows-bg {
+    background-color: #1a1a1a;
+    border: 2px solid #262626;
+    border-radius: 50%;
+    padding: 0.7rem;
+  } */
+
+
+  .navigation-btn {
+    @apply bg-[#1a1a1a] border-2 border-[#262626] rounded-full p-[0.7rem];
+
+  }

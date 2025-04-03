@@ -1,32 +1,37 @@
-export type Nullable<T> = T | null
-export type Optional<T> = T | undefined
-export type ImageGallery = {path:string}
+export type Nullable<T> = T | null;
+export type Optional<T> = T | undefined;
+export type ImageGallery = { path: string }[];
 
-
-export type Property = {
-    id: number | string
-    slug: string
-    image:string
-    title: string
-    summary:string
-    bedrooms?: null | number
-    bathrooms?: null | number
-    price: number
-    location: string
-    tagLine: string | null | undefined
-}
-
-export type PropertyId = Property & {
-    description: string
-    areaSqFt: number
-    imageGallery: ImageGallery[]
+export interface Property {
+  id: number;
+  slug: string;
+  image: string;
+  title: string;
+  summary: string;
+  price: number;
+  location: string;
+  imageGallery?: ImageGallery;
+  bedrooms?: string;
+  bathrooms?: string;
+  highlight?: string;
 }
 
 
+export type PropertyDetailsProps = Property & {
+  description: string;
+  areaSqFt: number;
+  imageGallery: ImageGallery;
+};
 
-export type MaybePropertyId = PropertyId | undefined
-export type GetPropertyById = (data: PropertyId[], id: number | string) => MaybePropertyId
-export type GetProperties = (properties: PropertyId[]) => Property[]
+export const enum PropertyCardVariant {
+  HomePage = 'homePage',
+  PropertyPage = 'propertiesPage',
+}
 
+export interface PropertyCardProps {
+  item: Property;
+  variant: PropertyCardVariant;
+}
 
-
+export type GetPropertyById = (data: PropertyDetailsProps[], id: number ) => PropertyDetailsProps | undefined;
+export type GetProperties = (properties: PropertyDetailsProps[]) => Property[];

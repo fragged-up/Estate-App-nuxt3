@@ -9,16 +9,18 @@
 </script>
 
 <template>
-  <div
-    class="my-8 grid grid-flow-col justify-around gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden">
+  <div class="my-8 grid grid-flow-col justify-around gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden">
+
     <!-- ${props.buttonHide} if you need top open the button dynamicly add this sentence to the div below  -->
     <button
       :class="`pad-fix:text-sm border-1 col-span-1 rounded-lg border-[#262626] bg-[#1A1A1A] px-8 py-4 text-center text-white`">
       {{ buttonText }}
     </button>
 
+
     <div class="col-span-2 flex items-center justify-around">
-      <button class="arrows-bg text-[#808080]">
+      <Icon name="tabler:circle-arrow-left-filled" class=" text-[#1a1a1a] p-10" />
+      <button class="navigation-btn text-[#808080]">
         <svg
           width="24"
           height="24"
@@ -39,7 +41,7 @@
         <span class="text-[#808080]">{{ totalPagesNumber }}</span>
       </p>
 
-      <button class="arrows-bg text-white">
+      <button class="navigation-btn text-white">
         <svg
           width="24"
           height="24"
@@ -56,15 +58,15 @@
     </div>
   </div>
 
-  <div
-    class="laptop-box items-center-2 mx-auto my-8 hidden justify-between border-t-2 border-t-[#262626] pt-4 laptop:flex">
+   <div class="laptop-box items-center-2 mx-auto my-8 hidden justify-between border-t-2 border-t-[#262626] pt-4 laptop:flex">
+
     <div class="box-left space-x-2">
       <span class="text-white">{{ pagesNumber }}</span>
       <span class="text-[#808080]">of</span>
       <span class="text-[#808080]">{{ totalPagesNumber }}</span>
     </div>
     <div class="box-left space-x-2">
-      <button class="arrows-bg text-[#808080]">
+      <button class="navigation-btn text-[#808080]">
         <svg
           width="24"
           height="24"
@@ -78,7 +80,7 @@
             fill="white" />
         </svg>
       </button>
-      <button class="arrows-bg text-white">
+      <button class="navigation-btn text-white">
         <svg
           width="24"
           height="24"
@@ -93,6 +95,7 @@
         </svg>
       </button>
     </div>
+
   </div>
 </template>
 
@@ -102,8 +105,5 @@
     border: 2px solid #262626;
     border-radius: 50%;
     padding: 0.7rem;
-    /* width: 44px;
-    height: 44px;
-    text-align: center; */
   }
 </style>

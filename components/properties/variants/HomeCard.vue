@@ -1,0 +1,21 @@
+<script setup lang="ts">
+  import type { Property } from '~/types';
+  import { getSlugId, loremIpsum } from '~/utils';
+
+  const props = defineProps<{ item: Property }>();
+</script>
+
+<template>
+  <div :id="`property-${props.item.slug}-${props.item.id}`" class="card-box">
+    <PropertyImage :card-image="$loadImage(props.item.image)" />
+    <PropertySummary :title="props.item.title" :summary="props.item.summary" :lorem-ipsum="loremIpsum" />
+    <PropertyFeatures :bed-rooms="props.item.bedrooms!" :bath-rooms="props.item.bathrooms!" />
+    <PropertyPrice :price="props.item.price" />
+    <NuxtLink
+      :to="`/properties/${getSlugId(props.item.slug, props.item.id)}`"
+      class="prp-cta text-sm text-center px-2 py-3 lg:px-6"
+    >
+      View Property
+    </NuxtLink>
+  </div>
+</template>

@@ -1,7 +1,6 @@
 import type {
   Cards,
-  Faces,
-  Faqs,
+  FaqItem,
   InputFields,
   SelectFields,
   LineImages,
@@ -10,37 +9,42 @@ import type {
   MiniCard,
   FaqCardType,
   BoxGroups,
+  Testimonial,
 } from './types';
 
-export const faces: Faces[] = [
+export const testimonials: Testimonial[] = [
   {
     id: 1,
-    faceImage: '/home/wadeFace.svg',
-    faceName: 'Wade Warren',
-    faceLocation: 'USA, California',
-    faceHead: 'Exceptional Service!',
-    facePara:
+    avatarUrl: '/home/wadeFace.svg',
+    fullName: 'Wade Warren',
+    location: 'USA, California',
+    headline: 'Exceptional Service!',
+    review:
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    stars: 4.5,
   },
   {
     id: 2,
-    faceImage: '/home/wadeFace.svg',
-    faceName: 'Wade Warren',
-    faceLocation: 'USA, California',
-    faceHead: 'Exceptional Service!',
-    facePara:
+    avatarUrl: '/home/wadeFace.svg',
+    fullName: 'Wade Warren',
+    location: 'USA, California',
+    headline: 'Exceptional Service!',
+    review:
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    stars: 4,
   },
   {
     id: 3,
-    faceImage: '/home/wadeFace.svg',
-    faceName: 'Wade Warren',
-    faceLocation: 'USA, California',
-    faceHead: 'Exceptional Service!',
-    facePara:
+    avatarUrl: '/home/wadeFace.svg',
+    fullName: 'Wade Warren',
+    location: 'USA, California',
+    headline: 'Exceptional Service!',
+    review:
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    stars: 5,
   },
 ];
+
 export const cards: Cards[] = [
   {
     id: 1,
@@ -70,20 +74,7 @@ export const cards: Cards[] = [
     cardPrice: '500,000',
   },
 ];
-export const faqs: Faqs[] = [
-  {
-    faqTitle: 'How do I search for properties on Estatein?',
-    faqText: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
-  },
-  {
-    faqTitle: 'What documents do I need to sell my property through Estatein?',
-    faqText: 'Find out about the necessary documentation for listing your property with us.',
-  },
-  {
-    faqTitle: 'How can I contact an Estatein agent?',
-    faqText: 'Discover the different ways you can get in touch with our experienced agents',
-  },
-];
+
 export const inputsFields: InputFields[] = [
   {
     for: 'firstName',
@@ -339,23 +330,44 @@ export const scard_2: MiniCard = {
   para: 'At Estatein, transparency is key. We want you to have a clear understanding of all costs associated with your property investment. Below, we break down the pricing for Seaside Serenity Villa to help you make an informed decision',
 };
 export const faqCard: FaqCardType = {
-  head: 'Frequently Asked Questions',
-  para: "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
+  title: 'Frequently Asked Questions',
+  description: "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
   faqs: [
-    {
-      faqTitle: 'How do I search for properties on Estatein?',
-      faqText: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+    { id:4,
+      question: 'How do I search for properties on Estatein?',
+      answer: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
     },
-    {
-      faqTitle: 'What documents do I need to sell my property through Estatein?',
-      faqText: 'Find out about the necessary documentation for listing your property with us.',
+    { id:5,
+      question: 'What documents do I need to sell my property through Estatein?',
+      answer: 'Find out about the necessary documentation for listing your property with us.',
     },
-    {
-      faqTitle: 'How can I contact an Estatein agent?',
-      faqText: 'Discover the different ways you can get in touch with our experienced agents',
+    { id:6,
+      question: 'How can I contact an Estatein agent?',
+      answer: 'Discover the different ways you can get in touch with our experienced agents',
     },
   ],
 };
+export const faqs: FaqItem[] = [
+  { id:1,
+    question: 'How do I search for properties on Estatein?',
+    answer: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+  },
+  { id:2,
+    question: 'What documents do I need to sell my property through Estatein?',
+    answer: 'Find out about the necessary documentation for listing your property with us.',
+  },
+  { id:3,
+    question: 'How can I contact an Estatein agent?',
+    answer: 'Discover the different ways you can get in touch with our experienced agents',
+  },
+];
+
+
+
+
+
+
+
 
 export const BOX_GROUPS: BoxGroups = {
   firstBoxGroup: [

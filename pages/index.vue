@@ -1,20 +1,13 @@
 <script setup lang="ts">
-  import { faces, cards, faqs } from '~/constants/index';
-  import {
-    cardTwoHead,
-    cardTwoParagraph,
-    cardThirdHead,
-    cardThirdParagraph,
-  } from '~/constants/homePage';
-  import { useRouter } from '#imports'; 
+  import { testimonials, faqs } from '~/constants/index';
+  import { cardTwoHead, cardTwoParagraph, cardThirdHead, cardThirdParagraph } from '~/constants/homePage';
+  import TestimonialCard from '~/components/molecules/TestimonialCard.vue';
 
   useSeoMeta({ title: 'Home' });
 
-const headerTxt ="Featured Properties"
-const paraTxt="Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein."
-const router = useRouter()
-
-const goToIdProperty = (property:any) => router.push({path:`/properties/${property.id}`})
+  const headerTxt = 'Featured Properties';
+  const paraTxt =
+    'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.';
 
   const API = [
     {
@@ -107,48 +100,26 @@ const goToIdProperty = (property:any) => router.push({path:`/properties/${proper
           :header-text="headerTxt"
           :para-text="paraTxt"
           :cont-style="'laptop:mx-0'"
-          :sub-cont-style="'laptop:mx-0'"
-          >
-          <template #default>
+          :sub-cont-style="'laptop:mx-0'" >
 
+          <template #default>
             <PaginationWrapper :items="API">
               <template #default="{ items }">
-                <HomeCard 
-                 v-for="item in items"
-                 :id="item.id"
-                 :key="item.id" 
-                 :slug="item.slug"
-                 :summary="item.summary"
-                 :title="item.title"
-                 :image="item.image"
-                 :bathrooms="item.bathrooms.toString()"
-                 :bedrooms="item.bedrooms.toString()"
-                 :price="item.price.toString()"
-                 @click="goToIdProperty(item)"
-                  />
-                </template>
+                <PropertyCard v-for="item in items" :key="item.id" :item="item" :variant="'homePage'" />
+              </template>
             </PaginationWrapper>
           </template>
-
         </MainBlock>
 
         <MainBlock
           :header-text="cardTwoHead"
           :cont-style="'laptop:mx-0'"
           :sub-cont-style="'laptop:mx-0'"
-          :para-text="cardTwoParagraph"
-        >
+          :para-text="cardTwoParagraph" >
+
           <template #default>
             <div class="cw flex flex-col gap-4 laptop:flex-row">
-              <ClientCard
-                v-for="(face, index) in faces"
-                :key="index"
-                :face-image="face.faceImage"
-                :face-name="face.faceName"
-                :face-location="face.faceLocation"
-                :face-head="face.faceHead"
-                :face-para="face.facePara"
-              />
+              <TestimonialCard v-for="testi in testimonials" :key="testi.id" :testimonial="testi" />
             </div>
 
             <ViewButton :button-text="'View All Properites'" :total-pages-number="'10'" />
@@ -159,23 +130,20 @@ const goToIdProperty = (property:any) => router.push({path:`/properties/${proper
           :header-text="cardThirdHead"
           :cont-style="'laptop:mx-0'"
           :sub-cont-style="'laptop:mx-0'"
-          :para-text="cardThirdParagraph"
-        >
+          :para-text="cardThirdParagraph" >
+
           <template #default>
             <div class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
-              <FaqCard v-for="(faq, index) in faqs" :key="index" :faq-title="faq.faqTitle" :faq-text="faq.faqText" />
+              <FaqCard v-for="faq in faqs" :key="faq.id" :faqs="faq" />
             </div>
             <Arrows />
             <ViewButton :button-text="'View All Properites'" :total-pages-number="'10'" />
           </template>
         </MainBlock>
+
+
       </div>
     </div>
   </main>
 </template>
 
-<style scoped>
-  .second-template {
-    box-shadow: 1px -1px 18px 1px #262626;
-  }
-</style>

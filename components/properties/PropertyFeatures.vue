@@ -1,7 +1,7 @@
 <script setup lang="ts">
   const props =defineProps<{
-    bedRooms: string;
-    bathRooms: string;
+    bedRooms: number;
+    bathRooms: number;
   }>();
 </script>
 

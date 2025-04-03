@@ -2,65 +2,55 @@
   import { scard_1, scard_2, keyFeatures, faqCard } from '~/constants';
   import { getPropertyById } from '~/server/utils/';
   import { useRoute } from '#imports';
-  const route = useRoute();
 
-  const { id } = route.params;
+  const route = useRoute();
+  const slugId = route.params.slugId as string;
+  const id = Number(slugId.split('-').pop());
   console.log('id', id);
-  const result = getPropertyById(id as string);
+  const propertyItemId = getPropertyById(id);
 
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {
     activeNumber.value = newIndex;
   };
 
-  console.log(result);
+  console.log(propertyItemId);
 </script>
 
 <template>
   <div class="main">
     <header>
       <div class="p-4">
-        <CardId
-          v-if="result"
-          :slug-id="result.slug"
-          :image-id="result.image"
-          :price-id="result.price"
-          :location-id="result.location"
-          :image-gallery-id="result.imageGallery"
-          :active-index="activeNumber"
-          @update-index="updateIndex"
-        />
+        <PropertyDetailsCard v-if="propertyItemId" :property-id="propertyItemId" @update-index="updateIndex" />
       </div>
     </header>
 
     <div class="2-blocks-cnt centerize-all mx-auto w-[90%] space-y-12 laptop:flex laptop:gap-6 laptop:space-y-0">
-      <div
-        class="description my-2 grid grid-flow-row gap-y-8 rounded-xl border border-hg bg-fgl px-8 py-12 laptop:my-0 laptop:py-8"
-      >
+      <div  class="description my-2 grid grid-flow-row gap-y-8 rounded-xl border border-hg bg-fgl px-8 py-12 laptop:my-0 laptop:py-8">
         <div class="head-cnt space-y-4">
           <h2 class="font-sans font-semibold text-white">Description</h2>
           <p class="font-sans text-sm font-medium text-gl">
-            {{ result.description }}
+            {{ propertyItemId.description }}
           </p>
         </div>
         <div class="grid grid-flow-col border-y border-hg py-12">
           <div class="left-s border-r border-hg">
             <LineImg :svg-icon="'tabler:bed'" :gapped-value="'gap-1'" :head="'Bedrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ result?.bedrooms ? result.bedrooms.toString() : 'N/A' }}
+              0{{ propertyItemId?.bedrooms ? propertyItemId.bedrooms.toString() : 'N/A' }}
             </p>
           </div>
           <div class="right-s pl-4">
             <LineImg :svg-icon="'tabler:bath'" :gapped-value="'gap-1'" :head="'Bathrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
-              0{{ result?.bathrooms ? result.bathrooms.toString() : 'N/A' }}
+              0{{ propertyItemId?.bathrooms ? propertyItemId.bathrooms.toString() : 'N/A' }}
             </p>
           </div>
         </div>
         <div class="area">
           <LineImg :svg-icon="'mdi:ruler-square'" :gapped-value="'gap-1'" :head="'Area'" />
           <p class="font-sans text-lg font-semibold text-white">
-            {{ result?.areaSqFt ? result.areaSqFt : 'N/A' }} Square Feet
+            {{ propertyItemId?.areaSqFt ? propertyItemId.areaSqFt : 'N/A' }} Square Feet
           </p>
         </div>
       </div>
@@ -83,7 +73,7 @@
       <div class="box-rows">
         <div class="box-row-one laptop:my-12 laptop:grid laptop:grid-cols-[25%_70%] laptop:justify-between">
           <MainBox :headline="scard_1.head" :paraline="scard_1.para" />
-          <FormId :location-text="result.location" />
+          <FormId :location-text="propertyItemId.location" />
         </div>
 
         <div class="box-row-two">
@@ -92,36 +82,32 @@
             <h4 class="border-b border-hg pb-4 font-sans text-lg font-semibold text-white">Note</h4>
             <div class="laptop:border-l laptop:border-hg laptop:pl-4 laptop:text-center">
               <p class="py-4 font-sans text-sm font-medium text-gl laptop:text-center">
-                The figures provided above are estimates and may vary depending on the result, location, and individual
-                circumstances.
+                The figures provided above are estimates and may vary depending on the propertyItemId, location, and
+                individual circumstances.
               </p>
             </div>
           </div>
           <div class="my-6">
-            <ListingData :listing-price="result.price" />
+            <ListingData :listing-price="propertyItemId.price" />
           </div>
         </div>
 
         <div class="box-row-faq">
           <MainBlock
-            :header-text="faqCard.head"
+            :header-text="faqCard.title"
             :cont-style="'laptop:mx-0'"
             :sub-cont-style="'laptop:mx-0'"
-            :para-text="faqCard.para"
-          >
+            :para-text="faqCard.description" >
+
             <template #default>
               <div class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
-                <FaqCard
-                  v-for="(faq, index) in faqCard.faqs"
-                  :key="index"
-                  :faq-title="faq.faqTitle"
-                  :faq-text="faq.faqText"
-                />
+                <FaqCard v-for="faq in faqCard.faqs" :key="faq.id" :faqs="faq" />
               </div>
               <ViewButton :button-text="'\View All FAQ\'s'" />
             </template>
           </MainBlock>
         </div>
+
       </div>
     </section>
   </div>

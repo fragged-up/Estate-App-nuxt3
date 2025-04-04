@@ -9,4 +9,4 @@
 
   export const getSlugId = (slug: string, id: number | string) => `${slugify(slug)}-${id}`;
 
-  export const loremIpsum = `Lorem ipsum dolor sit, amet consectetur adipisicing elit...`;
+  export const loremIpsum = `Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,`;

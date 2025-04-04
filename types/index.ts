@@ -14,6 +14,7 @@ export interface Property {
   bedrooms?: string;
   bathrooms?: string;
   highlight?: string;
+  readMore?:string;
 }
 
 

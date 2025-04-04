@@ -8,28 +8,31 @@
 </script>
 
 <template>
-  <div class="space-y-2">
+  <div class="">
     <p class="text-[#999999] font-sans font-medium text-sm leading-relaxed">
       {{ preview }}
-      <strong class="text-white text-xs font-sans font-medium laptop:text-base underline hover:text-[#703BF7] cursor-pointer ml-1" @click="toggleReadMe">
+    </p>
+    <strong class="text-white text-xs font-sans font-medium laptop:text-base underline hover:text-[#703BF7] cursor-pointer " @click="toggleReadMe">
         {{ isVisible ? 'Read Less' : 'Read More' }}
       </strong>
-    </p>
-    <transition name="fade">
-      <p v-show="isVisible" class="text-white text-sm break-words font-sans font-medium">
+      <Transition
+        enter-active-class="transition-all duration-300 ease-in-out"
+        enter-from-class="opacity-0 max-h-0"
+        enter-to-class="opacity-100 max-h-40"
+        leave-active-class="transition-all duration-300 ease-in-out"
+        leave-from-class="opacity-100 max-h-40"
+        leave-to-class="opacity-0 max-h-0"
+      >
+      <p v-if="isVisible" class="text-white text-sm break-words font-sans font-medium">
         {{ full }}
       </p>
-    </transition>
+    </Transition>
+
   </div>
 </template>
 
-<style scoped>
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.3s ease;
-  }
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-  }
-</style>
+
+
+
+
+

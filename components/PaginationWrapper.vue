@@ -36,19 +36,19 @@ const goRight = () => {
 
 <template>
   <div class="space-y-8 w-full">
-    <div class="w-full max-w-[1320px] mx-auto px-4">
+    <div class="w-full max-w-full mx-auto px-4">
       <div :class="['gap-[20px]', width >= 1024 ? 'grid grid-cols-3' :  width >= 640 ? 'grid grid-cols-2' :  'grid grid-cols-1'  ]">
         <slot :items="paginatedItems" />
       </div>
     </div>
 
-    <div class="w-full max-w-[1320px] mx-auto px-4">
+    <div class="w-full max-w-full] mx-auto px-4">
       <div
         class="flex items-center justify-between border-t border-[#2A2A2A] pt-6"
         :class="width < 1024 ? 'justify-center gap-8' : 'justify-between'">
         <PaginationButton direction="left" @click="goLeft" />
         <PaginationInfo :current-page="currentPage" :total-pages="totalPages" />
-        <PaginationButton direction="right" @click="goRight" />
+        <PaginationButton :disabled="currentPage>=totalPages" direction="right" @click="goRight"  />
       </div>
     </div>
   </div>

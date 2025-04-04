@@ -69,7 +69,7 @@
       </div>
     </div>
 
-    <section class="centerize-all *:space-y-20">
+    <section class="[&>*]:w-[90%] [&>*]:mx-auto">
       <div class="box-rows">
         <div class="box-row-one laptop:my-12 laptop:grid laptop:grid-cols-[25%_70%] laptop:justify-between">
           <MainBox :headline="scard_1.head" :paraline="scard_1.para" />
@@ -113,12 +113,3 @@
   </div>
 </template>
 
-<style scoped>
-  .grad-black {
-    background: linear-gradient(to left, rgba(26, 26, 26, 0), rgba(26, 26, 26, 1));
-  }
-  .centerize-all > * {
-    width: 90%;
-    margin-inline: auto;
-  }
-</style>

@@ -43,9 +43,9 @@
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
         <img
           :src="$loadImage(props.propertyId.image)"
-          alt="miniMainImage"
-          class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]"
-        >
+          alt="property-image"
+          class="card-img h-full min-h-[15.5rem] w-full min-w-[20rem]" >
+
       </div>
       <div class="gallery-cont min-w-full">
         <imageGallery :images="props.propertyId.imageGallery" :active-index="currentIndex" @update-active-index="currentIndex" />

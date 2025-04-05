@@ -1,4 +1,3 @@
-<script setup></script>
 
 <template>
   <div class="main-wrapper">
@@ -31,6 +30,8 @@
         <p class="font-sans text-base font-medium text-gl">Years of Experience</p>
       </div>
     </div>
+
+
   </div>
 </template>
 

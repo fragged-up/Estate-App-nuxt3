@@ -1,13 +1,7 @@
 <script setup lang="ts">
   import { inputsFields, selectFields } from '~/constants';
-  import { useRouter, useSeoMeta } from '#imports';
-
   useSeoMeta({ title: 'Properties' });
-
-  const itemsPerPage = 3;
-
   const { data: propertyList } = await useFetch('/api/properties');
-
   onMounted(() => {
     console.log('propertyList', propertyList);
   });
@@ -26,8 +20,8 @@
           <div class="property">
             <MainBlock
               :header-text="'Discover a World of Possibilities'"
-              :para-text="`Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home.`"
-            >
+              :para-text="`Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home.`" >
+
               <template #default>
                 <PaginationWrapper :items="propertyList">
                   <template #default="{ items }">
@@ -41,8 +35,8 @@
           <div class="last-div mx-auto w-11/12">
             <MainBlock
               header-text="Let's Make it Happen"
-              para-text="Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together."
-            >
+              para-text="Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together." >
+
               <template #default>
                 <Input
                   v-for="(inp, index) in inputsFields"

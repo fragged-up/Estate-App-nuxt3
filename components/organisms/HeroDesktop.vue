@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CircleCTA from '../molecules/CircleCTA.vue'
+import CircleCTA from '~/components/molecules/CircleCTA.vue'
+import { HERO_HIGHLIGHTS } from '~/constants/index';
 </script>
 
 <template>
@@ -29,5 +30,5 @@ import CircleCTA from '../molecules/CircleCTA.vue'
     </div>
   </div>
 
-  <CardFour />
+
 </template>

@@ -1,13 +1,11 @@
 <script setup lang="ts">
-  import { testimonials, faqs } from '~/constants/index';
+  import { testimonials, faqs,HERO_HIGHLIGHTS } from '~/constants/index'
   import { cardTwoHead, cardTwoParagraph, cardThirdHead, cardThirdParagraph } from '~/constants/homePage';
-  import TestimonialCard from '~/components/molecules/TestimonialCard.vue';
 
   useSeoMeta({ title: 'Home' });
 
   const headerTxt = 'Featured Properties';
   const paraTxt ='Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.';
-
 
   const API = [
     {
@@ -89,12 +87,17 @@
         'A charming cabin with rustic finishes, breathtaking mountain views, and close proximity to hiking trails.',
     },
   ];
+
+
 </script>
 
 <template>
   <main class="w-full bg-[#141414]">
     <div class="w-full">
       <HomeHero />
+      <div class="hero-highlight-container">
+    <HeroHighlight v-for="highlight in HERO_HIGHLIGHTS" :key="highlight.id" :card="highlight"  />
+    </div>
     </div>
 
     <section class="section-layout bg-fgl">
@@ -139,7 +142,6 @@
             <div class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
               <FaqCard v-for="faq in faqs" :key="faq.id" :faqs="faq" />
             </div>
-            <Arrows />
             <ViewButton :button-text="'View All Properites'" :total-pages-number="'10'" />
           </template>
         </MainBlock>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { ref } from '#imports'
   const { showDropDown = false } = defineProps<{
     inputImage?: string
     label: string
@@ -31,13 +30,10 @@
 </script>
 
 <template>
-  <div
-    class="relative flex cursor-pointer items-center justify-between rounded-2xl border border-[#262626] bg-[#141414] p-4"
-    @click="toggleDropdown">
+  <div class="relative flex cursor-pointer items-center justify-between rounded-2xl border border-[#262626] bg-[#141414] p-4" @click="toggleDropdown">
     <div class="flex items-center">
       <img :src="$loadImage(inputImage)" alt="inputIcon" class="mx-3 h-6 w-6" >
-      <span
-        class="ml-2 border-l border-[#666666] pl-4 font-sans text-base font-medium text-[#999999]">
+      <span class="ml-2 border-l border-[#666666] pl-4 font-sans text-base font-medium text-[#999999]">
         {{ label }}
       </span>
     </div>

@@ -2,7 +2,6 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
-
   ssr: false,
   app: {
     head: {
@@ -18,19 +17,16 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
-
   sourcemap: {
     server: true,
     client: true,
   },
-
   devtools: {
     enabled: true,
     vscode: {
       enabled: true,
     },
   },
-
   modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/icon'],
   icon: {
     serverBundle: {
@@ -38,11 +34,9 @@ export default defineNuxtConfig({
     },
   },
   plugins: ['~/plugins/imageLoader.ts', '~/plugins/mediaQueries.client.ts'],
-
   imports: {
     dirs: ['~/composables'],
   },
-
   components: {
     dirs: [
       { path: '~/components', pathPrefix: false },
@@ -54,13 +48,11 @@ export default defineNuxtConfig({
       { path: '~/components/properties', pathPrefix: false },
     ],
   },
-
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-
   compatibilityDate: '2025-03-29',
 });

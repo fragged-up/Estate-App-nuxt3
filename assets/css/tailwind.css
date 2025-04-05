@@ -74,13 +74,20 @@
   }
 } */
 
-/* These 2 classes are the content layout of the pages  */
+/* Layout & Containers */
 .section-layout {
   @apply container mx-auto grid justify-center;
 }
 .section-container {
   @apply mx-auto mt-32 grid w-11/12;
 }
+.hero-highlight-container {
+ @apply grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px];
+}
+
+
+
+
 
 .primary-prp {
   @apply bg-[#703bf7];

@@ -21,12 +21,11 @@
       </div>
 
       <div class="mx-auto w-11/12 py-8 text-center">
-        <NuxtLink
-        to="/properties"
-        class="w-full rounded-lg bg-pr py-4 font-sans text-sm font-medium text-white laptop:max-w-[153px]">
-
-        Explore Properties
-       </NuxtLink>
+        <NuxtLink to="/properties" >
+          <Button
+          :class="'w-full rounded-lg bg-pr py-4 font-sans text-sm font-medium text-white laptop:max-w-[153px]'"
+          btn-text="Explore Properties" />
+        </NuxtLink>
       </div>
     </div>
 
@@ -41,15 +40,10 @@
           <div class="p-4">
             <div class="inner-left-side">
               <h2 class="font-sans text-base font-medium text-gl">Home</h2>
-
               <p class="font-sans text-sm font-medium text-white">Hero Section</p>
-
               <p class="font-sans text-sm font-medium text-white">Features</p>
-
               <p class="font-sans text-sm font-medium text-white">Properties</p>
-
               <p class="font-sans text-sm font-medium text-white">Testimonials</p>
-
               <p class="font-sans text-sm font-medium text-white">FAQ'S</p>
             </div>
           </div>
@@ -57,15 +51,10 @@
           <div class="border-l-2 border-gl p-4">
             <div class="inner-right-side">
               <h2 class="font-sans text-base font-medium text-gl">About Us</h2>
-
               <p class="font-sans text-sm font-medium text-white">Our Story</p>
-
               <p class="font-sans text-sm font-medium text-white">Our Works</p>
-
               <p class="font-sans text-sm font-medium text-white">How it Works</p>
-
               <p class="font-sans text-sm font-medium text-white">Our Team</p>
-
               <p class="font-sans text-sm font-medium text-white">Our Clients</p>
             </div>
           </div>
@@ -73,9 +62,7 @@
           <div class="row-auto p-4">
             <div class="border-lg h-full border-b">
               <h2 class="font-sans text-base font-medium text-gl">Properties</h2>
-
               <p class="font-sans text-sm font-medium text-white">Portfolio</p>
-
               <p class="font-sans text-sm font-medium text-white">Categories</p>
             </div>
           </div>
@@ -83,15 +70,10 @@
           <div class="border-l-2 border-gl p-4">
             <div class="inner-right-side">
               <h2 class="font-sans text-base font-medium text-gl">Services</h2>
-
               <p class="font-sans text-sm font-medium text-white">Valuation Mastery</p>
-
               <p class="font-sans text-sm font-medium text-white">Strategic Marketing</p>
-
               <p class="font-sans text-sm font-medium text-white">Neogotiation Wizardy</p>
-
               <p class="font-sans text-sm font-medium text-white">Closing Success</p>
-
               <p class="font-sans text-sm font-medium text-white">Property Management</p>
             </div>
           </div>
@@ -99,9 +81,7 @@
           <div class="relative p-4 pt-0">
             <div class="inner-left-side unify">
               <h2 class="font-sans text-base font-medium text-gl">Contact Us</h2>
-
               <p class="font-sans text-sm font-medium text-white">Contact Form</p>
-
               <p class="font-sans text-sm font-medium text-white">Our Offices</p>
             </div>
           </div>

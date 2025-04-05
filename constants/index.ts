@@ -331,43 +331,43 @@ export const scard_2: MiniCard = {
 };
 export const faqCard: FaqCardType = {
   title: 'Frequently Asked Questions',
-  description: "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
+  description:
+    "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
   faqs: [
-    { id:4,
+    {
+      id: 4,
       question: 'How do I search for properties on Estatein?',
       answer: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
     },
-    { id:5,
+    {
+      id: 5,
       question: 'What documents do I need to sell my property through Estatein?',
       answer: 'Find out about the necessary documentation for listing your property with us.',
     },
-    { id:6,
+    {
+      id: 6,
       question: 'How can I contact an Estatein agent?',
       answer: 'Discover the different ways you can get in touch with our experienced agents',
     },
   ],
 };
 export const faqs: FaqItem[] = [
-  { id:1,
+  {
+    id: 1,
     question: 'How do I search for properties on Estatein?',
     answer: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
   },
-  { id:2,
+  {
+    id: 2,
     question: 'What documents do I need to sell my property through Estatein?',
     answer: 'Find out about the necessary documentation for listing your property with us.',
   },
-  { id:3,
+  {
+    id: 3,
     question: 'How can I contact an Estatein agent?',
     answer: 'Discover the different ways you can get in touch with our experienced agents',
   },
 ];
-
-
-
-
-
-
-
 
 export const BOX_GROUPS: BoxGroups = {
   firstBoxGroup: [
@@ -471,21 +471,16 @@ export const BOX_GROUPS: BoxGroups = {
   ],
 };
 
-export const heroSquaresHome = [
-  {
-    centerIcon: '/icons/homeIcon.svg',
-    title: 'Find Your Dream\n Home',
-  },
-  {
-    centerIcon: '/icons/cameraIcon.svg',
-    title: 'Unlock Property\n Value',
-  },
-  {
-    centerIcon: '/icons/buildingIcon.svg',
-    title: 'Effortless Property\n Management',
-  },
-  {
-    centerIcon: '/icons/sunIcon.svg',
-    title: 'Smart Investments,\n Informed Decisions',
-  },
+export const HERO_HIGHLIGHTS = [
+  { id: 1, icon: '/icons/homeIcon.svg', title: 'Find Your Dream\n Home' },
+  { id: 2, icon: '/icons/cameraIcon.svg', title: 'Unlock Property\n Value' },
+  { id: 3, icon: '/icons/buildingIcon.svg', title: 'Effortless Property\n Management' },
+  { id: 4, icon: '/icons/sunIcon.svg', title: 'Smart Investments,\n Informed Decisions' },
+];
+
+export const CONTACT_HERO = [
+  { id: 5, icon: '/icons/homeIcon.svg', title: 'info@estatein.com' },
+  { id: 6, icon: '/icons/cameraIcon.svg', title: '+1 (123) 456-7890' },
+  { id: 7, icon: '/icons/buildingIcon.svg', title: 'Instagram / Linkedin / Facebook ' },
+  { id: 8, icon: '/icons/sunIcon.svg', title: 'Main Headquarters' },
 ];

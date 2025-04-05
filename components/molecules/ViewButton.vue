@@ -19,7 +19,6 @@
 
 
     <div class="col-span-2 flex items-center justify-around">
-      <Icon name="tabler:circle-arrow-left-filled" class=" text-[#1a1a1a] p-10" />
       <button class="navigation-btn text-[#808080]">
         <svg
           width="24"

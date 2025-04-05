@@ -1,7 +1,6 @@
 <script setup lang="ts">
   const headerText = "Explore Estatein's World"
-  const paraText =
-    'Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces, inviting you to get to know us better.'
+  const paraText = 'Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces, inviting you to get to know us better.'
 </script>
 
 <template>
@@ -26,19 +25,15 @@
         <img :src="$loadImage('/icons/stars.svg')" alt="stars" class="stars" >
       </div>
       <div class="mx-auto my-4 w-11/12 py-4">
-        <h1 class="font-sans text-3xl font-semibold text-white">
-          {{ headerText }}
-        </h1>
-        <p
-          class="font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]">
-          {{ paraText }}
-        </p>
+        <h1 class="font-sans text-3xl font-semibold text-white"> {{ headerText }}   </h1>
+        <p  class="font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]">   {{ paraText }}    </p>
       </div>
     </div>
 
     <div class="sre">
       <img :src="$loadImage('/Explore/Main.svg')" alt="main" >
     </div>
+
   </div>
 </template>
 

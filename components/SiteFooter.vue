@@ -1,4 +1,9 @@
 <script setup lang="ts">
+// import FaceBookIcon from "~/assets/socialMedia/facebook.svg"
+// import LinkedinkIcon from "~/assets/socialMedia/in.svg"
+// import TwitterIcon from "~/assets/socialMedia/twitter.svg"
+// import YoutubeIcon from "~/assets/socialMedia/youtube.svg"
+
   const isProd = import.meta.env.PROD;
 </script>
 

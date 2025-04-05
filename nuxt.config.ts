@@ -1,6 +1,12 @@
 import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
+
+ runtimeConfig: {
+  public: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  },
+},
   css: ['~/assets/css/tailwind.css'],
   ssr: false,
   app: {

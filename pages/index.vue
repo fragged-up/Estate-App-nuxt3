@@ -11,7 +11,7 @@
     {
       id: 1,
       slug: 'Sunset Vista',
-      image: 'images/Beckos.svg',
+      image: '/images/Beckos.svg',
       imageGallery: [
         { path: '/imageGallery/seaSideOne.svg' },
         { path: '/imageGallery/seaSideTwo.svg' },
@@ -37,7 +37,7 @@
     {
       id: 2,
       slug: 'Urban Oasis',
-      image: 'images/MetroCard.svg',
+      image: '/images/MetroCard.svg',
       imageGallery: [
         { path: '/imageGallery/seaSideOne.svg' },
         { path: '/imageGallery/seaSideTwo.svg' },
@@ -63,7 +63,7 @@
     {
       id: 3,
       slug: 'Mountain Escape',
-      image: 'images/SeasideCard.svg',
+      image: '/images/SeasideCard.svg',
       imageGallery: [
         { path: '/imageGallery/seaSideOne.svg' },
         { path: '/imageGallery/seaSideTwo.svg' },

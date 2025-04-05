@@ -90,7 +90,3 @@
     </button>
   </div>
 </template>
-
-<style scoped>
-  /* Add your specific styles here if needed */
-</style>

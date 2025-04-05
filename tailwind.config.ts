@@ -16,19 +16,19 @@ export default {
         custom:'0.07em'
       },
       backgroundImage: {
-        'mobile-hero':"url(~/assets/home/mobile-hero.png)",
-        'desktop-hero':"url(~/assets/home/desktop-hero.png)",
+        'mobile-hero':"url(~/public/base/home/mobile-hero.png)",
+        'desktop-hero':"url(~/public/base/home/desktop-hero.png)",
         'foot-image': "url('/public/FooterImage.svg')",
         'hero-about-abst': "url('/public/AbstractDesign.svg')",
         'hero-about-image': "url('/public/HeroAbout.svg')",
         'grey-hero':
           'linear-gradient(90deg, rgba(38,38,38,1) 0%, rgba(38,38,38,0.5) 53%, rgba(0,0,0,1) 100%)',
         'unlock-image': "url('/public/unlock/UnlockImage.svg')",
-        'desk-hero': "url('~/assets/home/DeskRight.svg')",
-        'about-us': "url('~/assets/images/ImageHeroAbout.png')",
-        tsr: "url('~/assets/icons/threeStars.svg')",
-        'sea-left': "url('~/assets/images/leftSeaSide.svg')",
-        'sea-right': "url('~/assets/images/rightSeaSide.svg')",
+        'desk-hero': "url('~/public/base/home/DeskRight.svg')",
+        'about-us': "url('~/public/base/images/ImageHeroAbout.png')",
+        tsr: "url('~/public/base/icons/threeStars.svg')",
+        'sea-left': "url('~/public/base/images/leftSeaSide.svg')",
+        'sea-right': "url('~/public/base/images/rightSeaSide.svg')",
       },
       backgroundPosition: {
         'hero-about-abst': 'center center',

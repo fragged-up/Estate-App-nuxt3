@@ -4,6 +4,8 @@
     title: 'Real-Estate Nuxt App',
     description: 'Real Estate Company',
   })
+
+
 </script>
 
 <template>
@@ -41,5 +43,5 @@
     background-color: #141414;
   }
 
- 
+
 </style>

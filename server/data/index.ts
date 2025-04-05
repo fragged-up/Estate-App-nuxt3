@@ -8,7 +8,7 @@ export const PROPERTIES_API = [
   {
     id: 1,
     slug: 'Sunset-Vista',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:'Coastal Escapes - Where Waves Beckon',
     title: 'Breathtaking Oceanfront Property',
     summary: 'Enjoy panoramic ocean views in this luxurious retreat.',
@@ -35,7 +35,7 @@ export const PROPERTIES_API = [
   {
     id: 2,
     slug: 'Urban-Oasis',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:'Urban Oasis - Life in the Heart of the City',
     title: 'Modern Downtown Apartment',
     readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
@@ -62,7 +62,7 @@ export const PROPERTIES_API = [
   {
     id: 3,
     slug: 'Mountain-Escape',
-    image: 'images/SeasideCard.svg',
+    image: '/images/SeasideCard.svg',
     highlight:"Countryside Charm - Escape to Nature's Embrace",
     readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     title: 'Rustic Cabin with Mountain Views',
@@ -88,7 +88,7 @@ export const PROPERTIES_API = [
   {
     id: 4,
     slug: 'Lakeside-Serenity',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     title: 'Peaceful Waterfront Home',
     summary: 'A tranquil retreat on the shores of a serene lake.',
@@ -114,7 +114,7 @@ export const PROPERTIES_API = [
   {
     id: 5,
     slug: 'City Lights',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:'Urban Oasis - Life in the Heart of the City',
     readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
     imageGallery:[
@@ -141,7 +141,7 @@ export const PROPERTIES_API = [
   {
     id: 6,
     slug: 'Garden-Retreat',
-    image: 'images/SeasideCard.svg',
+    image: '/images/SeasideCard.svg',
     highlight:"Countryside Charm - Escape to Nature's Embrace",
     title: 'Charming Home with Lush Gardens',
     summary: 'A serene property surrounded by vibrant greenery.',
@@ -167,7 +167,7 @@ export const PROPERTIES_API = [
   {
     id: 7,
     slug: 'Coastal Paradise',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     title: 'Beachfront Dream Home',
     summary: 'Live the coastal lifestyle in this stunning beachfront home.',
@@ -193,7 +193,7 @@ export const PROPERTIES_API = [
   {
     id: 8,
     slug: 'Suburban-Haven',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:"Urban Oasis - Life in the Heart of the City",
     title: 'Family-Friendly Suburban Home',
     summary: 'A spacious home in a quiet suburban neighborhood.',
@@ -219,7 +219,7 @@ export const PROPERTIES_API = [
   {
     id: 9,
     slug: 'Desert-Gem',
-    image: 'images/SeasideCard.svg',
+    image: '/images/SeasideCard.svg',
     highlight:"Countryside Charm - Escape to Nature's Embrace",
     title: 'Modern Desert Retreat',
     summary: 'Sleek, modern design in a picturesque desert setting.',
@@ -245,7 +245,7 @@ export const PROPERTIES_API = [
   {
     id: 10,
     slug: 'Harbor-View',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     imageGallery:[
@@ -272,7 +272,7 @@ export const PROPERTIES_API = [
   {
     id: 11,
     slug: 'Maple-Manor',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:"Urban Oasis - Life in the Heart of the City",
     title: 'Elegant Country Estate',
     readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
@@ -298,7 +298,7 @@ export const PROPERTIES_API = [
   {
     id: 12,
     slug: 'Seaside-Cottage',
-    image: 'images/SeasideCard.svg',
+    image: '/images/SeasideCard.svg',
     highlight:"Countryside Charm - Escape to Nature's Embrace",
     readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     title: 'Cozy Beachside Getaway',
@@ -324,7 +324,7 @@ export const PROPERTIES_API = [
   {
     id: 13,
     slug: 'Hilltop-Haven',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     title: 'Modern Home with Panoramic Views',
     summary: 'A stunning property atop a scenic hill.',
@@ -350,7 +350,7 @@ export const PROPERTIES_API = [
   {
     id: 14,
     slug: 'Rustic-Farmhouse',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:"Urban Oasis - Life in the Heart of the City",
     title: 'Charming Farmhouse with Land',
     summary: 'A peaceful retreat with expansive grounds.',
@@ -376,7 +376,7 @@ export const PROPERTIES_API = [
   {
     id: 15,
     slug: 'Bayview-Residence',
-    image: 'images/SeasideCard.svg',
+    image: '/images/SeasideCard.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     title: 'Luxury Condo with Bay Views',
     summary: 'A sleek condo overlooking the bay.',
@@ -402,7 +402,7 @@ export const PROPERTIES_API = [
   {
     id: 16,
     slug: 'Golden-Fields',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:"Countryside Charm - Escape to Nature's Embrace",
     title: 'Spacious Ranch Property',
     summary: 'A stunning ranch home with endless possibilities.',
@@ -428,7 +428,7 @@ export const PROPERTIES_API = [
   {
     id: 17,
     slug: 'Skyline-Tower',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
     title: 'Luxury Highrise Apartment',
@@ -454,7 +454,7 @@ export const PROPERTIES_API = [
   {
     id: 18,
     slug: 'Willow-Creek',
-    image: 'images/SeasideCard.svg',
+    image: '/images/SeasideCard.svg',
     highlight:"Urban Oasis - Life in the Heart of the City",
     title: 'Charming Home Near Nature Trails',
     summary: 'A lovely home in a nature-friendly community.',
@@ -480,7 +480,7 @@ export const PROPERTIES_API = [
   {
     id: 19,
     slug: 'Desert-Retreat',
-    image: 'images/Beckos.svg',
+    image: '/images/Beckos.svg',
     highlight:"Countryside Charm - Escape to Nature's Embrace",
     title: 'Private Desert Sanctuary',
     summary: 'A hidden gem in the desert.',
@@ -506,7 +506,7 @@ export const PROPERTIES_API = [
   {
     id: 20,
     slug: 'Riverbend',
-    image: 'images/MetroCard.svg',
+    image: '/images/MetroCard.svg',
     highlight:"Coastal Escapes - Where Waves Beckon",
     readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
     title: 'Peaceful Riverside Home',

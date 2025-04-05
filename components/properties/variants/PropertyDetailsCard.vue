@@ -64,8 +64,8 @@
         <imageGallery :images="props.propertyId.imageGallery!" :active-index="currentIndex" @update-active-index="changeIndex" />
       </div>
       <div class="images-cnt mx-auto flex h-auto w-full items-center gap-4 p-4">
-        <img :src="$loadImage('images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >
-        <img :src="$loadImage('images/rightSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >
+        <img :src="$loadImage('/images/leftSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >
+        <img :src="$loadImage('/images/rightSeaSide.svg')" style="width: 50%" class="responsive-img" alt="mini-image" >
       </div>
       <div class="navigator-cont py-8">
         <NavigatorDots :total="total" :current="current" @update:current="(val: any) => (current = val)" />

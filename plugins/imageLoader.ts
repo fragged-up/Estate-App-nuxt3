@@ -1,13 +1,8 @@
 import type { NuxtApp } from 'nuxt/app'
 
 export default defineNuxtPlugin((nuxtApp: NuxtApp) => {
-  const baseURL = process.env.BASE_URL || ''
-
-  const loadImage = (path: string) => {
-    const assetUrl = `${baseURL}/_nuxt/public/${path}`
-    if (!assetUrl) console.log('Failed to load Asset URL:', assetUrl)
-
-    return assetUrl
+  const loadImage = (path: string): string => {
+    return `/base${path}`
   }
 
   nuxtApp.vueApp.config.globalProperties.$loadImage = loadImage

@@ -6,28 +6,7 @@
     name: string
     htmlAtt?: string
   }>()
-  // const props = defineProps({
-  //   inputType: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   placeholder: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   label: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   name: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   htmlAtt: {
-  //     type: String,
-  //     required: false,
-  //   },
-  // })
+
 </script>
 
 <template>
@@ -41,7 +20,7 @@
       :type="inputType"
       :name="name"
       :placeholder="placeholder"
-      class="w-full cursor-pointer rounded-2xl border border-[#262626] bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none" >
+      class="w-full appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none cursor-pointer rounded-2xl border border-[#262626] bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none" >
   </div>
 </template>
 

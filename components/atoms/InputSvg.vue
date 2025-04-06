@@ -2,11 +2,8 @@
 defineProps<{
     label?: string
     inTxt: string
-    svgImage: string
+    svgIcon: string
   }>()
-
-
-
 </script>
 
 <template>
@@ -14,10 +11,11 @@ defineProps<{
     <p v-if="label" class="font-sans text-base font-medium text-white">
       {{ label }}
     </p>
-    <div
-      class="flex w-full cursor-pointer gap-4 rounded-2xl border border-hg bg-fgl p-4 focus:outline-none">
+    <div class="flex w-full cursor-pointer gap-4 rounded-2xl border border-hg bg-fgl p-4 focus:outline-none">
       <p class="font-sans text-sm font-medium text-white">{{ inTxt }}</p>
-      <div v-html="svgImage" />
+      <div v-if="svgIcon">
+        <Icon :name="svgIcon" class="text-white w-6 h-6"/>
+      </div>
     </div>
   </div>
 </template>

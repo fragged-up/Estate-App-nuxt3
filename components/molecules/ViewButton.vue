@@ -12,10 +12,12 @@
   <div class="my-8 grid grid-flow-col justify-around gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden">
 
     <!-- ${props.buttonHide} if you need top open the button dynamicly add this sentence to the div below  -->
-    <button
-      :class="`pad-fix:text-sm border-1 col-span-1 rounded-lg border-[#262626] bg-[#1A1A1A] px-8 py-4 text-center text-white`">
-      {{ buttonText }}
-    </button>
+   <NuxtLink to="/properties">
+      <button
+        :class="`pad-fix:text-sm border-1 col-span-1 rounded-lg border-[#262626] bg-[#1A1A1A] px-8 py-4 text-center text-white`">
+        {{ buttonText }}
+      </button>
+   </NuxtLink>
 
 
     <div class="col-span-2 flex items-center justify-around">

@@ -1,8 +1,12 @@
 <script setup lang="ts">
   import type { FaqItem } from '~/constants/types';
+  import { useMaintanceModal } from '~/stores/maintanceModal'
+  const modalStore = useMaintanceModal()
+
   const props = defineProps<{
     faqs: FaqItem;
   }>();
+
 </script>
 
 <template>
@@ -13,6 +17,6 @@
     <p class="font-sans text-sm font-medium text-gl laptop:text-base">
       {{ props.faqs.answer }}
     </p>
-    <Button :class="'bg-[#1A1A1A] p-4 text-center text-white'" :btn-text="'Read More'" />
+    <Button :class="'bg-[#1A1A1A] p-4 text-center text-white'" :btn-text="'Read More'" @click="modalStore.toggleModal()" />
   </div>
 </template>

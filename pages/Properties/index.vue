@@ -1,5 +1,9 @@
 <script setup lang="ts">
   import { inputsFields, selectFields } from '~/constants';
+import { useMaintanceModal } from '~/stores/maintanceModal';
+import MaintanceModal from '~/shared/MaintanceModal.vue';
+  const modalStore = useMaintanceModal()
+
   useSeoMeta({ title: 'Properties' });
   const { data: propertyList } = await useFetch('/api/properties');
   onMounted(() => {
@@ -11,7 +15,7 @@
   <div>
     <DynamicHero variant="properties" />
     <main>
-      <div class="box-c">
+      <div class="box-c" @click="modalStore.toggleModal()">
         <BoxInput />
       </div>
 

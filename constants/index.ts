@@ -295,28 +295,28 @@ export const keyFeatures: LineImages[] = [
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
-    head: 'Expansive oceanfront terrace for outdoor entertaining',
+    head: 'Gourmet kitchen with top-of-the-line appliances',
   },
   {
     id: 3,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
-    head: 'Expansive oceanfront terrace for outdoor entertaining',
+    head: 'Private beach access for morning strolls and sunset views',
   },
   {
     id: 4,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
-    head: 'Expansive oceanfront terrace for outdoor entertaining',
+    head: 'Master suite with a spa-inspired bathroom and ocean-facing balcony',
   },
   {
     id: 5,
     svgImage: 'tabler:bolt-filled',
     cWrapper: 'grad-black border-l border-pr p-4',
     gapVal: 'gap-4',
-    head: 'Expansive oceanfront terrace for outdoor entertaining',
+    head: 'Private garage and ample storage space',
   },
 ];
 

@@ -37,7 +37,7 @@
         <InputSvg
           :in-txt="locationText"
           :label="'Selected Property'"
-          :svg-image="'tabler:map-pin-filled'" />
+          :svg-icon="'tabler:map-pin-filled'" />
       </div>
 
       <div class="message-cont mx-auto w-11/12 laptop:w-full">

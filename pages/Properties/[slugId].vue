@@ -2,19 +2,23 @@
   import { scard_1, scard_2, keyFeatures, faqCard } from '~/constants';
   import { getPropertyById } from '~/server/utils/';
   import { useRoute } from '#imports';
+  import {formatSelectedProperty,extractIdFromSlug} from "~/utils/formatters"
 
   const route = useRoute();
   const slugId = route.params.slugId as string;
-  const id = Number(slugId.split('-').pop());
-  console.log('id', id);
+  const id = extractIdFromSlug(slugId)
   const propertyItemId = getPropertyById(id);
 
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {
     activeNumber.value = newIndex;
   };
+  const selectedProperty = ref('')
+  if(propertyItemId){
+    selectedProperty.value =formatSelectedProperty(propertyItemId)
+  }
 
-  console.log(propertyItemId);
+
 </script>
 
 <template>
@@ -73,7 +77,7 @@
       <div class="box-rows">
         <div class="box-row-one laptop:my-12 laptop:grid laptop:grid-cols-[25%_70%] laptop:justify-between">
           <MainBox :headline="scard_1.head" :paraline="scard_1.para" />
-          <FormId :location-text="propertyItemId.location" />
+          <FormId :location-text="selectedProperty" />
         </div>
 
         <div class="box-row-two">

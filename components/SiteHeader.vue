@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import MobileMenu from '~/components/organisms/MobileMenu.vue';
   const navItems = [
     { to: '/', label: 'Home' },
     { to: '/AboutUs', label: 'About Us' },
@@ -6,6 +7,7 @@
     { to: '/Services', label: 'Services' },
   ];
   const isOpen = ref(false)
+ const toggleMenu = () => { isOpen.value = !isOpen.value }
 </script>
 
 <template>
@@ -18,7 +20,7 @@
         <h1 class="ml-4 text-white font-sans inline-block">Estatein</h1>
       </NuxtLink>
       <div class="hambu-container">
-        <img :src="$loadImage('/icons/Hamburger.svg')" alt="Hamburger" >
+        <img :src="$loadImage('/icons/Hamburger.svg')" alt="Hamburger" class="cursor-pointer" @click="toggleMenu">
       </div>
     </div>
     <Transition

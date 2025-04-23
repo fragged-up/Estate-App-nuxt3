@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     <div class="flex items-center justify-between">
       <span class="text-3xl font-extrabold tracking-wider">Estatein</span>
     </div>
-    <div class="h-[1px] bg-white/20 w-full mt-2"/>
+    <div class="h-[1px] bg-white/20 w-full mt-2" />
     <nav class="flex flex-col gap-6 mt-4 text-xl font-semibold tracking-wide">
       <NuxtLink
         v-for="(item, idx) in navItems"

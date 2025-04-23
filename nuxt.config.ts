@@ -17,7 +17,7 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap',
         },
       ],
-      meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+      meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }],
     },
   },
   typescript: {

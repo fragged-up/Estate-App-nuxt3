@@ -2,25 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html, body {
+  touch-action: manipulation;
+}
+
 .custom-border {
   background-color: #1a1a1a;
   border: 1px solid #262626;
 }
 
-/* .desk-hero-image {
-  background-image: url('/assets/home/DeskRight.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-} */
-/* .controller-box{
-  display: grid;
-  grid-template-columns:repeat(1,minmax(100px,1fr));
-  justify-content: center;
-  align-items: center;
-  row-gap:2rem;
-} */
+
 .grad-black {
   background: linear-gradient(to left, rgba(26, 26, 26, 0), rgba(26, 26, 26, 1));
 }
@@ -84,10 +76,6 @@
 .hero-highlight-container {
  @apply grid max-w-[100%] grid-cols-2 grid-rows-2 gap-x-2.5 gap-y-2.5 rounded-md border-2 border-[#262626] p-4 laptop:grid-flow-col laptop:grid-cols-none laptop:grid-rows-none laptop:border-[7px];
 }
-
-
-
-
 
 .primary-prp {
   @apply bg-[#703bf7];

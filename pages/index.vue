@@ -95,8 +95,8 @@
   <main class="w-full bg-[#141414]">
     <div class="w-full">
       <HomeHero />
-      <div class="hero-highlight-container">
-    <HeroHighlight v-for="highlight in HERO_HIGHLIGHTS" :key="highlight.id" :card="highlight"  />
+      <div class="hero-highlight-container w-11/12 mx-auto mt-8">
+       <HeroHighlight v-for="highlight in HERO_HIGHLIGHTS" :key="highlight.id" :card="highlight"  />
     </div>
     </div>
 

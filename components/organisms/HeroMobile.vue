@@ -19,12 +19,17 @@ import CircleCTA from '~/components/molecules/CircleCTA.vue';
         Your journey to finding the perfect property begins here. Explore our listings to find the home that matches
         your dreams.
       </p>
-      <button class="mx-auto my-2 w-full rounded-2xl border-2 border-[#262626] p-5 text-center font-sans text-base font-medium text-white">
-        Learn More
-      </button>
-      <button class="mx-auto my-2 w-full rounded-2xl bg-[#703BF7] p-5 text-center font-sans text-base font-medium text-white">
-        Browse Properties
-      </button>
+      <NuxtLink to="/AboutUs">
+        <button class="mx-auto my-2 w-full rounded-2xl border-2 border-[#262626] p-5 text-center font-sans text-base font-medium text-white">
+          Learn More
+        </button>
+      </NuxtLink>
+
+      <NuxtLink to="/properties">
+        <button class="mx-auto my-2 w-full rounded-2xl bg-[#703BF7] p-5 text-center font-sans text-base font-medium text-white">
+          Browse Properties
+        </button>
+      </NuxtLink>
     </div>
     <CardThree />
   </div>

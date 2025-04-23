@@ -6,7 +6,7 @@
 <template>
   <div>
     <DynamicHero variant="services" />
-    <nav class="hero-highlight-container">
+    <nav class="hero-highlight-container w-11/12 mx-auto mt-8">
      <HeroHighlight v-for="highlight in HERO_HIGHLIGHTS" :key="highlight.id" :card="highlight" />
     </nav>
 

@@ -16,7 +16,7 @@ import { CONTACT_HERO } from '~/constants';
 <template>
   <div class="contact-page">
     <DynamicHero variant="contact"/>
-   <div class="hero-highlight-container"> <HeroHighlight v-for="highlights in CONTACT_HERO" :key="highlights.id" :card="highlights" /></div>
+   <div class="hero-highlight-container w-11/12 mx-auto mt-8"> <HeroHighlight v-for="highlights in CONTACT_HERO" :key="highlights.id" :card="highlights" /></div>
 
     <main class="main-contact">
       <MainBlock :header-text="MainBlockHeaders.primary" :para-text="MainBlockHeaders.secondary">

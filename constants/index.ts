@@ -484,3 +484,123 @@ export const CONTACT_HERO = [
   { id: 7, icon: '/icons/buildingIcon.svg', title: 'Instagram / Linkedin / Facebook ' },
   { id: 8, icon: '/icons/sunIcon.svg', title: 'Main Headquarters' },
 ];
+
+export const PROPERTIES_CONFIG = {
+  title: 'Unlock Property Value',
+  summary: 'Selling your property should be a rewarding experience, and at Estatein, we make sure it is.',
+
+  features: [
+    {
+      id: 1,
+      icon: '/unlock/Valut.svg',
+      title: 'Valuation Mastery',
+      description: 'Discover the true worth of your property with our expert valuation services.',
+    },
+    {
+      id: 2,
+      icon: '/unlock/Strategic.svg',
+      title: 'Strategic Marketing',
+      description: 'Selling a property requires more than just a listing; it demands a strategic marketing.',
+    },
+    {
+      id: 3,
+      icon: '/unlock/Negotiation.svg',
+      title: 'Negotiation Wizardry',
+      description: 'Negotiating the best deal is an art, and our negotiation experts are masters of it.',
+    },
+    {
+      id: 4,
+      icon: '/unlock/Clossing.svg',
+      title: 'Closing Success',
+      description: 'A successful sale is not complete until the closing. We guide you through the intricate closing process.',
+    },
+  ],
+  experties: {
+    title: 'Unlock the Value of Your Property Today',
+    description:
+      'Ready to unlock the true value of your property? Explore our Property Selling Service categories and let us help you achieve the best deal possible for your valuable asset.',
+    text: 'Learn More',
+  },
+};
+
+export const EFFORTS_CONFIG = {
+  title: 'Effortless Property Management',
+  summary: "Owning a property should be a pleasure, not a hassle. Estatein's Property Management Service takes the stress out of property ownership.",
+  features: [
+    {
+      id: 1,
+      icon: '/unlock/Tenant.svg',
+      title: 'Tenant Harmony',
+      description: 'Discover the true worth of your property with our expert valuation services.',
+    },
+    {
+      id: 2,
+      icon: '/unlock/Maintain.svg',
+      title: 'Maintenance Ease',
+      description: 'Say goodbye to property maintenance headaches. We handle all aspects of property upkeep.',
+    },
+    {
+      id: 3,
+      icon: '/unlock/Financial.svg',
+      title: 'Financial Peace of Mind',
+      description: 'Managing property finances can be complex. Our financial experts take care of rent collection',
+    },
+    {
+      id: 4,
+      icon: '/unlock/Legal.svg',
+      title:'Legal Guardian',
+      description:'Stay compliant with property laws and regulations effortlessly.',
+
+    },
+  ],
+  experties: {
+    title: 'Experience Effortless Property Management',
+    description:
+      'Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.',
+    text: 'Learn More',
+  },
+};
+
+export const SMART_CONFIG = {
+  title: 'Smart Investments, Informed Decisions',
+  summary:
+    "Building a real estate portfolio requires a strategic approach. Estatein's Investment Advisory Service empowers you to make smart investments and informed decisions.",
+
+  features: [
+    {
+      id: 1,
+      icon: '/unlock/Market.svg',
+      title: 'Market Insight',
+      description:
+        'Stay ahead of market trends with our expert Market Analysis. We provide in-depth insights into real estate market conditions',
+    },
+    {
+      id: 2,
+      icon: '/unlock/ROI.svg',
+      title: 'ROI Assessment',
+      description:
+        'Make investment decisions with confidence. Our ROI Assessment services evaluate the potential returns on your investments',
+    },
+    {
+      id: 3,
+      icon: '/unlock/Customized.svg',
+      title: 'Customized Strategies',
+      description:
+        'Every investor is unique, and so are their goals. We develop Customized Investment Strategies tailored to your specific needs',
+    },
+    {
+      id: 4,
+      icon: '/unlock/Diver.svg',
+      title: 'Diversification Mastery',
+      description:
+        'Diversify your real estate portfolio effectively. Our experts guide you in spreading your investments across various property types and locations',
+    },
+  ],
+
+  experties: {
+    title: 'Unlock Your Investment Potential',
+    description:
+      'Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.',
+    text: 'Learn More',
+  },
+};

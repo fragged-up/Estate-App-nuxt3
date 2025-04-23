@@ -18,7 +18,7 @@
             {{ paraText }}
           </p>
         </div>
-        <p  v-if="deskHeader && override" :class="`${paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`">
+        <p v-if="deskHeader && override" :class="`${paraStyle} font-urbanist py-4 text-sm font-medium leading-5 text-[#999999]`">
           {{ paraText }}
         </p>
 
@@ -34,12 +34,3 @@
   </div>
 </template>
 
-<style>
-  /* from 1440px make hook to display viewButton wrap it in container of inline-flex width
-      width 155px and height 49px   */
-
-  /*  inner Card need in the styling overflow-x auto for mobile
-     from 1440px wrap it in container & to display additional 2 FeaturedProperties components with different props values
-     from 1440px make hook to display none this button
-     <viewButton :buttonText="viewAP" />  */
-</style>

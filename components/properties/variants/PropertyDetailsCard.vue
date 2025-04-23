@@ -38,7 +38,7 @@
 
   <!-- max-w-[414px] deleted for now  -->
   <div class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">
-    <!-- mobile BOX  -->
+    <!-- MOBILE BOX  -->
     <div class="mobile-box laptop:hidden">
       <div class="img-cont mx-auto w-auto min-w-full rounded-xl">
         <img
@@ -48,7 +48,7 @@
 
       </div>
       <div class="gallery-cont min-w-full">
-        <imageGallery :images="props.propertyId.imageGallery" :active-index="currentIndex" @update-active-index="currentIndex" />
+        <imageGallery :images="props.propertyId.imageGallery" :active-image="currentIndex" @update-active-index="currentIndex" />
       </div>
 
       <div class="navigator-cont">

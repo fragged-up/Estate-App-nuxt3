@@ -1,7 +1,6 @@
-<script lang="ts" setup></script>
 
 <template>
-  <div class="arr-l rounded-full border-2 border-hg bg-fgl p-3 text-gl">
+  <div class="arr-l cursor-pointer rounded-full border-2 border-hg bg-fgl p-3 text-gl">
     <svg
       width="24"
       height="24"
@@ -16,5 +15,3 @@
     </svg>
   </div>
 </template>
-
-<style lang="css" scoped></style>

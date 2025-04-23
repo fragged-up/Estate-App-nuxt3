@@ -17,22 +17,22 @@
 
 <template>
   <div class="content-title mx-auto my-4 w-[90%]">
-    <h1 class="font-sans text-xl font-semibold text-white">
-      {{ props.propertyId.slug }}
-    </h1>
-    <div class="mx-auto mb-2 mt-4 grid grid-flow-col">
-      <div class="flex">
-        <LineImg
+    <h1 class="font-sans text-xl font-semibold text-white"> {{ props.propertyId.slug }} </h1>
+
+    <div class="mx-auto grid grid-flow-col">
+      <div class="flex justify-between items-center my-5">
+        <IconBadge
           :svg-icon="'tabler:map-pin-filled'"
-          :container-wrapper="'border border-hg bg-fgl rounded-xl p-2'"
+          :container-wrapper="'border border-hg bg-fgl rounded-xl p-1 md:p-3 max-w-fit'"
           :gapped-value="'gap-1'"
           :head="props.propertyId.location"
         />
+        <div class="flex md:flex-col gap-2 md:gap-3 items-center justify-center">
+        <p class="font-sans text-sm md:text-lg font-medium text-gl">Price</p>
+        <p class="font-sans text-base md:text-xl font-semibold text-white">${{ props.propertyId.price }}</p>
       </div>
-      <div class="flex items-center justify-center gap-2">
-        <p class="font-sans text-sm font-medium text-gl">Price</p>
-        <p class="font-sans text-lg font-semibold text-white">${{ props.propertyId.price }}</p>
       </div>
+
     </div>
   </div>
 

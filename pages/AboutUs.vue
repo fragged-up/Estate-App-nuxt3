@@ -103,24 +103,24 @@
         </div>
         <div class="block-cr p-5">
           <div class="row-one">
-            <LineImg
+            <IconBadge
               :image="'/icons/TrustIcon.svg'"
               :head="h1"
               :para="p1"
               :container-wrapper="'box-one'" />
-            <LineImg
+            <IconBadge
               :image="'/icons/ExcellenceIcon.svg'"
               :head="h2"
               :para="p2"
               :container-wrapper="'box-two'" />
           </div>
           <div class="row-two">
-            <LineImg
+            <IconBadge
               :image="'/icons/CentricIcon.svg'"
               :head="h3"
               :para="p3"
               :container-wrapper="'box-three'" />
-            <LineImg
+            <IconBadge
               :image="'/icons/CommitIcon.svg'"
               :head="h4"
               :para="p4"

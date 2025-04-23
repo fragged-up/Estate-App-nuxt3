@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  import type { FaqItem } from '~/constants/types';
+  import { NuxtLink } from '#components';
+import type { FaqItem } from '~/constants/types';
   import { useMaintanceModal } from '~/stores/maintanceModal'
   const modalStore = useMaintanceModal()
 
@@ -17,6 +18,6 @@
     <p class="font-sans text-sm font-medium text-gl laptop:text-base">
       {{ props.faqs.answer }}
     </p>
-    <Button :class="'bg-[#1A1A1A] p-4 text-center text-white'" :btn-text="'Read More'" @click="modalStore.toggleModal()" />
+    <NuxtLink to="/aboutUs" class="w-full"><Button :class="'w-full bg-[#1A1A1A] p-4 text-center text-white'" :btn-text="'Read More'" @click="modalStore.toggleModal()" /></NuxtLink>
   </div>
 </template>

@@ -2,7 +2,7 @@
   import { scard_1, scard_2, keyFeatures, faqCard } from '~/constants';
   import { getPropertyById } from '~/server/utils/';
   import { useRoute } from '#imports';
-  import {formatSelectedProperty,extractIdFromSlug} from "~/utils/formatters"
+  import { formatSelectedProperty, extractIdFromSlug } from "~/utils/formatters"
 
   const route = useRoute();
   const slugId = route.params.slugId as string;
@@ -39,20 +39,20 @@
         </div>
         <div class="grid grid-flow-col border-y border-hg py-12">
           <div class="left-s border-r border-hg">
-            <LineImg :svg-icon="'tabler:bed'" :gapped-value="'gap-1'" :head="'Bedrooms'" />
+            <IconBadge :svg-icon="'tabler:bed'" :gapped-value="'gap-1'" :head="'Bedrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
               0{{ propertyItemId?.bedrooms ? propertyItemId.bedrooms.toString() : 'N/A' }}
             </p>
           </div>
           <div class="right-s pl-4">
-            <LineImg :svg-icon="'tabler:bath'" :gapped-value="'gap-1'" :head="'Bathrooms'" />
+            <IconBadge :svg-icon="'tabler:bath'" :gapped-value="'gap-1'" :head="'Bathrooms'" />
             <p class="py-2 font-sans text-lg font-semibold text-white">
               0{{ propertyItemId?.bathrooms ? propertyItemId.bathrooms.toString() : 'N/A' }}
             </p>
           </div>
         </div>
         <div class="area">
-          <LineImg :svg-icon="'mdi:ruler-square'" :gapped-value="'gap-1'" :head="'Area'" />
+          <IconBadge :svg-icon="'mdi:ruler-square'" :gapped-value="'gap-1'" :head="'Area'" />
           <p class="font-sans text-lg font-semibold text-white">
             {{ propertyItemId?.areaSqFt ? propertyItemId.areaSqFt : 'N/A' }} Square Feet
           </p>
@@ -62,7 +62,7 @@
       <div class="amentites space-y-6 rounded-xl border border-hg p-8">
         <h3 class="font-sans text-lg font-semibold text-white">Key Features and Amenities</h3>
 
-        <LineImg
+        <IconBadge
           v-for="box in keyFeatures"
           :key="box.id"
           :svg-icon="box.svgImage"
@@ -104,7 +104,7 @@
             :para-text="faqCard.description" >
 
             <template #default>
-              <div class="laptop:flex laptop:flex-row laptop:justify-between laptop:gap-6">
+              <div class="grid grid-cols-1 gap-6 justify-center items-center md:grid-cols-3">
                 <FaqCard v-for="faq in faqCard.faqs" :key="faq.id" :faqs="faq" />
               </div>
               <ViewButton :button-text="'\View All FAQ\'s'" />

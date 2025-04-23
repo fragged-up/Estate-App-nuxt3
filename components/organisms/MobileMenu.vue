@@ -11,7 +11,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', to: '/' },
-  { label: 'About Us', to: '/about' },
+  { label: 'About Us', to: '/aboutUs' },
   { label: 'Properties', to: '/properties' },
   { label: 'Services', to: '/services' },
   { label: 'Contact Us', to: '/contact', isPrimary: true },

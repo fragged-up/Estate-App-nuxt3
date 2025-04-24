@@ -12,6 +12,9 @@ export default {
 
   theme: {
     extend: {
+      touchAction:{
+        manipulation:'manipulation',
+      },
       letterSpacing:{
         custom:'0.07em'
       },

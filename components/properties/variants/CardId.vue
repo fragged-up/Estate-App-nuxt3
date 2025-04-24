@@ -1,4 +1,4 @@
-<script setup lang="ts">
+lea<script setup lang="ts">
 const props = defineProps<{
   images: { path: string }[]
   activeImage: number
@@ -15,16 +15,25 @@ const updateImage = (index: number) => {
 const handleSliderIndexChange = (newIndex: number) => {
   emit('update:active-image', newIndex);
 };
-</script>
 
+
+
+</script>
+<!-- max-h-[28.125rem] -->
 <template>
-  <div class="card-id space-y-6">
-    <img
+  <div class="inline-grid gap-5 space-y-6 p-5 bg-mg border-2 border-hg rounded-xl">
+    <!-- <img
       :src="$loadImage(props.images[activeImage].path)"
       alt="main-property-image"
-      class="w-full rounded-xl object-cover"
-    >
+      class="w-full max-h-[15.56rem] rounded-xl object-cover"
+    > -->
 
+
+    <NuxtImg
+      :src="`/base/${props.images[activeImage].path}`"
+      alt="image"
+      class="w-full max-h-[15.56rem] rounded-xl object-cover"
+    />
     <GalleryImage
       :images="props.images"
       :active-image="activeImage"
@@ -39,9 +48,10 @@ const handleSliderIndexChange = (newIndex: number) => {
   </div>
 </template>
 
-<style scoped>
-.card-id {
-  max-width: 600px;
-  margin: auto;
-}
-</style>
+
+
+    <!-- <AppImage
+      :src="props.images[activeImage].path"
+      :alt="`Image ${activeImage + 1}`"
+      class="w-full max-h-[15.56rem] rounded-xl object-cover"
+    /> -->

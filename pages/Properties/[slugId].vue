@@ -2,35 +2,54 @@
   import { scard_1, scard_2, keyFeatures, faqCard } from '~/constants';
   import { getPropertyById } from '~/server/utils/';
   import { useRoute } from '#imports';
-  import { formatSelectedProperty, extractIdFromSlug } from "~/utils/formatters"
+  import { formatSelectedProperty, extractIdFromSlug } from '~/utils/formatters';
 
   const route = useRoute();
   const slugId = route.params.slugId as string;
-  const id = extractIdFromSlug(slugId)
+  const id = extractIdFromSlug(slugId);
   const propertyItemId = getPropertyById(id);
 
   const activeNumber = ref<number>(0);
   const updateIndex = (newIndex: number) => {
     activeNumber.value = newIndex;
   };
-  const selectedProperty = ref('')
-  if(propertyItemId){
-    selectedProperty.value =formatSelectedProperty(propertyItemId)
+
+  const activeTab = ref(0);
+  const activeImage = ref(0);
+  const handleTabChange = (newTab: number) => {
+    activeTab.value = newTab;
+  };
+  const handleImageChange = (newImage: number) => {
+    activeImage.value = newImage;
+  };
+
+  const selectedProperty = ref('');
+  if (propertyItemId) {
+    selectedProperty.value = formatSelectedProperty(propertyItemId);
   }
-
-
+  console.log(propertyItemId);
 </script>
 
 <template>
   <div class="main">
     <header>
       <div class="p-4">
-        <PropertyDetailsCard v-if="propertyItemId" :property-id="propertyItemId" @update-index="updateIndex" />
+        <!-- <NuxtImg :src="image" alt="image" width="400" height="400"  /> -->
+
+        <!-- <PropertyDetailsCard v-if="propertyItemId" :property-id="propertyItemId" @update-index="updateIndex" /> -->
+        <CardId
+      v-if="propertyItemId"
+      :images="propertyItemId.imageGallery"
+      :active-image="activeImage"
+      @update:active-tab="handleTabChange"
+      @update:active-image="handleImageChange" />
       </div>
     </header>
 
     <div class="2-blocks-cnt centerize-all mx-auto w-[90%] space-y-12 laptop:flex laptop:gap-6 laptop:space-y-0">
-      <div  class="description my-2 grid grid-flow-row gap-y-8 rounded-xl border border-hg bg-fgl px-8 py-12 laptop:my-0 laptop:py-8">
+      <div
+        class="description my-2 grid grid-flow-row gap-y-8 rounded-xl border border-hg bg-fgl px-8 py-12 laptop:my-0 laptop:py-8"
+      >
         <div class="head-cnt space-y-4">
           <h2 class="font-sans font-semibold text-white">Description</h2>
           <p class="font-sans text-sm font-medium text-gl">
@@ -101,8 +120,8 @@
             :header-text="faqCard.title"
             :cont-style="'laptop:mx-0'"
             :sub-cont-style="'laptop:mx-0'"
-            :para-text="faqCard.description" >
-
+            :para-text="faqCard.description"
+          >
             <template #default>
               <div class="grid grid-cols-1 gap-6 justify-center items-center md:grid-cols-3">
                 <FaqCard v-for="faq in faqCard.faqs" :key="faq.id" :faqs="faq" />
@@ -111,9 +130,7 @@
             </template>
           </MainBlock>
         </div>
-
       </div>
     </section>
   </div>
 </template>
-

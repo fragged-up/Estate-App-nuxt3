@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 const emit = defineEmits<{ (e: 'click'): void }>()
 
-
-
 const props = defineProps<{
   icon: string
   alt?: string

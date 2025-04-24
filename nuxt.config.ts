@@ -20,9 +20,26 @@ export default defineNuxtConfig({
       meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }],
     },
   },
-  typescript: {
-    typeCheck: true,
+
+  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/icon','@nuxt/image'],
+
+/*
+Old Config
+image: {
+    providers: {
+      local: {
+        provider: 'ipx',
+        fileExtensions: ['jpg', 'jpeg', 'png', 'webp']
+      },
+      provider: 'ipx',
+    },
   },
+
+
+ */
+  // typescript: {
+  //   typeCheck: true,
+  // },
   sourcemap: {
     server: true,
     client: true,
@@ -33,7 +50,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/icon'],
+
   icon: {
     serverBundle: {
       collections: ['tabler', 'mdi'],

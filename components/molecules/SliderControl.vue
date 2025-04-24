@@ -31,27 +31,29 @@ const goRight = () => {
 </script>
 
 <template>
-  <div class="slider-control flex items-center justify-center gap-4">
-    <ArrowButton
-      icon="/left-navigator.svg"
-      direction="right"
-      :disabled="internalActiveTab === 0"
-      @click="goLeft"
-    />
+<div class="flex justify-center items-center">
+    <div class="slider-control bg-fgl max-w-[19.875rem] laptop:max-w-[12.875rem] rounded-full inline-flex items-center justify-center p-2 gap-4">
+      <ArrowButton
+        icon="/left-navigator.svg"
+        direction="right"
+        :disabled="internalActiveTab === 0"
+        @click="goLeft"
+      />
 
-    <TabIndicator
-      :tabs="props.tabsCount"
-      :active-tab="internalActiveTab"
-      @update:active-tab="updateActiveTab"
-    />
+      <TabIndicator
+        :tabs="props.tabsCount"
+        :active-tab="internalActiveTab"
+        @update:active-tab="updateActiveTab"
+      />
 
-    <ArrowButton
-      icon="/right-navigator.svg"
-      direction="right"
-      :disabled="internalActiveTab === props.tabsCount.length - 1"
-      @click="goRight"
-    />
-  </div>
+      <ArrowButton
+        icon="/right-navigator.svg"
+        direction="right"
+        :disabled="internalActiveTab === props.tabsCount.length - 1"
+        @click="goRight"
+      />
+    </div>
+</div>
 </template>
 
 

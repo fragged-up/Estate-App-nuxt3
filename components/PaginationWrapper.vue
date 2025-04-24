@@ -46,9 +46,21 @@ const goRight = () => {
       <div
         class="flex items-center justify-between border-t border-[#2A2A2A] pt-6"
         :class="width < 1024 ? 'justify-center gap-8' : 'justify-between'">
-        <PaginationButton direction="left" @click="goLeft" />
+        <ArrowButton
+        icon="/left-navigator.svg"
+        :alt="'left-arrow'"
+        direction="left"
+        :disabled="currentPage <= 1"
+        @click="goLeft"
+      />
         <PaginationInfo :current-page="currentPage" :total-pages="totalPages" />
-        <PaginationButton :disabled="currentPage>=totalPages" direction="right" @click="goRight"  />
+        <ArrowButton
+        icon="/right-navigator.svg"
+        :alt="'right-arrow'"
+        direction="right"
+        :disabled="currentPage>=totalPages"
+        @click="goRight"
+      />
       </div>
     </div>
   </div>

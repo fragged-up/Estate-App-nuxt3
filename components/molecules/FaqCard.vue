@@ -1,13 +1,12 @@
 <script setup lang="ts">
   import { NuxtLink } from '#components';
-import type { FaqItem } from '~/constants/types';
-  import { useMaintanceModal } from '~/stores/maintanceModal'
-  const modalStore = useMaintanceModal()
+  import type { FaqItem } from '~/constants/types';
+  import { useMaintanceModal } from '~/stores/maintanceModal';
+  const modalStore = useMaintanceModal();
 
   const props = defineProps<{
     faqs: FaqItem;
   }>();
-
 </script>
 
 <template>
@@ -18,6 +17,12 @@ import type { FaqItem } from '~/constants/types';
     <p class="font-sans text-sm font-medium text-gl laptop:text-base">
       {{ props.faqs.answer }}
     </p>
-    <NuxtLink to="/aboutUs" class="w-full"><Button :class="'w-full bg-[#1A1A1A] p-4 text-center text-white'" :btn-text="'Read More'" @click="modalStore.toggleModal()" /></NuxtLink>
+    <NuxtLink to="/aboutUs" class="w-full">
+      <Button
+        :class="'w-full bg-[#1A1A1A] p-4 text-center text-white'"
+        :btn-text="'Read More'"
+        @click="modalStore.toggleModal()"
+      />
+    </NuxtLink>
   </div>
 </template>

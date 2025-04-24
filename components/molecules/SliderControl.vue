@@ -35,6 +35,7 @@ const goRight = () => {
     <div class="slider-control bg-fgl max-w-[19.875rem] rounded-full inline-flex items-center justify-center gap-2 p-2">
       <ArrowButton
         icon="/left-navigator.svg"
+        :alt="'left-arrow'"
         direction="right"
         :disabled="internalActiveTab === 0"
         @click="goLeft"
@@ -48,6 +49,7 @@ const goRight = () => {
 
       <ArrowButton
         icon="/right-navigator.svg"
+        :alt="'left-arrow'"
         direction="right"
         :disabled="internalActiveTab === props.tabsCount.length - 1"
         @click="goRight"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   defineProps<{
-    labelLink?:string;
+    labelLink?: string;
+    linkPath?:string;
     goLeft: () => void;
     goRight: () => void;
   }>();
@@ -10,34 +11,35 @@
 
 <template>
   <div class="w-full max-w-full mx-auto px-4">
-    <div class="my-8 grid grid-flow-col justify-around gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden">
+    <!-- Mobile Variant -->
+    <div class="my-8 grid grid-flow-col justify-between gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden">
       <NuxtLink
         v-if="labelLink"
-        class="pad-fix:text-sm border-1 col-span-1 rounded-lg border-[#262626] bg-[#1A1A1A] px-8 py-4 text-center text-white"
-        to="/properties">
-
+        class="pad-fix:text-sm border-1 flex rounded-lg border-[#262626] bg-[#1A1A1A] px-4 py-4 text-center text-white"
+        :to="`${linkPath}`"
+      >
         {{ labelLink }}
       </NuxtLink>
 
-      <!-- Mobile Variant -->
-      <div class="col-span-2 flex items-center justify-around">
+      <div class="w-full flex items-center justify-between gap-3">
         <ArrowButton
           icon="/left-navigator.svg"
           :alt="'left-arrow'"
+          :size="14"
           direction="left"
           :disabled="currentPage <= 1"
           @click="goLeft"
         />
-
-        <p class="pad-fix:whitespace-nowrap space-x-1 p-2">
-          <span class="text-white">{{ currentPage }}</span>
-          <span class="text-[#808080]">of</span>
-          <span class="text-[#808080]">{{ totalPages }}</span>
-        </p>
+        <CardPaginationStatus
+          :current="currentPage"
+          :total="totalPages"
+          variant="flex gap-1"
+        />
 
         <ArrowButton
           icon="/right-navigator.svg"
           :alt="'right-arrow'"
+          :size="14"
           direction="right"
           :disabled="currentPage >= totalPages"
           @click="goRight"
@@ -46,19 +48,17 @@
     </div>
 
     <!-- Desktop Variant -->
-    <div
-      class="laptop-box items-center-2 mx-auto my-8 hidden justify-between border-t-2 border-t-[#262626] pt-4 laptop:flex"
-    >
+    <div class="laptop-box items-center-2 mx-auto my-8 hidden justify-between border-t-2 border-t-[#262626] pt-4 laptop:flex">
       <div class="box-left space-x-2">
-        <span class="text-white">{{ currentPage }}</span>
-        <span class="text-[#808080]">of</span>
-        <span class="text-[#808080]">{{ totalPages }}</span>
+        <CardPaginationStatus :current="currentPage" :total="totalPages" variant="flex gap-3" />
       </div>
+
       <div class="inline-flex justify-between items-start gap-2.5">
         <ArrowButton
           icon="/left-navigator.svg"
           :alt="'left-arrow'"
           direction="left"
+          :size="24"
           :disabled="currentPage <= 1"
           @click="goLeft"
         />
@@ -67,6 +67,7 @@
           :alt="'right-arrow'"
           direction="right"
           :disabled="currentPage >= totalPages"
+          :size="24"
           @click="goRight"
         />
       </div>

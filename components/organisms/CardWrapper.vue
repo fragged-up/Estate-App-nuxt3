@@ -1,37 +1,15 @@
-<!-- <script lang="ts" setup>
-  const props = defineProps<{
-    title?: string;
-    description?: string;
-    card: any[];
-  }>();
-</script>
-<template>
-  <div class="space-y-8 w-full touch-manipulation">
-    <FaqsHeader :title="props.title" :description="props.description" />
-    <div class="w-full max-w-full mx-auto px-4">
-      <div :class="['gap-[20px]',width >= 1024 ? 'grid grid-cols-3' : width >= 640 ? 'grid grid-cols-2' : 'grid grid-cols-1',]">
-        <slot :card="paginatedItems" />
-      </div>
-    </div>
-    <div class="w-full max-w-full mx-auto px-4">
-      <FaqContainer :button-text="'View All Properties'" />
-    </div>
-  </div>
-</template> -->
-
-Ï
 <script setup lang="ts">
   import { useWindowSize } from '@vueuse/core';
-  import CardHeader from './CardHeader.vue';
-  import CardNavigator from './CardNavigator.vue';
 
   const { width } = useWindowSize();
 
   const props = defineProps<{
-    title?: string;
-    description?: string;
+    title?: string | undefined;
+    description?: string | undefined;
     card: any[];
-    buttonText?: string;
+    label?: string;
+    path?: string;
+    removeNavigator?:boolean
   }>();
 
   const currentPage = ref(1);
@@ -59,8 +37,8 @@
   const goRight = () => {
     if (currentPage.value < totalPages.value) currentPage.value++;
   };
+  const shouldShowPaginator = ref(true)
 </script>
-<!--   mx-4   40 from text section to block Gap 30 from section to buttons  -->
 
 <template>
   <div class="space-y-8 w-full touch-manipulation">
@@ -68,17 +46,19 @@
     <div class="w-full max-w-full mx-auto px-4">
       <div
         :class="[
-          'gap-[20px]',
+          'touch-manipulation gap-[20px]',
           width >= 1024 ? 'grid grid-cols-3' : width >= 640 ? 'grid grid-cols-2' : 'grid grid-cols-1',
         ]"
       >
         <slot :card="paginatedItems" />
       </div>
     </div>
-    <CardNavigator
+    <CardPaginator
+      v-if="!props.removeNavigator"
       v-model:current-page="currentPage"
       v-model:total-pages="totalPages"
-      :button-text="buttonText"
+      :label-link="label"
+      :link-path="path"
       :go-left="goLeft"
       :go-right="goRight"
     />

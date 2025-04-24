@@ -9,7 +9,7 @@ const { isOpen } = storeToRefs(modalStore)
 <template>
   <div
     v-if="isOpen"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4 touch-manipulation"
     @click.self="modalStore.closeModal()"
   >
     <div

@@ -89,11 +89,9 @@
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full touch-manipulation">
     <div class="w-[90%] mx-auto space-y-12 laptop:flex laptop:gap-6 laptop:space-y-0">
-      <div
-        class="w-full my-2 grid grid-flow-row gap-y-8 rounded-xl border border-hg bg-fgl px-8 py-12 laptop:my-0 laptop:py-8"
-      >
+      <div class="w-full my-2 grid grid-flow-row gap-y-8 rounded-xl border border-hg bg-fgl px-8 py-12 laptop:my-0 laptop:py-8">
         <div class="space-y-4">
           <h2 class="font-sans font-semibold text-white">Description</h2>
           <p class="font-sans text-sm font-medium text-gl">
@@ -135,7 +133,7 @@
       </div>
     </div>
 
-    <section class="[&>*]:w-[90%] [&>*]:mx-auto">
+    <section class="[&>*]:w-[90%] [&>*]:mx-auto touch-manipulation">
       <div class="box-rows">
         <div class="box-row-one laptop:my-12 laptop:grid laptop:grid-cols-[25%_70%] laptop:justify-between">
           <MainBox :headline="MainBoxOne.title" :paraline="MainBoxOne.description" />
@@ -158,20 +156,12 @@
           </div>
         </div>
 
-        <div class="box-row-faq">
-          <MainBlock
-            :header-text="faqCard.title"
-            :cont-style="'laptop:mx-0'"
-            :sub-cont-style="'laptop:mx-0'"
-            :para-text="faqCard.description"
-          >
-            <template #default>
-              <div class="grid grid-cols-1 gap-6 justify-center items-center md:grid-cols-3">
-                <FaqCard v-for="faq in faqCard.faqs" :key="faq.id" :faqs="faq" />
-              </div>
-              <ViewButton :button-text="'\View All FAQ\'s'" />
-            </template>
-          </MainBlock>
+        <div class="box-row-faq touch-manipulation">
+          <CardWrapper :card="faqCard.faqs" :title="faqCard.title" :description="faqCard.description" label="View All FAQ's" link="/services">
+              <template #default="{ card }">
+                <FaqCard v-for="faq in card" :key="faq.id" :faqs="faq"  />
+              </template>
+            </CardWrapper>
         </div>
       </div>
     </section>

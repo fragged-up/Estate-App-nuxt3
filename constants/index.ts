@@ -5,9 +5,6 @@ import type {
   SelectFields,
   LineImages,
   StepsType,
-  RepeatedBlockConfig,
-  MiniCard,
-  FaqCardType,
   BoxGroups,
   Testimonial,
 } from './types';
@@ -35,6 +32,36 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
+    avatarUrl: '/home/wadeFace.svg',
+    fullName: 'Wade Warren',
+    location: 'USA, California',
+    headline: 'Exceptional Service!',
+    review:
+      "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    stars: 5,
+  },
+  {
+    id: 4,
+    avatarUrl: '/home/wadeFace.svg',
+    fullName: 'Wade Warren',
+    location: 'USA, California',
+    headline: 'Exceptional Service!',
+    review:
+      "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    stars: 4.5,
+  },
+  {
+    id: 5,
+    avatarUrl: '/home/wadeFace.svg',
+    fullName: 'Wade Warren',
+    location: 'USA, California',
+    headline: 'Exceptional Service!',
+    review:
+      "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
+    stars: 4,
+  },
+  {
+    id: 6,
     avatarUrl: '/home/wadeFace.svg',
     fullName: 'Wade Warren',
     location: 'USA, California',
@@ -231,6 +258,21 @@ export const faqs: FaqItem[] = [
     question: 'How can I contact an Estatein agent?',
     answer: 'Discover the different ways you can get in touch with our experienced agents',
   },
+  {
+    id: 4,
+    question: 'How do I search for properties on Estatein?',
+    answer: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+  },
+  {
+    id: 5,
+    question: 'What documents do I need to sell my property through Estatein?',
+    answer: 'Find out about the necessary documentation for listing your property with us.',
+  },
+  {
+    id: 6,
+    question: 'How can I contact an Estatein agent?',
+    answer: 'Discover the different ways you can get in touch with our experienced agents',
+  },
 ];
 
 export const BOX_GROUPS: BoxGroups = {
@@ -336,10 +378,10 @@ export const BOX_GROUPS: BoxGroups = {
 };
 
 export const HERO_HIGHLIGHTS = [
-  { id: 1, icon: '/icons/homeIcon.svg', title: 'Find Your Dream\n Home' },
-  { id: 2, icon: '/icons/cameraIcon.svg', title: 'Unlock Property\n Value' },
-  { id: 3, icon: '/icons/buildingIcon.svg', title: 'Effortless Property\n Management' },
-  { id: 4, icon: '/icons/sunIcon.svg', title: 'Smart Investments,\n Informed Decisions' },
+  { id: 1, icon: '/icons/homeIcon.svg', title: 'Find Your Dream\n Home', link:'/services'},
+  { id: 2, icon: '/icons/cameraIcon.svg', title: 'Unlock Property\n Value',link:'/services' },
+  { id: 3, icon: '/icons/buildingIcon.svg', title: 'Effortless Property\n Management',link:'/services' },
+  { id: 4, icon: '/icons/sunIcon.svg', title: 'Smart Investments,\n Informed Decisions',link:'/services' },
 ];
 
 export const CONTACT_HERO = [

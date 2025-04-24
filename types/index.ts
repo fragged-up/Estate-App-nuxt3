@@ -35,4 +35,5 @@ export interface HeroProps{
   id:number
   icon:string
   title:string
+  link?:string
 }

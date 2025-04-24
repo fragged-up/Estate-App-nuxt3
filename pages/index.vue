@@ -101,7 +101,6 @@
     </div>
 
     <section class="section-layout bg-fgl">
-      <NuxtImg src="/base/images/Beckos.svg" alt="image" width="400" height="400" />
       <div class="section-container">
         <MainBlock
           :header-text="headerTxt"

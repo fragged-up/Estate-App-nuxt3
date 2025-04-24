@@ -21,25 +21,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/icon','@nuxt/image'],
+  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/icon',],
 
-/*
-Old Config
-image: {
-    providers: {
-      local: {
-        provider: 'ipx',
-        fileExtensions: ['jpg', 'jpeg', 'png', 'webp']
-      },
-      provider: 'ipx',
-    },
+
+  typescript: {
+    typeCheck: true,
   },
-
-
- */
-  // typescript: {
-  //   typeCheck: true,
-  // },
   sourcemap: {
     server: true,
     client: true,
@@ -69,6 +56,7 @@ image: {
       { path: '~/components/templates', pathPrefix: false },
       { path: '~/components/sections', pathPrefix: false },
       { path: '~/components/properties', pathPrefix: false },
+      { path: '~/components/properties/Slug', pathPrefix: false },
     ],
   },
   postcss: {

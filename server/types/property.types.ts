@@ -11,7 +11,7 @@ export type Property = {
     bathrooms: number
     price: number
     location: string
-    tagline:string | null | undefined
+    tagline?:string | null | undefined
 }
 
 export type PropertyId = Property & {

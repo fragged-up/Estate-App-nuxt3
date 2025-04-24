@@ -15,7 +15,7 @@
     <p
       v-for="(tab, index) in props.tabs"
       :key="index"
-      class="cursor-pointer text-[2rem] text-[#4D4D4D] transition-all duration-300 ease-in-out"
+      class="cursor-pointer text-2xl md:text-3xl text-[#4D4D4D] transition-all duration-300 ease-in-out"
       :class="{ 'font-semibold text-pr rounded-full': props.activeTab === index }"
       @click="handleTabClick(index)"
     >

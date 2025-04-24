@@ -40,20 +40,18 @@ watch(
 <template>
   <div
     ref="galleryContainer"
-    class="my-6 flex max-w-full space-x-2.5 rounded-xl p-2.5 overflow-x-auto border border-hg bg-fgl laptop:w-full laptop:max-w-full laptop:justify-evenly"
+    class="flex max-w-full space-x-2.5 laptop:space-x-0 p-2.5 overflow-x-auto border rounded-xl border-hg bg-fgl laptop:w-full laptop:max-w-full laptop:justify-evenly"
   >
-    <NuxtImg
+    <img
       v-for="(image, index) in images"
       :key="index"
       :ref="'thumbnail-' + index"
       :src="$loadImage(image.path)"
       :alt="'image-' + index"
-      class="h-10 w-16 cursor-pointer transition-all duration-300"
-      :class="['thumbnail',index === activeImage ? 'opacity-100 scale-110  shadow-md' : 'opacity-50 grayscale-[20%]',]"
-
-
-
+      class="h-10 w-16 laptop:w-[7.625] laptop:h-[4.625rem] cursor-pointer transition-all duration-300"
+      :class="['thumbnail',index === activeImage ? 'opacity-100 scale-110 shadow-md' : 'opacity-50 grayscale-[20%]',]"
       :aria-current="index === activeImage ? 'true' : undefined"
       @click="updateActiveImage(index)"
-    /></div>
+    >
+  </div>
 </template>

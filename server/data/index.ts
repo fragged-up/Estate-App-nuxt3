@@ -1,9 +1,3 @@
-
-
-
-
-
-
 export const PROPERTIES_API = [
   {
     id: 1,

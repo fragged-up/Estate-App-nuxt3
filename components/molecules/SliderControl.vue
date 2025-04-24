@@ -32,7 +32,7 @@ const goRight = () => {
 
 <template>
 <div class="flex justify-center items-center">
-    <div class="slider-control bg-fgl max-w-[19.875rem] laptop:max-w-[12.875rem] rounded-full inline-flex items-center justify-center p-2 gap-4">
+    <div class="slider-control bg-fgl max-w-[19.875rem] rounded-full inline-flex items-center justify-center gap-2 p-2">
       <ArrowButton
         icon="/left-navigator.svg"
         direction="right"

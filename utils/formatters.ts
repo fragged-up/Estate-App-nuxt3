@@ -11,10 +11,9 @@
 
   export const loremIpsum = `Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,Lorem ipsum dolor sit, amet consectetur adipisicing elit,`;
 
-  export function formatSelectedProperty(propertyItemId?: { slug: string; location: string }): string | undefined {
-    if (!propertyItemId) return;
-
-    const { slug, location } = propertyItemId;
+  export function formatSelectedProperty(slugProps?: { slug: string; location: string }): string | undefined {
+    if (!slugProps) return;
+    const { slug, location } = slugProps;
     return `${slug.replace('-', ' ')}, ${location}`;
   }
 

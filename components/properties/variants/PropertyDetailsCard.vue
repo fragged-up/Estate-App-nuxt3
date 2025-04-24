@@ -16,25 +16,7 @@
 </script>
 
 <template>
-  <div class="content-title mx-auto my-4 w-[90%]">
-    <h1 class="font-sans text-xl font-semibold text-white"> {{ props.propertyId.slug }} </h1>
-
-    <div class="mx-auto grid grid-flow-col">
-      <div class="flex justify-between items-center my-5">
-        <IconBadge
-          :svg-icon="'tabler:map-pin-filled'"
-          :container-wrapper="'border border-hg bg-fgl rounded-xl p-1 md:p-3 max-w-fit'"
-          :gapped-value="'gap-1'"
-          :head="props.propertyId.location"
-        />
-        <div class="flex md:flex-col gap-2 md:gap-3 items-center justify-center">
-        <p class="font-sans text-sm md:text-lg font-medium text-gl">Price</p>
-        <p class="font-sans text-base md:text-xl font-semibold text-white">${{ props.propertyId.price }}</p>
-      </div>
-      </div>
-
-    </div>
-  </div>
+  <div class="content-title mx-auto my-4 w-[90%]"/>
 
   <!-- max-w-[414px] deleted for now  -->
   <div class="card-id-cont grid-flow-rows mx-auto my-6 grid max-w-[25rem] auto-rows-max items-center justify-center rounded-xl bg-mg px-4 py-8 laptop:w-[91.66%] laptop:max-w-[100%]">

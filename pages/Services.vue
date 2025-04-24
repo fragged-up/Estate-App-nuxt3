@@ -49,26 +49,4 @@
     </main>
   </div>
 </template>
-<!-- <style scoped>
-  .shadow-frame {
-    box-shadow: 1px -1px 18px 1px #2f1313;
-  }
 
-  .b-frame {
-    margin: 0;
-    border: 2px solid #262626;
-    border-radius: 0.75rem;
-    padding: 2rem;
-    width: auto;
-    max-width: 413px;
-  }
-
-  .controller-box {
-    margin-inline: auto;
-    display: grid;
-    grid-template-columns: repeat(1, minmax(100px, 1fr));
-    grid-template-rows: repeat(2, minmax(100px, auto));
-    row-gap: 20px;
-    column-gap: 15px;
-  }
-</style> -->

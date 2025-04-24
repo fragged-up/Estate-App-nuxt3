@@ -35,7 +35,7 @@ const goRight = () => {
 </script>
 
 <template>
-  <div class="space-y-8 w-full">
+  <div class="space-y-8 w-full touch-manipulation">
     <div class="w-full max-w-full mx-auto px-4">
       <div :class="['gap-[20px]', width >= 1024 ? 'grid grid-cols-3' :  width >= 640 ? 'grid grid-cols-2' :  'grid grid-cols-1'  ]">
         <slot :items="paginatedItems" />

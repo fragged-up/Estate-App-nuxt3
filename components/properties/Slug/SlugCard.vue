@@ -24,10 +24,13 @@
     <!-- Mobile Variant -->
     <div class="laptop:hidden inline-grid gap-5 p-5 bg-mg border-2 border-hg rounded-xl">
       <img
+        v-if="getSafeImagePath(activeImage)"
         :src="$loadImage(props.images[activeImage].path)"
         alt="main-property-image"
         class="w-full min-h-[15.56rem] rounded-xl object-cover"
       >
+      <div v-else class="w-full min-h-[15.56rem] rounded-xl bg-gradient-to-r from-zinc-200 to-zinc-300 animate-pulse" />
+
       <GalleryImage :images="props.images" :active-image="activeImage" @update-active-index="updateImage" />
       <SliderControl
         :tabs-count="props.images"
@@ -44,15 +47,23 @@
           v-if="getSafeImagePath(activeImage)"
           :src="$loadImage(getSafeImagePath(activeImage)!)"
           alt="main-property-image"
-          class="w-full min-h-[15.56rem]  object-cover"
+          class="w-full min-h-[15.56rem] object-cover"
         >
+        <div
+          v-else
+          class="w-full min-h-[15.56rem] rounded-xl bg-gradient-to-r from-zinc-200 to-zinc-300 animate-pulse"
+        />
 
         <img
           v-if="getSecondaryImagePath(activeImage)"
           :src="$loadImage(getSecondaryImagePath(activeImage)!)"
           alt="secondary-property-image"
-          class="w-full min-h-[15.56rem]  object-cover"
+          class="w-full min-h-[15.56rem] object-cover"
         >
+        <div
+          v-else
+          class="w-full min-h-[15.56rem] rounded-xl bg-gradient-to-r from-zinc-200 to-zinc-300 animate-pulse"
+        />
       </div>
       <SliderControl
         :tabs-count="props.images"

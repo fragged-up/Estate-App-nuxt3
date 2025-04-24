@@ -6,7 +6,8 @@
 
   const headerTxt = 'Featured Properties';
   const paraTxt ='Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.';
-
+  const { data: properties } = await useFetch('/api/properties')
+  console.log(properties);
   const API = [
     {
       id: 1,
@@ -92,7 +93,7 @@
 </script>
 
 <template>
-  <main class="w-full bg-[#141414]">
+  <main class="w-full bg-[#141414] touch-manipulation">
     <div class="w-full">
       <HomeHero />
       <div class="hero-highlight-container w-11/12 mx-auto mt-8">
@@ -109,7 +110,7 @@
           :sub-cont-style="'laptop:mx-0'" >
 
           <template #default>
-            <PaginationWrapper :items="API">
+            <PaginationWrapper :items="properties">
               <template #default="{ items }">
                 <PropertyCard v-for="item in items" :key="item.id" :item="item" :variant="'homePage'" />
               </template>

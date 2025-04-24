@@ -54,7 +54,6 @@ export default defineNuxtConfig({
       { path: '~/components/molecules', pathPrefix: false },
       { path: '~/components/organisms', pathPrefix: false },
       { path: '~/components/templates', pathPrefix: false },
-      { path: '~/components/sections', pathPrefix: false },
       { path: '~/components/properties', pathPrefix: false },
       { path: '~/components/properties/Slug', pathPrefix: false },
     ],

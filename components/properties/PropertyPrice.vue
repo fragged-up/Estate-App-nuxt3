@@ -7,8 +7,8 @@
 </script>
 
 <template>
-  <div class="text-center">
-    <p class="text-start font-sans font-semibold text-[#999999]">Price</p>
-    <p class="text-start font-sans font-semibold text-white">{{ formattedPrice }}</p>
+  <div class="flex flex-col justify-center items-center">
+    <p class="text-start font-sans font-semibold text-[#999999] text-sm md:text-base">Price</p>
+    <p class="text-start font-sans font-semibold text-white text-sm md:text-base">{{ `$ ${props.price}` }}</p>
   </div>
 </template>

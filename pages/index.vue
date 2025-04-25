@@ -1,6 +1,14 @@
 <script setup lang="ts">
   import { testimonials, faqs, HERO_HIGHLIGHTS } from '~/constants/index';
   import CardWrapper from '~/components/organisms/CardWrapper.vue';
+  useHead({
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    },
+  ],
+})
   useSeoMeta({ title: 'Home' });
   const FEATURED_TITLE = 'Featured Properties'
   const FEATURED_DESCRIPTION = 'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.'
@@ -20,8 +28,7 @@
       </div>
     </div>
 
-    <section class="bg-fgl">
-      <div class="mt-20 mx-3 touch-manipulation">
+    <section class="layout">
         <CardWrapper :card="properties" :title="FEATURED_TITLE" :description="FEATURED_DESCRIPTION" label="View All Properties" path="/properties">
           <template #default="{ card }">
             <PropertyCard v-for="item in card" :key="item.id" :item="item" :variant="'homePage'"/>
@@ -39,7 +46,6 @@
             <FaqCard v-for="faq in card" :key="faq.id" :faqs="faq" />
           </template>
         </CardWrapper>
-      </div>
     </section>
   </main>
 </template>

@@ -1,5 +1,13 @@
 <script setup lang="ts">
   import { CONTACT_HERO } from '~/constants';
+  useHead({
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    },
+  ],
+})
   useSeoMeta({ title: 'Contact Us' });
   const MainBlockHeaders = {
     primary: "Let's Connect",

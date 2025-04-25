@@ -5,7 +5,14 @@
     description: 'Real Estate Company',
   })
 
-
+  useHead({
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -36,11 +43,13 @@
   html,
   body {
     min-height: 100dvh;
+    touch-action: manipulation;
   }
 
   #__nuxt {
     min-height: 100vh;
     background-color: #141414;
+    touch-action: manipulation;
   }
 
 

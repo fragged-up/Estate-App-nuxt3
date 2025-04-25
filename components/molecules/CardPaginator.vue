@@ -12,7 +12,8 @@
 <template>
   <div class="w-full max-w-full mx-auto px-4">
     <!-- Mobile Variant -->
-    <div class="my-8 grid grid-flow-col justify-between gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden">
+    <div class="my-2 grid grid-flow-col justify-between gap-2 border-t-2 border-t-[#262626] pt-4 laptop:hidden"/>
+    <div class="w-full flex items-center justify-between gap-3 laptop:hidden">
       <NuxtLink
         v-if="labelLink"
         class="pad-fix:text-sm border-1 flex rounded-lg border-[#262626] bg-[#1A1A1A] px-4 py-4 text-center text-white"
@@ -21,7 +22,6 @@
         {{ labelLink }}
       </NuxtLink>
 
-      <div class="w-full flex items-center justify-between gap-3">
         <ArrowButton
           icon="/left-navigator.svg"
           :alt="'left-arrow'"
@@ -45,8 +45,6 @@
           @click="goRight"
         />
       </div>
-    </div>
-
     <!-- Desktop Variant -->
     <div class="laptop-box items-center-2 mx-auto my-8 hidden justify-between border-t-2 border-t-[#262626] pt-4 laptop:flex">
       <div class="box-left space-x-2">

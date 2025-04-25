@@ -378,10 +378,10 @@ export const BOX_GROUPS: BoxGroups = {
 };
 
 export const HERO_HIGHLIGHTS = [
-  { id: 1, icon: '/icons/homeIcon.svg', title: 'Find Your Dream\n Home', link:'/services'},
-  { id: 2, icon: '/icons/cameraIcon.svg', title: 'Unlock Property\n Value',link:'/services' },
-  { id: 3, icon: '/icons/buildingIcon.svg', title: 'Effortless Property\n Management',link:'/services' },
-  { id: 4, icon: '/icons/sunIcon.svg', title: 'Smart Investments,\n Informed Decisions',link:'/services' },
+  { id: 1, icon: '/icons/homeIcon.svg', title: 'Find Your Dream\n Home', link:'/properties'},
+  { id: 2, icon: '/icons/cameraIcon.svg', title: 'Unlock Property\n Value',link:'/properties' },
+  { id: 3, icon: '/icons/buildingIcon.svg', title: 'Effortless Property\n Management',link:'/properties' },
+  { id: 4, icon: '/icons/sunIcon.svg', title: 'Smart Investments,\n Informed Decisions',link:'/properties' },
 ];
 
 export const CONTACT_HERO = [

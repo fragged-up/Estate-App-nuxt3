@@ -2,6 +2,14 @@
   import { getPropertyById } from '~/server/utils/';
   import { useRoute } from '#imports';
   import { extractIdFromSlug } from '~/utils/formatters';
+  useHead({
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    },
+  ],
+})
 
   const route = useRoute();
   const slugId = route.params.slugId as string;

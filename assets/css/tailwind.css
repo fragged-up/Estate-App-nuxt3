@@ -51,22 +51,6 @@ html, body {
 .fill-white {
   fill: white;
 }
-/* Define the custom styles for the laptop breakpoint */
-/* @screen laptop {
-  .controller-box {
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
-    grid-template-rows: repeat(1, minmax(100px, 1fr));
-  }
-} */
-
-/* @screen laptop {
-  .controller-box {
-    grid-template-columns: repeat(1, minmax(100px, 1fr));
-    grid-template-rows: repeat(2, minmax(100px, 1fr));
-    max-width:1280px;
-    margin-inline:auto;
-  }
-} */
 
 /* Layout & Containers */
 .section-layout {
@@ -84,24 +68,18 @@ html, body {
 }
 
 .prp-cta {
-  @apply bg-[#703BF7] cursor-pointer font-sans hover:bg-purple-500 text-white font-medium text-center rounded-xl;
+  @apply bg-[#703BF7] inline-flex w-[60%] cursor-pointer font-sans hover:bg-purple-500 text-white font-medium text-center rounded-xl;
 }
 .card-box {
-  @apply grid w-full max-w-[29rem] gap-y-6 rounded-xl border-2 border-[#262626] p-6;
+  @apply grid w-full max-w-[29rem] gap-y-4 rounded-xl border-2 border-[#262626] p-6;
 }
 
 .shdw-template {
   box-shadow: 1px -1px 18px 1px #262626;
 }
-
-/*
-  // is migrated to navigation-btn
-  .arrows-bg {
-    background-color: #1a1a1a;
-    border: 2px solid #262626;
-    border-radius: 50%;
-    padding: 0.7rem;
-  } */
+.layout {
+  @apply bg-fgl mt-20 mx-3 laptop:mx-20 touch-manipulation grid gap-y-16 laptop:gap-y-24;
+}
 
 .navigation-btn {
   @apply bg-[#1a1a1a] border-2 border-[#262626] rounded-full p-[0.7rem];

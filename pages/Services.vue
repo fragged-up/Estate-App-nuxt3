@@ -1,5 +1,13 @@
 <script setup lang="ts">
   import { HERO_HIGHLIGHTS, PROPERTIES_CONFIG, EFFORTS_CONFIG, SMART_CONFIG } from '~/constants';
+  useHead({
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+    },
+  ],
+})
   useSeoMeta({ title: 'Services' });
 </script>
 

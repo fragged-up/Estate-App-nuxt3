@@ -31,18 +31,8 @@
     profiles,
   } from '~/constants/aboutsUsPage'
 
-  useHead({
-  meta: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
-    },
-  ],
-})
-  useSeoMeta({
-    title: 'About Us',
-  })
-
+  useHead({meta: [{   name: 'viewport',content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',},],})
+  useSeoMeta({title: 'About Us',})
 
   const MB_HEAD = 'Our Journey'
   const MB_PARA ="Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients."

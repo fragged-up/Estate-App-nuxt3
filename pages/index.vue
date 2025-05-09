@@ -1,22 +1,17 @@
 <script setup lang="ts">
   import { testimonials, faqs, HERO_HIGHLIGHTS } from '~/constants/index';
   import CardWrapper from '~/components/organisms/CardWrapper.vue';
-  useHead({
-  meta: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
-    },
-  ],
-})
+  useHead({meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', },],})
   useSeoMeta({ title: 'Home' });
+
+  const { data: properties } = await useFetch('/api/properties');
+
   const FEATURED_TITLE = 'Featured Properties'
   const FEATURED_DESCRIPTION = 'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.'
   const CLIENTS_SAY_TITLE = 'What Our Clients Say'
   const CLIENTS_SAY_DESCRIPTION = 'Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.'
   const FAQ_TITLE = 'Frequently Asked Questions'
   const FAQ_DESCRIPTION = "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way."
-  const { data: properties } = await useFetch('/api/properties');
 </script>
 
 <template>

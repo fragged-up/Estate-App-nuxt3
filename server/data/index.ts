@@ -24,7 +24,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-
+     buildYear:1995
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-
+buildYear:1998
   },
   {
     id: 3,
@@ -78,6 +78,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:1999
   },
   {
     id: 4,
@@ -104,6 +105,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2002
   },
   {
     id: 5,
@@ -130,6 +132,7 @@ export const PROPERTIES_API = [
     areaSqFt: 3500,
     location: 'New York, New York',
     description:'This elegant penthouse features floor-to-ceiling windows, a spacious layout, and breathtaking city views.',
+    buildYear:2008
 
   },
   {
@@ -157,6 +160,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2002
   },
   {
     id: 7,
@@ -183,6 +187,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2003
   },
   {
     id: 8,
@@ -209,6 +214,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2002
   },
   {
     id: 9,
@@ -235,6 +241,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2008
   },
   {
     id: 10,
@@ -288,6 +295,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2010
   },
   {
     id: 12,
@@ -314,6 +322,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2009
   },
   {
     id: 13,
@@ -340,6 +349,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2008
   },
   {
     id: 14,
@@ -366,6 +376,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2006
   },
   {
     id: 15,
@@ -418,6 +429,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2012
   },
   {
     id: 17,
@@ -470,6 +482,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2015
   },
   {
     id: 19,
@@ -496,6 +509,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2004
   },
   {
     id: 20,
@@ -522,6 +536,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2012
   },
   {
     id: 21,
@@ -548,7 +563,7 @@ export const PROPERTIES_API = [
     areaSqFt: 3500,
     location: 'New York, New York',
     description:'This elegant penthouse features floor-to-ceiling windows, a spacious layout, and breathtaking city views.',
-
+buildYear:2009
   },
   {
     id: 22,
@@ -601,6 +616,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2018
   },
   {
     id: 24,
@@ -627,6 +643,7 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    buildYear:2008
   },
 ]
 

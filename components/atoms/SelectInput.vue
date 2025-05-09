@@ -1,85 +1,114 @@
 <script setup lang="ts">
-  import { ref } from '#imports'
-
   type SelectInputs = {
-    label?: string
-    placeHolder?: string
-    showDropDown?: boolean
-    options: [] | (() => [])
-    selectHead: string
-    extraStyle?: string
-  }
-  defineProps<SelectInputs>()
+    label?: string;
+    placeHolder?: string;
+    options: string[] | (() => string[]);
+    selectHead: string;
+    modelValue?: string;
+    extraStyle?: string;
+  };
 
-  const selectedOption = ref('')
-  const dropdownVisible = ref(false)
+  const props = defineProps<SelectInputs>();
+  const emit = defineEmits(['update:modelValue']);
+
+  const selectedOption = ref(props.modelValue || '');
+  const dropdownVisible = ref(false);
+  const focusedIndex = ref(-1);
+
+  // Resolve options if it's a function
+  const resolvedOptions = computed(() => {
+    return typeof props.options === 'function' ? props.options() : props.options;
+  });
+
+  watch(
+    () => props.modelValue,
+    (val: any) => {
+      selectedOption.value = val || '';
+    },
+  );
 
   const toggleDropdown = () => {
-    dropdownVisible.value = !dropdownVisible.value
-  }
+    dropdownVisible.value = !dropdownVisible.value;
+  };
 
-  const selectOption = (option: string | string[] | boolean) => {
-    selectedOption.value = option
-    dropdownVisible.value = false
-  }
+  const closeDropdown = () => {
+    dropdownVisible.value = false;
+    focusedIndex.value = -1;
+  };
+
+  const selectOption = (option: string) => {
+    selectedOption.value = option;
+    emit('update:modelValue', option);
+    closeDropdown();
+  };
+
+  const onKeydown = (e: KeyboardEvent) => {
+    if (!dropdownVisible.value) return;
+    if (e.key === 'ArrowDown') {
+      focusedIndex.value = (focusedIndex.value + 1) % resolvedOptions.value.length;
+      e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+      focusedIndex.value = (focusedIndex.value - 1 + resolvedOptions.value.length) % resolvedOptions.value.length;
+      e.preventDefault();
+    } else if (e.key === 'Enter') {
+      if (focusedIndex.value >= 0) {
+        selectOption(resolvedOptions.value[focusedIndex.value]);
+      }
+    } else if (e.key === 'Escape') {
+      closeDropdown();
+    }
+  };
 </script>
 
 <template>
-  <div class="mx-auto w-11/12" :class="extraStyle">
-    <h3 class="my-6 font-sans text-base font-semibold text-white">
+  <div class="relative mx-auto w-11/12" :class="extraStyle">
+    <label class="my-2 block font-sans text-base font-semibold text-white">
       {{ selectHead }}
-    </h3>
+    </label>
     <div
-      class="flex cursor-pointer items-center justify-between rounded-2xl border border-[#262626] bg-[#141414] p-4"
-      @click="toggleDropdown">
-      <div
-        class="w-full bg-[#141414] pl-2 font-sans text-base font-medium text-[#999999]">
-        <span v-if="selectedOption">{{ selectedOption }}</span>
-        <span v-else class="text-sm">{{ placeHolder }}</span>
-      </div>
+      class="flex items-center justify-between rounded-2xl border border-[#262626] bg-[#141414] p-4 cursor-pointer"
+      role="combobox"
+      aria-haspopup="listbox"
+      :aria-expanded="dropdownVisible.toString()"
+      tabindex="0"
+      @click="toggleDropdown"
+      @keydown="onKeydown"
+    >
+      <span class="text-sm font-medium text-white">
+        {{ selectedOption || placeHolder || 'Select an option' }}
+      </span>
       <svg
-        v-if="!dropdownVisible"
-        class="ml-2 h-6 w-6 text-white"
+        class="ml-2 h-5 w-5 text-white"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M19 9l-7 7-7-7" />
-      </svg>
-      <svg
-        v-else
-        class="ml-2 h-6 w-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 15l-7-7-7 7" />
+          :d="dropdownVisible ? 'M19 15l-7-7-7 7' : 'M19 9l-7 7-7-7'"
+        />
       </svg>
     </div>
-    <div
+
+    <ul
       v-show="dropdownVisible"
-      class="mt-2 w-full rounded-2xl border border-[#262626] bg-[#141414]">
-      <ul class="m-0 list-none p-0">
-        <li
-          v-for="option in options"
-          :key="option"
-          class="cursor-pointer px-4 py-2 text-white hover:bg-[#262626]"
-          @click="selectOption(option)">
-          {{ option }}
-        </li>
-      </ul>
-    </div>
+      role="listbox"
+      class="absolute z-10 mt-2 max-h-60 w-full overflow-auto rounded-2xl border border-[#262626] bg-[#1a1a1a] shadow-lg"
+    >
+      <li
+        v-for="(option, index) in resolvedOptions"
+        :key="option"
+        class="px-4 py-2 text-white cursor-pointer hover:bg-[#333] transition"
+        :class="{ 'bg-[#444]': index === focusedIndex }"
+        role="option"
+        :aria-selected="selectedOption === option"
+        @click="selectOption(option)"
+      >
+        {{ option }}
+      </li>
+    </ul>
   </div>
 </template>
-
-<style scoped>
-  /* You can add additional styling if needed */
-</style>

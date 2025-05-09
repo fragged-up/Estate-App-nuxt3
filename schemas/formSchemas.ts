@@ -1,23 +1,24 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
-/* Full Inquiry Form */
 export const fullInquirySchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
   lastName: z.string().min(2, 'Last name is required'),
-  email: z.string().email('Invalid email'),
-  phone: z.string().min(10, 'Invalid phone'),
-  location: z.string().min(1, 'Select a location'),
-  propertyType: z.string().min(1, 'Select property type'),
-  bathrooms: z.string().min(1, 'Select bathrooms'),
-  bedrooms: z.string().min(1, 'Select bedrooms'),
-  budget: z.string().min(1, 'Select budget'),
-  contactMethod: z.enum(['phone', 'email']),
-  contactValue: z.string().min(5, 'Enter your contact'),
-  message: z.string().min(10, 'Enter a message'),
-  termsAccepted: z.literal(true, {
-    errorMap: () => ({ message: 'You must accept the terms' }),
+  email: z.string().email('Invalid email address'),
+  phone: z.string().min(9, 'Invalid phone number'),
+  preferredLocation: z.string().min(1, 'Please select a location'),
+  propertyType: z.string().min(1, 'Please select a property type'),
+  bathrooms: z.string().min(1, 'Please select the number of bathrooms'),
+  bedrooms: z.string().min(1, 'Please select the number of bedrooms'),
+  budget: z.string().min(1, 'Please select your budget'),
+  contactMethod: z.enum(['phone', 'email'], {
+    errorMap: () => ({ message: 'Please select a contact method' }),
   }),
-})
+  contactValue: z.string().min(5, 'Please enter your contact information'),
+  message: z.string().min(10, 'Please enter your message'),
+  termsAccepted: z.literal(true, {
+    errorMap: () => ({ message: 'You must accept the terms and conditions' }),
+  }),
+});
 
 /* Property Inquiry Form */
 export const propertyInquirySchema = z.object({
@@ -29,7 +30,7 @@ export const propertyInquirySchema = z.object({
   termsAccepted: z.literal(true, {
     errorMap: () => ({ message: 'You must accept the terms' }),
   }),
-})
+});
 
 /*  Contact Form */
 export const contactFormSchema = z.object({
@@ -43,9 +44,9 @@ export const contactFormSchema = z.object({
   termsAccepted: z.literal(true, {
     errorMap: () => ({ message: 'You must accept the terms' }),
   }),
-})
+});
 
 /* Type Inference */
-export type FullInquiryForm = z.infer<typeof fullInquirySchema>
-export type PropertyInquiryForm = z.infer<typeof propertyInquirySchema>
-export type ContactForm = z.infer<typeof contactFormSchema>
+export type FullInquiryForm = z.infer<typeof fullInquirySchema>;
+export type PropertyInquiryForm = z.infer<typeof propertyInquirySchema>;
+export type ContactForm = z.infer<typeof contactFormSchema>;

@@ -1,14 +1,8 @@
 <script setup lang="ts">
   import { CONTACT_HERO } from '~/constants';
-  useHead({
-  meta: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
-    },
-  ],
-})
+  useHead({meta: [{     name: 'viewport',content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',},],})
   useSeoMeta({ title: 'Contact Us' });
+
   const MainBlockHeaders = {
     primary: "Let's Connect",
     secondary: 'Discover Our Office Locations',
@@ -42,6 +36,35 @@
       buttonLabel: 'Get Direction',
     },
   ];
+
+const formData = reactive({
+  formType: 'contact',
+  name: '',
+  email: '',
+  message: ''
+})
+const submitContactForm = async () => {
+  const { data, error } = await useFetch('/api/forms/contact', {
+    method: 'POST',
+    body: formData,
+  })
+
+  if (error.value) {
+    console.error('Submission failed:', error.value)
+  } else {
+    console.log('Submission success:', data.value)
+  }
+}
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <template>

@@ -40,7 +40,7 @@ export const contactFormSchema = z.object({
   email: z.string().email('Invalid email address'),
   phone: z.string().min(9, 'Invalid phone number'),
   inquiryType: z.string().optional(),
-  howDidYouHearAboutUs: z.enum(['linkedin', 'google', 'facebook'], {
+  howDidYouHearAboutUs: z.enum(['Linkedin', 'Google', 'Facebook'], {
     errorMap: () => ({ message: 'Please select how you heard about us' }),
   }).optional(),
   message: z.string().min(10, 'Please enter your message'),

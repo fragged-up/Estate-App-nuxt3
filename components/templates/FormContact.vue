@@ -25,17 +25,17 @@
 
 <template>
   <div class="contact-section">
-    <div
+    <form
       class="cont main-b mx-auto my-10 w-[90%] laptop:grid laptop:w-4/5 laptop:grid-cols-1 laptop:p-8">
       <div class="first-row laptop:flex laptop:gap-6">
-         <Input 
+         <Input
          v-for="(inp,index) in rowOne"
          :key="index"
          :label="inp.label"
          :input-type="inp.inputType"
          :placeholder="inp.placeHolder"
          :name="inp.name"
-         /> 
+         />
       </div>
 
       <div class="second-row laptop:flex laptop:gap-6">
@@ -83,7 +83,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 <style scoped></style>

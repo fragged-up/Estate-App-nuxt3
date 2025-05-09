@@ -33,18 +33,22 @@ export const propertyInquirySchema = z.object({
 });
 
 /*  Contact Form */
+
 export const contactFormSchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
   lastName: z.string().min(2, 'Last name is required'),
-  email: z.string().email('Invalid email'),
-  phone: z.string().min(10, 'Invalid phone number'),
-  inquiryType: z.string().min(1, 'Please select inquiry type'),
-  referralSource: z.string().min(1, 'Please select how you heard about us'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  email: z.string().email('Invalid email address'),
+  phone: z.string().min(9, 'Invalid phone number'),
+  inquiryType: z.string().optional(),
+  howDidYouHearAboutUs: z.enum(['linkedin', 'google', 'facebook'], {
+    errorMap: () => ({ message: 'Please select how you heard about us' }),
+  }).optional(),
+  message: z.string().min(10, 'Please enter your message'),
   termsAccepted: z.literal(true, {
-    errorMap: () => ({ message: 'You must accept the terms' }),
+    errorMap: () => ({ message: 'You must agree to the terms and privacy policy' }),
   }),
 });
+
 
 /* Type Inference */
 export type FullInquiryForm = z.infer<typeof fullInquirySchema>;

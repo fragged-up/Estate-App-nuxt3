@@ -52,14 +52,14 @@ export default {
 
       screens: {
         padfix: { max: '376px' },
-        xs: '480px', //  min-width  Custom small screen
-        sm: '640px', //  min-width Default small screen
-        md: '768px', //  min-width Default medium screen
-        lg: '1024px', // min-width  Default large screen
+        xs: '480px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
         xl: '1280px',
-        laptop: '1440px', //  min-width Default extra large screen
-        '2xl': '1536px', // min-width  Default 2x extra large screen
-        '3xl': '1920px', // min-width  Custom extra large screen
+        laptop: '1440px',
+        '2xl': '1536px',
+        '3xl': '1920px',
       },
       colors: {
         pr: '#703BF7',
@@ -69,7 +69,7 @@ export default {
         fgl: '#141414',
       },
       fontFamily: {
-        sans: ['Urbanist', 'sans-serif'], // Add your custom font here
+        sans: ['Urbanist', 'sans-serif'],
       },
       fontWeight: {
         thin: 100,
@@ -80,7 +80,7 @@ export default {
         semibold: 600,
         bold: 700,
         extrabold: 800,
-        black: 900, // Add custom font weight here
+        black: 900,
       },
     },
   },

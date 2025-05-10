@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { Property } from '~/types';
-  import { getSlugId, loremIpsum } from '~/utils';
+  import { getSlugId } from '~/utils';
 
   const props = defineProps<{ item: Property }>();
 </script>

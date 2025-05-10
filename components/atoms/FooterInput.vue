@@ -1,18 +1,4 @@
 <script setup>
-  // const inputProps = defineProps({
-  //   placeHolder:{
-  //     type:String,
-  //     required:true
-  //   },
-  //   inputFirstImage:{
-  //     type:String,
-  //     required:false
-  //   },
-  //   inputSecondImage:{
-  //     type:String,
-  //     required:false
-  //   }
-  // })
 </script>
 
 <template>
@@ -33,4 +19,4 @@
   </div>
 </template>
 
-<style scoped></style>
+

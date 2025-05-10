@@ -23,9 +23,7 @@
 </template>
 
 <style scoped>
-  /* neon-left-side-adjustments */
 
-  /* #region */
   .neon-border-left {
     position: relative;
   }
@@ -35,8 +33,8 @@
     top: 0;
     left: 0;
     height: 50%;
-    width: 0.5px; /* Adjust the width as needed */
-    background: linear-gradient(180deg, #703bf7, #703bf7); /* Gradient color */
+    width: 0.5px;
+    background: linear-gradient(180deg, #703bf7, #703bf7);
     box-shadow:
       0 0 5px #703bf7,
       0 0 10px #703bf7,
@@ -48,7 +46,6 @@
     border-top-left-radius: 0 !important;
   }
 
-  /* #endregion */
 
   .neon-border-bottom {
     position: relative;
@@ -60,8 +57,8 @@
     bottom: 0;
     left: 0;
     width: 15%;
-    height: 0.5px; /* Adjust the height as needed */
-    background: linear-gradient(90deg, #703bf7, #703bf7); /* Gradient color */
+    height: 0.5px;
+    background: linear-gradient(90deg, #703bf7, #703bf7);
     box-shadow:
       0 0 5px #703bf7,
       0 0 10px #703bf7,
@@ -69,4 +66,5 @@
       0 0 20px #703bf7;
     border-radius: 2px;
   }
+
 </style>

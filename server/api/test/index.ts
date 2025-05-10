@@ -8,6 +8,7 @@ export default defineEventHandler(async () => {
     const querySnapshot = await getDocs(collectionRef);
     const properties = querySnapshot.docs.map((doc) => ({
       id: doc.id,
+      slug:doc.data().slug,
       location: doc.data().location,
       areaSqFt: doc.data().areaSqFt,
       buildYear: doc.data().buildYear,

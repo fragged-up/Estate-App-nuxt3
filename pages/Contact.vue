@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { CONTACT_HERO } from '~/constants';
+import { showToast } from '~/constants/toaster';
   import type { ContactForm } from '~/schemas/formSchemas';
   import { contactFormSchema } from '~/schemas/formSchemas';
 
@@ -67,9 +68,11 @@
         method: 'POST',
         body: contactFormState,
       });
+       showToast({ToastMessage: 'Form Submmited We Will Contact You Soon',});
       console.log('Response:', res);
     } catch (err: any) {
       console.error('Form Validation Failed:', err);
+      showToast({ToastMessage: 'There is Error With Submitting You Contact Information, Please Try Again Later',});
       errors.value = err.errors.reduce((acc: any, curr: any) => {
         acc[curr.path[0]] = curr.message;
         return acc;

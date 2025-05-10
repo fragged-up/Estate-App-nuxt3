@@ -136,10 +136,10 @@ const handleClearResults = () => {
 
   <div class="my-14">
       <button
-        class="font-light text-gray-300 px-6 py-2 text-2xl md:text-5xl rounded-xl font-sans mx-auto block my-18"
+        class="font-light text-gray-300 px-6 py-2 text-2xl md:text-5xl rounded-xl font-sans mx-auto block my-18 hover:text-gray-500"
         @click="showResults = true"
       >
-        Find Your Dream Home Now
+       Browse More Properties . . .
       </button>
   </div>
 

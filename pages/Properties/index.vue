@@ -2,6 +2,7 @@
   import type { FullInquiryForm } from '~/schemas/formSchemas';
   import { fullInquirySchema } from '~/schemas/formSchemas';
   import CardWrapper from '~/components/organisms/CardWrapper.vue';
+  import SearchProperty from '~/components/properties/SearchProperty.vue';
 
   useHead({ meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }],});
   useSeoMeta({ title: 'Properties' });
@@ -62,9 +63,9 @@
   <div>
     <DynamicHero variant="properties" />
     <main>
-      <div class="box-c touch-manipulation">
-        <BoxInput />
-      </div>
+      <nav class="box-c touch-manipulation">
+        <SearchProperty />
+      </nav>
 
       <section class="layout">
         <CardWrapper :card="propertyList" :title="DISCOVER_TITLE" :description="DISCOVER_DESCRIPTION">

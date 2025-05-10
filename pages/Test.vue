@@ -150,7 +150,10 @@
     <div v-if="error" class="text-center text-red-500">Error: {{ error }}</div>
 
     <div v-if="filteredProperties.length > 0" class="px-4 text-left text-white">
-      <h2 class="my-12 text-3xl font-light text-gray-300 font-sans text-center">Filtered Properties</h2>
+      <div class="flex">
+        <h2 class="my-12 text-3xl font-light text-gray-300 font-sans text-center">Filtered Properties</h2>
+        <span class="text-gray-300 font-sans">clear Results</span>
+      </div>
       <ul class="space-y-6">
         <li
           v-for="property in filteredProperties"

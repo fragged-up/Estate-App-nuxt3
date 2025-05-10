@@ -1,204 +1,152 @@
 <script setup lang="ts">
-  interface Property {
-    id: string;
-    location: string;
-    areaSqFt: number;
-    buildYear: number;
-    propertyType: string;
-    price: number;
+interface Property {
+  id: string
+  location: string
+  areaSqFt: number
+  buildYear: number
+  propertyType: string
+  price: number
+}
+
+interface ApiResponse {
+  properties?: Property[]
+  error?: string
+}
+
+const allProperties = ref<Property[]>([])
+
+const selectedPrice = ref<number | string | null>(null)
+const selectedLocation = ref<string | null>(null)
+const selectedAreaSqFt = ref<number | string | null>(null)
+const selectedBuildYear = ref<number | string | null>(null)
+const selectedPropertyType = ref<string | null>(null)
+
+const priceOptions = ref<(string | number)[]>(['All Prices'])
+const locationOptions = ref<(string | number)[]>(['All Locations'])
+const areaSqFtOptions = ref<(string | number)[]>(['All Sizes'])
+const buildYearOptions = ref<(string | number)[]>(['All Years'])
+const propertyTypeOptions = ref<(string | number)[]>(['All Types'])
+
+const filteredProperties = computed(() => {
+  return allProperties.value.filter((property:any) => {
+    const priceMatch =
+      selectedPrice.value === null || selectedPrice.value === 'All Prices' || property.price === +selectedPrice.value
+    const locationMatch =
+      selectedLocation.value === null || selectedLocation.value === 'All Locations' || property.location === selectedLocation.value
+    const areaMatch =
+      selectedAreaSqFt.value === null || selectedAreaSqFt.value === 'All Sizes' || property.areaSqFt === +selectedAreaSqFt.value
+    const yearMatch =
+      selectedBuildYear.value === null || selectedBuildYear.value === 'All Years' || property.buildYear === +selectedBuildYear.value
+    const typeMatch =
+      selectedPropertyType.value === null || selectedPropertyType.value === 'All Types' || property.propertyType === selectedPropertyType.value
+
+    return priceMatch && locationMatch && areaMatch && yearMatch && typeMatch
+  })
+})
+
+const loading = ref(true)
+const error = ref<string | null>(null)
+
+onMounted(async () => {
+  try {
+    const response = await $fetch<ApiResponse>('/api/test')
+    loading.value = false
+
+    if (response.error) {
+      error.value = response.error
+      return
+    }
+
+    if (response.properties) {
+      allProperties.value = response.properties
+
+      const properties = response.properties
+
+      priceOptions.value = [
+        'All Prices',
+        ...[...new Set(properties.map((p) => p.price).filter((v) => typeof v === 'number'))].sort((a, b) => a - b),
+      ]
+      locationOptions.value = ['All Locations', ...[...new Set(properties.map((p) => p.location))].sort()]
+      areaSqFtOptions.value = [
+        'All Sizes',
+        ...[...new Set(properties.map((p) => p.areaSqFt).filter((v) => typeof v === 'number'))].sort((a, b) => a - b),
+      ]
+      buildYearOptions.value = [
+        'All Years',
+        ...[...new Set(properties.map((p) => p.buildYear).filter((v) => typeof v === 'number'))].sort((a, b) => a - b),
+      ]
+      propertyTypeOptions.value = ['All Types', ...[...new Set(properties.map((p) => p.propertyType))].sort()]
+    }
+  } catch (err) {
+    loading.value = false
+    error.value = 'An unexpected error occurred'
+    console.error(err)
   }
-
-  interface ApiResponse {
-    properties?: Property[];
-    error?: string;
-  }
-
-  const allProperties = ref<Property[]>([]);
-  const selectedPrice = ref<number | null>(null);
-  const selectedLocation = ref<string | null>(null);
-  const selectedAreaSqFt = ref<number | null>(null);
-  const selectedBuildYear = ref<number | null>(null);
-  const selectedPropertyType = ref<string | null>(null);
-
-  const priceOptions = ref<(string | number)[]>(['All Prices']);
-  const locationOptions = ref<(string | number)[]>(['All Locations']);
-  const areaSqFtOptions = ref<(string | number)[]>(['All Sizes']);
-  const buildYearOptions = ref<(string | number)[]>(['All Years']);
-  const propertyTypeOptions = ref<(string | number)[]>(['All Types']);
-
-  const filteredProperties = computed(() => {
-    return allProperties.value.filter((property: any) => {
-      const priceMatch = selectedPrice.value === null || property.price === selectedPrice.value;
-      const locationMatch = selectedLocation.value === null || property.location === selectedLocation.value;
-      const areaSqFtMatch = selectedAreaSqFt.value === null || property.areaSqFt === selectedAreaSqFt.value;
-      const buildYearMatch = selectedBuildYear.value === null || property.buildYear === selectedBuildYear.value;
-      const propertyTypeMatch =
-        selectedPropertyType.value === null || property.propertyType === selectedPropertyType.value;
-
-      return priceMatch && locationMatch && areaSqFtMatch && buildYearMatch && propertyTypeMatch;
-    });
-  });
-
-  const error = ref<string | null>(null);
-  const loading = ref(true);
-
-  onMounted(async () => {
-    try {
-      const response = await $fetch<ApiResponse>('/api/test');
-      loading.value = false;
-
-      if (response.error) {
-        error.value = response.error;
-        console.error('Error fetching data:', response.error);
-        return;
-      }
-
-      if (response.properties) {
-        allProperties.value = response.properties;
-        priceOptions.value = [
-          'All Prices',
-          ...[...new Set(response.properties.map((p) => p.price).filter((p) => typeof p === 'number'))].sort(
-            (a, b) => a - b,
-          ),
-        ];
-        locationOptions.value = ['All Locations', ...[...new Set(response.properties.map((p) => p.location))].sort()];
-        areaSqFtOptions.value = [
-          'All Sizes',
-          ...[...new Set(response.properties.map((p) => p.areaSqFt).filter((p) => typeof p === 'number'))].sort(
-            (a, b) => a - b,
-          ),
-        ];
-        buildYearOptions.value = [
-          'All Years',
-          ...[...new Set(response.properties.map((p) => p.buildYear).filter((p) => typeof p === 'number'))].sort(
-            (a, b) => a - b,
-          ),
-        ];
-        propertyTypeOptions.value = [
-          'All Types',
-          ...[...new Set(response.properties.map((p) => p.propertyType))].sort(),
-        ];
-      }
-    } catch (err) {
-      loading.value = false;
-      error.value = 'An unexpected error occurred';
-      console.error('Unexpected error fetching data:', err);
-    }
-  });
-
-  const updateFilter = (filterType: string, value: any) => {
-    if (value === null || value === undefined) {
-      return;
-    }
-
-    switch (filterType) {
-      case 'price':
-        selectedPrice.value = value === 'All Prices' ? null : typeof value === 'string' ? parseFloat(value) : value;
-        break;
-      case 'location':
-        selectedLocation.value = value === 'All Locations' ? null : (value as string);
-        break;
-      case 'areaSqFt':
-        selectedAreaSqFt.value = value === 'All Sizes' ? null : typeof value === 'string' ? parseFloat(value) : value;
-        break;
-      case 'buildYear':
-        selectedBuildYear.value = value === 'All Years' ? null : typeof value === 'string' ? parseFloat(value) : value;
-        break;
-      case 'propertyType':
-        selectedPropertyType.value = value === 'All Types' ? null : (value as string);
-        break;
-    }
-  };
+})
 </script>
+
 <template>
-  <div>
-    <h1>Test Page</h1>
-
-    <div v-if="loading">Loading properties and filter options...</div>
-
-    <div v-if="error">
-      <p style="color: red">Error: {{ error }}</p>
+  <div class="box-input-main-container">
+    <!-- Search bar -->
+    <div class="mx-auto mt-8 bg-mg p-4 laptop:grid laptop:w-[50%] laptop:rounded-lg laptop:text-center">
+      <Search :placeholder="'Search For A Property'" :icon-src="'/icons/Find.svg'" />
     </div>
 
-    <div class="h-screnn bg-gray-300">
-      <div>
-        <label for="price-filter">Property Price:</label>
-        <select
-          id="price-filter"
-          v-model="selectedPrice"
-          @change="updateFilter('price', ($event.target as HTMLSelectElement).value)"
-        >
-          <option v-for="option in priceOptions" :key="option" :value="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="location-filter">Property Location:</label>
-        <select
-          id="location-filter"
-          v-model="selectedLocation"
-          @change="updateFilter('location', ($event.target as HTMLSelectElement).value)"
-        >
-          <option v-for="option in locationOptions" :key="option" :value="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="area-sqft-filter">Property Area (SqFt):</label>
-        <select
-          id="area-sqft-filter"
-          v-model="selectedAreaSqFt"
-          @change="updateFilter('areaSqFt', ($event.target as HTMLSelectElement).value)"
-        >
-          <option v-for="option in areaSqFtOptions" :key="option" :value="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="build-year-filter">Property Build Year:</label>
-        <select
-          id="build-year-filter"
-          v-model="selectedBuildYear"
-          @change="updateFilter('buildYear', ($event.target as HTMLSelectElement).value)"
-        >
-          <option v-for="option in buildYearOptions" :key="option" :value="option">{{ option }}</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="property-type-filter">Property Type:</label>
-        <select
-          id="property-type-filter"
-          v-model="selectedPropertyType"
-          @change="updateFilter('propertyType', ($event.target as HTMLSelectElement).value)"
-        >
-          <option v-for="option in propertyTypeOptions" :key="option" :value="option">{{ option }}</option>
-        </select>
-      </div>
+    <!-- Filter Inputs -->
+    <div class="mx-auto mb-12 mt-4 flex w-11/12 flex-col gap-y-6 rounded-3xl bg-mg p-8 text-center laptop:my-0 laptop:w-auto laptop:max-w-[79rem] laptop:flex-row laptop:items-center laptop:justify-center laptop:gap-x-4 laptop:rounded-xl laptop:px-0 laptop:py-6">
+      <SortInput
+        v-model="selectedLocation"
+        :input-image="'/icons/Location.svg'"
+        label="Location"
+        :options="locationOptions"
+      />
+      <SortInput
+        v-model="selectedPropertyType"
+        :input-image="'/icons/HouseIcon.svg'"
+        label="Property Type"
+        :options="propertyTypeOptions"
+      />
+      <SortInput
+        v-model="selectedPrice"
+        :input-image="'/icons/CamIcon.svg'"
+        label="Pricing Range"
+        :options="priceOptions"
+      />
+      <SortInput
+        v-model="selectedAreaSqFt"
+        :input-image="'/icons/CubeIc.svg'"
+        label="Property Size"
+        :options="areaSqFtOptions"
+      />
+      <SortInput
+        v-model="selectedBuildYear"
+        :input-image="'/icons/Calendar.svg'"
+        label="Build Year"
+        :options="buildYearOptions"
+      />
     </div>
 
-    <h2>Properties:</h2>
-    <ul v-if="filteredProperties.length > 0" class="bg-gray-400">
-      <li v-for="property in filteredProperties" :key="property.id">
-        Location: {{ property.location }}, Price: {{ property.price.toLocaleString() }}, Area: {{ property.areaSqFt }},
-        Year: {{ property.buildYear }}, Type: {{ property.propertyType }}
-      </li>
-    </ul>
-    <p v-else-if="!error && !loading">No properties found matching the filters.</p>
+    <!-- Loading / Error -->
+    <div v-if="loading" class="text-center text-gray-500">Loading properties...</div>
+    <div v-if="error" class="text-center text-red-500">Error: {{ error }}</div>
+
+    <!-- Filtered Properties -->
+    <div v-if="filteredProperties.length > 0" class="px-4 text-left text-white">
+      <h2 class="mb-2 text-xl font-bold">Filtered Properties:</h2>
+      <ul class="space-y-2">
+        <li
+          v-for="property in filteredProperties"
+          :key="property.id"
+          class="rounded bg-gray-800 p-4 shadow"
+        >
+          <strong>{{ property.location }}</strong> — {{ property.propertyType }}<br >
+          Price: ${{ property.price.toLocaleString() }}<br >
+          Size: {{ property.areaSqFt }} sq.ft<br >
+          Year Built: {{ property.buildYear }}
+        </li>
+      </ul>
+    </div>
+
+    <p v-else-if="!loading && !error" class="text-center text-gray-500">No properties match your filters.</p>
   </div>
 </template>
-
-<style scoped>
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-
-  select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 150px;
-  }
-</style>

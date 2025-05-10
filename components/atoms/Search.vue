@@ -1,14 +1,9 @@
 <script setup lang="ts">
-  import MaintenanceModal from "~/shared/MaintanceModal.vue"
-  import { useMaintanceModal } from '~/stores/maintanceModal'
   defineProps<{
     iconSrc: string
     placeholder: string
   }>()
-  // const props = defineProps({
-  //   iconSrc: String,
-  //   placeholder: String,
-  // })
+
 
 
 

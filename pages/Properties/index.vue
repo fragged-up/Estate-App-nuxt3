@@ -1,14 +1,12 @@
 <script setup lang="ts">
   import type { FullInquiryForm } from '~/schemas/formSchemas';
   import { fullInquirySchema } from '~/schemas/formSchemas';
-  import { useMaintanceModal } from '~/stores/maintanceModal';
   import CardWrapper from '~/components/organisms/CardWrapper.vue';
 
   useHead({ meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }],});
   useSeoMeta({ title: 'Properties' });
 
   const { data: propertyList } = await useFetch('/api/properties');
-  const modalStore = useMaintanceModal();
   const DISCOVER_TITLE = 'Discover a World of Possibilities';
   const DISCOVER_DESCRIPTION = 'Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home.`';
   const MAKE_IT_TITLE = "Let's Make it Happen";
@@ -64,7 +62,7 @@
   <div>
     <DynamicHero variant="properties" />
     <main>
-      <div class="box-c touch-manipulation" @click="modalStore.toggleModal()">
+      <div class="box-c touch-manipulation">
         <BoxInput />
       </div>
 

@@ -30,7 +30,6 @@ export const pushPropertyToFirestore = async (property: any) => {
   }
 };
 
-// Push multiple properties to Firestore
 export const pushAllProperties = async (properties: any) => {
   for (const property of properties) {
     await pushPropertyToFirestore(property);

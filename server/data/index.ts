@@ -3,16 +3,18 @@ export const PROPERTIES_API = [
     id: 1,
     slug: 'Sunset-Vista',
     image: '/images/Home-building.png',
-    highlight:'Coastal Escapes - Where Waves Beckon',
+    highlight: 'Coastal Escapes - Where Waves Beckon',
     title: 'Breathtaking Oceanfront Property',
     summary: 'Enjoy panoramic ocean views in this luxurious retreat.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 4,
     bathrooms: 3,
     price: 1200000,
     areaSqFt: 3200,
     location: 'Laguna Beach, California',
-    description: 'This stunning property offers unmatched views of the Pacific Ocean, modern architecture, and luxurious amenities.',
+    description:
+      'This stunning property offers unmatched views of the Pacific Ocean, modern architecture, and luxurious amenities.',
     imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
@@ -24,22 +26,25 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-     buildYear:1995
+    buildYear: 1995,
+    propertyType: "Estates",
   },
   {
     id: 2,
     slug: 'Urban-Oasis',
     image: '/images/MetroCard.svg',
-    highlight:'Urban Oasis - Life in the Heart of the City',
+    highlight: 'Urban Oasis - Life in the Heart of the City',
     title: 'Modern Downtown Apartment',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     summary: 'A sleek, urban residence in the heart of the city.',
     bedrooms: 2,
     bathrooms: 2,
     price: 850000,
     areaSqFt: 1800,
     location: 'Seattle, Washington',
-    description:'Located in the vibrant city center, this modern apartment offers convenience, style, and fantastic views.',
+    description:
+      'Located in the vibrant city center, this modern apartment offers convenience, style, and fantastic views.',
     imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
@@ -51,14 +56,16 @@ export const PROPERTIES_API = [
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-buildYear:1998
+    buildYear: 1998,
+    propertyType: "Penthouse",
   },
   {
     id: 3,
     slug: 'Mountain-Escape',
     image: '/images/SeasideCard.svg',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     title: 'Rustic Cabin with Mountain Views',
     summary: 'Experience serenity in this cozy mountain retreat.',
     bedrooms: 3,
@@ -66,7 +73,8 @@ buildYear:1998
     price: 450000,
     areaSqFt: 2200,
     location: 'Aspen, Colorado',
-    description: 'A charming cabin with rustic finishes, breathtaking mountain views, and close proximity to hiking trails.',
+    description:
+      'A charming cabin with rustic finishes, breathtaking mountain views, and close proximity to hiking trails.',
     imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
@@ -78,23 +86,25 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:1999
+    buildYear: 1999,
+    propertyType: "Mansion",
   },
   {
     id: 4,
     slug: 'Lakeside-Serenity',
     image: '/rs-webp/rs-image-1.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
     title: 'Peaceful Waterfront Home',
     summary: 'A tranquil retreat on the shores of a serene lake.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 4,
     bathrooms: 3,
     price: 680000,
     areaSqFt: 3000,
     location: 'Lake Tahoe, Nevada',
     description: 'This lakeside property offers stunning water views, private docks, and a peaceful atmosphere.',
-    imageGallery:[
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -105,15 +115,17 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2002
+    buildYear: 2002,
+    propertyType: "Townhouse",
   },
   {
     id: 5,
     slug: 'City Lights',
     image: '/rs-webp/rs-image-2.webp',
-    highlight:'Urban Oasis - Life in the Heart of the City',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
-    imageGallery:[
+    highlight: 'Urban Oasis - Life in the Heart of the City',
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -131,25 +143,27 @@ buildYear:1998
     price: 2500000,
     areaSqFt: 3500,
     location: 'New York, New York',
-    description:'This elegant penthouse features floor-to-ceiling windows, a spacious layout, and breathtaking city views.',
-    buildYear:2008
-
+    description:
+      'This elegant penthouse features floor-to-ceiling windows, a spacious layout, and breathtaking city views.',
+    buildYear: 2008,
+    propertyType: "Townhouse",
   },
   {
     id: 6,
     slug: 'Garden-Retreat',
     image: '/rs-webp/rs-image-3.webp',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
     title: 'Charming Home with Lush Gardens',
     summary: 'A serene property surrounded by vibrant greenery.',
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     bedrooms: 4,
     bathrooms: 3,
     price: 520000,
     areaSqFt: 2900,
     location: 'Portland, Oregon',
     description: 'This charming home offers spacious interiors, a large backyard, and beautifully landscaped gardens.',
-    imageGallery:[
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -160,23 +174,25 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2002
+    buildYear: 2002,
+    propertyType: "Penthouse",
   },
   {
     id: 7,
     slug: 'Coastal Paradise',
     image: '/rs-webp/rs-image-4.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
     title: 'Beachfront Dream Home',
     summary: 'Live the coastal lifestyle in this stunning beachfront home.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 5,
     bathrooms: 4,
     price: 1800000,
     areaSqFt: 4200,
     location: 'Santa Barbara, California',
-    description:'Wake up to the sound of waves in this luxurious beachfront property with direct beach access.',
-    imageGallery:[
+    description: 'Wake up to the sound of waves in this luxurious beachfront property with direct beach access.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -187,23 +203,26 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2003
+    buildYear: 2003,
+    propertyType:"Villa",
   },
   {
     id: 8,
     slug: 'Suburban-Haven',
     image: '/rs-webp/rs-image-19.webp',
-    highlight:"Urban Oasis - Life in the Heart of the City",
+    highlight: 'Urban Oasis - Life in the Heart of the City',
     title: 'Family-Friendly Suburban Home',
     summary: 'A spacious home in a quiet suburban neighborhood.',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     bedrooms: 4,
     bathrooms: 3,
     price: 430000,
     areaSqFt: 3000,
     location: 'Phoenix, Arizona',
-    description:'Perfect for families, this home features a large backyard, modern kitchen, and excellent schools nearby.',
-    imageGallery:[
+    description:
+      'Perfect for families, this home features a large backyard, modern kitchen, and excellent schools nearby.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -214,23 +233,25 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2002
+    buildYear: 2002,
+    propertyType: "Villa",
   },
   {
     id: 9,
     slug: 'Desert-Gem',
     image: '/rs-webp/rs-image-5.webp',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
     title: 'Modern Desert Retreat',
     summary: 'Sleek, modern design in a picturesque desert setting.',
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     bedrooms: 3,
     bathrooms: 2,
     price: 650000,
     areaSqFt: 2400,
     location: 'Palm Springs, California',
-    description:'This desert property combines modern architecture with serene desert views and luxurious amenities.',
-    imageGallery:[
+    description: 'This desert property combines modern architecture with serene desert views and luxurious amenities.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -241,15 +262,17 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2008
+    buildYear: 2008,
+    propertyType: "Villa",
   },
   {
     id: 10,
     slug: 'Harbor-View',
     image: '/rs-webp/rs-image-6.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
-    imageGallery:[
+    highlight: 'Coastal Escapes - Where Waves Beckon',
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -267,24 +290,25 @@ buildYear:1998
     price: 900000,
     areaSqFt: 1700,
     location: 'Boston, Massachusetts',
-    description:'This stunning condo offers breathtaking harbor views, modern interiors, and proximity to downtown.',
-
+    description: 'This stunning condo offers breathtaking harbor views, modern interiors, and proximity to downtown.',
+    propertyType: "Mansion",
   },
   {
     id: 11,
     slug: 'Maple-Manor',
     image: '/rs-webp/rs-image-7.webp',
-    highlight:"Urban Oasis - Life in the Heart of the City",
+    highlight: 'Urban Oasis - Life in the Heart of the City',
     title: 'Elegant Country Estate',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     summary: 'A charming estate in the heart of the countryside.',
     bedrooms: 5,
     bathrooms: 4,
     price: 1100000,
     areaSqFt: 4500,
     location: 'Nashville, Tennessee',
-    description:  'This sprawling estate offers privacy, stunning landscapes, and a beautiful country setting.',
-    imageGallery:[
+    description: 'This sprawling estate offers privacy, stunning landscapes, and a beautiful country setting.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -295,14 +319,16 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2010
+    buildYear: 2010,
+    propertyType: "Mansion",
   },
   {
     id: 12,
     slug: 'Seaside-Cottage',
     image: '/rs-webp/rs-image-8.webp',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     title: 'Cozy Beachside Getaway',
     summary: 'A quaint cottage just steps from the beach.',
     bedrooms: 2,
@@ -311,7 +337,7 @@ buildYear:1998
     areaSqFt: 1200,
     location: 'Charleston, South Carolina',
     description: 'This cozy cottage offers a relaxing retreat with easy access to sandy beaches and ocean breezes.',
-    imageGallery:[
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -322,16 +348,18 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2009
+    buildYear: 2009,
+    propertyType: "Mansion",
   },
   {
     id: 13,
     slug: 'Hilltop-Haven',
     image: '/rs-webp/rs-image-9.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
     title: 'Modern Home with Panoramic Views',
     summary: 'A stunning property atop a scenic hill.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 4,
     bathrooms: 3,
     price: 980000,
@@ -349,23 +377,25 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2008
+    buildYear: 2008,
+    propertyType: "Villa",
   },
   {
     id: 14,
     slug: 'Rustic-Farmhouse',
     image: '/rs-webp/rs-image-10.webp',
-    highlight:"Urban Oasis - Life in the Heart of the City",
+    highlight: 'Urban Oasis - Life in the Heart of the City',
     title: 'Charming Farmhouse with Land',
     summary: 'A peaceful retreat with expansive grounds.',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     bedrooms: 3,
     bathrooms: 2,
     price: 620000,
     areaSqFt: 3000,
     location: 'Boise, Idaho',
-    description:  'This rustic farmhouse offers plenty of land, modern updates, and a welcoming atmosphere.',
-    imageGallery:[
+    description: 'This rustic farmhouse offers plenty of land, modern updates, and a welcoming atmosphere.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -376,23 +406,25 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2006
+    buildYear: 2006,
+    propertyType: "Estates",
   },
   {
     id: 15,
     slug: 'Bayview-Residence',
     image: '/rs-webp/rs-image-11.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
     title: 'Luxury Condo with Bay Views',
     summary: 'A sleek condo overlooking the bay.',
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     bedrooms: 2,
     bathrooms: 2,
     price: 890000,
     areaSqFt: 1900,
     location: 'San Francisco, California',
     description: 'Enjoy bayfront living in this luxurious condo with modern amenities and breathtaking views.',
-    imageGallery:[
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -403,15 +435,17 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    propertyType: "Townhouse",
   },
   {
     id: 16,
     slug: 'Golden-Fields',
     image: '/rs-webp/rs-image-12.webp',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
     title: 'Spacious Ranch Property',
     summary: 'A stunning ranch home with endless possibilities.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 5,
     bathrooms: 4,
     price: 1300000,
@@ -429,14 +463,16 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2012
+    buildYear: 2012,
+    propertyType: "Townhouse",
   },
   {
     id: 17,
     slug: 'Skyline-Tower',
     image: '/rs-webp/rs-image-13.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     title: 'Luxury Highrise Apartment',
     summary: 'A modern apartment in a prestigious building.',
     bedrooms: 3,
@@ -444,7 +480,7 @@ buildYear:1998
     price: 1000000,
     areaSqFt: 2700,
     location: 'Chicago, Illinois',
-    description:  'This highrise apartment offers stunning city views, luxury amenities, and a prime location.',
+    description: 'This highrise apartment offers stunning city views, luxury amenities, and a prime location.',
     imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
@@ -456,22 +492,24 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    propertyType: "Townhouse",
   },
   {
     id: 18,
     slug: 'Willow-Creek',
     image: '/rs-webp/rs-image-14.webp',
-    highlight:"Urban Oasis - Life in the Heart of the City",
+    highlight: 'Urban Oasis - Life in the Heart of the City',
     title: 'Charming Home Near Nature Trails',
     summary: 'A lovely home in a nature-friendly community.',
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     bedrooms: 4,
     bathrooms: 3,
     price: 720000,
     areaSqFt: 3100,
     location: 'Portland, Oregon',
-    description:'Surrounded by beautiful nature trails, this home offers peace, comfort, and plenty of space.',
-    imageGallery:[
+    description: 'Surrounded by beautiful nature trails, this home offers peace, comfort, and plenty of space.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -482,16 +520,18 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2015
+    buildYear: 2015,
+    propertyType: "Penthouse",
   },
   {
     id: 19,
     slug: 'Desert-Retreat',
     image: '/rs-webp/rs-image-15.webp',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
     title: 'Private Desert Sanctuary',
     summary: 'A hidden gem in the desert.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 3,
     bathrooms: 2,
     price: 540000,
@@ -509,14 +549,16 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2004
+    buildYear: 2004,
+    propertyType: "Penthouse",
   },
   {
     id: 20,
     slug: 'Riverbend',
     image: '/rs-webp/rs-image-16.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     title: 'Peaceful Riverside Home',
     summary: 'A serene home along a quiet riverbank.',
     bedrooms: 3,
@@ -524,7 +566,7 @@ buildYear:1998
     price: 780000,
     areaSqFt: 2900,
     location: 'Sacramento, California',
-    description:   'Enjoy riverside living in this beautiful home with expansive views and modern interiors.',
+    description: 'Enjoy riverside living in this beautiful home with expansive views and modern interiors.',
     imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
@@ -536,15 +578,17 @@ buildYear:1998
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2012
+    buildYear: 2012,
+    propertyType: "Penthouse",
   },
   {
     id: 21,
     slug: 'City Lights',
     image: '/rs-webp/rs-image-17.webp',
-    highlight:'Urban Oasis - Life in the Heart of the City',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
-    imageGallery:[
+    highlight: 'Urban Oasis - Life in the Heart of the City',
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -562,24 +606,27 @@ buildYear:1998
     price: 2500000,
     areaSqFt: 3500,
     location: 'New York, New York',
-    description:'This elegant penthouse features floor-to-ceiling windows, a spacious layout, and breathtaking city views.',
-buildYear:2009
+    description:
+      'This elegant penthouse features floor-to-ceiling windows, a spacious layout, and breathtaking city views.',
+    buildYear: 2009,
+    propertyType:"Mansion",
   },
   {
     id: 22,
     slug: 'Garden-Retreat',
     image: '/rs-webp/rs-image-18.webp',
-    highlight:"Countryside Charm - Escape to Nature's Embrace",
+    highlight: "Countryside Charm - Escape to Nature's Embrace",
     title: 'Charming Home with Lush Gardens',
     summary: 'A serene property surrounded by vibrant greenery.',
-    readMore:"This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
+    readMore:
+      "This is situated in one of Tel Aviv's most in-demand towers, offering a breathtaking cityscape from the 21st floor. With 24/7 concierge service, private gym, and rooftop lounge, the building redefines urban convenience. Inside, you'll find designer finishes, a state-of-the-art kitchen, and energy-efficient systems. Located near Sarona Market, tech hubs, and nightlife, this unit is ideal for professionals or those seeking a high-return investment opportunity in the heart of Tel Aviv.",
     bedrooms: 4,
     bathrooms: 3,
     price: 520000,
     areaSqFt: 2900,
     location: 'Portland, Oregon',
     description: 'This charming home offers spacious interiors, a large backyard, and beautifully landscaped gardens.',
-    imageGallery:[
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -590,22 +637,24 @@ buildYear:2009
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
+    propertyType: "Estates",
   },
   {
     id: 23,
     slug: 'Coastal Paradise',
     image: '/rs-webp/rs-image-19.webp',
-    highlight:"Coastal Escapes - Where Waves Beckon",
+    highlight: 'Coastal Escapes - Where Waves Beckon',
     title: 'Beachfront Dream Home',
     summary: 'Live the coastal lifestyle in this stunning beachfront home.',
-    readMore:"This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
+    readMore:
+      "This elegant 4-bedroom villa is located in the prestigious Herzliya Pituach neighborhood, just steps from the Mediterranean shoreline. Designed with both comfort and sophistication in mind, it features a private infinity pool, floor-to-ceiling glass walls, and smart home technology throughout. The spacious open-plan kitchen flows seamlessly into the living area, perfect for entertaining. Nearby, you'll find upscale dining, international schools, and yacht marina access — a true gem for families or investors seeking exclusivity in Israel's prime coastal real estate market.",
     bedrooms: 5,
     bathrooms: 4,
     price: 1800000,
     areaSqFt: 4200,
     location: 'Santa Barbara, California',
-    description:'Wake up to the sound of waves in this luxurious beachfront property with direct beach access.',
-    imageGallery:[
+    description: 'Wake up to the sound of waves in this luxurious beachfront property with direct beach access.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -616,23 +665,26 @@ buildYear:2009
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2018
+    buildYear: 2018,
+    propertyType: "Estates",
   },
   {
     id: 24,
     slug: 'Suburban-Haven',
     image: '/rs-webp/rs-image-20.webp',
-    highlight:"Urban Oasis - Life in the Heart of the City",
+    highlight: 'Urban Oasis - Life in the Heart of the City',
     title: 'Family-Friendly Suburban Home',
     summary: 'A spacious home in a quiet suburban neighborhood.',
-    readMore:"Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.",
+    readMore:
+      'Set on over 10 dunams of private land, this expansive country estate offers 6 bedrooms, a natural spring-fed pool, olive groves, and vineyard potential. The property blends rustic charm with modern upgrades, including underfloor heating, solar power, and high-speed fiber internet. Located minutes from boutique wineries, hiking trails, and historic villages, it offers a unique opportunity to enjoy peaceful living while staying connected. Perfect as a family retreat, boutique hotel project, or a lifestyle-driven investment.',
     bedrooms: 4,
     bathrooms: 3,
     price: 430000,
     areaSqFt: 3000,
     location: 'Phoenix, Arizona',
-    description:'Perfect for families, this home features a large backyard, modern kitchen, and excellent schools nearby.',
-    imageGallery:[
+    description:
+      'Perfect for families, this home features a large backyard, modern kitchen, and excellent schools nearby.',
+    imageGallery: [
       { path: '/imageGallery/seaSideOne.svg' },
       { path: '/imageGallery/seaSideTwo.svg' },
       { path: '/imageGallery/seaSideThree.svg' },
@@ -643,7 +695,7 @@ buildYear:2009
       { path: '/imageGallery/seaSideNine.svg' },
       { path: '/imageGallery/seaSideEight.svg' },
     ],
-    buildYear:2008
+    buildYear: 2008,
+    propertyType: "Estates",
   },
-]
-
+];

@@ -1,4 +1,4 @@
-import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { collection, addDoc,  getDocs } from 'firebase/firestore';
 import { db } from './firebase';
 
 export const getContactUsSubmissions = async () => {

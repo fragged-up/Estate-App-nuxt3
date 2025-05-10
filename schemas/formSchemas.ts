@@ -20,7 +20,6 @@ export const fullInquirySchema = z.object({
   }),
 });
 
-/* Property Inquiry Form */
 export const propertyInquirySchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
   lastName: z.string().min(2, 'Last name is required'),
@@ -31,8 +30,6 @@ export const propertyInquirySchema = z.object({
     errorMap: () => ({ message: 'You must accept the terms' }),
   }),
 });
-
-/*  Contact Form */
 
 export const contactFormSchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
@@ -50,7 +47,6 @@ export const contactFormSchema = z.object({
 });
 
 
-/* Type Inference */
 export type FullInquiryForm = z.infer<typeof fullInquirySchema>;
 export type PropertyInquiryForm = z.infer<typeof propertyInquirySchema>;
 export type ContactForm = z.infer<typeof contactFormSchema>;

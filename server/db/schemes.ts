@@ -1,43 +1,29 @@
-/* collection proerties */
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
-/* {
-    "id": "property_123",
-    "title": "Luxury Villa in Tel Aviv",
-    "description": "A beautiful villa with ocean views.",
-    "price": 2000000,
-    "location": {
-      "city": "Tel Aviv",
-      "country": "Israel"
-    },
-    "images": ["url1", "url2"],
-    "agentId": "agent_456",
-    "status": "for_sale",  // ["for_sale", "sold", "rented"]
-    "createdAt": "2024-02-11T10:00:00Z"
+async function fetchCollection(collectionName: string) {
+  try {
+    const collectionRef = collection(db, collectionName);
+    const querySnapshot = await getDocs(collectionRef);
+    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  } catch (error) {
+    console.error(`Error fetching ${collectionName}:`, error);
+    return [];
   }
- */
+}
 
-/* Agents Collections  */
+export async function useFilterOptions() {
+  const locationOptions = await fetchCollection('locations');
+  const propertyTypeOptions = await fetchCollection('propertyTypes');
+  const pricingRangeOptions = await fetchCollection('pricingRanges');
+  const propertySizeOptions = await fetchCollection('propertySizes');
+  const buildYearOptions = await fetchCollection('buildYears');
 
-/* {
-    "id": "agent_456",
-    "name": "David Cohen",
-    "email": "david@example.com",
-    "phone": "+972-50-1234567",
-    "profileImage": "url",
-    "listedProperties": ["property_123", "property_789"],
-    "reviews": [
-      { "userId": "user_001", "rating": 5, "comment": "Great service!" }
-    ]
-  } */
-
-  /* Inquires Collection */
-
-
-
-//   {
-//     "id": "inq_789",
-//     "userId": "user_001",
-//     "propertyId": "property_123",
-//     "message": "I’m interested in this property, is it still available?",
-//     "status": "pending"
-//   }
+  return {
+    locationOptions,
+    propertyTypeOptions,
+    pricingRangeOptions,
+    propertySizeOptions,
+    buildYearOptions,
+  };
+}

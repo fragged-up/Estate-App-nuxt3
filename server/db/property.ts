@@ -1,4 +1,4 @@
-import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { collection, addDoc, query, where, getDocs, setDoc, doc } from 'firebase/firestore';
 import { db } from './firebase';
 
 export const getPropertiesByCity = async (city: any) => {
@@ -14,4 +14,25 @@ export const createProperty = async (propertyData: any) => {
 export const getProducts = async () => {
   const snapshot = await getDocs(collection(db, 'properties'));
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+};
+
+
+
+
+export const pushPropertyToFirestore = async (property: any) => {
+  const propertyRef = doc(db, 'properties', property.id.toString());
+
+  try {
+    await setDoc(propertyRef, property);
+    console.log(`Property ${property.title} pushed successfully to Firestore!`);
+  } catch (error) {
+    console.error('Error pushing property:', error);
+  }
+};
+
+// Push multiple properties to Firestore
+export const pushAllProperties = async (properties: any) => {
+  for (const property of properties) {
+    await pushPropertyToFirestore(property);
+  }
 };

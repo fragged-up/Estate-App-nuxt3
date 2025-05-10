@@ -20,4 +20,4 @@ logs
 .env
 .env.*
 !.env.example
-/private-for-me
+/private

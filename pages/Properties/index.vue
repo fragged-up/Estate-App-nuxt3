@@ -41,7 +41,7 @@
       errors.value = {};
       console.log('formState.value : ', formState.value);
 
-      const res = await $fetch('/api/forms/contact', {
+      const res = await $fetch('/api/forms/inquiry', {
         method: 'POST',
         body: formState,
       });

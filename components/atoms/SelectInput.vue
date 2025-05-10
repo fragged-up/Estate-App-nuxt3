@@ -15,7 +15,6 @@
   const dropdownVisible = ref(false);
   const focusedIndex = ref(-1);
 
-  // Resolve options if it's a function
   const resolvedOptions = computed(() => {
     return typeof props.options === 'function' ? props.options() : props.options;
   });
@@ -61,12 +60,12 @@
 </script>
 
 <template>
-  <div class="relative mx-auto w-11/12" :class="extraStyle">
-    <label class="my-2 block font-sans text-base font-semibold text-white">
+  <div class="relative mx-auto w-11/12 my-6" :class="extraStyle">
+    <label class=" font-sans text-base font-semibold text-white">
       {{ selectHead }}
     </label>
     <div
-      class="flex items-center justify-between rounded-2xl border border-[#262626] bg-[#141414] p-4 cursor-pointer"
+      class="flex items-center my-6 justify-between rounded-2xl border border-[#262626] bg-[#141414] p-4 cursor-pointer"
       role="combobox"
       aria-haspopup="listbox"
       :aria-expanded="dropdownVisible.toString()"
@@ -74,7 +73,7 @@
       @click="toggleDropdown"
       @keydown="onKeydown"
     >
-      <span class="text-sm font-medium text-white">
+      <span class="text-sm font-medium text-[#666666] font-sans">
         {{ selectedOption || placeHolder || 'Select an option' }}
       </span>
       <svg
@@ -96,7 +95,7 @@
     <ul
       v-show="dropdownVisible"
       role="listbox"
-      class="absolute z-10 mt-2 max-h-60 w-full overflow-auto rounded-2xl border border-[#262626] bg-[#1a1a1a] shadow-lg"
+      class="absolute z-10 max-h-60 w-full overflow-auto rounded-2xl border border-[#262626] bg-[#1a1a1a] shadow-lg"
     >
       <li
         v-for="(option, index) in resolvedOptions"

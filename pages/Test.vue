@@ -1,156 +1,203 @@
-<script lang="ts" setup>
-  import type { ContactForm } from '~/schemas/formSchemas';
-  import { contactFormSchema } from '~/schemas/formSchemas';
+<script setup lang="ts">
+interface Property {
+  id: string;
+  title: string;
+  price: number;
+  location: { city: string };
+  areaSqFt: number;
+  buildYear: number;
+  image?: string;
+}
 
-  const errors = ref<Record<string, string>>({});
-  const isSubmitting = ref(false);
+interface ApiResponse<T = any> {
+  data?: T;
+  message?: string;
+  error?: string;
+}
 
-  const contactFormState = reactive<ContactForm>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    inquiryType: '',
-    howDidYouHearAboutUs: '',
-    message: '',
-    termsAccepted: false,
-  });
+const filters = ref({
+  location: '',
+  propertyType: '',
+  priceRange: [null, null] as [number | null, number | null],
+  areaRange: [null, null] as [number | null, number | null],
+  buildYear: null as number | null,
+});
 
-const submitContactForm = async () => {
-  console.log('Submit button clicked');
-  isSubmitting.value = true;
-  console.log('isSubmitting:', isSubmitting.value);
+const properties = ref<Property[]>([]);
+const errorMessage = ref<string | null>(null);
+const loading = ref(false);
 
+const cities = ref<string[]>([]);
+const propertyTypes = ref<string[]>([]);
+const buildYears = ref<number[]>([]);
+const filterLoading = ref(false);
+const filterError = ref<string | null>(null);
+
+const fetchFilterOptions = async () => {
+  filterLoading.value = true;
+  filterError.value = null;
   try {
-    await contactFormSchema.parseAsync(contactFormState);
-    errors.value = {};
-
-    const res = await $fetch('/api/forms/contact', {
-      method: 'POST',
-      body: contactFormState,
-    });
-    console.log('Response:', res);
-  } catch (err: any) {
-    console.error('Form Validation Failed:', err);
-    errors.value = err.errors.reduce((acc: any, curr: any) => {
-      acc[curr.path[0]] = curr.message;
-      return acc;
-    }, {});
+    const response = await $fetch<ApiResponse<{
+      locationOptions: { id: string; name: string }[];
+      propertyTypeOptions: { id: string; type: string }[];
+      buildYearOptions: { id: string; year: number }[];
+    }>>('/api/test');
+    if (response.data) {
+      cities.value = response.data.locationOptions.map(option => option.name).filter((v, i, a) => a.indexOf(v) === i) as string[];
+      propertyTypes.value = response.data.propertyTypeOptions.map(option => option.type).filter((v, i, a) => a.indexOf(v) === i) as string[];
+      buildYears.value = response.data.buildYearOptions.map(option => option.year).filter((v, i, a) => a.indexOf(v) === i).sort((a, b) => b - a) as number[]; // Sort descending and remove duplicates
+    } else {
+      filterError.value = response.message || 'Failed to load filter options.';
+    }
+  } catch (error) {
+    console.error('Error fetching filter options:', error);
+    filterError.value = 'Failed to load filter options.';
   } finally {
-    console.log('Form submission finished');
-    isSubmitting.value = false;
+    filterLoading.value = false;
   }
 };
 
+const filteredProperties = computed(() => {
+  return properties.value.filter((property: any) => {
+    const locationMatch = !filters.value.location || property.location.city.toLowerCase().includes(filters.value.location.toLowerCase());
+    const typeMatch = !filters.value.propertyType || property.propertyType.toLowerCase() === filters.value.propertyType.toLowerCase();
+    const priceMatch = (!filters.value.priceRange[0] || property.price >= filters.value.priceRange[0]) &&
+      (!filters.value.priceRange[1] || property.price <= filters.value.priceRange[1]);
+    const areaMatch = (!filters.value.areaRange[0] || property.areaSqFt >= filters.value.areaRange[0]) &&
+      (!filters.value.areaRange[1] || property.areaSqFt <= filters.value.areaRange[1]);
+    const yearMatch = filters.value.buildYear === null || property.buildYear === filters.value.buildYear;
+    return locationMatch && typeMatch && priceMatch && areaMatch && yearMatch;
+  });
+});
+
+const fetchProperties = async () => {
+  loading.value = true;
+  errorMessage.value = null;
+  try {
+    const response = await $fetch<ApiResponse<Property[]>>('/api/test', { // Assuming a new endpoint for filtered properties
+      method: 'POST',
+      body: filters.value,
+    });
+
+    if (response.data) {
+      properties.value = response.data;
+    } else {
+      errorMessage.value = response.message || 'No properties found.';
+      properties.value = [];
+    }
+  } catch (error) {
+    console.error('Error fetching properties:', error);
+    errorMessage.value = 'Failed to fetch properties.';
+    properties.value = [];
+  } finally {
+    loading.value = false;
+  }
+};
+
+const resetFilters = () => {
+  filters.value = {
+    location: '',
+    propertyType: '',
+    priceRange: [null, null],
+    areaRange: [null, null],
+    buildYear: null,
+  };
+  fetchProperties();
+};
+
+onMounted(() => {
+  fetchFilterOptions();
+  fetchProperties(); // Optionally fetch all properties on initial load
+});
 </script>
+
 <template>
-  <form
-    class="cont main-b mx-auto my-10 w-[90%] laptop:grid laptop:w-4/5 laptop:grid-cols-1 laptop:p-8"
-    @submit.prevent="submitContactForm"
-  >
-    <div class="first-row laptop:flex laptop:gap-6">
-      <div class="mx-auto my-6 flex w-full flex-col gap-y-4">
-        <label for="firstName" class="font-sans text-base font-medium text-white">First Name</label>
-        <input
-          id="firstName"
-          v-model="contactFormState.firstName"
-          type="text"
-          name="firstName"
-          placeholder="Enter First Name"
-          class="w-full appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none rounded-2xl border border-[#262626] text-white bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none"
-        >
-        <span v-if="errors.firstName" class="mt-1 text-red-500 text-left">{{ errors.firstName }}</span>
-      </div>
-      <div class="mx-auto my-6 flex w-full flex-col gap-y-4">
-        <label for="lastName" class="font-sans text-base font-medium text-white">Last Name</label>
-        <input
-          id="lastName"
-          v-model="contactFormState.lastName"
-          type="text"
-          name="lastName"
-          placeholder="Enter Last Name"
-          class="w-full appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none rounded-2xl border border-[#262626] text-white bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none"
-        >
-        <span v-if="errors.lastName" class="mt-1 text-red-500 text-left">{{ errors.lastName }}</span>
-      </div>
-      <div class="mx-auto my-6 flex w-full flex-col gap-y-4">
-        <label for="email" class="font-sans text-base font-medium text-white">Email</label>
-        <input
-          id="email"
-          v-model="contactFormState.email"
-          type="email"
-          name="email"
-          placeholder="Enter your Email"
-          class="w-full appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none rounded-2xl border border-[#262626] text-white bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none"
-        >
-        <span v-if="errors.email" class="mt-1 text-red-500 text-left">{{ errors.email }}</span>
-      </div>
-    </div>
+  <div class="bg-gray-100 min-h-screen py-10">
+    <div class="container mx-auto p-6 bg-white shadow-md rounded-lg">
+      <h1 class="text-3xl font-semibold mb-6 text-gray-800">Find Your Dream Property</h1>
 
-    <div class="second-row laptop:flex laptop:gap-6">
-      <div class="mx-auto my-6 flex w-full flex-col gap-y-4">
-        <label for="phone" class="font-sans text-base font-medium text-white">Phone</label>
-        <input
-          id="phone"
-          v-model="contactFormState.phone"
-          type="text"
-          name="phone"
-          placeholder="Enter Phone Number"
-          class="w-full appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none rounded-2xl border border-[#262626] text-white bg-[#141414] p-4 placeholder:text-sm placeholder:font-medium placeholder:text-[#666666] focus:outline-none"
-        >
-        <span v-if="errors.phone" class="mt-1 text-red-500 text-left">{{ errors.phone }}</span>
-      </div>
-      <SelectInput
-        v-model="contactFormState.inquiryType"
-        :select-head="'Inquiry Type'"
-        :place-holder="'Inquiry Type'"
-        :label="'Select Location'"
-        :options="['Malibu', 'MonteNegro', 'Holywood']"
-      />
-      <SelectInput
-        v-model="contactFormState.howDidYouHearAboutUs"
-        :select-head="'How Did You Hear About Us'"
-        :place-holder="'Select'"
-        :label="'Select'"
-        :options="['Linkedin', 'Google', 'Facebook']"
-      />
-    </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div>
+          <label for="location" class="block text-gray-700 text-sm font-bold mb-2">Location:</label>
+          <select id="location" v-model="filters.location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :disabled="filterLoading">
+            <option value="">Any</option>
+            <option v-for="city in cities" :key="city" :value="city">{{ city }}</option>
+          </select>
+          <div v-if="filterError" class="text-red-500 text-xs italic">{{ filterError }}</div>
+          <div v-if="filterLoading" class="text-gray-500 text-xs italic">Loading...</div>
+        </div>
 
-    <div class="message-cont mx-auto w-11/12 laptop:w-full">
-      <div class="third-row message-section mt-6">
-        <h3 class="mb-4 text-lg font-semibold text-white">Message</h3>
-        <textarea
-          v-model="contactFormState.message"
-          class="w-full rounded-2xl border border-[#262626] bg-[#141414] p-4 text-white"
-          placeholder="Enter your Message here.."
-        />
-        <span v-if="errors.message" class="mt-1 text-red-500 text-left">{{ errors.message }}</span>
+        <div>
+          <label for="propertyType" class="block text-gray-700 text-sm font-bold mb-2">Property Type:</label>
+          <select id="propertyType" v-model="filters.propertyType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :disabled="filterLoading">
+            <option value="">Any</option>
+            <option v-for="type in propertyTypes" :key="type" :value="type">{{ type }}</option>
+          </select>
+          <div v-if="filterError" class="text-red-500 text-xs italic">{{ filterError }}</div>
+          <div v-if="filterLoading" class="text-gray-500 text-xs italic">Loading...</div>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 text-sm font-bold mb-2">Price Range ($):</label>
+          <div class="flex space-x-2">
+            <input v-model.number="filters.priceRange[0]" type="number" placeholder="Min" class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <input v-model.number="filters.priceRange[1]" type="number" placeholder="Max" class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 text-sm font-bold mb-2">Area Range (sqft):</label>
+          <div class="flex space-x-2">
+            <input v-model.number="filters.areaRange[0]" type="number" placeholder="Min" class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <input v-model.number="filters.areaRange[1]" type="number" placeholder="Max" class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          </div>
+        </div>
+
+        <div>
+          <label for="buildYear" class="block text-gray-700 text-sm font-bold mb-2">Build Year:</label>
+          <select id="buildYear" v-model="filters.buildYear" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :disabled="filterLoading">
+            <option :value="null">Any</option>
+            <option v-for="year in buildYears" :key="year" :value="year">{{ year }}</option>
+          </select>
+          <div v-if="filterError" class="text-red-500 text-xs italic">{{ filterError }}</div>
+          <div v-if="filterLoading" class="text-gray-500 text-xs italic">Loading...</div>
+        </div>
+
+        <div class="flex items-end space-x-2">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" :disabled="loading" @click="fetchProperties">
+            Apply Filters
+          </button>
+          <button class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" :disabled="loading || filterLoading" @click="resetFilters">
+            Reset
+          </button>
+        </div>
       </div>
 
-      <div class="fourth-row agree-section mt-6 laptop:my-6 laptop:flex laptop:justify-between">
-        <label class="flex items-center text-white">
-          <input
-            v-model="contactFormState.termsAccepted"
-            type="checkbox"
-            class="form-checkbox h-4 w-4 text-[#703BF7] accent-[#703BF7]"
-          >
-          <span class="ml-2">
-            I agree with
-            <a href="#" class="text-[#703BF7] underline">Terms of Use</a>
-            and
-            <a href="#" class="text-[#703BF7] underline">Privacy Policy</a>
-          </span>
-        </label>
-        <span v-if="errors.termsAccepted" class="mt-1 text-red-500 text-left">{{ errors.termsAccepted }}</span>
-        <button
-          type="submit"
-          class="my-6 w-full rounded-2xl bg-[#703BF7] p-4 text-white laptop:m-0 laptop:max-w-[195px]"
-          :disabled="isSubmitting"
-        >
-          <span v-if="isSubmitting" class="text-lg text-white">Sending...</span>
-          <span v-else class="text-lg text-white">Send Your Message</span>
-        </button>
+      <div v-if="loading" class="text-center py-4 text-gray-600">Loading properties...</div>
+
+      <div v-else-if="filteredProperties.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-for="property in filteredProperties" :key="property.id" class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img v-if="property.image" :src="property.image" alt="Property Image" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">{{ property.title }}</h2>
+            <p class="text-gray-600 mb-1"><i class="fas fa-map-marker-alt mr-2" />{{ property.location.city }}</p>
+            <p class="text-indigo-600 font-bold text-lg mb-2">${{ property.price.toLocaleString() }}</p>
+            <div class="flex space-x-4 text-gray-500 text-sm">
+              <span><i class="fas fa-ruler-horizontal mr-2" />{{ property.areaSqFt }} sqft</span>
+              <span><i class="fas fa-calendar-alt mr-2" />Built: {{ property.buildYear }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-else-if="!loading && filteredProperties.length === 0 && !errorMessage" class="text-center py-4 text-gray-600">
+        No properties match your filters.
+      </div>
+
+      <div v-if="errorMessage" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-6" role="alert">
+        <strong class="font-bold">Error!</strong>
+        <span class="block sm:inline">{{ errorMessage }}</span>
       </div>
     </div>
-  </form>
+  </div>
 </template>
